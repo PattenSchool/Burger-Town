@@ -17,23 +17,39 @@ public class PauseManager : MonoBehaviour
 
     public void OnPause(InputAction.CallbackContext context)
     {
-        //Used to freeze the game
-        Time.timeScale = 0f;
-
         //Used to switch the player input
         playerInput.SwitchCurrentActionMap("UI");
-
-        //Used to unlock the cursor from the screen
-        Cursor.lockState = CursorLockMode.None;
-
-        //Used to switch canvases
-        pauseCanvas.SetActive(true);
-        playerHUD.SetActive(false);
+        
+        TogglePause(true);
     }
 
     public void OnUnPause(InputAction.CallbackContext context)
     {
 
+        //Switches player input
+        playerInput.SwitchCurrentActionMap("Player");
+
+        TogglePause(false);
+    }
+
+    public void TogglePause(bool isPaused)
+    {
+        if (isPaused)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            //Used to freeze the game
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            //Resumes game
+            Time.timeScale = 1f;
+        }
+
+        //Switch canvases
+        pauseCanvas.SetActive(isPaused);
+        playerHUD.SetActive(!isPaused);
     }
 
     public void FreezeTime()

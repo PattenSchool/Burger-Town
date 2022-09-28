@@ -7,6 +7,7 @@ public class MenuSwitch : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Unlocks cursor
         Cursor.lockState = CursorLockMode.None;
     }
 
