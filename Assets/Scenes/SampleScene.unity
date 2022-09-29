@@ -933,7 +933,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: cfffa6a0-223e-4de1-910c-7e52e8bb7cfd
+    m_ActionId: 17ce0f1c-d013-4d0b-b20e-53a8142369fe
     m_ActionName: UI/Unpause[/Keyboard/p]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
@@ -1461,7 +1461,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1408927817}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2147011410}
+        m_TargetAssemblyTypeName: PauseManager, Assembly-CSharp
+        m_MethodName: TogglePause
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1408927817
 MonoBehaviour:
   m_ObjectHideFlags: 0

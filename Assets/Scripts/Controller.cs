@@ -477,7 +477,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Unpause"",
                     ""type"": ""Button"",
-                    ""id"": ""cfffa6a0-223e-4de1-910c-7e52e8bb7cfd"",
+                    ""id"": ""17ce0f1c-d013-4d0b-b20e-53a8142369fe"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -905,7 +905,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""21f2be1b-dead-4f05-a78c-e69e226ade1f"",
+                    ""id"": ""f08ced56-c041-48ce-a750-b2dfe1d08874"",
                     ""path"": ""<Keyboard>/p"",
                     ""interactions"": """",
                     ""processors"": """",

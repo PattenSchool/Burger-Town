@@ -17,14 +17,18 @@ public class PauseManager : MonoBehaviour
 
     public void OnPause(InputAction.CallbackContext context)
     {
+        //Used to freeze the game
+        Time.timeScale = 0f;
+
         //Used to switch the player input
         playerInput.SwitchCurrentActionMap("UI");
-        
         TogglePause(true);
     }
 
     public void OnUnPause(InputAction.CallbackContext context)
     {
+        //Resumes game
+        Time.timeScale = 1f;
 
         //Switches player input
         playerInput.SwitchCurrentActionMap("Player");
@@ -37,13 +41,11 @@ public class PauseManager : MonoBehaviour
         if (isPaused)
         {
             Cursor.lockState = CursorLockMode.None;
-            //Used to freeze the game
-            Time.timeScale = 0f;
         }
         else
         {
             Cursor.lockState = CursorLockMode.Locked;
-            //Resumes game
+            playerInput.SwitchCurrentActionMap("Player");
             Time.timeScale = 1f;
         }
 

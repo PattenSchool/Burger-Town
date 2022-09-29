@@ -61,7 +61,7 @@ public class rbCharacterController : MonoBehaviour
 
     private void FixedUpdate() //use fixed because we have a rb that is physics-based
     {
-        /*
+        
         Vector3 currentVelocity = rb.velocity; //find target velocity
         Vector3 targetVelocity = new Vector3(move.x, 0, move.y); //take input and change it into a vector to move character
         targetVelocity *= speed;
@@ -76,7 +76,7 @@ public class rbCharacterController : MonoBehaviour
         Vector3.ClampMagnitude(velocityChange, maxForce); //limit amount of force on player
 
         rb.AddForce(velocityChange, ForceMode.VelocityChange); //add velocity change to player
-        */
+        
     }
 
     void Start()

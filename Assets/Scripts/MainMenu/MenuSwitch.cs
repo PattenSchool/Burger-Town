@@ -9,6 +9,8 @@ public class MenuSwitch : MonoBehaviour
     {
         //Unlocks cursor
         Cursor.lockState = CursorLockMode.None;
+        //Time Scale thing
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
