@@ -17,6 +17,14 @@ public class SceneSelect : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
     }
 
+    public void Level2()
+    {
+        //Currently for testing Win Menu
+        //Will load second level
+        Cursor.lockState = CursorLockMode.Locked;
+        SceneManager.LoadScene("LevelSwitchTest");
+    }
+
     public void ExitGame()
     {
         //Quits to Desktop
