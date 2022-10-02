@@ -6,6 +6,17 @@ using UnityEngine.InputSystem;
 
 public class SchootScript : MonoBehaviour
 {
+    #region Timer Variables
+    [Header("Time Variables")]
+
+    [Tooltip("The time remaining")]
+    private float timeRemining = 0f;
+
+    [Tooltip("The time between shots in seconds")]
+    [SerializeField]
+    private float timeBetweenShots = 1f;
+    #endregion
+
     #region Game Variables
     [Header("Game data variables")]
 
@@ -56,10 +67,19 @@ public class SchootScript : MonoBehaviour
     #region Unity Methods
     private void OnEnable()
     {
+        //Set a player reference
         if (player == null)
         {
             player = this.gameObject;
         }
+
+        
+    }
+
+    private void Update()
+    {
+        //Time functions
+        timeRemining -= Time.deltaTime;
     }
     #endregion
 
@@ -68,9 +88,15 @@ public class SchootScript : MonoBehaviour
     /// Used to get a bullet somewhere and fire it in the direction of the player
     /// </summary>
     /// <param name="context"></param>
+    ///     The context of the input
     public void Fire(InputAction.CallbackContext context)
     {
+        if (!(timeRemining <= 0f))
+        {
+            return;
+        }
 
+        //Fire if pressed
         if (context.started)
         {
             //Get direction facing
@@ -91,6 +117,9 @@ public class SchootScript : MonoBehaviour
             GetComponent<Rigidbody>().AddForce(-directionVector * 100f, ForceMode.Impulse);
 
             //spawnedAmmo.GetComponent<BoltTemplate>().OnLaunched(player);
+
+            //Reset the time
+            timeRemining = timeBetweenShots;
         }
 
     }

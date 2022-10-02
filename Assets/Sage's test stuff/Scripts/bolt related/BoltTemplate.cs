@@ -29,13 +29,32 @@ public class BoltTemplate : Projectile
 
     private void Update()
     {
-        //Cast a raycast in front
-        bool hit = Physics.Raycast(this.gameObject.transform.position,
-            Vector3.forward, _detectionRange);
-
-        if (hit)
+        //Define the ray being cast
+        Ray ray = new Ray()
         {
-            IHit();
+            origin = transform.position,
+            direction = Vector3.forward,
+        };
+
+        //Define how the hit is being set
+        RaycastHit hitInfo;
+
+        //Hit physics
+        if (Physics.Raycast(ray, out hitInfo, _detectionRange))
+        {
+            //What is being hit
+            IHitable hitable = hitInfo.collider.GetComponent<IHitable>();
+
+            //If hitable, then deploy IHitable
+            if (hitable != null)
+            {
+                //Deploy it for object
+                hitable.IHit();
+
+                //Deploy it for bolt
+                IHit();
+            }
+                
         }
         
     }

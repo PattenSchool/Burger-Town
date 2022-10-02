@@ -21,6 +21,9 @@ public class rbCharacterController : MonoBehaviour
     public bool grounded;
     public float jumpForce;
 
+
+    public Vector3 outsideVel;
+
     #region Character Controller Methods
     public void OnMove(InputAction.CallbackContext context) //input system for movement
     {
@@ -63,19 +66,41 @@ public class rbCharacterController : MonoBehaviour
 
     private bool CheckGrounded()
     {
-        Vector3 center = this.gameObject.transform.position -
-            (this.gameObject.transform.lossyScale.y * Vector3.down * 0.5f) - new Vector3(0f, 0.1f / 2f, 0f);
+        Vector3 center = transform.position;
         Vector3 halfExtents = this.gameObject.transform.lossyScale * (0.5f) + Vector3.down * 0.1f;
         Vector3 direction = Vector3.down;
+        Quaternion rotation = transform.rotation;
+        float distance = 1f;
 
-        return Physics.BoxCast(center, halfExtents, direction);
+
+        return Physics.BoxCast(center, halfExtents, direction, rotation, distance);
+    }
+
+    void Move()
+    {
+        //To move (in tutorial)
+        Vector3 currentVelocity = rb.velocity;
+        Vector3 targetVelocity = new Vector3(move.x, 0f, move.y);
+        targetVelocity *= speed;
+
+        //Align direction
+        targetVelocity = transform.TransformDirection(targetVelocity);
+
+        //Calculate forces
+        Vector3 velocityChange = (targetVelocity - currentVelocity);
+        velocityChange = new Vector3(velocityChange.x, 0f, velocityChange.z);
+
+        //Limit force
+        Vector3.ClampMagnitude(velocityChange, maxForce);
+
+        rb.AddForce(velocityChange, ForceMode.VelocityChange);
     }
     #endregion
 
     #region Unity Methods
     private void FixedUpdate() //use fixed because we have a rb that is physics-based
     {
-        
+        //Move();
     }
 
     void Start()
@@ -88,6 +113,9 @@ public class rbCharacterController : MonoBehaviour
     {
         SetGrounded(CheckGrounded());
 
+        
+
+        //To Move
         Vector3 desiredmove = transform.rotation * new Vector3(move.x, 0f, move.y) * speed;
         rb.velocity = new Vector3(desiredmove.x, rb.velocity.y, desiredmove.z);
     }
@@ -102,11 +130,4 @@ public class rbCharacterController : MonoBehaviour
         main_camera.transform.eulerAngles.y, main_camera.transform.eulerAngles.z);                          //rotate the camera (in world space)
     }
     #endregion
-
-    
-
-    public void OnPause(InputAction.CallbackContext context)
-    {
-        
-    }
 }
