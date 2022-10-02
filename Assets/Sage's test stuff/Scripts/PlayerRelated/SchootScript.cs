@@ -58,10 +58,6 @@ public class SchootScript : MonoBehaviour
     [Tooltip("The velocity of the bolt")]
     [SerializeField, Min(0f)]
     private float _initialVelocity = 0f;
-
-    //[Tooltip("Object pool for the bolts")]
-    //[SerializeField]
-    //private ObjectPooling _boltPooling;
     #endregion
 
     #region Unity Methods
@@ -102,8 +98,11 @@ public class SchootScript : MonoBehaviour
             //Get direction facing
             Vector3 directionVector = Camera.main.transform.forward;
 
+            //Get the ammo prefab
+            GameObject ammo = boltPrefabs[currentBoltIndex - 1].gameObject;
+
             //Instantiate the object
-            GameObject spawnedAmmo = ObjectPooling.Spawn(_ammo, 
+            GameObject spawnedAmmo = ObjectPooling.Spawn(ammo, 
                 this.gameObject.transform.position +(directionVector * _spawnRange), 
                 Camera.main.transform.rotation);
 
@@ -111,7 +110,7 @@ public class SchootScript : MonoBehaviour
             spawnedAmmo.GetComponent<Rigidbody>().velocity = directionVector * _initialVelocity;
 
             //Add rotation
-            spawnedAmmo.transform.eulerAngles = CalcFacingAngles();
+            spawnedAmmo.transform.rotation = Camera.main.transform.rotation;
 
             spawnedAmmo.GetComponent<BoltTemplate>().OnLaunched(player);
 

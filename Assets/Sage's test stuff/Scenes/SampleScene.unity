@@ -1473,8 +1473,10 @@ MonoBehaviour:
   _ammo: {fileID: 1199278060189394181, guid: 1273c10c756cd6d479a1a226507f075a, type: 3}
   _spawnRange: 1.85
   currentBoltIndex: 1
-  boltPrefabs: []
-  maxUnlockedBoltIndex: 3
+  boltPrefabs:
+  - {fileID: 375351735573986292, guid: 945fff4507ec64d42b5065af7909994c, type: 3}
+  - {fileID: 2035242447197048098, guid: 1273c10c756cd6d479a1a226507f075a, type: 3}
+  maxUnlockedBoltIndex: 2
   _initialVelocity: 25.83
 --- !u!1 &1021694367
 GameObject:
