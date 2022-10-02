@@ -9,7 +9,7 @@ public class BoltTemplate : Projectile
 
     [Tooltip("The rigid body of this bolt")]
     [SerializeField]
-    private Rigidbody _rigidbody;
+    protected Rigidbody _rigidbody;
     #endregion
 
     #region Data Variables
@@ -18,6 +18,14 @@ public class BoltTemplate : Projectile
     [Tooltip("The range in front of the bolt for detection")]
     [SerializeField, Min(0f)]
     private float _detectionRange = 0f;
+    #endregion
+
+    #region Time Variables
+    [Header("Time Variables")]
+
+    [Tooltip("The desired time bolt to exist in the world in seconds")]
+    [SerializeField, Min(0f)]
+    private float _desiredSetTime = 0f;
     #endregion
 
     #region Unity Methods
@@ -56,13 +64,6 @@ public class BoltTemplate : Projectile
             }
                 
         }
-        
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawRay(this.gameObject.transform.position, Vector3.forward * _detectionRange);
     }
     #endregion
 
@@ -72,22 +73,34 @@ public class BoltTemplate : Projectile
     /// </summary>
     public override void IHit()
     {
-        _rigidbody.velocity = Vector3.zero;
-        _rigidbody.useGravity = false;
-        _rigidbody.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePosition;
+        
     }
     #endregion
 
     #region Launched Methods
     /// <summary>
-    /// Used to apply an effect to a launchee
+    /// Used to apply an effect to a launchee or bolt on launch
     /// </summary>
     /// <param name="launchee"></param>
     ///     The one who launched the bolt
     public virtual void OnLaunched(GameObject launchee)
     {
-        //Override information here
-        launchee.GetComponent<Rigidbody>().AddForce(_rigidbody.velocity * -1f, ForceMode.Force);
+        //Set the maximum time the bolt exists
+        StartCoroutine(Despawn());
+    }
+    #endregion
+
+    #region Coroutine Methods
+    private IEnumerator Despawn()
+    {
+        //wait for the bolt to stop
+        yield return new WaitForSeconds(_desiredSetTime);
+
+        //Used to despawn the bolt in the object pool
+        ObjectPooling.Despawn(this.gameObject);
+
+        //A safe gaurd
+        yield break;
     }
     #endregion
 }

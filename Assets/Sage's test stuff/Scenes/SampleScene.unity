@@ -1361,6 +1361,7 @@ MonoBehaviour:
   main_camera: {fileID: 963194227}
   grounded: 0
   jumpForce: 3
+  outsideVel: {x: 0, y: 0, z: 0}
 --- !u!54 &997846907
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1468,14 +1469,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 356c0c7dc4d34ea4abc688906efbee50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemining: 0
   timeBetweenShots: 3
-  _ammo: {fileID: 8487001831863955601, guid: 945fff4507ec64d42b5065af7909994c, type: 3}
+  _ammo: {fileID: 1199278060189394181, guid: 1273c10c756cd6d479a1a226507f075a, type: 3}
   _spawnRange: 1.85
-  _initialVelocity: 25.83
   currentBoltIndex: 1
-  boltTemplates: []
+  boltPrefabs: []
   maxUnlockedBoltIndex: 3
+  _initialVelocity: 25.83
 --- !u!1 &1021694367
 GameObject:
   m_ObjectHideFlags: 0

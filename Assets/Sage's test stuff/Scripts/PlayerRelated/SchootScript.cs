@@ -37,14 +37,6 @@ public class SchootScript : MonoBehaviour
     private float _spawnRange;
     #endregion
 
-    #region Test Bolt Variables
-    [Header("Test Bolt Variables")]
-
-    [Tooltip("The velocity of the bolt")]
-    [SerializeField, Min(0f)]
-    private float _initialVelocity = 0f;
-    #endregion
-
     #region Bolt Data Variables
     [Header("Bolt variables")]
 
@@ -54,7 +46,7 @@ public class SchootScript : MonoBehaviour
 
     [Tooltip("Different type of bolt prefabs")]
     [SerializeField]
-    public BoltTemplate[] boltTemplates;
+    public BoltTemplate[] boltPrefabs;
 
     [Tooltip("The current level/ the current unlock of the bolt")]
     [SerializeField, Range(1, 11)]
@@ -62,6 +54,14 @@ public class SchootScript : MonoBehaviour
 
     [Tooltip("The minimum bolt index (leave be)")]
     private int minBoltIndex = 1;
+
+    [Tooltip("The velocity of the bolt")]
+    [SerializeField, Min(0f)]
+    private float _initialVelocity = 0f;
+
+    //[Tooltip("Object pool for the bolts")]
+    //[SerializeField]
+    //private ObjectPooling _boltPooling;
     #endregion
 
     #region Unity Methods
@@ -103,10 +103,9 @@ public class SchootScript : MonoBehaviour
             Vector3 directionVector = Camera.main.transform.forward;
 
             //Instantiate the object
-            GameObject spawnedAmmo = Instantiate(_ammo);
-
-            spawnedAmmo.transform.position = this.gameObject.transform.position +
-                (directionVector * _spawnRange);
+            GameObject spawnedAmmo = ObjectPooling.Spawn(_ammo, 
+                this.gameObject.transform.position +(directionVector * _spawnRange), 
+                Camera.main.transform.rotation);
 
             //Add Velocity
             spawnedAmmo.GetComponent<Rigidbody>().velocity = directionVector * _initialVelocity;
@@ -114,9 +113,7 @@ public class SchootScript : MonoBehaviour
             //Add rotation
             spawnedAmmo.transform.eulerAngles = CalcFacingAngles();
 
-            GetComponent<Rigidbody>().AddForce(-directionVector * 100f, ForceMode.Impulse);
-
-            //spawnedAmmo.GetComponent<BoltTemplate>().OnLaunched(player);
+            spawnedAmmo.GetComponent<BoltTemplate>().OnLaunched(player);
 
             //Reset the time
             timeRemining = timeBetweenShots;
@@ -186,17 +183,7 @@ public class SchootScript : MonoBehaviour
             int maxIndex = maxUnlockedBoltIndex;
             int minIndex = minBoltIndex;
 
-            //Used to loop around to the other allowed level bolt
-            //Such as, currLevel = 1 and index goes down,
-            //Then the level is set to max level. 
-            //if (newBoltIndex < minIndex)
-            //{
-            //    newBoltIndex = maxIndex;
-            //}
-            //else if (newBoltIndex > maxIndex)
-            //{
-            //    newBoltIndex = minIndex;
-            //}
+            //Used to keep the integers in a loop
             MathFExtended.Ranges.IntLoopInRange(minIndex, ref newBoltIndex, maxIndex);
 
             //Assign the bolt index to the script variable
