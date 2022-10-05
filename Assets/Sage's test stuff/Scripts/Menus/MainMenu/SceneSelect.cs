@@ -5,16 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class SceneSelect : MonoBehaviour
 {
+
+    //Load the main menu directly
     public void MainMenu()
     {
         //Loads main menu
         SceneManager.LoadScene("MainMenu");
     }
     
-    public void Level1()
+    //Load a level
+    public void LevelLoad(string levelName)
     {
         //Loads first level when it is ready
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(levelName);
     }
 
     public void Level2()

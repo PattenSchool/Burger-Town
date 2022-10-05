@@ -130,7 +130,8 @@ public class EventTrigger : MonoBehaviour
         //Draw lines to show where the recievers are
         foreach (var reciever in eventRecievers)
         {
-            Gizmos.DrawLine(transform.position, reciever.gameObject.transform.position);
+            if (reciever != null)
+                Gizmos.DrawLine(transform.position, reciever.gameObject.transform.position);
         }
     }
     #endregion

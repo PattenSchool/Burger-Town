@@ -24,8 +24,28 @@ public class PauseManager : MonoBehaviour
         playerInput.SwitchCurrentActionMap("UI");
         TogglePause(true);
     }
+    public void OnPause()
+    {
+        //Used to freeze the game
+        Time.timeScale = 0f;
+
+        //Used to switch the player input
+        playerInput.SwitchCurrentActionMap("UI");
+        TogglePause(true);
+    }
 
     public void OnUnPause(InputAction.CallbackContext context)
+    {
+        //Resumes game
+        Time.timeScale = 1f;
+
+        //Switches player input
+        playerInput.SwitchCurrentActionMap("Player");
+
+        TogglePause(false);
+    }
+
+    public void OnUnPause()
     {
         //Resumes game
         Time.timeScale = 1f;
@@ -51,6 +71,25 @@ public class PauseManager : MonoBehaviour
 
         //Switch canvases
         pauseCanvas.SetActive(isPaused);
+        playerHUD.SetActive(!isPaused);
+    }
+
+    public void TogglePauseNoCanvas(bool isPaused)
+    {
+        if (isPaused)
+        {
+            Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
+            playerInput.SwitchCurrentActionMap("UI");
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            playerInput.SwitchCurrentActionMap("Player");
+            Time.timeScale = 1f;
+        }
+
+        //Switch canvases
         playerHUD.SetActive(!isPaused);
     }
 

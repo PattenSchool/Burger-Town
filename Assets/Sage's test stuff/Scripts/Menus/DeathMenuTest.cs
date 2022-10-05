@@ -20,7 +20,7 @@ public class DeathMenuTest : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag == "KillTest")
+        if (collision.gameObject.tag == "Player")
         {
             isdead = true;
         }

@@ -78,7 +78,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""id"": ""acafa932-1b95-4564-a109-ba173fac92ba"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold"",
                     ""initialStateCheck"": false
                 },
                 {
@@ -98,6 +98,15 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Throw"",
+                    ""type"": ""Button"",
+                    ""id"": ""c6bced55-dd23-437f-b21f-5fa9572f2784"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -356,28 +365,6 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""8088dfde-b1af-4796-b6fd-c26fa71dc461"",
-                    ""path"": ""<Mouse>/forwardButton"",
-                    ""interactions"": ""Press"",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Grab"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""cf74c96f-5195-4e77-a6a8-009bd896dda7"",
-                    ""path"": ""<Mouse>/forwardButton"",
-                    ""interactions"": ""Press(behavior=1)"",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Grab"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""c5c9656e-6754-42cd-907f-18fa2d24ba27"",
                     ""path"": ""<Keyboard>/p"",
                     ""interactions"": """",
@@ -395,6 +382,28 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Bolt Index Scroll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""51bb8162-e007-48c0-83ca-f0a0103fd91b"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Grab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7d0f92cb-9586-47e6-bb4a-cbec0380917a"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Throw"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1038,6 +1047,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
         m_Player_Grab = m_Player.FindAction("Grab", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         m_Player_BoltIndexScroll = m_Player.FindAction("Bolt Index Scroll", throwIfNotFound: true);
+        m_Player_Throw = m_Player.FindAction("Throw", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1121,6 +1131,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Grab;
     private readonly InputAction m_Player_Pause;
     private readonly InputAction m_Player_BoltIndexScroll;
+    private readonly InputAction m_Player_Throw;
     public struct PlayerActions
     {
         private @Controller m_Wrapper;
@@ -1133,6 +1144,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
         public InputAction @Grab => m_Wrapper.m_Player_Grab;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputAction @BoltIndexScroll => m_Wrapper.m_Player_BoltIndexScroll;
+        public InputAction @Throw => m_Wrapper.m_Player_Throw;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1166,6 +1178,9 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 @BoltIndexScroll.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBoltIndexScroll;
                 @BoltIndexScroll.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBoltIndexScroll;
                 @BoltIndexScroll.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBoltIndexScroll;
+                @Throw.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnThrow;
+                @Throw.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnThrow;
+                @Throw.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnThrow;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1194,6 +1209,9 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 @BoltIndexScroll.started += instance.OnBoltIndexScroll;
                 @BoltIndexScroll.performed += instance.OnBoltIndexScroll;
                 @BoltIndexScroll.canceled += instance.OnBoltIndexScroll;
+                @Throw.started += instance.OnThrow;
+                @Throw.performed += instance.OnThrow;
+                @Throw.canceled += instance.OnThrow;
             }
         }
     }
@@ -1399,6 +1417,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
         void OnGrab(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnBoltIndexScroll(InputAction.CallbackContext context);
+        void OnThrow(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

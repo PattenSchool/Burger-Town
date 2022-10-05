@@ -56,7 +56,7 @@
                     "id": "acafa932-1b95-4564-a109-ba173fac92ba",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Hold",
                     "initialStateCheck": false
                 },
                 {
@@ -76,6 +76,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Throw",
+                    "type": "Button",
+                    "id": "c6bced55-dd23-437f-b21f-5fa9572f2784",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -334,28 +343,6 @@
                 },
                 {
                     "name": "",
-                    "id": "8088dfde-b1af-4796-b6fd-c26fa71dc461",
-                    "path": "<Mouse>/forwardButton",
-                    "interactions": "Press",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Grab",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "cf74c96f-5195-4e77-a6a8-009bd896dda7",
-                    "path": "<Mouse>/forwardButton",
-                    "interactions": "Press(behavior=1)",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Grab",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "c5c9656e-6754-42cd-907f-18fa2d24ba27",
                     "path": "<Keyboard>/p",
                     "interactions": "",
@@ -373,6 +360,28 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Bolt Index Scroll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "51bb8162-e007-48c0-83ca-f0a0103fd91b",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Grab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7d0f92cb-9586-47e6-bb4a-cbec0380917a",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Throw",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
