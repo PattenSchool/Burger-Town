@@ -7,6 +7,35 @@ namespace UnityEngine.MathExtensions
     /// </summary>
     public static class MathFExtended
     {
+        #region Math Functions
+        /// <summary>
+        /// Returns the sign of a number, or 0 if a zero
+        /// </summary>
+        /// <param name="n"></param>
+        ///     Any number between - infinity and + infinity
+        /// <returns></returns>
+        ///     Either -1, 0, or 1 depending on it's relation to 0
+        public static int SignEx(float n)
+        {
+            int number = 0;
+
+            if (n < 0)
+            {
+                number = -1;
+            }
+            else if (n > 0)
+            {
+                number = 1;
+            }
+            else
+            {
+                number = 0;
+            }
+
+            return number;
+        }
+        #endregion
+
         /// <summary>
         /// The class of rotation and vector methods
         /// </summary>
@@ -75,6 +104,112 @@ namespace UnityEngine.MathExtensions
 
                 //Return the result
                 return directionVector;
+            }
+            #endregion
+        }
+
+        /// <summary>
+        /// Used to set numbers in a set range
+        /// </summary>
+        public static class Ranges
+        {
+            #region Range Methods
+            /// <summary>
+            /// Sets a number in a boundary range
+            /// </summary>
+            /// <param name="min"></param>
+            ///     The minimum of the range inclusive
+            /// <param name="x"></param>
+            ///     The number being compared
+            /// <param name="max"></param>
+            ///     The maximum of the range inclusive
+            /// <returns></returns>
+            ///     A number within the bounds
+            public static void InBound(float min, ref float x, float max)
+            {
+                //Min check
+                if(x < min)
+                    x = min;
+
+                //Max check
+                else if (x > max)
+                    x = max;
+            }
+
+            /// <summary>
+            /// Sets a number in a boundary range
+            /// </summary>
+            /// <param name="min"></param>
+            ///     The minimum of the range inclusive
+            /// <param name="x"></param>
+            ///     The number being compared
+            /// <param name="max"></param>
+            ///     The maximum of the range inclusive
+            /// <returns></returns>
+            ///     A number within the bounds
+            public static void IntInBound(int min, ref int x, int max)
+            {
+                //Min check
+                if (x < min)
+                    x = min;
+
+                //Max check
+                else if (x > max)
+                    x = max;
+            }
+
+            /// <summary>
+            /// Sets the x so that if it goes above the max bound, it loops around
+            ///     and vice versa
+            /// </summary>
+            /// <param name="min"></param>
+            ///     The minimum of the range inclusive
+            /// <param name="x"></param>
+            ///     The number being compared
+            /// <param name="max"></param>
+            ///     The maximum of the range inclusive
+            /// <returns></returns>
+            ///     A number within the bounds
+            public static void LoopInRange(float min, ref float x, float max)
+            {
+                //Loop x to max if the x is minimum
+                if (x < min)
+                {
+                    x = max;
+                }
+
+                //Loop x to min if above max
+                else if (x > max)
+                {
+                    x = min;
+                }
+            }
+
+            /// <summary>
+            /// Sets the x so that if it goes above the max bound, it loops around
+            ///     and vice versa
+            /// </summary>
+            /// <param name="min"></param>
+            ///     The minimum of the range inclusive
+            /// <param name="x"></param>
+            ///     The number being compared
+            /// <param name="max"></param>
+            ///     The maximum of the range inclusive
+            /// <returns></returns>
+            ///     A number within the bounds
+            public static void IntLoopInRange(int min, ref int x, int max)
+            {
+                //Loop x to max if the x is minimum
+                if (x < min)
+                {
+                    x = max;
+                }
+
+                //Loop x to min if above max
+                else if (x > max)
+                {
+                    x = min;
+                }
             }
             #endregion
         }

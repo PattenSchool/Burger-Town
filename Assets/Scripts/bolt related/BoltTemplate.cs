@@ -9,7 +9,7 @@ public class BoltTemplate : Projectile
 
     [Tooltip("The rigid body of this bolt")]
     [SerializeField]
-    private Rigidbody _rigidbody;
+    protected Rigidbody _rigidbody;
     #endregion
 
     #region Data Variables
@@ -18,6 +18,18 @@ public class BoltTemplate : Projectile
     [Tooltip("The range in front of the bolt for detection")]
     [SerializeField, Min(0f)]
     private float _detectionRange = 0f;
+
+    [Tooltip("The initial speed of the bolt in meters per second")]
+    [SerializeField]
+    protected float _initialSpeed = 10f;
+    #endregion
+
+    #region Time Variables
+    [Header("Time Variables")]
+
+    [Tooltip("The desired time bolt to exist in the world in seconds")]
+    [SerializeField, Min(0f)]
+    private float _desiredSetTime = 10f;
     #endregion
 
     #region Unity Methods
@@ -29,43 +41,90 @@ public class BoltTemplate : Projectile
 
     private void Update()
     {
-        //Cast a raycast in front
-        bool hit = Physics.Raycast(this.gameObject.transform.position,
-            Vector3.forward, _detectionRange);
-
-        if (hit)
+        //Define the ray being cast
+        Ray ray = new Ray()
         {
-            IHit();
-        }
-        
-    }
+            origin = transform.position,
+            direction = Vector3.forward,
+        };
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawRay(this.gameObject.transform.position, Vector3.forward * _detectionRange);
+        //Define how the hit is being set
+        RaycastHit hitInfo;
+
+        //Hit physics
+        if (Physics.Raycast(ray, out hitInfo, _detectionRange))
+        {
+            //What is being hit
+            IHitable hitable = hitInfo.collider.GetComponent<IHitable>();
+
+            //If hitable, then deploy IHitable
+            if (hitable != null)
+            {
+                //Deploy it for object
+                hitable.IHit();
+
+                //Deploy it for bolt
+                IHit();
+            }
+                
+        }
     }
     #endregion
 
     #region Collision Methods
+    /// <summary>
+    /// Used to set the conditions when the bolt hits the object
+    /// </summary>
     public override void IHit()
     {
-        _rigidbody.velocity = Vector3.zero;
-        _rigidbody.useGravity = false;
-        _rigidbody.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePosition;
+        DespawnFromPool();
     }
     #endregion
 
-    #region Launched Methods
+    #region On Fire Methods
     /// <summary>
-    /// Used to apply an effect to a launchee
+    /// Used to apply an effect to someone who fired the bolt
     /// </summary>
-    /// <param name="launchee"></param>
+    /// <param name="firee"></param>
     ///     The one who launched the bolt
-    public virtual void OnLaunched(GameObject launchee)
+    public virtual void OnFire(GameObject firee)
     {
-        //Override information here
-        //launchee.GetComponent<Rigidbody>().velocity += (_rigidbody.velocity * -1f);
+        //Get the direction vector
+        Vector3 directionVector = Camera.main.transform.forward;
+
+        //Set the speed of the bolt
+        GetComponent<Rigidbody>().velocity = directionVector * _initialSpeed;
+
+        //Set the maximum time the bolt exists
+        StartCoroutine(DespawWithTimer());
+    }
+    #endregion
+
+    #region Coroutine Despawn Methods
+    /// <summary>
+    /// Despawns this bolt in an object pool by time limit
+    /// </summary>
+    /// <returns></returns>
+    ///     A coroutine result
+    private IEnumerator DespawWithTimer()
+    {
+        //wait for the bolt to stop
+        yield return new WaitForSeconds(_desiredSetTime);
+
+        //Used to despawn the bolt in the object pool
+        DespawnFromPool();
+
+        //A safe gaurd
+        yield break;
+    }
+
+    /// <summary>
+    /// Despawns the game obejct with the object pool
+    /// </summary>
+    private void DespawnFromPool()
+    {
+        //Despawn the game object from the object pool
+        ObjectPooling.Despawn(this.gameObject);
     }
     #endregion
 }
