@@ -30,10 +30,7 @@ public class RecoilBolt : BoltTemplate
         Rigidbody rb = firee.GetComponent<Rigidbody>();
 
         //Set the initial velocity of the player to launch
-        if (firee.tag == PlayerStatic.PlayerTag)
-            rb.velocity = PlayerStatic.LookingDirectionVector * _initialSpeed;
-        else
-            rb.velocity = firee.transform.forward * _initialSpeed;
+        rb.velocity = Camera.main.transform.forward * _initialSpeed;
     }
     #endregion
 }
