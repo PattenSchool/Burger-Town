@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// A basic bolt template
+/// </summary>
 public class BoltTemplate : Projectile
 {
     #region Game objects
@@ -10,14 +13,41 @@ public class BoltTemplate : Projectile
     [Tooltip("The rigid body of this bolt")]
     [SerializeField]
     protected Rigidbody _rigidbody;
+
+    [Tooltip("The collision of this object")]
+    [SerializeField]
+    protected Collider _collider;
     #endregion
 
-    #region Data Variables
+    #region Collision Variables
     [Header("Collision Variables")]
 
     [Tooltip("The range in front of the bolt for detection")]
+<<<<<<< Updated upstream:Assets/Sage's test stuff/Scripts/bolt related/BoltTemplate.cs
     [SerializeField, Min(0f)]
     private float _detectionRange = 0f;
+=======
+    [SerializeField, Min(0.01f)]
+    private float _detectionRange = 0.1f;
+
+    [Tooltip("The initial speed of the bolt in meters per second")]
+    [SerializeField]
+    protected float _initialSpeed = 10f;
+
+    [Tooltip("The layermasks that are detected")]
+    [SerializeField]
+    protected LayerMask _hittableLayers;
+
+    [Tooltip("The radius of the circle")]
+    [SerializeField, Min(0.01f)]
+    private float _detectionRadius;
+
+    [Tooltip("The origin of the wiresphere")]
+    private Vector3 _detectionOrigin;
+
+    [Tooltip("THe direction of the detection wiresphere")]
+    private Vector3 _detectionDirection;
+>>>>>>> Stashed changes:Assets/Scripts/bolt related/BoltTemplate.cs
     #endregion
 
     #region Time Variables
@@ -28,42 +58,64 @@ public class BoltTemplate : Projectile
     private float _desiredSetTime = 0f;
     #endregion
 
+    #region Data Variables
+    [Header("Data Variables")]
+
+    [Tooltip("The bolt layer mask name")]
+    private string boltLayerName = "Bolt";
+    #endregion
+
     #region Unity Methods
     private void OnEnable()
     {
         if (_rigidbody == null)
             _rigidbody = this.gameObject.GetComponent<Rigidbody>();
+        if (_collider == null)
+            _collider = GetComponent<Collider>();
+
+        if (this.gameObject.layer != LayerMask.NameToLayer(boltLayerName))
+            this.gameObject.layer = LayerMask.NameToLayer(boltLayerName);
     }
 
     private void Update()
     {
-        //Define the ray being cast
-        Ray ray = new Ray()
-        {
-            origin = transform.position,
-            direction = Vector3.forward,
-        };
-
         //Define how the hit is being set
         RaycastHit hitInfo;
 
         //Hit physics
-        if (Physics.Raycast(ray, out hitInfo, _detectionRange))
+        if (IsHitting(out hitInfo))
         {
             //What is being hit
             IHitable hitable = hitInfo.collider.GetComponent<IHitable>();
+
+            Collider hittedCollider = hitInfo.collider;
 
             //If hitable, then deploy IHitable
             if (hitable != null)
             {
                 //Deploy it for object
                 hitable.IHit();
+            }
 
-                //Deploy it for bolt
+            if (hittedCollider != null)
+            {
+                //Deploy hit for bolt
                 IHit();
             }
-                
+
+            
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        //Calculate the origin of the detection range in the editor
+        SetUpDetectionSphere();
+        Gizmos.color = Color.red;
+
+        //Beginning of the detection range
+        Gizmos.DrawWireSphere(_detectionOrigin, _detectionRadius);
+        Gizmos.DrawWireSphere(_detectionOrigin + _detectionDirection * _detectionRange, _detectionRadius);
     }
     #endregion
 
@@ -75,6 +127,35 @@ public class BoltTemplate : Projectile
     {
         
     }
+
+    /// <summary>
+    /// Checks if the bolt is hitting an object
+    /// </summary>
+    /// <param name="hitInfo"></param>
+    ///     The info of the object being hit, returning any information of it being hit
+    /// <returns></returns>
+    ///     The result of the cast of the hit
+    protected bool IsHitting(out RaycastHit hitInfo)
+    {
+        _detectionDirection = transform.forward.normalized;
+        _detectionOrigin = transform.position + _collider.bounds.extents.z * transform.forward;
+
+        //Check if hitting
+        bool hitBool = Physics.SphereCast(_detectionOrigin, _detectionRadius, _detectionDirection,
+            out hitInfo, _detectionRange, _hittableLayers);
+
+        //Return the result
+        return hitBool;
+    }
+
+    /// <summary>
+    /// Editor Sphere only
+    /// </summary>
+    private void SetUpDetectionSphere()
+    {
+        _detectionOrigin = transform.position + _collider.bounds.extents.z * transform.forward;
+        _detectionDirection = transform.forward.normalized;
+    }
     #endregion
 
     #region Launched Methods
@@ -85,6 +166,15 @@ public class BoltTemplate : Projectile
     ///     The one who launched the bolt
     public virtual void OnLaunched(GameObject launchee)
     {
+<<<<<<< Updated upstream:Assets/Sage's test stuff/Scripts/bolt related/BoltTemplate.cs
+=======
+        //Get the direction vector
+        Vector3 directionVector = transform.forward;
+
+        //Set the speed of the bolt
+        _rigidbody.velocity = directionVector * _initialSpeed;
+
+>>>>>>> Stashed changes:Assets/Scripts/bolt related/BoltTemplate.cs
         //Set the maximum time the bolt exists
         StartCoroutine(Despawn());
     }

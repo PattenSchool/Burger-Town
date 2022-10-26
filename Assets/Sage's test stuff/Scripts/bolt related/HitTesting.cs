@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class HitTesting : MonoBehaviour, IHitable
 {
-    private void OnCollisionEnter(Collision collision)
-    {
-        IHit();
-    }
+
 
     public void IHit()
     {

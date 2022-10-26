@@ -110,7 +110,6 @@ GameObject:
   - component: {fileID: 1199278060189394179}
   - component: {fileID: 1199278060189394180}
   - component: {fileID: 1199278060189394176}
-  - component: {fileID: 5197342209854681171}
   - component: {fileID: 2035242447197048098}
   m_Layer: 0
   m_Name: StickyBolt
@@ -216,19 +215,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5197342209854681171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1199278060189394181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates: []
 --- !u!114 &2035242447197048098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,8 +228,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 0}
+<<<<<<< Updated upstream:Assets/Sage's test stuff/Prefab/StickyBolt/StickyBolt.prefab
   _detectionRange: 0.5
   _desiredSetTime: 5
+=======
+  _collider: {fileID: 1199278060189394180}
+  _detectionRange: 0.17
+  _initialSpeed: 20.18
+  _hittableLayers:
+    serializedVersion: 2
+    m_Bits: 55
+  _detectionRadius: 0.11
+  _desiredSetTime: 2.62
+  boltLayerName: Bolt
+>>>>>>> Stashed changes:Assets/Prefabs/Bolts/StickyBolt.prefab
 --- !u!1 &1199278060787491703
 GameObject:
   m_ObjectHideFlags: 0
