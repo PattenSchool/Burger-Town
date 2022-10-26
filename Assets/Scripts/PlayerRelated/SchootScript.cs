@@ -20,11 +20,6 @@ public class SchootScript : MonoBehaviour
     #region Game Variables
     [Header("Game data variables")]
 
-    [Tooltip("The object being shot," +
-        "\nRequires a rigid body to work")]
-    [SerializeField]
-    private GameObject _ammo = null;
-
     [Tooltip("The player game object")]
     private GameObject player = null;
     #endregion

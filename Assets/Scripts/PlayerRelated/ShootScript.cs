@@ -100,18 +100,8 @@ public class ShootScript : MonoBehaviour
                 transform.position + (directionVector * _spawnRange),
                 PlayerStatic.LookingDirection);
 
-<<<<<<< Updated upstream:Assets/Sage's test stuff/Scripts/PlayerRelated/SchootScript.cs
-            //Add Velocity
-            spawnedAmmo.GetComponent<Rigidbody>().velocity = directionVector * _initialVelocity;
-
-            //Add rotation
-            spawnedAmmo.transform.rotation = Camera.main.transform.rotation;
-
-            spawnedAmmo.GetComponent<BoltTemplate>().OnLaunched(player);
-=======
             //Execute the on fire method
             spawnedAmmo.GetComponent<BoltTemplate>().OnFire(this.gameObject);
->>>>>>> Stashed changes:Assets/Scripts/PlayerRelated/ShootScript.cs
 
             //Reset the time
             timeRemaining = timeBetweenShots;
