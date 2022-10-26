@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TargetCollision : MonoBehaviour
+public class TargetCollision : MonoBehaviour, IHitable
 {
     // Start is called before the first frame update
     void Start()
@@ -16,10 +16,15 @@ public class TargetCollision : MonoBehaviour
         
     }
 
-    public void OnCollisionEnter(Collision collider)
+    public void IHit()
     {
         //Destroys the Target Object
         Destroy(this.gameObject);
+    }
+
+    public void OnCollisionEnter(Collision collider)
+    {
+        
     }
 
     public void OnDestroy()
