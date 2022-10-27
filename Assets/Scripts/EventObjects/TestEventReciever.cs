@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TestEventReciever : MonoBehaviour, IObjectEvent
 {
-    public void OnEventTriggered()
+    public void IOnEventTriggered()
     {
         this.gameObject.SetActive(false);
     }

@@ -14,7 +14,7 @@ public class WinEvent : MonoBehaviour, IObjectEvent
     [SerializeField]
     private PauseManager pauseManager;
 
-    public void OnEventTriggered()
+    public void IOnEventTriggered()
     {
         pauseManager.TogglePauseNoCanvas(true);;
         winCanvas.SetActive(true);

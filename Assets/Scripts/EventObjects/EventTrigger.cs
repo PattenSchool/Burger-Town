@@ -6,7 +6,7 @@ using UnityEngine;
 public interface IObjectEvent
 {
     //The object events defined in the object recievers
-    public abstract void OnEventTriggered();
+    public abstract void IOnEventTriggered();
 }
 
 
@@ -148,7 +148,7 @@ public class EventTrigger : MonoBehaviour
         //Set off the events
         foreach (var reciever in eventRecieverInterfaces)
         {
-            reciever.OnEventTriggered();
+            reciever.IOnEventTriggered();
         }
     }
 
