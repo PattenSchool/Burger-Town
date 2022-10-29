@@ -89,7 +89,7 @@ public class ShootScript : MonoBehaviour
             Vector3 directionVector = PlayerStatic.LookingDirectionVector;
 
             //Get the ammo prefab
-            GameObject ammo = boltPrefabs[currentBoltIndex - 1].gameObject;
+            GameObject ammo = PlayerStatic.BoltSelected;
 
             //Instantiate the object
             GameObject spawnedAmmo = ObjectPooling.Spawn(ammo,

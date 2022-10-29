@@ -68,7 +68,7 @@ public class SchootScript : MonoBehaviour
     {
         //Get direction facing
         Vector3 directionVector = PlayerStatic.LookingDirectionVector;
-        GameObject ammo = boltPrefabs[currentBoltIndex - 1].gameObject;
+        GameObject ammo = GetSelectedBolt();
 
         //Instantiate the object
         GameObject spawnedAmmo = ObjectPooling.Spawn(ammo,

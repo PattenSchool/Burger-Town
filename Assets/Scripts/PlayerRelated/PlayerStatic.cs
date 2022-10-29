@@ -5,7 +5,6 @@ using UnityEngine;
 /// <summary>
 /// Used to access the player from anywhere in the scene
 /// </summary>
-[RequireComponent(typeof(Rigidbody))]
 public class PlayerStatic
 {
     #region Player Components
@@ -74,7 +73,7 @@ public class PlayerStatic
     /// <summary>
     /// A reference to the shoot script
     /// </summary>
-    private static ShootScript _shootScript;
+    public static ShootScript _shootScript;
 
     /// <summary>
     /// Get a selected bolt found from the player
@@ -135,7 +134,6 @@ public class PlayerStatic
 
         }
 
-        
         MainCamera = Camera.main;
         SetUpShootScript(player);
     }
