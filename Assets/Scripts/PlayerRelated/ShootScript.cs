@@ -59,10 +59,6 @@ public class ShootScript : MonoBehaviour
 
     [Tooltip("The minimum bolt index (leave be)")]
     private int minBoltIndex = 1;
-
-    [Tooltip("The velocity of the bolt")]
-    [SerializeField, Min(0f)]
-    private float _initialVelocity = 0f;
     #endregion
 
     #region Bolt Methods
@@ -101,7 +97,7 @@ public class ShootScript : MonoBehaviour
                 PlayerStatic.LookingDirection);
 
             //Execute the on fire method
-            spawnedAmmo.GetComponent<BoltTemplate>().OnFire(this.gameObject);
+            spawnedAmmo.GetComponent<BoltTemplate>().OnFire(this.gameObject, directionVector);
 
             //Reset the time
             timeRemaining = timeBetweenShots;

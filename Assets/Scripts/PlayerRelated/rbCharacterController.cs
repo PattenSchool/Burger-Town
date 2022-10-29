@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.MathExtensions;
@@ -8,6 +6,7 @@ using UnityEngine.MathExtensions;
 
 public class rbCharacterController : MonoBehaviour
 {
+    #region Variables
     public Rigidbody rb;
     public float defaultSpeed;
     private float speed;
@@ -23,6 +22,7 @@ public class rbCharacterController : MonoBehaviour
 
 
     public Vector3 outsideVel;
+    #endregion
 
     #region Character Controller Methods
     public void OnMove(InputAction.CallbackContext context) //input system for movement
@@ -76,32 +76,28 @@ public class rbCharacterController : MonoBehaviour
         return Physics.BoxCast(center, halfExtents, direction, rotation, distance);
     }
 
-    void Move()
-    {
-        //To move (in tutorial)
-        Vector3 currentVelocity = rb.velocity;
-        Vector3 targetVelocity = new Vector3(move.x, 0f, move.y);
-        targetVelocity *= speed;
+    //void Move()
+    //{
+    //    //To move (in tutorial)
+    //    Vector3 currentVelocity = rb.velocity;
+    //    Vector3 targetVelocity = new Vector3(move.x, 0f, move.y);
+    //    targetVelocity *= speed;
 
-        //Align direction
-        targetVelocity = transform.TransformDirection(targetVelocity);
+    //    //Align direction
+    //    targetVelocity = transform.TransformDirection(targetVelocity);
 
-        //Calculate forces
-        Vector3 velocityChange = (targetVelocity - currentVelocity);
-        velocityChange = new Vector3(velocityChange.x, 0f, velocityChange.z);
+    //    //Calculate forces
+    //    Vector3 velocityChange = (targetVelocity - currentVelocity);
+    //    velocityChange = new Vector3(velocityChange.x, 0f, velocityChange.z);
 
-        //Limit force
-        Vector3.ClampMagnitude(velocityChange, maxForce);
+    //    //Limit force
+    //    Vector3.ClampMagnitude(velocityChange, maxForce);
 
-        rb.AddForce(velocityChange, ForceMode.VelocityChange);
-    }
+    //    rb.AddForce(velocityChange, ForceMode.VelocityChange);
+    //}
     #endregion
 
     #region Unity Methods
-    private void FixedUpdate() //use fixed because we have a rb that is physics-based
-    {
-        //Move();
-    }
 
     void Start()
     {
@@ -109,11 +105,11 @@ public class rbCharacterController : MonoBehaviour
 
         speed = defaultSpeed;
     }
-    private void Update()
+    
+    private void FixedUpdate()
     {
+        //Set the ground state
         SetGrounded(CheckGrounded());
-
-
 
         //To Move
         Vector3 desiredmove = transform.rotation * new Vector3(move.x, 0f, move.y) * speed;
@@ -123,9 +119,8 @@ public class rbCharacterController : MonoBehaviour
             return;
         }
 
-
+        //Set the velocity
         rb.velocity = new Vector3(desiredmove.x, rb.velocity.y, desiredmove.z);
-
     }
 
     void LateUpdate()                                                                                         //move camera after rest of scene has been updated

@@ -1,23 +1,26 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BoltTemplate : Projectile
 {
-    #region Game objects
-    [Header("Game Objects")]
+    #region Components
+    [Header("Game Object Components")]
 
     [Tooltip("The rigid body of this bolt")]
     [SerializeField]
     protected Rigidbody _rigidbody;
+
+    [Tooltip("The collider of the bolt")]
+    [SerializeField]
+    protected Collider _collider;
     #endregion
 
     #region Data Variables
-    [Header("Collision Variables")]
+    [Header("Data Varaibles")]
 
-    [Tooltip("The range in front of the bolt for detection")]
-    [SerializeField, Min(0f)]
-    private float _detectionRange = 0f;
+    [Tooltip("The location of the local center of mass")]
+    [SerializeField]
+    protected Vector3 _centerOfMass;
 
     [Tooltip("The initial speed of the bolt in meters per second")]
     [SerializeField]
@@ -29,45 +32,54 @@ public class BoltTemplate : Projectile
 
     [Tooltip("The desired time bolt to exist in the world in seconds")]
     [SerializeField, Min(0f)]
-    private float _desiredSetTime = 10f;
+    protected float _desiredSetTime = 10f;
     #endregion
 
     #region Unity Methods
-    private void OnEnable()
+    protected void OnEnable()
     {
+        //Set up bolt
         if (_rigidbody == null)
             _rigidbody = this.gameObject.GetComponent<Rigidbody>();
+
+        _rigidbody.centerOfMass = _centerOfMass;
+
+        if (_collider == null)
+            _collider = this.gameObject.GetComponent<Collider>();
     }
 
-    private void Update()
+    protected void OnDisable()
     {
-        //Define the ray being cast
-        Ray ray = new Ray()
+        _rigidbody.constraints = RigidbodyConstraints.None;
+        _rigidbody.angularVelocity = Vector3.zero;
+    }
+
+    /// <summary>
+    /// Used to apply the hitted effect when the bolt hits something
+    /// </summary>
+    /// <param name="collision"></param>
+    ///     The info of the game object being collided
+    protected void OnCollisionEnter(Collision collision)
+    {
+        //Test to see if there is a hitable interface on the other collider
+        IHitable hittableObejct = collision.gameObject.GetComponent<IHitable>();
+
+        //Activate object IHitable
+        if (hittableObejct != null && collision.gameObject.tag != PlayerStatic.PlayerTag)
         {
-            origin = transform.position,
-            direction = Vector3.forward,
-        };
-
-        //Define how the hit is being set
-        RaycastHit hitInfo;
-
-        //Hit physics
-        if (Physics.Raycast(ray, out hitInfo, _detectionRange))
-        {
-            //What is being hit
-            IHitable hitable = hitInfo.collider.GetComponent<IHitable>();
-
-            //If hitable, then deploy IHitable
-            if (hitable != null)
-            {
-                //Deploy it for object
-                hitable.IHit();
-
-                //Deploy it for bolt
-                IHit();
-            }
-                
+            hittableObejct.IHit();
         }
+
+        //Activate bolt Ihitable
+        IHit();
+
+        print("hit");
+    }
+
+    protected void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(_centerOfMass, 0.01f);
     }
     #endregion
 
@@ -87,13 +99,13 @@ public class BoltTemplate : Projectile
     /// </summary>
     /// <param name="firee"></param>
     ///     The one who launched the bolt
-    public virtual void OnFire(GameObject firee)
+    public virtual void OnFire(GameObject firee, Vector3 directionVector)
     {
-        //Get the direction vector
-        Vector3 directionVector = Camera.main.transform.forward;
-
         //Set the speed of the bolt
-        GetComponent<Rigidbody>().velocity = directionVector * _initialSpeed;
+        _rigidbody.velocity = directionVector * _initialSpeed;
+
+        _rigidbody.constraints = RigidbodyConstraints.FreezeRotationX;
+        _rigidbody.constraints = RigidbodyConstraints.FreezeRotationZ;
 
         //Set the maximum time the bolt exists
         StartCoroutine(DespawWithTimer());
@@ -106,7 +118,7 @@ public class BoltTemplate : Projectile
     /// </summary>
     /// <returns></returns>
     ///     A coroutine result
-    private IEnumerator DespawWithTimer()
+    protected IEnumerator DespawWithTimer()
     {
         //wait for the bolt to stop
         yield return new WaitForSeconds(_desiredSetTime);
@@ -121,7 +133,7 @@ public class BoltTemplate : Projectile
     /// <summary>
     /// Despawns the game obejct with the object pool
     /// </summary>
-    private void DespawnFromPool()
+    protected void DespawnFromPool()
     {
         //Despawn the game object from the object pool
         ObjectPooling.Despawn(this.gameObject);
