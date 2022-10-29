@@ -5,6 +5,7 @@ using UnityEngine;
 /// <summary>
 /// Used to access the player from anywhere in the scene
 /// </summary>
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerStatic
 {
     #region Player Components

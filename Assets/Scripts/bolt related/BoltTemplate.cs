@@ -72,8 +72,6 @@ public class BoltTemplate : Projectile
 
         //Activate bolt Ihitable
         IHit();
-
-        print("hit");
     }
 
     protected void OnDrawGizmos()

@@ -78,6 +78,17 @@ public class SchootScript : MonoBehaviour
         //Return the ammo spawned
         return spawnedAmmo;
     }
+
+    /// <summary>
+    /// Get the current bolt selected
+    /// </summary>
+    /// <returns></returns>
+    ///     The bolt selected
+    public GameObject GetSelectedBolt()
+    {
+        return boltPrefabs[currentBoltIndex - 1].gameObject;
+    }
+    
     #endregion
 
     #region Instantiation Variables

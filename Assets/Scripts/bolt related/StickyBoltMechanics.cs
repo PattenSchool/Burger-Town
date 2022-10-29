@@ -55,8 +55,12 @@ public class StickyBoltMechanics : BoltTemplate
     /// <param name="collision"></param>
     protected void OnCollisionEnter(Collision collision)
     {
+        //Have no idea what's going on here, thanks Stack Overflow
+        bool onNonstickSurface =
+            (_nonStickyLayerMasks & 1 << collision.gameObject.layer) == 1 << collision.gameObject.layer;
+
         //Spawn the platform if the material is compatible
-        if (!((_nonStickyLayerMasks & 1 << collision.gameObject.layer) == 1 << collision.gameObject.layer))
+        if (!onNonstickSurface)
         {
             ContactPoint contactPoint = collision.contacts[0];
 
