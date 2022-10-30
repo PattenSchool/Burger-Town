@@ -73,7 +73,7 @@ public class PlayerStatic
     /// <summary>
     /// A reference to the shoot script
     /// </summary>
-    private static ShootScript _shootScript;
+    public static ShootScript _shootScript;
 
     /// <summary>
     /// Get a selected bolt found from the player
@@ -87,6 +87,33 @@ public class PlayerStatic
     }
     #endregion
 
+    #region Error Testing
+    /// <summary>
+    /// Keeps track of how many players extra are trying to access this script
+    /// </summary>
+    private static int _nonNeededPlayers = 0;
+
+    /// <summary>
+    /// Warns of how many players are remaining for this script to work
+    /// </summary>
+    /// <returns></returns>
+    ///     Message telling the console of how many unnecessary players are remaining
+    public static string PlayerWarning()
+    {
+        return $"Please destroy extra players, {_nonNeededPlayers} remaining";
+    }
+
+    /// <summary>
+    /// Tells if there are any extra players remaining at all
+    /// </summary>
+    /// <returns></returns>
+    ///     Gives a bool if there are any m ore players than the 1 allowed
+    public static bool IsExtraneousPlayers()
+    {
+        return _nonNeededPlayers > 0;
+    }
+    #endregion
+
     #region Methods
     /// <summary>
     /// et up the static player class
@@ -95,7 +122,18 @@ public class PlayerStatic
     ///     The player game object
     public static void SetupPlayer(GameObject player)
     {
-        Player = player;
+        //Check if there already a player registered, if not, then garantees that there is only one
+        if (Player == null)
+        {
+            Player = player;
+        }
+        else if (Player != null)
+        {
+            player.SetActive(false);
+            _nonNeededPlayers++;
+
+        }
+
         MainCamera = Camera.main;
         SetUpShootScript(player);
     }

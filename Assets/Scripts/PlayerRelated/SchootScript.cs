@@ -1,38 +1,47 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.MathExtensions;
 using UnityEngine.InputSystem;
 
 public class SchootScript : MonoBehaviour
 {
-    #region Timer Variables
+    #region Timer Related
     [Header("Time Variables")]
 
     [Tooltip("The time remaining")]
-    private float timeRemining = 0f;
+    private float timeRemaining = 0f;
 
     [Tooltip("The time between shots in seconds")]
     [SerializeField]
     private float timeBetweenShots = 1f;
+
+    /// <summary>
+    /// Updates the timeRemaining varaible.
+    ///     Subtracts delta time from the timer.
+    /// </summary>
+    /// <param name="deltaTime"></param>
+    ///     The change in time between frames
+    private void UpdateTimer(float deltaTime)
+    {
+        timeRemaining -= deltaTime;
+    }
+
+    /// <summary>
+    /// Checks if the timer is up
+    /// </summary>
+    /// <returns></returns>
+    ///     Returns true if the timer is less than or equal to zero
+    private bool IsTimerUp()
+    {
+        return timeRemaining <= 0f;
+    }
+
+    private void ResetTimer()
+    {
+        timeRemaining = timeBetweenShots;
+    }
     #endregion
 
-    #region Game Variables
-    [Header("Game data variables")]
-
-    [Tooltip("The player game object")]
-    private GameObject player = null;
-    #endregion
-
-    #region Instantiation Variables
-    [Header("Instantiation Data Variables")]
-
-    [Tooltip("Instantiate the object x meters away fromt the player")]
-    [SerializeField]
-    private float _spawnRange;
-    #endregion
-
-    #region Bolt Data Variables
+    #region Bolt related
     [Header("Bolt variables")]
 
     [Tooltip("Used to store the current bolt index")]
@@ -49,28 +58,56 @@ public class SchootScript : MonoBehaviour
 
     [Tooltip("The minimum bolt index (leave be)")]
     private int minBoltIndex = 1;
+
+    /// <summary>
+    /// Generate ammo wanted by the player
+    /// </summary>
+    /// <returns></returns>
+    ///     An ammo the player selected
+    private GameObject GenerateAmmo()
+    {
+        //Get direction facing
+        Vector3 directionVector = PlayerStatic.LookingDirectionVector;
+        GameObject ammo = GetSelectedBolt();
+
+        //Instantiate the object
+        GameObject spawnedAmmo = ObjectPooling.Spawn(ammo,
+            this.gameObject.transform.position + (directionVector * _spawnRange),
+            Camera.main.transform.rotation);
+
+        //Return the ammo spawned
+        return spawnedAmmo;
+    }
+
+    /// <summary>
+    /// Get the current bolt selected
+    /// </summary>
+    /// <returns></returns>
+    ///     The bolt selected
+    public GameObject GetSelectedBolt()
+    {
+        return boltPrefabs[currentBoltIndex - 1].gameObject;
+    }
+    
+    #endregion
+
+    #region Instantiation Variables
+    [Header("Instantiation Data Variables")]
+
+    [Tooltip("Instantiate the object x meters away fromt the player")]
+    [SerializeField]
+    private float _spawnRange;
     #endregion
 
     #region Unity Methods
-    private void OnEnable()
-    {
-        //Set a player reference
-        if (player == null)
-        {
-            player = this.gameObject;
-        }
-
-        
-    }
-
     private void Update()
     {
-        //Time functions
-        timeRemining -= Time.deltaTime;
+        //Update the timer
+        UpdateTimer(Time.deltaTime);
     }
     #endregion
 
-    #region Shoot Methods
+    #region Action Methods
     /// <summary>
     /// Used to get a bullet somewhere and fire it in the direction of the player
     /// </summary>
@@ -78,7 +115,8 @@ public class SchootScript : MonoBehaviour
     ///     The context of the input
     public void Fire(InputAction.CallbackContext context)
     {
-        if (!(timeRemining <= 0f))
+        //Checks if the bolt timer is up
+        if (!IsTimerUp())
         {
             return;
         }
@@ -86,68 +124,18 @@ public class SchootScript : MonoBehaviour
         //Fire if pressed
         if (context.started)
         {
-            //Get direction facing
-            Vector3 directionVector = Camera.main.transform.forward;
-
             //Get the ammo prefab
-            GameObject ammo = boltPrefabs[currentBoltIndex - 1].gameObject;
-
-            //Instantiate the object
-            GameObject spawnedAmmo = ObjectPooling.Spawn(ammo, 
-                this.gameObject.transform.position +(directionVector * _spawnRange), 
-                Camera.main.transform.rotation);
+            GameObject ammo = GenerateAmmo();
 
             //Execute the on fire method
-            spawnedAmmo.GetComponent<BoltTemplate>().OnFire(player);
+            ammo.GetComponent<BoltTemplate>().OnFire(this.gameObject, PlayerStatic.LookingDirectionVector);
 
             //Reset the time
-            timeRemining = timeBetweenShots;
+            ResetTimer();
         }
 
     }
-    #endregion
 
-    #region Calculation Methods
-    /// <summary>
-    /// Get's the normalized vector components of the player 
-    /// </summary>
-    /// <returns></returns>
-    private Vector3 CalcFacingDirection()
-    {
-        Vector3 rotationVector = CalcFacingAngles();
-        float xRotation = rotationVector.x * -1;
-        float yRotation = rotationVector.y;
-
-        //Convert to radians
-        yRotation = MathFExtended.RotationAndVectorMethods.ConvertToRadians(yRotation);
-        xRotation = MathFExtended.RotationAndVectorMethods.ConvertToRadians(xRotation);
-
-        Vector3 normalizedFacingDirection = new Vector3(
-            Mathf.Cos(xRotation) * Mathf.Sin(yRotation),
-            Mathf.Sin(xRotation),
-            Mathf.Cos(xRotation) * Mathf.Cos(yRotation));
-
-        return normalizedFacingDirection;
-    }
-
-    /// <summary>
-    /// Return the rotation of the direction being faced
-    /// </summary>
-    /// <returns></returns>
-    ///     The direction of the facing direction
-    private Vector3 CalcFacingAngles()
-    {
-        //Get direction currently facing
-        float yRotation = player.transform.rotation.eulerAngles.y;
-        float xRotation = Camera.main.transform.rotation.eulerAngles.x;
-
-        //Return
-        return new Vector3(xRotation, yRotation, 0f);
-
-    }
-    #endregion
-
-    #region Bolt Select
     /// <summary>
     /// Used to switch the bolt index
     /// </summary>
@@ -173,7 +161,7 @@ public class SchootScript : MonoBehaviour
 
             //Assign the bolt index to the script variable
             currentBoltIndex = newBoltIndex;
-        }   
+        }
     }
     #endregion
 }

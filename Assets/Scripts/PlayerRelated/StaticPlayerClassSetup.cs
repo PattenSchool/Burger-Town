@@ -11,5 +11,10 @@ public class StaticPlayerClassSetup : MonoBehaviour
     {
         GameObject player = GameObject.FindGameObjectWithTag(PlayerStatic.PlayerTag);
         PlayerStatic.SetupPlayer(player);
+
+        if (PlayerStatic.IsExtraneousPlayers())
+        {
+            Debug.LogError(PlayerStatic.PlayerWarning());
+        }
     }
 }
