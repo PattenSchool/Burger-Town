@@ -9,11 +9,11 @@ public class BoltShower : MonoBehaviour
     private TMP_Text _boltUIText;
 
     [SerializeField]
-    private SchootScript shootScript;
+    private ShootScript shootScript;
 
     private void Awake()
     {
-        shootScript = GetComponent<SchootScript>();
+        shootScript = GetComponent<ShootScript>();
     }
 
     private void Update()

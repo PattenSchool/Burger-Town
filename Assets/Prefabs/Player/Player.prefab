@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 169127177725776816}
-  - component: {fileID: 7770842633720511077}
+  - component: {fileID: 2952916372639094676}
   m_Layer: 0
   m_Name: PlayerSetupObject
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 4922232175022903782}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7770842633720511077
+--- !u!114 &2952916372639094676
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 4922232175022903779}
   - component: {fileID: 4922232175022903777}
   - component: {fileID: 4922232175022903785}
-  - component: {fileID: 8989189697405507305}
+  - component: {fileID: 7926570962753120012}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -399,8 +399,8 @@ MonoBehaviour:
     m_ActionName: Player/Pause[/Keyboard/q]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SchootScript, Assembly-CSharp
+      - m_Target: {fileID: 7926570962753120012}
+        m_TargetAssemblyTypeName: ShootScript, Assembly-CSharp
         m_MethodName: SwitchBolt
         m_Mode: 0
         m_Arguments:
@@ -483,7 +483,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 2
---- !u!114 &8989189697405507305
+--- !u!114 &7926570962753120012
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -498,11 +498,11 @@ MonoBehaviour:
   timeBetweenShots: 1
   currentBoltIndex: 1
   boltPrefabs:
-  - {fileID: 4182381697802582432, guid: 904d67dcfe93146459991bfcd066805a, type: 3}
-  - {fileID: 3460807099631298658, guid: 3ec1d19a4851f3343b06b1152ea4a1f5, type: 3}
-  - {fileID: 2952103668610892054, guid: 1273c10c756cd6d479a1a226507f075a, type: 3}
+  - {fileID: 2543685648339813248, guid: 904d67dcfe93146459991bfcd066805a, type: 3}
+  - {fileID: 2140322201534021366, guid: 1273c10c756cd6d479a1a226507f075a, type: 3}
+  - {fileID: 2140322201534021366, guid: 1273c10c756cd6d479a1a226507f075a, type: 3}
   maxUnlockedBoltIndex: 3
-  _spawnRange: 0
+  _spawnRange: 1.5
 --- !u!1 &4922232176234319311
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,6 +515,7 @@ GameObject:
   - component: {fileID: 4922232176234319344}
   - component: {fileID: 4922232176234319345}
   - component: {fileID: 4922232176234319310}
+  - component: {fileID: 1667207588999304518}
   m_Layer: 0
   m_Name: Grabber
   m_TagString: Untagged
@@ -600,6 +601,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1667207588999304518
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4922232176234319311}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4922232177027138272
 GameObject:
   m_ObjectHideFlags: 0
