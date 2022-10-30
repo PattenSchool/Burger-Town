@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class ShootScript : MonoBehaviour
 {
-    #region Timer elements
+    #region Timer Related
     [Header("Time Variables")]
 
     [Tooltip("The time remaining")]
@@ -18,31 +18,33 @@ public class ShootScript : MonoBehaviour
     private float timeBetweenShots = 1f;
 
     /// <summary>
-    /// Updates the time remaining with the time passed
+    /// Updates the timeRemaining varaible.
+    ///     Subtracts delta time from the timer.
     /// </summary>
+    /// <param name="deltaTime"></param>
+    ///     The change in time between frames
     private void UpdateTimer(float deltaTime)
     {
         timeRemaining -= deltaTime;
     }
 
     /// <summary>
-    /// Checks if timer ran out
+    /// Checks if the timer is up
     /// </summary>
     /// <returns></returns>
-    ///     True if time remaining ran out
-    private bool IsTimerEnd()
+    ///     Returns true if the timer is less than or equal to zero
+    private bool IsTimerUp()
     {
         return timeRemaining <= 0f;
     }
+
+    private void ResetTimer()
+    {
+        timeRemaining = timeBetweenShots;
+    }
     #endregion
 
-    #region Bolt Variables
-    [Header("Instantiation Data Variables")]
-
-    [Tooltip("Instantiate the object x meters away fromt the player")]
-    [SerializeField]
-    private float _spawnRange;
-
+    #region Bolt related
     [Header("Bolt variables")]
 
     [Tooltip("Used to store the current bolt index")]
@@ -59,16 +61,57 @@ public class ShootScript : MonoBehaviour
 
     [Tooltip("The minimum bolt index (leave be)")]
     private int minBoltIndex = 1;
-    #endregion
 
-    #region Bolt Methods
+    /// <summary>
+    /// Generate ammo wanted by the player
+    /// </summary>
+    /// <returns></returns>
+    ///     An ammo the player selected
+    private GameObject GenerateAmmo()
+    {
+        //Get direction facing
+        Vector3 directionVector = PlayerStatic.LookingDirectionVector;
+        GameObject ammo = GetSelectedBolt();
+
+        //Instantiate the object
+        GameObject spawnedAmmo = ObjectPooling.Spawn(ammo,
+            this.gameObject.transform.position + (directionVector * _spawnRange),
+            Camera.main.transform.rotation);
+
+        //Return the ammo spawned
+        return spawnedAmmo;
+    }
+
+    /// <summary>
+    /// Get the current bolt selected
+    /// </summary>
+    /// <returns></returns>
+    ///     The bolt selected
     public GameObject GetSelectedBolt()
     {
+        //Balaudeba
         return boltPrefabs[currentBoltIndex - 1].gameObject;
+    }
+
+    #endregion
+
+    #region Instantiation Variables
+    [Header("Instantiation Data Variables")]
+
+    [Tooltip("Instantiate the object x meters away fromt the player")]
+    [SerializeField]
+    private float _spawnRange;
+    #endregion
+
+    #region Unity Methods
+    private void Update()
+    {
+        //Update the timer
+        UpdateTimer(Time.deltaTime);
     }
     #endregion
 
-    #region Input Methods
+    #region Action Methods
     /// <summary>
     /// Used to get a bullet somewhere and fire it in the direction of the player
     /// </summary>
@@ -76,8 +119,8 @@ public class ShootScript : MonoBehaviour
     ///     The context of the input
     public void Fire(InputAction.CallbackContext context)
     {
-        //Cancel action if timer doesn't exist
-        if (!IsTimerEnd())
+        //Checks if the bolt timer is up
+        if (!IsTimerUp())
         {
             return;
         }
@@ -85,22 +128,14 @@ public class ShootScript : MonoBehaviour
         //Fire if pressed
         if (context.started)
         {
-            //Get direction facing
-            Vector3 directionVector = PlayerStatic.LookingDirectionVector;
-
             //Get the ammo prefab
-            GameObject ammo = PlayerStatic.BoltSelected;
-
-            //Instantiate the object
-            GameObject spawnedAmmo = ObjectPooling.Spawn(ammo,
-                transform.position + (directionVector * _spawnRange),
-                PlayerStatic.LookingDirection);
+            GameObject ammo = GenerateAmmo();
 
             //Execute the on fire method
-            spawnedAmmo.GetComponent<BoltTemplate>().OnFire(this.gameObject, directionVector);
+            ammo.GetComponent<BoltTemplate>().OnFire(this.gameObject, PlayerStatic.LookingDirectionVector);
 
             //Reset the time
-            timeRemaining = timeBetweenShots;
+            ResetTimer();
         }
 
     }
@@ -131,14 +166,6 @@ public class ShootScript : MonoBehaviour
             //Assign the bolt index to the script variable
             currentBoltIndex = newBoltIndex;
         }
-    }
-    #endregion
-
-    #region Unity Methods
-    private void Update()
-    {
-        //Update timer
-        UpdateTimer(Time.deltaTime);
     }
     #endregion
 }

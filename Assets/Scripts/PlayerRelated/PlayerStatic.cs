@@ -135,7 +135,7 @@ public class PlayerStatic
         }
 
         MainCamera = Camera.main;
-        SetUpShootScript(player);
+        SetUpShootScript(Player);
     }
 
     /// <summary>

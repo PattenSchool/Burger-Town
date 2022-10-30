@@ -20,6 +20,6 @@ public class BoltUIDisplay : MonoBehaviour
     }
     private void Update()
     {
-        _nameDisplay.text = PlayerStatic.Player.gameObject.GetComponent<ShootScript>().name;
+        _nameDisplay.text = PlayerStatic.BoltSelected.name;
     }
 }
