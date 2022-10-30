@@ -168,4 +168,61 @@ public class ShootScript : MonoBehaviour
         }
     }
     #endregion
+
+    #region Ready to switch to save system
+    ////[Header("BoltRelated")]
+
+    //[Tooltip("The allowed bolts")]
+    //[SerializeField]
+    //private List<BoltTemplate> _allowedBolts;
+
+    ///// <summary>
+    ///// Set the allowed bolts by an outside script
+    ///// </summary>
+    ///// <param name="allowedBoltObjects"></param>
+    /////     Set the outside allowed script to this parameter
+    //public void SetAllowedBolts(List<BoltTemplate> allowedBoltObjects)
+    //{
+    //    _allowedBolts = allowedBoltObjects;
+    //    _allowedBolts.TrimExcess();
+    //}
+
+    ///// <summary>
+    ///// Used to switch the bolt index
+    ///// </summary>
+    ///// <param name="cxt"></param>
+    /////     The index of the callback
+    //public void SwitchBolt(InputAction.CallbackContext cxt)
+    //{
+    //    //Ensure that the change is only once
+    //    if (cxt.performed)
+    //    {
+    //        //Set to the old bolt index to be modified
+    //        int newBoltIndex = currentBoltIndex;
+
+    //        //Get only the sign of the number
+    //        newBoltIndex += MathFExtended.SignEx(cxt.ReadValue<Vector2>().y);
+
+    //        //The level ranges
+    //        int maxIndex = _allowedBolts.Count + 1;
+    //        int minIndex = minBoltIndex;
+
+    //        //Used to keep the integers in a loop
+    //        MathFExtended.Ranges.IntLoopInRange(minIndex, ref newBoltIndex, maxIndex);
+
+    //        //Assign the bolt index to the script variable
+    //        currentBoltIndex = newBoltIndex;
+    //    }
+    //}
+
+    ///// <summary>
+    ///// Get the current bolt selected
+    ///// </summary>
+    ///// <returns></returns>
+    /////     The bolt selected
+    //public GameObject GetSelectedBolt()
+    //{
+    //    return _allowedBolts[currentBoltIndex - 1].gameObject;
+    //}
+    #endregion
 }
