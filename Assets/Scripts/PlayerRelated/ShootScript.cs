@@ -204,7 +204,7 @@ public class ShootScript : MonoBehaviour
     //        newBoltIndex += MathFExtended.SignEx(cxt.ReadValue<Vector2>().y);
 
     //        //The level ranges
-    //        int maxIndex = _allowedBolts.Count + 1;
+    //        int maxIndex = _allowedBolts.Count;
     //        int minIndex = minBoltIndex;
 
     //        //Used to keep the integers in a loop
