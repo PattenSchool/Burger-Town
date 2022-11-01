@@ -14,9 +14,14 @@ public enum BoltTypes
 public class LevelData_SO : ScriptableObject
 {
     [SerializeField]
-    private string scene;
+    private string sceneName;
     
 
     [Header("Bolt Related")]
     public BoltTypes allowedBoltTypes;
+
+    public string GetSceneName()
+    {
+        return sceneName;
+    }
 }

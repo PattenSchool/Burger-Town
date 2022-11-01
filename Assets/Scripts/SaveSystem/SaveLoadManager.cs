@@ -8,8 +8,12 @@ public class SaveLoadManager : MonoBehaviour
     private LevelData_SO levelData;
     [SerializeField]
     private OverarchingGameData_SO gamedata;
-    private void Awake()
+
+    private void Start()
     {
+        //Make a list for the allowed bolts
+        List<BoltTemplate> allowedBolts = new();
+
         for (int i = 0; i < gamedata.boltTemplates.Count; i++)
         {
             //Get the enum index (because index is stored in powers of 2)
@@ -21,12 +25,24 @@ public class SaveLoadManager : MonoBehaviour
             if (levelData.allowedBoltTypes.HasFlag(lookingAtBoltType))
             {
                 //Get the bolt associated with that type
-                GameObject bolt = gamedata.boltTemplates[i - 1].gameObject;
+                BoltTemplate bolt = gamedata.boltTemplates[i - 1];
 
-                //Print the name
-                print(bolt.name);
+                allowedBolts.Add(bolt);
             }
         }
+
+        allowedBolts.TrimExcess();
+
+        PlayerStatic._shootScript.SetAllowedBolts(allowedBolts);
     }
 
+    private void LoadPlayer(string levelName)
+    {
+
+    }
+
+    private void LoadPlayerAmmo()
+    {
+
+    }
 }
