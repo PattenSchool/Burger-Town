@@ -1,15 +1,83 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class SaveLoadManager : MonoBehaviour
+public class SaveLoadManager : MonoBehaviour, IObjectEvent
 {
     [SerializeField]
-    private LevelData_SO levelData;
+    private LevelData_SO currentLevelData;
     [SerializeField]
     private OverarchingGameData_SO gamedata;
 
-    private void Start()
+
+    public void IOnEventTriggered()
+    {
+        SaveLevel();
+        print(PlayerPrefs.GetInt(saveName));
+    }
+
+    private void Awake()
+    {
+        if (PlayerStatic.Player == null)
+        {
+            Debug.LogWarning("Player is not detected in scene");
+            Debug.Break();
+        }
+
+        currentLevelData = FindLevelData(SceneManager.GetActiveScene().buildIndex);
+        LoadPlayerAssets();
+
+        SaveLevel();
+        print(PlayerPrefs.GetInt(saveName));
+    }
+
+    public string saveName = "playerSave";
+
+    public int currentMaxLevel;
+
+    public void LoadSave()
+    {
+        if (PlayerPrefs.GetInt(saveName) != 0)
+        {
+            currentMaxLevel = PlayerPrefs.GetInt(saveName);
+            SceneManager.LoadScene(currentMaxLevel);
+        }
+    }
+
+    public void SaveLevel()
+    {
+        currentMaxLevel = PlayerPrefs.GetInt(saveName);
+        if (currentMaxLevel < SceneManager.GetActiveScene().buildIndex)
+        {
+            currentMaxLevel = SceneManager.GetActiveScene().buildIndex;
+            PlayerPrefs.SetInt(saveName, currentMaxLevel);
+        }
+    }
+
+
+    private LevelData_SO FindLevelData(int currentLevelBuildIndex)
+    {
+        foreach(LevelData_SO levelData in gamedata.levels)
+        {
+            if (levelData.GetSceneIndex() == currentLevelBuildIndex)
+            {
+                return levelData;
+            }
+        }
+
+        Debug.LogError($"Name {SceneManager.GetActiveScene().name} is not in levelData");
+        Debug.Break();
+        return null;
+    }
+
+    #region Player Loading
+    private void LoadPlayerAssets()
+    {
+
+        LoadPlayerAmmo();
+    }
+    private void LoadPlayerAmmo()
     {
         //Make a list for the allowed bolts
         List<BoltTemplate> allowedBolts = new();
@@ -22,10 +90,10 @@ public class SaveLoadManager : MonoBehaviour
             //Get the bolt type
             BoltTypes lookingAtBoltType = (BoltTypes)enumIndex;
 
-            if (levelData.allowedBoltTypes.HasFlag(lookingAtBoltType))
+            if (currentLevelData.allowedBoltTypes.HasFlag(lookingAtBoltType))
             {
                 //Get the bolt associated with that type
-                BoltTemplate bolt = gamedata.boltTemplates[i - 1];
+                BoltTemplate bolt = gamedata.boltTemplates[i];
 
                 allowedBolts.Add(bolt);
             }
@@ -35,14 +103,5 @@ public class SaveLoadManager : MonoBehaviour
 
         PlayerStatic._shootScript.SetAllowedBolts(allowedBolts);
     }
-
-    private void LoadPlayer(string levelName)
-    {
-
-    }
-
-    private void LoadPlayerAmmo()
-    {
-
-    }
+    #endregion
 }
