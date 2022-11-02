@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class SceneSelect : MonoBehaviour
 {
+  
+     void Start()
+    {
+
+    }
 
     //Load the main menu directly
     public void MainMenu()
@@ -26,6 +31,12 @@ public class SceneSelect : MonoBehaviour
         //Will load second level
         Cursor.lockState = CursorLockMode.Locked;
         SceneManager.LoadScene("LevelSwitchTest");
+    }
+
+    public void RestartCurrentLevel()
+    {
+        //reloads the current active scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ExitGame()
