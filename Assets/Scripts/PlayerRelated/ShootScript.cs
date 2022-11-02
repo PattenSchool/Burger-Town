@@ -55,7 +55,7 @@ public class ShootScript : MonoBehaviour
     [SerializeField]
     public BoltTemplate[] boltPrefabs;
 
-    [Tooltip("The current level/ the current unlock of the bolt")]
+    [HideInInspector][Tooltip("The current level/ the current unlock of the bolt")]
     [SerializeField, Range(1, 11)]
     public int maxUnlockedBoltIndex = 1;
 
