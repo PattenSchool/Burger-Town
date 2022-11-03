@@ -503,6 +503,7 @@ MonoBehaviour:
   - {fileID: 4724837397857756078, guid: 3ec1d19a4851f3343b06b1152ea4a1f5, type: 3}
   maxUnlockedBoltIndex: 3
   _spawnRange: 1.5
+  _allowedBolts: []
 --- !u!1 &4922232176234319311
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,7 +516,6 @@ GameObject:
   - component: {fileID: 4922232176234319344}
   - component: {fileID: 4922232176234319345}
   - component: {fileID: 4922232176234319310}
-  - component: {fileID: 1667207588999304518}
   m_Layer: 0
   m_Name: Grabber
   m_TagString: Untagged
@@ -531,7 +531,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4922232176234319311}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2.63}
+  m_LocalPosition: {x: 0, y: 0, z: 1.6}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -597,26 +597,10 @@ BoxCollider:
   m_GameObject: {fileID: 4922232176234319311}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &1667207588999304518
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4922232176234319311}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &4922232177027138272
 GameObject:
   m_ObjectHideFlags: 0

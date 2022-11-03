@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BoltTemplate : Projectile
 {
@@ -25,6 +26,9 @@ public class BoltTemplate : Projectile
     [Tooltip("The initial speed of the bolt in meters per second")]
     [SerializeField]
     protected float _initialSpeed = 10f;
+
+    [Tooltip("2D image of the bolt")]
+    public Sprite sprite;
     #endregion
 
     #region Time Variables

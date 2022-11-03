@@ -9,46 +9,75 @@ public class SaveLoadManager : MonoBehaviour, IObjectEvent
     private LevelData_SO currentLevelData;
     [SerializeField]
     private OverarchingGameData_SO gamedata;
+    [SerializeField]
+    private bool isLevel;
+    public string saveName = "playerSave";
 
-
+    public int currentMaxLevel;
     public void IOnEventTriggered()
     {
         SaveLevel();
         print(PlayerPrefs.GetInt(saveName));
     }
-
-    private void Awake()
+    public void ResetMaxLevel()
     {
-        if (PlayerStatic.Player == null)
+        currentMaxLevel = 1000000;
+
+        foreach(var levelData in gamedata.levels)
         {
-            Debug.LogWarning("Player is not detected in scene");
-            Debug.Break();
+            if (levelData.GetSceneIndex() <= currentMaxLevel)
+            {
+                currentMaxLevel = levelData.GetSceneIndex();
+            }
         }
 
-        currentLevelData = FindLevelData(SceneManager.GetActiveScene().buildIndex);
-        LoadPlayerAssets();
+        PlayerPrefs.SetInt(saveName, currentMaxLevel);
 
-        SaveLevel();
-        print(PlayerPrefs.GetInt(saveName));
+        SceneManager.LoadScene(currentMaxLevel);
+    }
+    private void Awake()
+    {
+        if (PlayerPrefs.HasKey(saveName))
+        {
+            currentMaxLevel = PlayerPrefs.GetInt(saveName, 1);
+        }
+
+        if (isLevel == true)
+        {
+            if (PlayerStatic.Player == null)
+            {
+                Debug.LogWarning("Player is not detected in scene");
+                Debug.Break();
+            }
+
+            currentLevelData = FindLevelData(SceneManager.GetActiveScene().buildIndex);
+            LoadPlayerAssets();
+
+            SaveLevel();
+            print(PlayerPrefs.GetInt(saveName));
+        }
+        else
+        {
+            if (PlayerPrefs.HasKey(saveName))
+                currentMaxLevel = PlayerPrefs.GetInt(saveName, 1);
+        }
     }
 
-    public string saveName = "playerSave";
-
-    public int currentMaxLevel;
+    
 
     public void LoadSave()
     {
-        if (PlayerPrefs.GetInt(saveName) != 0)
-        {
+        //if (PlayerPrefs.GetInt(saveName) != 0)
+        //{
             currentMaxLevel = PlayerPrefs.GetInt(saveName);
             SceneManager.LoadScene(currentMaxLevel);
-        }
+        //}
     }
 
     public void SaveLevel()
     {
         currentMaxLevel = PlayerPrefs.GetInt(saveName);
-        if (currentMaxLevel < SceneManager.GetActiveScene().buildIndex)
+        if (currentMaxLevel <= SceneManager.GetActiveScene().buildIndex)
         {
             currentMaxLevel = SceneManager.GetActiveScene().buildIndex;
             PlayerPrefs.SetInt(saveName, currentMaxLevel);
