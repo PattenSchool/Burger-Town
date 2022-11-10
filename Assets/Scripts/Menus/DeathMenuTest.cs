@@ -7,8 +7,8 @@ public class DeathMenuTest : MonoBehaviour
 {
     public PlayerInput playerInput;
 
-    public GameObject deathCanvas;
-    public GameObject playerHUD;
+    private GameObject deathCanvas;
+    private GameObject playerHUD;
 
     public bool isdead;
 
@@ -16,6 +16,9 @@ public class DeathMenuTest : MonoBehaviour
     {
         isdead = false;
         Time.timeScale = 1f;
+
+        deathCanvas = PlayerStatic.UIDisplays.deathMenu;
+        playerHUD = PlayerStatic.UIDisplays.playerHud;
     }
 
     private void OnTriggerEnter(Collider collision)

@@ -67,6 +67,7 @@ public class StickyBoltMechanics : BoltTemplate
             SpawnPlatform(contactPoint.point);
         }
 
+        //Apply the IHit method
         IHit();
     }
 
@@ -91,12 +92,15 @@ public class StickyBoltMechanics : BoltTemplate
     ///     If the rigidbody to act if it is stuck on an object or not
     private void ToggleStick(bool isStick)
     {
+        //If sticky is true
         if (isStick == true)
         {
             _rigidbody.velocity = Vector3.zero;
             _rigidbody.useGravity = false;
             _rigidbody.constraints = RigidbodyConstraints.FreezeAll;
         }
+
+        //If stick is false
         else if (isStick == false)
         {
             _rigidbody.useGravity = true;

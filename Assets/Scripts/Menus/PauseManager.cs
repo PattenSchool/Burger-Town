@@ -9,11 +9,22 @@ using UnityEngine.InputSystem;
 public class PauseManager : MonoBehaviour
 {
     //Used to get the player input manager
-    public PlayerInput playerInput;
+    private PlayerInput playerInput;
 
     //The canvases used in display
-    public GameObject pauseCanvas;
-    public GameObject playerHUD;
+    private GameObject pauseCanvas;
+    private GameObject playerHUD;
+
+    #region Unity Methods
+    private void Start()
+    {
+        pauseCanvas = PlayerStatic.UIDisplays.pauseMenu;
+        playerHUD = PlayerStatic.UIDisplays.playerHud;
+
+        playerInput = PlayerStatic.ControllerInput;
+    }
+    #endregion
+
 
     public void OnPause(InputAction.CallbackContext context)
     {

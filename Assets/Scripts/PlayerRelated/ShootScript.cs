@@ -51,16 +51,16 @@ public class ShootScript : MonoBehaviour
     [SerializeField]
     public int currentBoltIndex;
 
-    [Tooltip("Different type of bolt prefabs")]
-    [SerializeField]
-    public BoltTemplate[] boltPrefabs;
-
-    [HideInInspector][Tooltip("The current level/ the current unlock of the bolt")]
-    [SerializeField, Range(1, 11)]
-    public int maxUnlockedBoltIndex = 1;
-
     [Tooltip("The minimum bolt index (leave be)")]
     private int minBoltIndex = 1;
+
+    [Tooltip("The allowed bolts")]
+    [SerializeField]
+    private List<BoltTemplate> _allowedBolts;
+
+    [Tooltip("The default bolt if one doesn't exist")]
+    [SerializeField]
+    private BoltTemplate defaultBolt;
 
     /// <summary>
     /// Generate ammo wanted by the player
@@ -104,6 +104,10 @@ public class ShootScript : MonoBehaviour
     #endregion
 
     #region Unity Methods
+    private void Awake()
+    {
+        SetAllowedBolts(_allowedBolts);
+    }
     private void Update()
     {
         //Update the timer
@@ -167,14 +171,6 @@ public class ShootScript : MonoBehaviour
     //        currentBoltIndex = newBoltIndex;
     //    }
     //}
-    #endregion
-
-    #region Ready to switch to save system
-    //[Header("BoltRelated")]
-
-    [Tooltip("The allowed bolts")]
-    [SerializeField]
-    private List<BoltTemplate> _allowedBolts;
 
     /// <summary>
     /// Set the allowed bolts by an outside script
@@ -183,7 +179,12 @@ public class ShootScript : MonoBehaviour
     ///     Set the outside allowed script to this parameter
     public void SetAllowedBolts(List<BoltTemplate> allowedBoltObjects)
     {
-        _allowedBolts = allowedBoltObjects;
+        if (_allowedBolts != null)
+            _allowedBolts = allowedBoltObjects;
+        else
+        {
+            _allowedBolts.Add(defaultBolt);
+        }
         _allowedBolts.TrimExcess();
     }
 
@@ -214,7 +215,9 @@ public class ShootScript : MonoBehaviour
             currentBoltIndex = newBoltIndex;
         }
     }
+    #endregion
 
+    #region Public bolt files
     /// <summary>
     /// Get the current bolt selected
     /// </summary>
@@ -222,7 +225,10 @@ public class ShootScript : MonoBehaviour
     ///     The bolt selected
     public GameObject GetSelectedBolt()
     {
-        return _allowedBolts[currentBoltIndex - 1].gameObject;
+        if (_allowedBolts == null)
+            return _allowedBolts[currentBoltIndex - 1].gameObject;
+        else
+            return defaultBolt.gameObject;
     }
     #endregion
 }

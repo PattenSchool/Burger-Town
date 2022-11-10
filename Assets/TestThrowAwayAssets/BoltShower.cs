@@ -19,6 +19,6 @@ public class BoltShower : MonoBehaviour
     private void Update()
     {
         int boltindex = shootScript.currentBoltIndex;
-        _boltUIText.text = shootScript.boltPrefabs[boltindex - 1].name;
+        _boltUIText.text = PlayerStatic.BoltSelected.name;
     }
 }

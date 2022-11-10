@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 /// <summary>
 /// Used to access the player from anywhere in the scene
@@ -21,6 +22,12 @@ public class PlayerStatic
     /// The main camera's game object
     /// </summary>
     public static Camera MainCamera
+    {
+        get;
+        private set;
+    }
+
+    public static PlayerInput ControllerInput
     {
         get;
         private set;
@@ -87,6 +94,18 @@ public class PlayerStatic
     }
     #endregion
 
+    #region UIElements
+    /// <summary>
+    /// Used to get and handle the player displays
+    /// </summary>
+    private static PlayerDisplays _uiDisplays;
+    public static PlayerDisplays UIDisplays
+    {
+        get { return _uiDisplays; }
+        private set {  }
+    }
+    #endregion
+
     #region Error Testing
     /// <summary>
     /// Keeps track of how many players extra are trying to access this script
@@ -131,11 +150,12 @@ public class PlayerStatic
         {
             player.SetActive(false);
             _nonNeededPlayers++;
-
         }
 
         MainCamera = Camera.main;
         SetUpShootScript(Player);
+        SetUpUIDisplays(Player);
+        SetUpPlayerInput(Player);
     }
 
     /// <summary>
@@ -144,6 +164,16 @@ public class PlayerStatic
     private static void SetUpShootScript(GameObject player)
     {
         _shootScript = player.GetComponent<ShootScript>();
+    }
+
+    private static void SetUpUIDisplays(GameObject player)
+    {
+        _uiDisplays = player.GetComponent<PlayerDisplays>();
+    }
+
+    private static void SetUpPlayerInput(GameObject player)
+    {
+        ControllerInput = player.GetComponent<PlayerInput>();
     }
     #endregion
 }

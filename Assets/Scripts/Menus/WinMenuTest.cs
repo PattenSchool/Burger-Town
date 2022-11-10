@@ -7,8 +7,16 @@ public class WinMenuTest : MonoBehaviour
 {
     public PlayerInput playerInput;
 
-    public GameObject winCanvas;
-    public GameObject playerHUD;
+    private GameObject winCanvas;
+    private GameObject playerHUD;
+
+    #region Unity Methods
+    private void Start()
+    {
+        winCanvas = PlayerStatic.UIDisplays.winMenu;
+        playerHUD = PlayerStatic.UIDisplays.playerHud;
+    }
+    #endregion
 
     private void OnTriggerEnter(Collider collision)
     {

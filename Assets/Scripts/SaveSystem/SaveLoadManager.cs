@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SaveLoadManager : MonoBehaviour, IObjectEvent
 {
+    #region Variables
     [SerializeField]
     private LevelData_SO currentLevelData;
     [SerializeField]
@@ -14,16 +15,68 @@ public class SaveLoadManager : MonoBehaviour, IObjectEvent
     public string saveName = "playerSave";
 
     public int currentMaxLevel;
-    public void IOnEventTriggered()
+    #endregion
+
+    #region Unity Methods
+    private void Awake()
     {
-        SaveLevel();
-        print(PlayerPrefs.GetInt(saveName));
+        //Check if the playerprefs has the save name key
+        if (PlayerPrefs.HasKey(saveName))
+        {
+            //if the max level exists, then add in
+            currentMaxLevel = PlayerPrefs.GetInt(saveName, 1);
+        }
+
+        //Sets up if the player level is set
+        if (isLevel == true)
+        {
+            //Set up player
+            if (PlayerStatic.Player == null)
+            {
+                Debug.LogWarning("Player is not detected in scene");
+                Debug.Break();
+            }
+
+            //Load level data and load player assets
+            currentLevelData = FindLevelData(SceneManager.GetActiveScene().buildIndex);
+            LoadPlayerAssets();
+
+            //Save level
+            SaveLevel();
+        }
+        //For menus and non-level areas
+        else
+        {
+            //save level to max level
+            if (PlayerPrefs.HasKey(saveName))
+                currentMaxLevel = PlayerPrefs.GetInt(saveName, 1);
+        }
     }
+    #endregion
+
+    #region Load Methods
+    /// <summary>
+    /// Loads a save (works with only one save currently)
+    /// </summary>
+    public void LoadSave()
+    {
+        //if (PlayerPrefs.GetInt(saveName) != 0)
+        //{
+        currentMaxLevel = PlayerPrefs.GetInt(saveName);
+        SceneManager.LoadScene(currentMaxLevel);
+        //}
+    }
+    #endregion
+
+    #region Save Methods
+    /// <summary>
+    /// Reset max level to lowest level
+    /// </summary>
     public void ResetMaxLevel()
     {
-        currentMaxLevel = 1000000;
+        currentMaxLevel = int.MaxValue;
 
-        foreach(var levelData in gamedata.levels)
+        foreach (var levelData in gamedata.levels)
         {
             if (levelData.GetSceneIndex() <= currentMaxLevel)
             {
@@ -35,45 +88,10 @@ public class SaveLoadManager : MonoBehaviour, IObjectEvent
 
         SceneManager.LoadScene(currentMaxLevel);
     }
-    private void Awake()
-    {
-        if (PlayerPrefs.HasKey(saveName))
-        {
-            currentMaxLevel = PlayerPrefs.GetInt(saveName, 1);
-        }
 
-        if (isLevel == true)
-        {
-            if (PlayerStatic.Player == null)
-            {
-                Debug.LogWarning("Player is not detected in scene");
-                Debug.Break();
-            }
-
-            currentLevelData = FindLevelData(SceneManager.GetActiveScene().buildIndex);
-            LoadPlayerAssets();
-
-            SaveLevel();
-            print(PlayerPrefs.GetInt(saveName));
-        }
-        else
-        {
-            if (PlayerPrefs.HasKey(saveName))
-                currentMaxLevel = PlayerPrefs.GetInt(saveName, 1);
-        }
-    }
-
-    
-
-    public void LoadSave()
-    {
-        //if (PlayerPrefs.GetInt(saveName) != 0)
-        //{
-            currentMaxLevel = PlayerPrefs.GetInt(saveName);
-            SceneManager.LoadScene(currentMaxLevel);
-        //}
-    }
-
+    /// <summary>
+    /// Save the level if max level if max level is bigger than the current level
+    /// </summary>
     public void SaveLevel()
     {
         currentMaxLevel = PlayerPrefs.GetInt(saveName);
@@ -84,10 +102,16 @@ public class SaveLoadManager : MonoBehaviour, IObjectEvent
         }
     }
 
-
+    /// <summary>
+    /// Get the level data by searching in the build index
+    /// </summary>
+    /// <param name="currentLevelBuildIndex"></param>
+    ///     The current level build index
+    /// <returns></returns>
+    ///     The current level data
     private LevelData_SO FindLevelData(int currentLevelBuildIndex)
     {
-        foreach(LevelData_SO levelData in gamedata.levels)
+        foreach (LevelData_SO levelData in gamedata.levels)
         {
             if (levelData.GetSceneIndex() == currentLevelBuildIndex)
             {
@@ -99,18 +123,37 @@ public class SaveLoadManager : MonoBehaviour, IObjectEvent
         Debug.Break();
         return null;
     }
+    #endregion
 
+    #region On Event Triggered
+    /// <summary>
+    /// Triggered if the event is triggered (such as a check point)
+    /// </summary>
+    public void IOnEventTriggered()
+    {
+        SaveLevel();
+    }
+    #endregion
+    
     #region Player Loading
+    /// <summary>
+    /// Load the player assets
+    /// </summary>
     private void LoadPlayerAssets()
     {
-
+        //Loads the player's ammo
         LoadPlayerAmmo();
     }
+
+    /// <summary>
+    /// Load the player ammo to the player static object
+    /// </summary>
     private void LoadPlayerAmmo()
     {
         //Make a list for the allowed bolts
         List<BoltTemplate> allowedBolts = new();
 
+        //Set up the allowed bolts by checking each bolt
         for (int i = 0; i < gamedata.boltTemplates.Count; i++)
         {
             //Get the enum index (because index is stored in powers of 2)
@@ -119,17 +162,21 @@ public class SaveLoadManager : MonoBehaviour, IObjectEvent
             //Get the bolt type
             BoltTypes lookingAtBoltType = (BoltTypes)enumIndex;
 
+            //If bolt is allowed, then put it in the list
             if (currentLevelData.allowedBoltTypes.HasFlag(lookingAtBoltType))
             {
                 //Get the bolt associated with that type
                 BoltTemplate bolt = gamedata.boltTemplates[i];
 
+                //Add in the allowed bolts
                 allowedBolts.Add(bolt);
             }
         }
 
+        //Trim list of allowed bolts
         allowedBolts.TrimExcess();
 
+        //Set up allowed bolts
         PlayerStatic._shootScript.SetAllowedBolts(allowedBolts);
     }
     #endregion
