@@ -3,29 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneSelect : MonoBehaviour
+public static class SceneSelect
 {
-  
-     void Start()
-    {
-
-    }
 
     //Load the main menu directly
-    public void MainMenu()
+    public static void MainMenu()
     {
         //Loads main menu
         SceneManager.LoadScene("MainMenu");
     }
     
     //Load a level
-    public void LevelLoad(string levelName)
+    public static void LevelLoad(string levelName)
     {
         //Loads first level when it is ready
         SceneManager.LoadScene(levelName);
     }
 
-    public void Level2()
+    public static void Level2()
     {
         //Currently for testing Win Menu
         //Will load second level
@@ -33,18 +28,18 @@ public class SceneSelect : MonoBehaviour
         SceneManager.LoadScene("LevelSwitchTest");
     }
 
-    public void RestartCurrentLevel()
+    public static void RestartCurrentLevel()
     {
         //reloads the current active scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void ExitGame()
+    public static void ExitGame()
     {
         //Quits to Desktop
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #endif
         Application.Quit();
     }
 }

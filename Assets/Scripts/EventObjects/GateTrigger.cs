@@ -51,7 +51,7 @@ public class GateTrigger : MonoBehaviour
         if (targetNum <= 0)
         {
             // Outputs a message to the console if the gate conditons have been satisfied.
-            Debug.Log("Gate is now open");
+            //Debug.Log("Gate is now open");
             //Gate moves down.
             moveDirection += -this.transform.up;
         }
