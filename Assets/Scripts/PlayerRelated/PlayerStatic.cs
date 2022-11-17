@@ -133,9 +133,9 @@ public class PlayerStatic
     }
     #endregion
 
-    #region Methods
+    #region Set Up Methods
     /// <summary>
-    /// et up the static player class
+    /// Set up the static player class
     /// </summary>
     /// <param name="player"></param>
     ///     The player game object
@@ -169,11 +169,47 @@ public class PlayerStatic
     private static void SetUpUIDisplays(GameObject player)
     {
         _uiDisplays = player.GetComponent<PlayerDisplays>();
+        textQueue = new Queue<string>();
     }
 
     private static void SetUpPlayerInput(GameObject player)
     {
         ControllerInput = player.GetComponent<PlayerInput>();
+    }
+    #endregion
+
+    #region Main Text Elements
+    /// <summary>
+    /// Used to display the text in the main display
+    /// </summary>
+    private static Queue<string> textQueue;
+    public static Queue<string> TextQueue
+    {
+        get { return textQueue; }
+        private set { textQueue = value; }
+    }
+
+    /// <summary>
+    /// Adds a new text to the text queue
+    /// </summary>
+    /// <param name="newText"></param>
+    ///     The new text
+    public static void AddToTextQueue(string newText)
+    {
+        textQueue.Enqueue(newText);
+    }
+
+    /// <summary>
+    /// Adds multiple texts to a queue
+    /// </summary>
+    /// <param name="newTexts"></param>
+    ///     The new texts
+    public static void AddTextsToQueue(string[] newTexts)
+    {
+        foreach(string newText in newTexts)
+        {
+            AddToTextQueue(newText);
+        }
     }
     #endregion
 }

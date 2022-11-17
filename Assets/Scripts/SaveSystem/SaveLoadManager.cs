@@ -18,7 +18,7 @@ public class SaveLoadManager : MonoBehaviour, IObjectEvent
     #endregion
 
     #region Unity Methods
-    private void Awake()
+    private void Start()
     {
         //Check if the playerprefs has the save name key
         if (PlayerPrefs.HasKey(saveName))

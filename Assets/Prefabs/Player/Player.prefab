@@ -502,7 +502,9 @@ MonoBehaviour:
   currentBoltIndex: 1
   _allowedBolts: []
   defaultBolt: {fileID: 2543685648339813248, guid: 904d67dcfe93146459991bfcd066805a, type: 3}
+  isDeveloperMode: 0
   _spawnRange: 1.5
+  overarchingGameData: {fileID: 11400000, guid: 9377a42c48ad97746a1961ff23aa2e42, type: 2}
 --- !u!114 &1946536399443783054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -720,6 +722,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4922232175022903782}
     m_Modifications:
+    - target: {fileID: 3481031523177959173, guid: 93fb409d919dad54084c8b75f35ac148, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7597421554049410034, guid: 93fb409d919dad54084c8b75f35ac148, type: 3}
       propertyPath: m_IsActive
       value: 0

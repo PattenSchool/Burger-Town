@@ -15,7 +15,7 @@ public class IcrementLevel : MonoBehaviour, IObjectEvent
 
     public void IOnEventTriggered()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     // Update is called once per frame
     void Update()

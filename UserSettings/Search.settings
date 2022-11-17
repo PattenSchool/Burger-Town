@@ -1,12 +1,15 @@
 trackSelection = true
 fetchPreview = true
-defaultFlags = 0
+wantsMore = false
 keepOpen = false
 queryFolder = "Assets"
 onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
+	"last_search.7BEC51F9" = ""
+	"OpenInspectorPreview.7BEC51F9" = "0"
+	"currentGroup.7BEC51F9" = "asset"
 }
 providers = {
 	adb = {
@@ -49,8 +52,6 @@ providers = {
 		priority = 50
 		defaultAction = null
 	}
-}
-objectSelectors = {
 }
 recentSearches = [
 ]
