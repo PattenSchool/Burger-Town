@@ -12,7 +12,7 @@ public class ShotTimerTracker : StateMachineBehaviour
     #region Shot Related Variables
     [Tooltip("Shot Trigger Tag")]
     [SerializeField]
-    private string shotTriggerTag = "";
+    private string shotTriggerTag = "shotTrigger";
     #endregion
 
     #region Timer Related

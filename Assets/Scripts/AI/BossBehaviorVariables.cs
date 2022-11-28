@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class BossBehaviorVariables : MonoBehaviour
 {
@@ -25,10 +26,10 @@ public class BossBehaviorVariables : MonoBehaviour
 
     [Tooltip("The distractable object")]
     [SerializeField]
-    private DistractableObject[] distractableObjects;
-    public DistractableObject[] DistractableObjects
+    private DistractableObject distractableObject;
+    public DistractableObject DistractableObject
     {
-        get { return distractableObjects; }
+        get { return distractableObject; }
     }
     #endregion
 
@@ -52,7 +53,34 @@ public class BossBehaviorVariables : MonoBehaviour
     #region Unity Methods
     private void OnEnable()
     {
-        distractableObjects = GameObject.FindObjectsOfType<DistractableObject>();
+        //Get every instance of distractable objects
+        var distractableObjects = GameObject.FindObjectsOfType<DistractableObject>();
+
+        //If distractable object exists, then ignore rest of thing
+        if (distractableObject != null)
+        {
+            return;
+        }
+
+        //Case studies of it
+        if (distractableObjects.Length < 1 || distractableObjects == null)
+        {
+            Debug.LogError("No distractable objects detected");
+
+            #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+            #endif
+
+        }
+        else if (distractableObjects.Length > 1)
+        {
+            Debug.LogError("Multiple distractable objects detected, grabbing first instance");
+            distractableObject = distractableObjects[0];
+        }
+        else if (distractableObjects.Length == 1)
+        {
+            distractableObject = distractableObjects[0];
+        }
     }
 
     private void Update()
