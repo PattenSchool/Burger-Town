@@ -102,7 +102,7 @@ public class PlayerStatic
     public static PlayerDisplays UIDisplays
     {
         get { return _uiDisplays; }
-        private set {  }
+        private set { }
     }
     #endregion
 
@@ -206,10 +206,33 @@ public class PlayerStatic
     ///     The new texts
     public static void AddTextsToQueue(string[] newTexts)
     {
-        foreach(string newText in newTexts)
+        foreach (string newText in newTexts)
         {
             AddToTextQueue(newText);
         }
+    }
+    #endregion
+
+    #region Conversation stuff
+    private static Conversation_SO conversation;
+    public static Conversation_SO Conversation
+    {
+        get { return conversation; }
+    }
+
+    public static void OverrideConversation(Conversation_SO newConversation)
+    {
+        conversation = newConversation;
+    }
+
+    public static bool HasConversation()
+    {
+        return conversation != null;
+    }
+
+    public static void DeleteConversation()
+    {
+        conversation = null;
     }
     #endregion
 }

@@ -7,13 +7,6 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class ShootScript : MonoBehaviour
 {
-    public Conversation_SO convo;
-
-    private void Start()
-    {
-        DialogueManager.instance.SetConversation(convo);
-    }
-
     #region Timer Related
     [Header("Time Variables")]
 

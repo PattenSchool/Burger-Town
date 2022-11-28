@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class TextDisplayText : MonoBehaviour, IObjectEvent
 {
-    public void Start()
-    {
-        PlayerStatic.AddToTextQueue("Thing");
-    }
+    public Conversation_SO conversation;
 
     public void IOnEventTriggered()
     {
-        print("Thing");
+        PlayerStatic.OverrideConversation(conversation);
     }
 }
