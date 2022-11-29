@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -303,6 +303,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textBackground: {fileID: 4927560603370043375}
   text: {fileID: 1262428133656302369}
+  timer: 0
+  textText: []
 --- !u!1 &4927560603370043375
 GameObject:
   m_ObjectHideFlags: 0
