@@ -26,34 +26,42 @@ public class DistractObjectTracker : StateMachineBehaviour
         //Get boss behavior variable data once
         if (bossBehaviorData == null)
             bossBehaviorData = animator.gameObject.GetComponent<BossBehaviorVariables>();
+
+        //Get the boss's head
+        if (bossHead == null)
+        {
+            bossHead = bossBehaviorData.Head;
+        }
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        ///Set distracted if distracted objct exists in eye sight
-
+        ///Set distracted if distracted objct exists in eye sight, then is distracted
         //check if distractable object exists, if not, then skip
         if (!bossBehaviorData.DistractableObject.gameObject.activeInHierarchy)
         {
             animator.SetBool(isDistractedTag, false);
             return;
         }
-        else
+
+        //TODO: Check if distractable object is in eye sight
+        #region Define Line
+        Vector3 start = bossHead.transform.position;
+        Vector3 end = bossBehaviorData.DistractableObject.transform.position;
+        RaycastHit hit;
+        #endregion
+
+        Physics.Linecast(start, end, out hit);
+
+        if(hit.collider.gameObject == bossBehaviorData.DistractableObject.gameObject)
         {
             animator.SetBool(isDistractedTag, true);
         }
-
-        //TODO: Check if distractable object is in eye sight
-        #region Define Ray
-        //Ray eyeSight = new Ray()
-        //{
-        //    origin = bossBehaviorData.Head.transform.position,
-        //    direction = bossBehaviorData.LookingDirection,
-        //};
-        #endregion
-
-        //Physics.Raycast(eyeSight);
+        else
+        {
+            animator.SetBool(isDistractedTag, false);
+        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

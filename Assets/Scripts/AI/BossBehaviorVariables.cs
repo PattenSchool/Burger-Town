@@ -48,10 +48,69 @@ public class BossBehaviorVariables : MonoBehaviour
     {
         get { return lookingDirection; }
     }
+
+    [Tooltip("Objects that, if not existing, destroys the enemy")]
+    private LifeLinkObject[] lifeLinkObejcts;
+    public LifeLinkObject[] LifeLinkObjects
+    {
+        get { return lifeLinkObejcts; }
+    }
+
+    [Tooltip("If enemy is defeated")]
+    private bool isDefeated;
+    public bool IsDefeated
+    {
+        get { return isDefeated; }
+    }
     #endregion
 
     #region Unity Methods
     private void OnEnable()
+    {
+        SetUpDistractbleObject();
+
+        SetUpLifeLinks();
+    }
+
+    private void Update()
+    {
+        //Update variables here
+        if (head != null)
+        {
+            lookingDirection = head.transform.forward;
+        }
+
+        //Update defeated state
+        FindDefeatedState();
+    }
+    #endregion
+
+    #region Defeated State Stuff
+    /// <summary>
+    /// If lifeobject exists, then enemy is not defeated
+    /// </summary>
+    private void FindDefeatedState()
+    {
+        //If an object is active, let enemy live
+        foreach (var lifeObject in lifeLinkObejcts)
+        {
+            if (lifeObject.isActiveAndEnabled)
+            {
+                isDefeated = false;
+                return;
+            }
+        }
+
+        //If no object is active, then enemy is defeated
+        isDefeated = true;
+    }
+    #endregion
+
+    #region Setup Methods
+    /// <summary>
+    /// Used to set up distractable object for enemy
+    /// </summary>
+    private void SetUpDistractbleObject()
     {
         //Get every instance of distractable objects
         var distractableObjects = GameObject.FindObjectsOfType<DistractableObject>();
@@ -83,12 +142,16 @@ public class BossBehaviorVariables : MonoBehaviour
         }
     }
 
-    private void Update()
+    /// <summary>
+    /// Gets life objects to stand in as enemy health
+    /// </summary>
+    private void SetUpLifeLinks()
     {
-        //Update variables here
-        if (head != null)
+        lifeLinkObejcts = FindObjectsOfType<LifeLinkObject>();
+
+        if (LifeLinkObjects.Length < 1)
         {
-            lookingDirection = head.transform.forward;
+            Debug.LogError("Please spawn in object with a LifeLinkObject script");
         }
     }
     #endregion
