@@ -7,7 +7,12 @@ public class PlayerGrab : MonoBehaviour
 {
     public GameObject grabberCollider;
     public float grabDistance;
-    private GameObject grabObject = null;
+
+
+    [HideInInspector]
+    public GameObject grabObject = null;
+
+
     private GameObject _player;
     private GameObject _cameraObject;
     private GameObject updatePlayer;
@@ -20,7 +25,7 @@ public class PlayerGrab : MonoBehaviour
 
     public string currentTag = null;
 
-    public bool isGrab;
+    private bool isGrab;
 
     public void Start()
     {
@@ -107,10 +112,11 @@ public class PlayerGrab : MonoBehaviour
         grabObject.GetComponent<Rigidbody>().freezeRotation = true;
         grabObject.GetComponent<Rigidbody>().freezeRotation = false;
 
-        //grabObject.GetComponent<Rigidbody>().freezeRotation = false;
+        
         grabObject.GetComponent<Rigidbody>().useGravity = true;
         grabObject.transform.parent = null;
         grabObject.GetComponent<Rigidbody>().drag = 0;
+        //grabObject.GetComponent<Rigidbody>().freezeRotation = false;
         //grabObject = null;
     }
 
@@ -179,6 +185,4 @@ public class PlayerGrab : MonoBehaviour
     {
         grabObject.GetComponent<Rigidbody>().AddForce(_cameraObject.transform.eulerAngles * throwForce);
     }
-
-
 }
