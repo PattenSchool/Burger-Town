@@ -78,7 +78,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""id"": ""acafa932-1b95-4564-a109-ba173fac92ba"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Hold(pressPoint=1)"",
+                    ""interactions"": ""Hold"",
                     ""initialStateCheck"": false
                 },
                 {
@@ -400,17 +400,6 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""7d0f92cb-9586-47e6-bb4a-cbec0380917a"",
                     ""path"": ""<Keyboard>/q"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Throw"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""1d9d7970-0363-4f93-b514-daca57a8b0c5"",
-                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
