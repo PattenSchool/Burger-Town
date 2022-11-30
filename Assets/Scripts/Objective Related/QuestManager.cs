@@ -17,7 +17,7 @@ public class QuestManager : MonoBehaviour
 
     private List<RectTransform> InactiveBurgerSprites = new List<RectTransform>();
 
-    private List<AbstractObjective> currentObjectives;
+    private List<AbstractObjective> currentObjectives = new List<AbstractObjective>();
 
     private List<RectTransform> ObjectiveDisplays = new List<RectTransform>();
 
@@ -225,9 +225,14 @@ public class QuestManager : MonoBehaviour
             }
             else
             {
-                if (displayedQuests[0].objectives.Count > 1 && currentObjectives.Count != displayedQuests[0].objectives.Count)
+                currentObjectives.Clear();
+                foreach (AbstractObjective objective in displayedQuests[0].objectives)
                 {
-                    foreach (AbstractObjective objective in displayedQuests[0].objectives)
+                    if (objective.isComplete)
+                    {
+                        currentObjectives.Remove(objective);
+                    }
+                    else
                     {
                         currentObjectives.Add(objective);
                     }
@@ -235,13 +240,13 @@ public class QuestManager : MonoBehaviour
 
                 for (int i = 0; i < ObjectiveDisplays.Count; i++)
                 {
-                    if (i < displayedQuests[0].objectives.Count)
+                    if (i < currentObjectives.Count)
                     {
-                        ObjectiveDisplays[i].GetComponent<TextMeshProUGUI>().text = displayedQuests[0].objectives[i].ObjectiveName;
+                        ObjectiveDisplays[i].GetComponentInChildren<TextMeshProUGUI>().text = currentObjectives[i].ObjectiveName;
                     }
                     else
                     {
-                        ObjectiveDisplays[i].GetComponent<TextMeshProUGUI>().text = "";
+                        ObjectiveDisplays[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
                     }
                 }
             }
