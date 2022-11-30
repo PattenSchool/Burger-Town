@@ -7,6 +7,6 @@ public class LoadLevelButton : MonoBehaviour, IObjectEvent
     public SaveLoadManager saveLoadManagerTest;
     public void IOnEventTriggered()
     {
-        saveLoadManagerTest.LoadSave();
+        //saveLoadManagerTest.LoadSave();
     }
 }
