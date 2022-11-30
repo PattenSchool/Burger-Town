@@ -173,6 +173,7 @@ MonoBehaviour:
   burger: {fileID: 11400000, guid: 868b091caf370ce46924ad2719483c9a, type: 2}
   progress: []
   _currentParts: []
+  partsLeft: 0
   _currentItem: {fileID: 0}
 --- !u!1 &22024040
 GameObject:
@@ -2156,6 +2157,7 @@ MonoBehaviour:
   burger: {fileID: 11400000, guid: 868b091caf370ce46924ad2719483c9a, type: 2}
   progress: []
   _currentParts: []
+  partsLeft: 0
   _currentItem: {fileID: 0}
 --- !u!1 &454069099
 GameObject:
@@ -3263,7 +3265,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6699dae3b4beadc42b66562e7b65037f, type: 2}
+  - {fileID: 2100000, guid: 7c9866af12a7d9d40aa58f7358acdc49, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3805,7 +3807,7 @@ MonoBehaviour:
     - {fileID: 950804279}
     - {fileID: 1999022587}
     - {fileID: 281038547}
-    - {fileID: 281038547}
+    - {fileID: 1519149894}
   - isActive: 0
     QuestName: Get all the burger parts
     NextQuests: 
@@ -6423,7 +6425,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &543450653449235141
 Transform:
   m_ObjectHideFlags: 0
@@ -7644,7 +7646,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &9086364180519093530
 MeshFilter:
   m_ObjectHideFlags: 0

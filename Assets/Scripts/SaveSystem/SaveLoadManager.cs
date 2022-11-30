@@ -260,6 +260,7 @@ public class SaveLoadManager : MonoBehaviour, IObjectEvent
         if (currentMaxLevel <= SceneManager.GetActiveScene().buildIndex)
         {
             currentMaxLevel = SceneManager.GetActiveScene().buildIndex;
+            currentSaveData.maxLevel = currentMaxLevel;
             PlayerPrefs.SetInt(currentSaveData.name + currentSaveData.saveIndex, currentMaxLevel);
         }
     }

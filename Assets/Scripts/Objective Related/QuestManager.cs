@@ -13,7 +13,7 @@ public class QuestManager : MonoBehaviour
 
     public RectTransform InactiveBurgerSprite;
 
-    private List<RectTransform> ActiveBurgerSprites = new List<RectTransform> ();
+    private List<RectTransform> ActiveBurgerSprites = new List<RectTransform>();
 
     private List<RectTransform> InactiveBurgerSprites = new List<RectTransform>();
 
@@ -32,10 +32,13 @@ public class QuestManager : MonoBehaviour
 
     private List<Quest> displayedQuests = new List<Quest> ();
 
-    private bool isBurgerComplete = true;
+    private bool isBurgerDisplayed = false;
+
+    private ObjectiveObtainBurger objective = null;
 
     void Start()
     {
+
         foreach (RectTransform child in ActiveBurgerSprite.GetComponentsInChildren<RectTransform>())
         {
             ActiveBurgerSprites.Add(child);
@@ -256,9 +259,9 @@ public class QuestManager : MonoBehaviour
 
     void DisplayBurger(Quest quest)
     {
-        ObjectiveObtainBurger objective = quest.objectives[0].GetComponent<ObjectiveObtainBurger>();
+        objective = quest.objectives[0].GetComponent<ObjectiveObtainBurger>();
 
-        if (objective.isComplete)
+        if (!isBurgerDisplayed)
         {
             foreach (RectTransform image in ActiveBurgerSprites)
             {
@@ -269,6 +272,10 @@ public class QuestManager : MonoBehaviour
             {
                 image.gameObject.SetActive(true);
             }
+
+            ActiveBurgerSprite.gameObject.SetActive(true);
+
+            isBurgerDisplayed = true;
         }
 
         if (objective._currentItem)
@@ -281,6 +288,25 @@ public class QuestManager : MonoBehaviour
                     ActiveBurgerSprites[i].gameObject.SetActive(true);
                 }
             }
+        }
+
+        if (objective.partsLeft <= 0)
+        {
+            isBurgerDisplayed = false;
+            ClearBurgerDisplay();
+        }
+    }
+
+    void ClearBurgerDisplay()
+    {
+        foreach (RectTransform image in ActiveBurgerSprites)
+        {
+            image.gameObject.SetActive(false);
+        }
+
+        foreach (RectTransform image in InactiveBurgerSprites)
+        {
+            image.gameObject.SetActive(false);
         }
     }
 }

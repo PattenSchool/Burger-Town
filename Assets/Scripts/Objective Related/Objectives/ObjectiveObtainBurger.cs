@@ -13,6 +13,9 @@ public class ObjectiveObtainBurger : AbstractObjective
     [HideInInspector]
     public List<GameObject> _currentParts;
 
+    [HideInInspector]
+    public int partsLeft;
+
     private GrabObject _grabObject;
 
     [HideInInspector]
@@ -25,6 +28,8 @@ public class ObjectiveObtainBurger : AbstractObjective
          _grabObject = PlayerStatic.Player.GetComponent<GrabObject>();
 
         _currentParts = new List<GameObject>(burger.allParts);
+
+        partsLeft = _currentParts.Count;
     }
 
     public override void UpdateThis()
@@ -40,6 +45,7 @@ public class ObjectiveObtainBurger : AbstractObjective
                 if (part.name == _currentItem.name)
                 {
                     _currentParts.Remove(part);
+                    partsLeft--;
                 }
             }
         }
