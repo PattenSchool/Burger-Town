@@ -13,11 +13,13 @@ using UnityEditor;
 [CreateAssetMenu(fileName = "New Conversation", menuName = "DIalogueData/Convo")]
 [System.Serializable]
 [SerializeField]
-public class Conversation_SO : ScriptableObject, ISerializationCallbackReceiver
+public class Conversation_SO : ScriptableObject
+    //, ISerializationCallbackReceiver
 {
     #region Dialogue Variables
     //Dialogue Struct
-    public struct Dialogue
+    [System.Serializable]
+    public class Dialogue
     {
         public enum NarrationType
         {
@@ -32,7 +34,7 @@ public class Conversation_SO : ScriptableObject, ISerializationCallbackReceiver
     }
 
     //Dialogue Array
-    public Dialogue[] dialogues = new Dialogue[1];
+    public List<Dialogue> dialogues = new List<Dialogue>();
     #endregion
 
     #region Dialogues Edit Methods
@@ -41,7 +43,15 @@ public class Conversation_SO : ScriptableObject, ISerializationCallbackReceiver
     /// </summary>
     public void AddLastDialogue()
     {
-        if (dialogues.Length == 0)
+        if(dialogues == null)
+        {
+            dialogues = new List<Dialogue>();
+        }
+
+        dialogues.Add(new Dialogue());
+
+        /*
+        if (dialogues.Count == 0)
         {
             dialogues = new Dialogue[1];
         }
@@ -52,6 +62,7 @@ public class Conversation_SO : ScriptableObject, ISerializationCallbackReceiver
             tempList.TrimExcess();
             dialogues = tempList.ToArray();
         }
+        */
     }
 
     /// <summary>
@@ -59,19 +70,32 @@ public class Conversation_SO : ScriptableObject, ISerializationCallbackReceiver
     /// </summary>
     public void RemoveLastDialogue()
     {
+        if(dialogues == null)
+        {
+            return;
+        }
+
+        dialogues.RemoveAt(dialogues.Count - 1);
+
+        /*
         var tempList = dialogues.ToList();
         if (tempList.Count > 0)
             tempList.RemoveAt(tempList.Count - 1);
         dialogues = tempList.ToArray();
+        */
     }
 
     public void RemoveDialogueAtIndex(int index)
     {
-        if (index >= dialogues.Length || index < 0)
+        if (dialogues == null || index >= dialogues.Count || index < 0)
         {
             Debug.Log("Index Error On Conversation");
+            return;
         }
 
+        dialogues.RemoveAt(index);
+
+        /*
         if (dialogues.Length > 0)
         {
             var tempList = dialogues.ToList();
@@ -83,6 +107,7 @@ public class Conversation_SO : ScriptableObject, ISerializationCallbackReceiver
         {
             Debug.Log("No more dialogue elements");
         }
+        */
         
     }
     #endregion
@@ -90,7 +115,7 @@ public class Conversation_SO : ScriptableObject, ISerializationCallbackReceiver
     #region Return Text
     public string GetFormattedText(int index)
     {
-        if (dialogues.Length > 0)
+        if (dialogues.Count > 0)
         {
             //Get the dialogue
             var dialogue = dialogues[index];
@@ -115,55 +140,55 @@ public class Conversation_SO : ScriptableObject, ISerializationCallbackReceiver
 
     public int ConversationLength
     {
-        get { return dialogues.Length; }
+        get { return dialogues.Count; }
     }
     #endregion
 
     /// <summary>
     /// !!DO NOT TOUCH!!
     /// </summary>
-    #region Serialiation Methods and Attributes
-    //Used to save narration types
-    [SerializeField, HideInInspector]
-    private int[] dialogueNarroratorSaves = new int[0];
+    //#region Serialiation Methods and Attributes
+    ////Used to save narration types
+    //[SerializeField, HideInInspector]
+    //private int[] dialogueNarroratorSaves = new int[0];
 
-    //Used to save the texts
-    [SerializeField, HideInInspector]
-    private string[] dialogueTextSaves = new string[0];
+    ////Used to save the texts
+    //[SerializeField, HideInInspector]
+    //private string[] dialogueTextSaves = new string[0];
 
-    /// <summary>
-    /// Called before saving
-    /// </summary>
-    public void OnBeforeSerialize()
-    {
-        //Set array lengths
-        dialogueNarroratorSaves = new int[dialogues.Length];
-        dialogueTextSaves = new string[dialogues.Length];
+    ///// <summary>
+    ///// Called before saving
+    ///// </summary>
+    //public void OnBeforeSerialize()
+    //{
+    //    //Set array lengths
+    //    dialogueNarroratorSaves = new int[dialogues.Length];
+    //    dialogueTextSaves = new string[dialogues.Length];
 
-        //Save array contents
-        for (int i = 0; i < dialogues.Length; i++)
-        {
-            dialogueNarroratorSaves[i] = (int)dialogues[i].Narrorator;
-            dialogueTextSaves[i] = dialogues[i].text;
-        }
-    }
+    //    //Save array contents
+    //    for (int i = 0; i < dialogues.Length; i++)
+    //    {
+    //        dialogueNarroratorSaves[i] = (int)dialogues[i].Narrorator;
+    //        dialogueTextSaves[i] = dialogues[i].text;
+    //    }
+    //}
 
-    /// <summary>
-    /// Called to reload data
-    /// </summary>
-    public void OnAfterDeserialize()
-    {
-        //Set dialogue length
-        dialogues = new Dialogue[dialogueNarroratorSaves.Length];
+    ///// <summary>
+    ///// Called to reload data
+    ///// </summary>
+    //public void OnAfterDeserialize()
+    //{
+    //    //Set dialogue length
+    //    dialogues = new Dialogue[dialogueNarroratorSaves.Length];
 
-        //Reload dialogue content
-        for (int i = 0; i < dialogueNarroratorSaves.Length; i++)
-        {
-            dialogues[i].Narrorator = (Dialogue.NarrationType)dialogueNarroratorSaves[i];
-            dialogues[i].text = dialogueTextSaves[i];
-        }
-    }
-    #endregion
+    //    //Reload dialogue content
+    //    for (int i = 0; i < dialogueNarroratorSaves.Length; i++)
+    //    {
+    //        dialogues[i].Narrorator = (Dialogue.NarrationType)dialogueNarroratorSaves[i];
+    //        dialogues[i].text = dialogueTextSaves[i];
+    //    }
+    //}
+    //#endregion
 }
 
 #if UNITY_EDITOR
@@ -181,69 +206,74 @@ public class ConversationEditor : Editor
     protected int dialogueIndexPop = 0;
     #endregion
 
-    #region Inspector Methods
-    /// <summary>
-    /// Set up the inspector
-    /// </summary>
-    public override void OnInspectorGUI()
+    /*
+#region Inspector Methods
+/// <summary>
+/// Set up the inspector
+/// </summary>
+///
+public override void OnInspectorGUI()
+{
+    //Get conversation target
+    Conversation_SO conversation = (Conversation_SO)target;
+
+    #region Dialogue Element Editor
+    //Show if dialogues is colapsed or not
+    showDialogues = EditorGUILayout.Foldout(showDialogues, "Conversation Elements");
+
+    //If dropdown is true, then display
+    if (showDialogues)
     {
-        //Get conversation target
-        var conversation = (Conversation_SO)target;
-
-        #region Dialogue Element Editor
-        //Show if dialogues is colapsed or not
-        showDialogues = EditorGUILayout.Foldout(showDialogues, "Conversation Elements");
-
-        //If dropdown is true, then display
-        if (showDialogues)
+        //For each element of dialogues in the conversation
+        for (int i = 0; i < conversation.dialogues.Count; i++)
         {
-            //For each element of dialogues in the conversation
-            for (int i = 0; i < conversation.dialogues.Length; i++)
-            {
-                EditorGUILayout.LabelField($"Dialogue {i}");
+            EditorGUILayout.LabelField($"Dialogue {i}");
 
-                //Edit the text of a dialogue
-                conversation.dialogues[i].text = 
-                    EditorGUILayout.TextField(conversation.dialogues[i].text);
+            //Edit the text of a dialogue
+            conversation.dialogues[i].text =
+                EditorGUILayout.TextField(conversation.dialogues[i].text);
 
-                //Edit the narrorator of the dialogue
-                conversation.dialogues[i].Narrorator =
-                    (Conversation_SO.Dialogue.NarrationType)
-                    EditorGUILayout.EnumPopup(conversation.dialogues[i].Narrorator);
-            }
+            //Edit the narrorator of the dialogue
+            conversation.dialogues[i].Narrorator =
+                (Conversation_SO.Dialogue.NarrationType)
+                EditorGUILayout.EnumPopup(conversation.dialogues[i].Narrorator);
         }
-        #endregion
-
-        #region Dailogue Length Edit
-        EditorGUILayout.BeginHorizontal();
-
-        if (GUILayout.Button("+"))
-        {
-            conversation.AddLastDialogue();
-        }
-
-        if (GUILayout.Button("-"))
-        {
-            conversation.RemoveLastDialogue();
-        }
-
-        EditorGUILayout.EndHorizontal();
-        #endregion
-
-        #region Dialogue Pop Edit
-        EditorGUILayout.BeginHorizontal();
-
-        dialogueIndexPop = 
-            EditorGUILayout.IntSlider(dialogueIndexPop, 0, conversation.dialogues.Length - 1);
-
-        EditorGUILayout.EndHorizontal();
-
-        if (GUILayout.Button("Remove At Index"))
-        {
-            conversation.RemoveDialogueAtIndex(dialogueIndexPop);
-        }
-        #endregion
     }
     #endregion
+
+
+    #region Dailogue Length Edit
+    EditorGUILayout.BeginHorizontal();
+
+    if (GUILayout.Button("+"))
+    {
+        conversation.AddLastDialogue();
+    }
+
+    if (GUILayout.Button("-"))
+    {
+        conversation.RemoveLastDialogue();
+    }
+
+    EditorGUILayout.EndHorizontal();
+    #endregion
+
+    #region Dialogue Pop Edit
+    EditorGUILayout.BeginHorizontal();
+
+    dialogueIndexPop = 
+        EditorGUILayout.IntSlider(dialogueIndexPop, 0, 
+            conversation.dialogues.Count <= 1? 0: conversation.dialogues.Count - 1);
+
+    EditorGUILayout.EndHorizontal();
+
+    if (GUILayout.Button("Remove At Index") && conversation.dialogues.Count > 0)
+    {
+        conversation.RemoveDialogueAtIndex(dialogueIndexPop);
+    }
+    #endregion
+}
+#endregion
+    */
 }
 #endif

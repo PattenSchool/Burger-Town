@@ -83,7 +83,7 @@ public class SaveLoadManager : MonoBehaviour, IObjectEvent
 
     #region Load Methods
     /// <summary>
-    /// Loads a save (works with only one save currently)
+    /// Loads a save
     /// </summary>
     /// 
     public void LoadSave (int saveIndex)

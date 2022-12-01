@@ -213,6 +213,7 @@ public class PlayerStatic
     }
     #endregion
 
+    
     #region Conversation stuff
     private static Conversation_SO conversation;
     public static Conversation_SO Conversation
@@ -235,4 +236,5 @@ public class PlayerStatic
         conversation = null;
     }
     #endregion
+        
 }
