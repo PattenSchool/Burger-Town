@@ -88,7 +88,7 @@ public class SaveLoadManager : MonoBehaviour, IObjectEvent
     /// Loads a save
     /// </summary>
     /// 
-    public void LoadSave (int saveIndex)
+    public void LoadSave(int saveIndex)
     {
         foreach (SaveData_SO save in saveData.saves)
         {
@@ -142,6 +142,7 @@ public class SaveLoadManager : MonoBehaviour, IObjectEvent
             }
         }
         
+
 
         for (int i = 0; i < levelButtons.Count; i++)
         {
@@ -266,6 +267,16 @@ public class SaveLoadManager : MonoBehaviour, IObjectEvent
     {
         ClearSave(levelIndex);
 
+        foreach (SaveData_SO save in saveData.saves)
+        {
+            if (save.saveIndex == levelIndex)
+            {
+                currentSaveData = save;
+                PlayerPrefs.SetInt(currentSaveName, currentSaveData.saveIndex);
+                currentMaxLevel = currentSaveData.maxLevel;
+            }
+        }
+
         ResetMaxLevel();
     }
 
@@ -342,7 +353,7 @@ public class SaveLoadManager : MonoBehaviour, IObjectEvent
         SaveLevel();
     }
     #endregion
-    
+
     #region Player Loading
     /// <summary>
     /// Load the player assets
