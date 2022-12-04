@@ -330,6 +330,7 @@ MonoBehaviour:
   _collider: {fileID: 0}
   _centerOfMass: {x: 0, y: 0, z: 0.17}
   _initialSpeed: 20
+  sprite: {fileID: 0}
   _desiredSetTime: 10
 --- !u!54 &4503373205164251981
 Rigidbody:
@@ -342,7 +343,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0

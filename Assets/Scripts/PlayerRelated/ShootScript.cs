@@ -62,6 +62,10 @@ public class ShootScript : MonoBehaviour
     [SerializeField]
     private BoltTemplate defaultBolt;
 
+    [Tooltip("Sets the Game Obejct to have all the bolts")]
+    [SerializeField]
+    private bool isDeveloperMode;
+
     /// <summary>
     /// Generate ammo wanted by the player
     /// </summary>
@@ -89,6 +93,10 @@ public class ShootScript : MonoBehaviour
     [Tooltip("Instantiate the object x meters away fromt the player")]
     [SerializeField]
     private float _spawnRange;
+
+    [Tooltip("The overarching game data accessing the game data")]
+    [SerializeField]
+    private OverarchingGameData_SO overarchingGameData;
     #endregion
 
     #region Unity Methods
@@ -139,11 +147,20 @@ public class ShootScript : MonoBehaviour
     ///     Set the outside allowed script to this parameter
     public void SetAllowedBolts(List<BoltTemplate> allowedBoltObjects)
     {
-        if (_allowedBolts != null)
+        //Check if there are any bolts inside thing
+        if (_allowedBolts.Count > 0)
             _allowedBolts = allowedBoltObjects;
         else
         {
-            _allowedBolts.Add(defaultBolt);
+            if (!isDeveloperMode)
+                _allowedBolts.Add(defaultBolt);
+            else
+            {
+                foreach (var bolt in overarchingGameData.boltTemplates)
+                {
+                    _allowedBolts.Add(bolt);
+                }
+            }
         }
         _allowedBolts.TrimExcess();
     }
@@ -185,10 +202,7 @@ public class ShootScript : MonoBehaviour
     ///     The bolt selected
     public GameObject GetSelectedBolt()
     {
-        if (_allowedBolts != null)
-            return _allowedBolts[currentBoltIndex - 1].gameObject;
-        else
-            return defaultBolt.gameObject;
+        return _allowedBolts[currentBoltIndex - 1].gameObject;
     }
     #endregion
 }

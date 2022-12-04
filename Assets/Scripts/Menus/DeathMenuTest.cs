@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class DeathMenuTest : MonoBehaviour
 {
+    [HideInInspector]
     public PlayerInput playerInput;
 
     private GameObject deathCanvas;
@@ -19,6 +20,8 @@ public class DeathMenuTest : MonoBehaviour
 
         deathCanvas = PlayerStatic.UIDisplays.deathMenu;
         playerHUD = PlayerStatic.UIDisplays.playerHud;
+
+        playerInput = PlayerStatic.ControllerInput;
     }
 
     private void OnTriggerEnter(Collider collision)

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using TMPro;
+using UnityEditor.SceneTemplate;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -33,6 +34,7 @@ public class SaveLoadManager : MonoBehaviour, IObjectEvent
 
     public RectTransform loadSaveParent;
     public RectTransform saveParent;
+    public RectTransform newSaveParent;
 
 
     public int currentMaxLevel;
@@ -45,7 +47,7 @@ public class SaveLoadManager : MonoBehaviour, IObjectEvent
         UpdateSaveData();
 
         // Possibly move into separate method like UpdateSaveData()
-        // Get current save from save file and array
+        // Get current save from player prefs and array
         if (PlayerPrefs.HasKey(currentSaveName))
         {
             int currentSaveIndex = PlayerPrefs.GetInt(currentSaveName);
@@ -83,7 +85,7 @@ public class SaveLoadManager : MonoBehaviour, IObjectEvent
 
     #region Load Methods
     /// <summary>
-    /// Loads a save (works with only one save currently)
+    /// Loads a save
     /// </summary>
     /// 
     public void LoadSave (int saveIndex)
@@ -172,9 +174,13 @@ public class SaveLoadManager : MonoBehaviour, IObjectEvent
         {
             tempTransform = saveParent;
         }
-        else
+        else if (loadSaveParent.gameObject.activeInHierarchy)
         {
             tempTransform = loadSaveParent;
+        }
+        else
+        {
+            tempTransform = newSaveParent;
         }
 
         Button[] buttons = tempTransform.GetComponentsInChildren<Button>();
@@ -198,6 +204,7 @@ public class SaveLoadManager : MonoBehaviour, IObjectEvent
             buttonsList[i].GetComponentInChildren<TextMeshProUGUI>().text = buttonName;
         }
     }
+
 
     public void ClearSave(int index)
     {
@@ -249,6 +256,17 @@ public class SaveLoadManager : MonoBehaviour, IObjectEvent
         PlayerPrefs.SetInt(saveName, currentMaxLevel);
 
         SceneManager.LoadScene(currentMaxLevel);
+    }
+
+    /// Repurposed ResetMaxLevel to work with new save system
+    /// <summary>
+    /// Reset chosen save index to level 0 and load that level
+    /// </summary>
+    public void ResetMaxLevel(int levelIndex)
+    {
+        ClearSave(levelIndex);
+
+        ResetMaxLevel();
     }
 
     /// <summary>
