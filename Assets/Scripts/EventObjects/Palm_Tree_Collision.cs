@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Palm_Tree_Collision : MonoBehaviour
+public class Palm_Tree_Collision : MonoBehaviour, IHitable
 {
 
     public Animator palmTreeAnimation;
@@ -18,15 +18,11 @@ public class Palm_Tree_Collision : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void IHit()
     {
-        GameObject otherObject = collision.gameObject;
         //Plays the idle animation if the Idle Test Object is touched.
-        if (otherObject.tag == "NormalBolt")
-        {
-            palmTreeAnimation.Play("Palm_Tree_Fall_Down");
-            Debug.Log("Tree is falling");
-        }
+        palmTreeAnimation.Play("Palm_Tree_Fall_Down");
+        Debug.Log("Tree is falling");
         
     }
 
