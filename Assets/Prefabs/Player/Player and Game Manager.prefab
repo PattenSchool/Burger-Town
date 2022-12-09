@@ -211,7 +211,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SFXChannelAmount: 3
-  testClip: {fileID: 0}
 --- !u!224 &4046824368026803547 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3371407030721299053, guid: b7e56b7813d957b4c9c3b0bbd36e606a, type: 3}
@@ -231,6 +230,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3140624440339424698, guid: 78766dd8732bddf4b883424e74c4d324, type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831775728150575592, guid: 78766dd8732bddf4b883424e74c4d324, type: 3}
+      propertyPath: currentQuests.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4738624401157213087, guid: 78766dd8732bddf4b883424e74c4d324, type: 3}
@@ -413,7 +416,6 @@ MonoBehaviour:
   buttonPrefab: {fileID: 6551522282792667498, guid: 7542495be66e6af42826bec3204de693, type: 3}
   loadSaveParent: {fileID: 4046824368026803547}
   saveParent: {fileID: 4046824368043322087}
-  newSaveParent: {fileID: 0}
   currentMaxLevel: 0
 --- !u!4 &4046824366798297095 stripped
 Transform:

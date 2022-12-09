@@ -463,7 +463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossBehaviordata: {fileID: 0}
   shotTriggerTag: shotTrigger
-  delayInSeconds: 19.42
+  delayInSeconds: 4.74
 --- !u!114 &6692626342433309474
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -632,6 +632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5115df51800d645a0d2e99fceb8ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boltSpawnSpace: 1
 --- !u!114 &9134618638964300265
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -644,3 +645,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5115df51800d645a0d2e99fceb8ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boltSpawnSpace: 1
