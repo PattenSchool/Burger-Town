@@ -18,6 +18,11 @@ public class PauseManager : MonoBehaviour
     #region Unity Methods
     private void Start()
     {
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
+
         pauseCanvas = PlayerStatic.UIDisplays.pauseMenu;
         playerHUD = PlayerStatic.UIDisplays.playerHud;
 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class RecoilBolt : BoltTemplate
@@ -31,10 +32,14 @@ public class RecoilBolt : BoltTemplate
     public void ApplyKnockbacRecoil(GameObject firee, Vector3 directionVector)
     {
         //Get the rigid body of the one being launched
-        Rigidbody rb = firee.GetComponent<Rigidbody>();
+        //Rigidbody rb = firee.GetComponent<Rigidbody>();
 
         //Set the initial velocity of the player to launch
-        rb.velocity = directionVector * _initialSpeed;
+        //rb.velocity = directionVector * _initialSpeed;
+
+        firee.GetComponent<rbCharacterController>().boltVelocity = directionVector * _initialSpeed;
+
+        //firee.GetComponent<rbCharacterController>().boltVelocity = Vector3.zero;
     }
     #endregion
 }

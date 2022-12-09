@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -13,8 +14,9 @@ public class AudioManager : MonoBehaviour
 
     private int curSFX = 0;
 
-    [SerializeField]
-    private AudioClip testClip;
+    private AudioSource bgm;
+    private List<AudioClip> tracks = new List<AudioClip> ();
+    private int bgmIndex = 0;
 
     private void Awake()
     {
@@ -30,7 +32,16 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+
+        bgm = gameObject.AddComponent<AudioSource>();
         SFXSources = new AudioSource[SFXChannelAmount];
+
+        if (tracks.Count > 0)
+        {
+            bgm.clip = tracks[0];
+            bgm.volume = SettingsMenu.instance.MusicVolume;
+            bgm.Play();
+        }
 
         for (int i = 0; i < SFXSources.Length; i++)
         {
@@ -40,10 +51,18 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (tracks.Count > 0)
+        {
+            PlayBGMList();
+        }
+    }
+
     public void PlaySFX(AudioClip clip)
     {
         SFXSources[curSFX].clip = clip;
-
+        SFXSources[curSFX].volume = SettingsMenu.instance.SFXVolume;
         SFXSources[curSFX].Play();
 
         curSFX++;
@@ -61,18 +80,50 @@ public class AudioManager : MonoBehaviour
         GO.transform.position = position;
         thing.clip = clip;
         thing.spatialBlend = 1;
+        thing.volume = SettingsMenu.instance.SFXVolume;
         thing.Play();
         StartCoroutine(DestroyAfterTime(GO, clip.length));
-    }
-
-    private void OnEnable()
-    {
-        PlaySFX(testClip, Vector3.zero);
     }
 
     private IEnumerator DestroyAfterTime(GameObject go, float duration)
     {
         yield return new WaitForSeconds(duration);
         Destroy(go);
+    }
+
+    public void AddTrack(AudioClip clip)
+    {
+        tracks.Add(clip);
+    }
+
+    private void PlayBGMList()
+    {
+        if (!bgm.isPlaying)
+        {
+
+            if (tracks.Count > 0)
+            {
+                if (bgmIndex < tracks.Count - 1)
+                {
+                    bgmIndex++;
+                    bgm.clip = tracks[bgmIndex];
+                    bgm.volume = SettingsMenu.instance.MusicVolume;
+                    bgm.Play();
+                }
+                else if (bgmIndex >= tracks.Count - 1)
+                {
+                    bgmIndex = 0;
+                    bgm.clip = tracks[bgmIndex];
+                    bgm.volume = SettingsMenu.instance.MusicVolume;
+                    bgm.Play();
+                }
+            }
+            else
+            {
+                bgm.clip = tracks[0];
+                bgm.volume = SettingsMenu.instance.MusicVolume;
+                bgm.Play();
+            }
+        }
     }
 }

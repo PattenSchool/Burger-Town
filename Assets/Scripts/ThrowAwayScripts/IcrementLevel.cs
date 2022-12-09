@@ -11,7 +11,7 @@ public class IcrementLevel : MonoBehaviour, IObjectEvent
     #region Unity Methods
     public void IOnEventTriggered()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     private void OnCollisionEnter(Collision collision)
     {
