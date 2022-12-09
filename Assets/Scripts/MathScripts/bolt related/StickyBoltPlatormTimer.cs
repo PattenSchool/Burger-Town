@@ -3,6 +3,22 @@ using UnityEngine;
 
 public class StickyBoltPlatormTimer : MonoBehaviour
 {
+    #region timer Variables
+    [Header("Timer")]
+
+    [Tooltip("Timer delaying despawn")]
+    [SerializeField, Min(0.5f)]
+    private float despawnInSeconds = 1f;
+    #endregion
+
+    #region Unity Methods
+    private void OnEnable()
+    {
+        StartCoroutine(DespawnWithTimer(despawnInSeconds));
+    }
+
+    #endregion
+
     #region Despawn Methods
     /// <summary>
     /// Despawns the game obejct with the object pool
@@ -25,6 +41,9 @@ public class StickyBoltPlatormTimer : MonoBehaviour
 
         //Used to despawn the bolt in the object pool
         DespawnFromPool();
+
+        //Double check despawn
+        this.gameObject.SetActive(false);
 
         //A safe gaurd
         yield break;

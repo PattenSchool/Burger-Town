@@ -9,6 +9,7 @@ public class LifeLinkObject : MonoBehaviour, IHitable
     /// </summary>
     public void IHit()
     {
+        this.gameObject.GetComponent<Collider>().enabled = false;
         this.gameObject.SetActive(false);
     }
 }

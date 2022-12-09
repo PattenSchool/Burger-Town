@@ -16,6 +16,14 @@ public class BossBehaviorVariables : MonoBehaviour
         get { return head; }
     }
 
+    [Tooltip("Animation Shell")]
+    [SerializeField]
+    private BossAnimationPlayer animationShell;
+    public BossAnimationPlayer AnimationShell
+    {
+        get { return animationShell; }
+    }
+
     [Tooltip("The ammo the boss uses")]
     [SerializeField]
     private BoltTemplate ammo;
@@ -35,7 +43,7 @@ public class BossBehaviorVariables : MonoBehaviour
 
     #region Boss Data
     [Tooltip("Time between shots in seconds")]
-    [SerializeField, Min(0.1f)]
+    [SerializeField, Min(0.5f)]
     private float timeBetweenShots;
     public float TimeBetweenShots
     {
@@ -50,6 +58,7 @@ public class BossBehaviorVariables : MonoBehaviour
     }
 
     [Tooltip("Objects that, if not existing, destroys the enemy")]
+    [SerializeField]
     private LifeLinkObject[] lifeLinkObejcts;
     public LifeLinkObject[] LifeLinkObjects
     {

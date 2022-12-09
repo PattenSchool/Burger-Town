@@ -109,6 +109,8 @@ public class BoltTemplate : Projectile
         _rigidbody.constraints = RigidbodyConstraints.FreezeRotationX;
         _rigidbody.constraints = RigidbodyConstraints.FreezeRotationZ;
 
+        _rigidbody.useGravity = false;
+
         //Set the maximum time the bolt exists
         StartCoroutine(DespawWithTimer());
     }

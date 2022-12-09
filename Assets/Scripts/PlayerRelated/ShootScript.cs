@@ -66,6 +66,9 @@ public class ShootScript : MonoBehaviour
     [SerializeField]
     private bool isDeveloperMode;
 
+    [SerializeField]
+    private AudioClip shootSFX;
+
     /// <summary>
     /// Generate ammo wanted by the player
     /// </summary>
@@ -133,6 +136,9 @@ public class ShootScript : MonoBehaviour
 
             //Execute the on fire method
             ammo.GetComponent<BoltTemplate>().OnFire(this.gameObject, PlayerStatic.LookingDirectionVector);
+
+            // Plays an audio clip
+            AudioManager.instance.PlaySFX(shootSFX);
 
             //Reset the time
             ResetTimer();

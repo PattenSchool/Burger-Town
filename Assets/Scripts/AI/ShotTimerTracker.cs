@@ -19,6 +19,10 @@ public class ShotTimerTracker : StateMachineBehaviour
     [Tooltip("time between shots in seconds")]
     private float timeBetweenShots = 0f;
 
+    [Tooltip("Shots delay in seconds")]
+    [SerializeField, Min(0f)]
+    private float delayInSeconds = 0f;
+
     [Tooltip("Current time of timer")]
     private float shotTimer = 0f;
 
@@ -27,7 +31,7 @@ public class ShotTimerTracker : StateMachineBehaviour
     /// </summary>
     private void SetShotTimer()
     {
-        shotTimer = timeBetweenShots;
+        shotTimer = timeBetweenShots + delayInSeconds;
     }
 
     /// <summary>
@@ -70,6 +74,8 @@ public class ShotTimerTracker : StateMachineBehaviour
         {
             animator.SetTrigger(shotTriggerTag);
         }
+
+        Debug.Log(shotTimer);
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
