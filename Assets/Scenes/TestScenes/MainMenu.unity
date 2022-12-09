@@ -2382,7 +2382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLevelData: {fileID: 0}
-  gamedata: {fileID: 11400000, guid: 9377a42c48ad97746a1961ff23aa2e42, type: 2}
+  gamedata: {fileID: 11400000, guid: bed510943af20374481cfddf13affe99, type: 2}
   isLevel: 0
   saveName: playerSave
   saveData: {fileID: 11400000, guid: d79b98d99fe1cab449349fdc12326cef, type: 2}
@@ -3762,6 +3762,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoadLevel
       objectReference: {fileID: 0}
+    - target: {fileID: 3429128897365668077, guid: e1889c56d49fa6b41b54d22de1c8b3cd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3429128897365668082, guid: e1889c56d49fa6b41b54d22de1c8b3cd, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4271,6 +4275,10 @@ PrefabInstance:
     - target: {fileID: 5137238077106554428, guid: a92964c2083d8cd4f9367a6e1270311a, type: 3}
       propertyPath: m_Name
       value: LoadSaveMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5137238077106554428, guid: a92964c2083d8cd4f9367a6e1270311a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5137238077106554431, guid: a92964c2083d8cd4f9367a6e1270311a, type: 3}
       propertyPath: m_Pivot.x
