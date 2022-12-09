@@ -31,15 +31,7 @@ public class RecoilBolt : BoltTemplate
     ///     The vector of the firee facing
     public void ApplyKnockbacRecoil(GameObject firee, Vector3 directionVector)
     {
-        //Get the rigid body of the one being launched
-        //Rigidbody rb = firee.GetComponent<Rigidbody>();
-
-        //Set the initial velocity of the player to launch
-        //rb.velocity = directionVector * _initialSpeed;
-
         firee.GetComponent<rbCharacterController>().boltVelocity = directionVector * _initialSpeed;
-
-        //firee.GetComponent<rbCharacterController>().boltVelocity = Vector3.zero;
     }
     #endregion
 }

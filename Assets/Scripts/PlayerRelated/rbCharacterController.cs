@@ -23,8 +23,10 @@ public class rbCharacterController : MonoBehaviour
 
     public Vector3 boltVelocity;
 
-
     public Vector3 outsideVel;
+
+    public float horizontalFriction = 1f;
+    public float verticalFriction = 47f;
     #endregion
 
     #region Character Controller Methods
@@ -119,37 +121,19 @@ public class rbCharacterController : MonoBehaviour
         //To Move
         Vector3 desiredmove = transform.rotation * new Vector3(move.x, 0f, move.y) * speed;
 
-        //Vector3 velocityChange = ((desiredmove + boltVelocity) - currentVelocity);
-
         Vector3 velocityChange = (desiredmove - currentVelocity);
 
         Vector3.ClampMagnitude(velocityChange, maxForce);
 
-        /*
-        if (rb.velocity.magnitude > desiredmove.magnitude)
-        {
-            return;
-        }
-        */
-
-        //Set the velocity
-        //rb.velocity = new Vector3(desiredmove.x + rb.velocity.x, rb.velocity.y, desiredmove.z + rb.velocity.z);
-
-        //Vector3.ClampMagnitude(boltVelocity, maxForce);
-
-
-
-        //Vector3 finalForce = new Vector3(velocityChange.x + boltVelocity.x, 0f + boltVelocity.y, velocityChange.z + boltVelocity.y);
- 
         Vector3 finalForce = new Vector3(velocityChange.x, 0f, velocityChange.z);
 
-        if (boltVelocity.magnitude > 0)
+        if (boltVelocity.magnitude > 0.25f)
         {
-            Vector3 temp = new Vector3(velocityChange.x + boltVelocity.x, Mathf.Lerp(boltVelocity.y, 0, 47.5f * Time.fixedDeltaTime), velocityChange.z + boltVelocity.z);
+            Vector3 temp = new Vector3(velocityChange.x + boltVelocity.x, boltVelocity.y, velocityChange.z + boltVelocity.z);
             rb.AddForce(temp, ForceMode.VelocityChange);
-            //rb.AddForce(finalForce)
-            //StartCoroutine(ResetBoltVelocity());
-            boltVelocity = boltVelocity * Mathf.Lerp(1, 0, 1.5f * Time.fixedDeltaTime);
+            boltVelocity = new Vector3(boltVelocity.x * Mathf.Lerp(1, 0, horizontalFriction * Time.fixedDeltaTime)
+                , boltVelocity.y - Mathf.Lerp(0, boltVelocity.y, verticalFriction * Time.fixedDeltaTime)
+                , boltVelocity.z * Mathf.Lerp(1, 0, horizontalFriction * Time.fixedDeltaTime));
         }
         else
         {
