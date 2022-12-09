@@ -9,38 +9,25 @@ public class ShootState : StateMachineBehaviour
     private BossBehaviorVariables bossBehaviorVariables;
     #endregion
 
-
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if (bossBehaviorVariables == null)
             bossBehaviorVariables = animator.GetComponent<BossBehaviorVariables>();
 
-        //Get the transform's direction
-        Vector3 directionFacing = bossBehaviorVariables.LookingDirection;
-
-        //Fire at the direction being faced
-        var ammoTemplate = bossBehaviorVariables.Ammo;
-        var spawnedAmmo =
-            ObjectPooling.Spawn(ammoTemplate.gameObject, 
-            directionFacing + bossBehaviorVariables.Head.transform.position, bossBehaviorVariables.Head.transform.rotation);
-
-        spawnedAmmo.GetComponent<BoltTemplate>().OnFire(animator.gameObject, directionFacing);
-
-
+        Shoot();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+    }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        
+    }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -53,4 +40,27 @@ public class ShootState : StateMachineBehaviour
     //{
     //    // Implement code that sets up animation IK (inverse kinematics)
     //}
+
+    #region Coroutines
+    
+    private IEnumerable DelayShoot(float delayInSeconds)
+    {
+        yield return new WaitForSeconds(delayInSeconds);
+
+        Shoot();
+    }
+    private void Shoot()
+    {
+        //Get the transform's direction
+        Vector3 directionFacing = bossBehaviorVariables.LookingDirection;
+
+        //Fire at the direction being faced
+        var ammoTemplate = bossBehaviorVariables.Ammo;
+        var spawnedAmmo =
+            ObjectPooling.Spawn(ammoTemplate.gameObject,
+            directionFacing + bossBehaviorVariables.Head.transform.position, bossBehaviorVariables.Head.transform.rotation);
+
+        spawnedAmmo.GetComponent<BoltTemplate>().OnFire(bossBehaviorVariables.Head, directionFacing);
+    }
+    #endregion
 }

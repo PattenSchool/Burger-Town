@@ -12,14 +12,14 @@ public class TestWeakSpot : MonoBehaviour
     {
         // Cannot get IHit to work here, but should function the same as the OnCollisionEnter method.
         Debug.Log("Boss Hit");
-        StartCoroutine(hurtBoss());
+        //StartCoroutine(hurtBoss());
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         // Starts the hurtBoss coroutine animation when the weak spot is hit.
         Debug.Log("Boss Hit");
-        StartCoroutine(hurtBoss());
+        //StartCoroutine(hurtBoss());
     }
 
     IEnumerator hurtBoss()
