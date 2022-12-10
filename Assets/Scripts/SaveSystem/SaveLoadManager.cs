@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using TMPro;
+using UnityEditor.SceneTemplate;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -33,6 +34,7 @@ public class SaveLoadManager : MonoBehaviour, IObjectEvent
 
     public RectTransform loadSaveParent;
     public RectTransform saveParent;
+    public RectTransform newSaveParent;
 
 
     public int currentMaxLevel;
@@ -45,7 +47,7 @@ public class SaveLoadManager : MonoBehaviour, IObjectEvent
         UpdateSaveData();
 
         // Possibly move into separate method like UpdateSaveData()
-        // Get current save from save file and array
+        // Get current save from player prefs and array
         if (PlayerPrefs.HasKey(currentSaveName))
         {
             int currentSaveIndex = PlayerPrefs.GetInt(currentSaveName);
@@ -86,7 +88,7 @@ public class SaveLoadManager : MonoBehaviour, IObjectEvent
     /// Loads a save
     /// </summary>
     /// 
-    public void LoadSave (int saveIndex)
+    public void LoadSave(int saveIndex)
     {
         foreach (SaveData_SO save in saveData.saves)
         {
@@ -139,7 +141,7 @@ public class SaveLoadManager : MonoBehaviour, IObjectEvent
                 buttonInstance.gameObject.SetActive(false);
             }
         }
-        
+
 
         for (int i = 0; i < levelButtons.Count; i++)
         {
@@ -172,9 +174,13 @@ public class SaveLoadManager : MonoBehaviour, IObjectEvent
         {
             tempTransform = saveParent;
         }
-        else
+        else if (loadSaveParent.gameObject.activeInHierarchy)
         {
             tempTransform = loadSaveParent;
+        }
+        else
+        {
+            tempTransform = newSaveParent;
         }
 
         Button[] buttons = tempTransform.GetComponentsInChildren<Button>();
@@ -199,18 +205,19 @@ public class SaveLoadManager : MonoBehaviour, IObjectEvent
         }
     }
 
+
     public void ClearSave(int index)
     {
-        saveData.saves[index - 1].maxLevel = 0;
+        saveData.saves[index - 1].maxLevel = 1;
 
-        PlayerPrefs.SetInt(saveData.saves[index - 1].name + saveData.saves[index - 1].saveIndex, 0);
+        PlayerPrefs.SetInt(saveData.saves[index - 1].name + saveData.saves[index - 1].saveIndex, 1);
 
         foreach (SaveData_SO save in saveData.saves)
         {
             if (save.saveIndex == index)
             {
-                PlayerPrefs.SetInt(save.name + save.saveIndex, 0);
-                save.maxLevel = 0;
+                PlayerPrefs.SetInt(save.name + save.saveIndex, 1);
+                save.maxLevel = 1;
             }
         }
 
@@ -249,6 +256,27 @@ public class SaveLoadManager : MonoBehaviour, IObjectEvent
         PlayerPrefs.SetInt(saveName, currentMaxLevel);
 
         SceneManager.LoadScene(currentMaxLevel);
+    }
+
+    /// Repurposed ResetMaxLevel to work with new save system
+    /// <summary>
+    /// Reset chosen save index to level 0 and load that level
+    /// </summary>
+    public void ResetMaxLevel(int levelIndex)
+    {
+        ClearSave(levelIndex);
+
+        foreach (SaveData_SO save in saveData.saves)
+        {
+            if (save.saveIndex == levelIndex)
+            {
+                currentSaveData = save;
+                PlayerPrefs.SetInt(currentSaveName, currentSaveData.saveIndex);
+                currentMaxLevel = currentSaveData.maxLevel;
+            }
+        }
+
+        ResetMaxLevel();
     }
 
     /// <summary>
@@ -324,7 +352,7 @@ public class SaveLoadManager : MonoBehaviour, IObjectEvent
         SaveLevel();
     }
     #endregion
-    
+
     #region Player Loading
     /// <summary>
     /// Load the player assets
