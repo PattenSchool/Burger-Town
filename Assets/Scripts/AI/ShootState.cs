@@ -9,6 +9,11 @@ public class ShootState : StateMachineBehaviour
     private BossBehaviorVariables bossBehaviorVariables;
     #endregion
 
+    #region Bolt spaceing
+    [SerializeField, Min(1f)]
+    private float boltSpawnSpace = 1f;
+    #endregion
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -58,7 +63,8 @@ public class ShootState : StateMachineBehaviour
         var ammoTemplate = bossBehaviorVariables.Ammo;
         var spawnedAmmo =
             ObjectPooling.Spawn(ammoTemplate.gameObject,
-            directionFacing + bossBehaviorVariables.Head.transform.position, bossBehaviorVariables.Head.transform.rotation);
+            (directionFacing * boltSpawnSpace) + bossBehaviorVariables.Head.transform.position, 
+            bossBehaviorVariables.Head.transform.rotation);
 
         spawnedAmmo.GetComponent<BoltTemplate>().OnFire(bossBehaviorVariables.Head, directionFacing);
     }

@@ -45,11 +45,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLevelData: {fileID: 0}
-  gamedata: {fileID: 11400000, guid: 9377a42c48ad97746a1961ff23aa2e42, type: 2}
+  gamedata: {fileID: 11400000, guid: bed510943af20374481cfddf13affe99, type: 2}
   isLevel: 1
   saveName: playerSave
   saveData: {fileID: 11400000, guid: d79b98d99fe1cab449349fdc12326cef, type: 2}
   currentSaveName: currentSave
   scrollParent: {fileID: 0}
   buttonPrefab: {fileID: 6551522282792667498, guid: 7542495be66e6af42826bec3204de693, type: 3}
+  loadSaveParent: {fileID: 0}
+  saveParent: {fileID: 0}
+  newSaveParent: {fileID: 0}
   currentMaxLevel: 0
