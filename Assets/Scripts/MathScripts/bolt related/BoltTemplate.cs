@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class BoltTemplate : Projectile
 {
     #region Components
@@ -72,6 +72,14 @@ public class BoltTemplate : Projectile
         if (hittableObejct != null && collision.gameObject.tag != PlayerStatic.PlayerTag)
         {
             hittableObejct.IHit();
+        }
+
+        //Reset level if player was hit
+        if (hittableObejct != null && collision.gameObject.tag == PlayerStatic.PlayerTag)
+        {
+            Scene activeScene = SceneManager.GetActiveScene();
+
+            SceneManager.LoadScene(activeScene.name);
         }
 
         //Activate bolt Ihitable

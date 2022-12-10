@@ -48,7 +48,7 @@ public class IngredientCollision : MonoBehaviour
 
                 Debug.Log("Bottom Bun Acquired!");
             }
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
         }
     }
 }

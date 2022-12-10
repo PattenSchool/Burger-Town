@@ -74,8 +74,6 @@ public class ShotTimerTracker : StateMachineBehaviour
         {
             animator.SetTrigger(shotTriggerTag);
         }
-
-        Debug.Log(shotTimer);
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
