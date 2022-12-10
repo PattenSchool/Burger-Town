@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e57333d090fc48c448b53cd96f4be680, type: 3}
-  m_Name: BossPrototype
+  m_Script: {fileID: 11500000, guid: 6e31002ba153d404b80405be71eb360a, type: 3}
+  m_Name: RecoilBoltTutorial
   m_EditorClassIdentifier: 
-  sceneIndex: 4
-  allowedBoltTypes: 1
+  dialogues:
+  - Narrorator: 0
+    text: 'The recoil Bolt can be used to '
