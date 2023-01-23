@@ -138,7 +138,8 @@ public class ShootScript : MonoBehaviour
             ammo.GetComponent<BoltTemplate>().OnFire(this.gameObject, PlayerStatic.LookingDirectionVector);
 
             // Plays an audio clip
-            AudioManager.instance.PlaySFX(shootSFX);
+            if (SettingsMenu.instance != null)
+                AudioManager.instance.PlaySFX(shootSFX);
 
             //Reset the time
             ResetTimer();
