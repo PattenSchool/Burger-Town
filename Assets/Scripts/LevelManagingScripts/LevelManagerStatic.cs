@@ -43,4 +43,11 @@ public static class LevelManagerStatic
             IncrementLevel();
         }
     }
+
+    public static void ResetLevel()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        SceneManager.LoadScene(currentScene.name);
+    }
 }
