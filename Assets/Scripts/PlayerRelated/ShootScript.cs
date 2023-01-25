@@ -169,7 +169,11 @@ public class ShootScript : MonoBehaviour
         else
         {
             if (!isDeveloperMode)
+            {
                 _allowedBolts.Add(defaultBolt);
+                print("default bolt added");
+            }
+                
             else
             {
                 foreach (var bolt in overarchingGameData.boltTemplates)
