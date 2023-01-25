@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HutDoorCollision : MonoBehaviour
+public class HutDoorCollision : MonoBehaviour, IHitable
 {
     // Start is called before the first frame update
     void Start()
@@ -24,12 +24,12 @@ public class HutDoorCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        GameObject otherObject = collision.gameObject;
-        //Plays the idle animation if the Idle Test Object is touched.
-        if (otherObject.tag == "NormalBolt")
-        {
-            this.gameObject.SetActive(false);
-        }
+        //GameObject otherObject = collision.gameObject;
+        ////Plays the idle animation if the Idle Test Object is touched.
+        //if (otherObject.tag == "NormalBolt")
+        //{
+        //    this.gameObject.SetActive(false);
+        //}
 
     }
 
