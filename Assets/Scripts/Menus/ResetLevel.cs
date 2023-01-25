@@ -11,6 +11,8 @@ public class ResetLevel : MonoBehaviour
             LevelManagerStatic.ResetLevel();
     }
 
+    
+
     /// <summary>
     /// Reset the current level
     /// </summary>
