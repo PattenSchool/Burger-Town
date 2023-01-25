@@ -68,6 +68,8 @@ public class BoltTemplate : Projectile
         //Test to see if there is a hitable interface on the other collider
         IHitable hittableObejct = collision.gameObject.GetComponent<IHitable>();
 
+        
+
         //Activate object IHitable
         if (hittableObejct != null && collision.gameObject.tag != PlayerStatic.PlayerTag)
         {
@@ -75,11 +77,13 @@ public class BoltTemplate : Projectile
         }
 
         //Reset level if player was hit
-        if (hittableObejct != null && collision.gameObject.tag == PlayerStatic.PlayerTag)
+        if (collision.gameObject.tag == PlayerStatic.PlayerTag)
         {
+            print(collision.gameObject.tag);
+
             Scene activeScene = SceneManager.GetActiveScene();
 
-            SceneManager.LoadScene(activeScene.name);
+            SceneManager.LoadScene(activeScene.buildIndex);
         }
 
         //Activate bolt Ihitable
