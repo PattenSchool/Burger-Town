@@ -1389,10 +1389,10 @@ MonoBehaviour:
   saveName: playerSave
   saveData: {fileID: 11400000, guid: d79b98d99fe1cab449349fdc12326cef, type: 2}
   currentSaveName: currentSave
-  scrollParent: {fileID: 0}
+  scrollParent: {fileID: 1167254205177598670}
   buttonPrefab: {fileID: 7413462114488744188, guid: f0b5badb3f07d184caec541bc38c46f7, type: 3}
-  loadSaveParent: {fileID: 0}
-  saveParent: {fileID: 0}
+  loadSaveParent: {fileID: 1167254204050473297}
+  saveParent: {fileID: 1167254204947666437}
   newSaveParent: {fileID: 0}
   currentMaxLevel: 0
 --- !u!114 &1977737997339317485
@@ -1523,6 +1523,21 @@ PrefabInstance:
 --- !u!4 &1167254203846160142 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2358237019018862485, guid: efd8ff67f370f2e419ef06cfd33db1ef, type: 3}
+  m_PrefabInstance: {fileID: 3497273330453409947}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1167254204050473297 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2358237019762454986, guid: efd8ff67f370f2e419ef06cfd33db1ef, type: 3}
+  m_PrefabInstance: {fileID: 3497273330453409947}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1167254204947666437 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2358237020119361182, guid: efd8ff67f370f2e419ef06cfd33db1ef, type: 3}
+  m_PrefabInstance: {fileID: 3497273330453409947}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1167254205177598670 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2358237020887605845, guid: efd8ff67f370f2e419ef06cfd33db1ef, type: 3}
   m_PrefabInstance: {fileID: 3497273330453409947}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &1167254205546967415 stripped
