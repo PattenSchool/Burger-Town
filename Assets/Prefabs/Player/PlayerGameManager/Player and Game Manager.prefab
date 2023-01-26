@@ -1470,6 +1470,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8140202511980614736}
     m_Modifications:
+    - target: {fileID: 2358237018976416381, guid: efd8ff67f370f2e419ef06cfd33db1ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1977737995703040195}
+    - target: {fileID: 2358237018976416381, guid: efd8ff67f370f2e419ef06cfd33db1ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: DisplaySaves
+      objectReference: {fileID: 0}
     - target: {fileID: 2358237019018862466, guid: efd8ff67f370f2e419ef06cfd33db1ef, type: 3}
       propertyPath: m_Name
       value: Player Without Game Manager
@@ -1517,6 +1525,22 @@ PrefabInstance:
     - target: {fileID: 2358237019018862485, guid: efd8ff67f370f2e419ef06cfd33db1ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358237019036946903, guid: efd8ff67f370f2e419ef06cfd33db1ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1977737995703040195}
+    - target: {fileID: 2358237019036946903, guid: efd8ff67f370f2e419ef06cfd33db1ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: DisplaySaves
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358237019321712524, guid: efd8ff67f370f2e419ef06cfd33db1ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1977737995703040195}
+    - target: {fileID: 2358237019321712524, guid: efd8ff67f370f2e419ef06cfd33db1ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: DisplaySaves
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efd8ff67f370f2e419ef06cfd33db1ef, type: 3}
