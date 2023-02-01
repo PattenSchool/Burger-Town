@@ -10929,6 +10929,8 @@ GameObject:
   - component: {fileID: 191066524363630038}
   - component: {fileID: 2452607828652030391}
   - component: {fileID: 8665375090775169422}
+  - component: {fileID: 5792181245267777072}
+  - component: {fileID: 4151215550332057543}
   m_Layer: 0
   m_Name: TextPanel
   m_TagString: Untagged
@@ -11009,8 +11011,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textBackground: {fileID: 8763798841918503163}
   text: {fileID: 3413202963971612765}
-  timer: 3
-  textText: []
+  textDisplayIndex: 0
+  conversationStringHolder: []
+  textIndex: 0
+--- !u!114 &5792181245267777072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5111709781677576836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bde05942c17a83b479f3abf8bcf25e30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reticle: {fileID: 4378070938714198781}
+  cooldownDisplay: {fileID: 7210489900901267680}
+  displayWhileConvo: 1
+--- !u!114 &4151215550332057543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5111709781677576836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b56405ebc306c458e68ddc3761af82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 0}
+  textDisplayScript: {fileID: 0}
 --- !u!1 &5523812408578211139
 GameObject:
   m_ObjectHideFlags: 0
