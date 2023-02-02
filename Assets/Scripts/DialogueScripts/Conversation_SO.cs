@@ -79,7 +79,7 @@ public class Conversation_SO : ScriptableObject
     #region Return Text
     public string GetFormattedText(int index)
     {
-        if (dialogues.Count > 0)
+        if (dialogues.Count >= 0)
         {
             //Get the dialogue
             var dialogue = dialogues[index];

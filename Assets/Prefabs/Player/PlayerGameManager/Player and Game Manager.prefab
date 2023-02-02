@@ -2045,7 +2045,7 @@ MonoBehaviour:
   sensitivity: 0.42
   maxForce: 1
   main_camera: {fileID: 1480431237834682416}
-  grounded: 0
+  grounded: 1
   jumpForce: 3
   boltVelocity: {x: 0, y: 0, z: 0}
   outsideVel: {x: 0, y: 0, z: 0}
@@ -10956,7 +10956,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -4.107605, y: -19.5109}
+  m_AnchoredPosition: {x: -4.107666, y: -19.510895}
   m_SizeDelta: {x: 8.2152, y: -441.5627}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &191066524363630038
@@ -11012,7 +11012,6 @@ MonoBehaviour:
   textBackground: {fileID: 8763798841918503163}
   text: {fileID: 3413202963971612765}
   textDisplayIndex: 0
-  conversationStringHolder: []
   textIndex: 0
 --- !u!114 &5792181245267777072
 MonoBehaviour:
@@ -11041,8 +11040,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32b56405ebc306c458e68ddc3761af82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInput: {fileID: 0}
-  textDisplayScript: {fileID: 0}
+  playerInput: {fileID: 1480431235829949233}
+  textDisplayScript: {fileID: 8665375090775169422}
 --- !u!1 &5523812408578211139
 GameObject:
   m_ObjectHideFlags: 0

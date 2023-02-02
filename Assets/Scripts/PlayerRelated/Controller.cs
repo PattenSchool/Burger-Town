@@ -462,7 +462,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Click"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Button"",
                     ""id"": ""e1c66c26-8293-4641-9bae-201ed46580aa"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",

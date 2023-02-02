@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -23,8 +25,6 @@ public class DialogueInputManager : MonoBehaviour
     #endregion
 
     #region Input Sub Parts
-    //!===========Variables and Properties===========!//
-
     //!===================Methods====================!//
     /// <summary>
     /// Sets up the display actions
@@ -32,7 +32,7 @@ public class DialogueInputManager : MonoBehaviour
     private void DisplayActionsSetUp()
     {
         SwitchMapToUI();
-        playerInput.currentActionMap.actions[4].performed += IncrementTextIndex;
+        playerInput.currentActionMap.actions[4].started += IncrementTextIndex;
         SwitchMapToPlayer();
     }
 
@@ -41,17 +41,25 @@ public class DialogueInputManager : MonoBehaviour
     /// </summary>
     private void StopDisplayActionConnection()
     {
-
+        SwitchMapToUI();
+        playerInput.currentActionMap.actions[4].started -= IncrementTextIndex;
+        SwitchMapToPlayer();
     }
 
+    /// <summary>
+    /// Switches the player map to "UI"
+    /// </summary>
     private void SwitchMapToUI()
     {
         playerInput.SwitchCurrentActionMap("UI");
     }
 
+    /// <summary>
+    /// Switches the player map to the default "Player" controller
+    /// </summary>
     private void SwitchMapToPlayer()
     {
-        playerInput.SwitchCurrentActionMap("Player");
+        playerInput.SwitchCurrentActionMap(playerInput.defaultActionMap);
     }
     #endregion
 
@@ -64,9 +72,19 @@ public class DialogueInputManager : MonoBehaviour
     private void IncrementTextIndex(InputAction.CallbackContext cxt)
     {
         if (PlayerStatic.HasConversation())
-            textDisplayScript.IncrementTextIndex();
+           StartCoroutine(IncrementTextIndexTimed());
+    }
 
-        print("It worked");
+    private IEnumerator IncrementTextIndexTimed()
+    {
+        //wait for a small amount of time
+        yield return new WaitForSeconds(0.1f);
+
+        //Increment the text display
+        textDisplayScript.IncrementTextIndex();
+
+        //Cancel any remaining text displays
+        StopAllCoroutines();
     }
     #endregion
 
@@ -84,10 +102,7 @@ public class DialogueInputManager : MonoBehaviour
 
     private void Update()
     {
-        if (PlayerStatic.HasConversation())
-            SwitchMapToUI();
-        else
-            SwitchMapToPlayer();
+        SwitchMap();
     }
 
     /// <summary>
@@ -95,17 +110,39 @@ public class DialogueInputManager : MonoBehaviour
     /// </summary>
     private void OnDisable()
     {
-        //playerInput.actions["UI"].performed-= IncrementTextIndex;
+        StopDisplayActionConnection();
     }
 
-    private void OnDestroy()
-    {
-        //playerInput.actions["UI"].performed -= IncrementTextIndex;
-    }
-
+    /// <summary>
+    //  ?Just in case
+    /// </summary>
     private void OnApplicationQuit()
     {
-        //playerInput.actions["UI"].performed -= IncrementTextIndex;
+        StopDisplayActionConnection();
+    }
+
+    /// <summary>
+    //  ?Just in case
+    /// </summary>
+    private void OnDestroy()
+    {
+        StopDisplayActionConnection();
+    }
+
+    private void OnEnable()
+    {
+        DisplayActionsSetUp();
+    }
+    #endregion
+
+    #region Switch Maps
+    public void SwitchMap()
+    {
+        if (PlayerStatic.HasConversation())
+            SwitchMapToUI();
+        else if (playerInput.currentActionMap.name != playerInput.defaultActionMap
+            && !PlayerStatic.HasConversation())
+            SwitchMapToPlayer();
     }
     #endregion
 }
