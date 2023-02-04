@@ -70,7 +70,7 @@ public class Conversation_SO : ScriptableObject
             Debug.Log("Index Error On Conversation");
             return;
         }
-
+        
         dialogues.RemoveAt(index);
         
     }

@@ -1,62 +1,126 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.ComponentModel;
+using UnityEngine.MathExtensions;
 
 /// <summary>
 /// Displays the dialogue of NPCs
 /// </summary>
 public class NPCDialogueDisplay : MonoBehaviour
 {
-    #region Display Variables
+    #region Display
     //!===========Variables and Properties===========!//
     [Header("UI Elements")]
 
     [Tooltip("The Text display carrying the text")]
     [SerializeField]
-    private TMP_Text textDisplay;
-    #endregion
+    protected TMP_Text textDisplay;
 
-    #region Conversation Variables
-    //!===========Variables and Properties===========!//
-    [Header("Conversation Related")]
-
-    [Tooltip("Possible dialogue options")]
-    [SerializeField]
-    private Conversation_SO npcConversation;
-
-    [Tooltip("Start randomizing at this index onwards" +
-        "if randomizing is greater than possible dialogues, " +
-        "then randomizing doesn't happen.")]
-    [SerializeField]
-    private int startRandomizingAt = 9999;
-    #endregion
-
-    #region Conversation Methods
     //!===================Methods====================!//
     /// <summary>
-    /// Overrides the conversation 
+    /// Displays a dialogue if a conversation exists,
+    ///     else it will print a dialogue
     /// </summary>
-    /// <param name="newConversation"></param>
-    ///     The conversation that is replacing the old or null conversation
-    public void OverrideConversation(Conversation_SO newConversation)
+    public virtual void DisplayDialogue()
     {
-        npcConversation = newConversation;
+        if (conversation != null)
+            textDisplay.text = conversation.GetFormattedText(dialogueIndex);
+        else
+            print($"Conversation at {this.gameObject} does not have a conversation for a dialogue" +
+                $" to diaplay");
     }
 
     /// <summary>
-    /// Returns true if a conversation is in place
+    /// Displays a dialogue with an index
     /// </summary>
-    /// <returns></returns>
-    ///     Returns true if conversation is held
-    public bool HasConversation()
+    /// <param name="index"></param>
+    ///     The index to specify a dialogue is set
+    public void DisplayDialogue(int index)
     {
-        return npcConversation != null;
+        //Sets the index
+        SetDialogueIndex(index);
+
+        //Display the dialogue
+        textDisplay.text = conversation.GetFormattedText(index);
     }
 
+    /// <summary>
+    /// Resets the dialogue display
+    /// </summary>
+    public void ResetDisplay()
+    {
+        textDisplay.text = "";
+    }
+    #endregion
+
+    #region Conversation Related
+    //!===========Variables and Properties===========!//
+    [Header("Conversation Elements")]
+
+    [Tooltip("A conversation that this display is holding")]
+    [SerializeField]
+    protected Conversation_SO conversation;
+
+    //!===================Methods====================!//
+    /// <summary>
+    /// Set's a new conversation
+    /// </summary>
+    /// <param name="newConversation"></param>
+    ///     Get's the conversation
+    public void OverrideConversation(Conversation_SO newConversation)
+    {
+        //Set the dialoge
+        conversation = newConversation;
+    }
+
+    /// <summary>
+    /// Deletes the conversation currently being held
+    /// </summary>
     public void DeleteConversation()
     {
-        npcConversation = null;
+        conversation = null;
+    }
+    #endregion
+
+    #region Index Related
+    //!===========Variables and Properties===========!//
+    [Header("Indexer Elements")]
+
+    [Tooltip("The index of the dialogue")]
+    [SerializeField, Min(0)]
+    protected int dialogueIndex = 0;
+    public int DialogueIndex
+    {
+        get { return dialogueIndex; }
+        set { dialogueIndex = value; }
+    }
+
+    //!===================Methods====================!//
+    public void ResetDialogueIndex()
+    {
+        dialogueIndex = 0;
+    }
+
+    public void IncrementDialogueIndex()
+    {
+        dialogueIndex++;
+    }
+
+    public void DecrementDialogueIndex()
+    {
+        dialogueIndex--;
+    }
+
+    public void SetDialogueIndex(int newIndex)
+    {
+        dialogueIndex = newIndex;
+    }
+    #endregion
+
+    #region Unity Methods
+    private void Awake()
+    {
+        ResetDialogueIndex();
     }
     #endregion
 }
