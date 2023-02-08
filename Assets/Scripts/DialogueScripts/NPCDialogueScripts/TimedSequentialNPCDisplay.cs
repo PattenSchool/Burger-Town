@@ -43,6 +43,8 @@ public class TimedSequentialNPCDisplay : SequentialNPCDialogueDisplay
             yield return new WaitForSeconds(dialogueShownSeconds);
         }
 
+        textDisplay.text = "";
+
         //Reset the text
         ResetDialogueIndex();
         ResetDisplay();
