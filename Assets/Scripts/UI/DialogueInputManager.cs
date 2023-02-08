@@ -41,9 +41,9 @@ public class DialogueInputManager : MonoBehaviour
     /// </summary>
     private void StopDisplayActionConnection()
     {
-        SwitchMapToUI();
-        playerInput.currentActionMap.actions[4].started -= IncrementTextIndex;
-        SwitchMapToPlayer();
+        //SwitchMapToUI();
+        //playerInput.currentActionMap.actions[4].started -= IncrementTextIndex;
+        //SwitchMapToPlayer();
     }
 
     /// <summary>

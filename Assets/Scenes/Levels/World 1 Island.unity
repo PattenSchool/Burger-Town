@@ -159,12 +159,13 @@ MonoBehaviour:
   grabTargetObj: {fileID: 0}
   grabTag: PhysObject
   ObtainableTag: Obtainable
-  grabDistance: 0
   throwForce: 10
   orbitForce: 20
+  grabDistance: 0
   disconnectDistance: 1
   grabObject: {fileID: 0}
   currentItem: {fileID: 0}
+  transparencyMat: {fileID: 0}
 --- !u!54 &21934065
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -320,6 +321,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba8096c7aac47d84e92e4de4301ed91c, type: 3}
+--- !u!1001 &89306286
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 690518336266648764, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 690518336266648764, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 230.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 690518336266648764, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 13.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 690518336266648764, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 116.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 690518336266648764, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 690518336266648764, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690518336266648764, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690518336266648764, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690518336266648764, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690518336266648764, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690518336266648764, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 690518336266648766, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
+      propertyPath: m_Name
+      value: RequiredObjects
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
 --- !u!1 &124155507
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,12 +414,13 @@ MonoBehaviour:
   grabTargetObj: {fileID: 0}
   grabTag: PhysObject
   ObtainableTag: Obtainable
-  grabDistance: 0
   throwForce: 10
   orbitForce: 20
+  grabDistance: 0
   disconnectDistance: 1
   grabObject: {fileID: 0}
   currentItem: {fileID: 0}
+  transparencyMat: {fileID: 0}
 --- !u!54 &124155509
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -775,7 +834,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3789020055782449738, guid: ca81b971d796a09429960b03b83b3223, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3789020055782449738, guid: ca81b971d796a09429960b03b83b3223, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1326,7 +1385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4221802960801118, guid: c59495df3c5f36747a7e65f00e6d508d, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4221802960801118, guid: c59495df3c5f36747a7e65f00e6d508d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1607,12 +1666,13 @@ MonoBehaviour:
   grabTargetObj: {fileID: 0}
   grabTag: PhysObject
   ObtainableTag: Obtainable
-  grabDistance: 0
   throwForce: 10
   orbitForce: 20
+  grabDistance: 0
   disconnectDistance: 1
   grabObject: {fileID: 0}
   currentItem: {fileID: 0}
+  transparencyMat: {fileID: 0}
 --- !u!54 &905559739
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1839,7 +1899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4221802960801118, guid: c59495df3c5f36747a7e65f00e6d508d, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4221802960801118, guid: c59495df3c5f36747a7e65f00e6d508d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2347,7 +2407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4221802960801118, guid: c59495df3c5f36747a7e65f00e6d508d, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4221802960801118, guid: c59495df3c5f36747a7e65f00e6d508d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2589,63 +2649,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   palmTreeAnimation: {fileID: 1038197085}
---- !u!1001 &1318448724
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2358237019018862466, guid: efd8ff67f370f2e419ef06cfd33db1ef, type: 3}
-      propertyPath: m_Name
-      value: Player Without Game Manager
-      objectReference: {fileID: 0}
-    - target: {fileID: 2358237019018862485, guid: efd8ff67f370f2e419ef06cfd33db1ef, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2358237019018862485, guid: efd8ff67f370f2e419ef06cfd33db1ef, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 228.592
-      objectReference: {fileID: 0}
-    - target: {fileID: 2358237019018862485, guid: efd8ff67f370f2e419ef06cfd33db1ef, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.268
-      objectReference: {fileID: 0}
-    - target: {fileID: 2358237019018862485, guid: efd8ff67f370f2e419ef06cfd33db1ef, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 131.455
-      objectReference: {fileID: 0}
-    - target: {fileID: 2358237019018862485, guid: efd8ff67f370f2e419ef06cfd33db1ef, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9834136
-      objectReference: {fileID: 0}
-    - target: {fileID: 2358237019018862485, guid: efd8ff67f370f2e419ef06cfd33db1ef, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2358237019018862485, guid: efd8ff67f370f2e419ef06cfd33db1ef, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.18137738
-      objectReference: {fileID: 0}
-    - target: {fileID: 2358237019018862485, guid: efd8ff67f370f2e419ef06cfd33db1ef, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2358237019018862485, guid: efd8ff67f370f2e419ef06cfd33db1ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2358237019018862485, guid: efd8ff67f370f2e419ef06cfd33db1ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 20.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2358237019018862485, guid: efd8ff67f370f2e419ef06cfd33db1ef, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: efd8ff67f370f2e419ef06cfd33db1ef, type: 3}
 --- !u!1001 &1319469896
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2954,7 +2957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4221802960801118, guid: c59495df3c5f36747a7e65f00e6d508d, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4221802960801118, guid: c59495df3c5f36747a7e65f00e6d508d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3073,7 +3076,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3789020055782449738, guid: f3c5c4a80684d554982dde2f2fe241c4, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3789020055782449738, guid: f3c5c4a80684d554982dde2f2fe241c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3157,12 +3160,13 @@ MonoBehaviour:
   grabTargetObj: {fileID: 0}
   grabTag: PhysObject
   ObtainableTag: Obtainable
-  grabDistance: 0
   throwForce: 10
   orbitForce: 20
+  grabDistance: 0
   disconnectDistance: 1
   grabObject: {fileID: 0}
   currentItem: {fileID: 0}
+  transparencyMat: {fileID: 0}
 --- !u!54 &1724184676
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3776,12 +3780,13 @@ MonoBehaviour:
   grabTargetObj: {fileID: 0}
   grabTag: PhysObject
   ObtainableTag: Obtainable
-  grabDistance: 0
   throwForce: 10
   orbitForce: 20
+  grabDistance: 0
   disconnectDistance: 1
   grabObject: {fileID: 0}
   currentItem: {fileID: 0}
+  transparencyMat: {fileID: 0}
 --- !u!54 &1951586184
 Rigidbody:
   m_ObjectHideFlags: 0

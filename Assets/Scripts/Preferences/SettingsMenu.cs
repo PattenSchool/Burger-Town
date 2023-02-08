@@ -99,7 +99,8 @@ public class SettingsMenu : MonoBehaviour
 
         PlayerPrefs.SetFloat(SensitivityName, sensitivity);
 
-        PlayerStatic.Player.GetComponent<rbCharacterController>().sensitivity = sensitivity;
+        if (PlayerStatic.Player != null)
+            PlayerStatic.Player.GetComponent<rbCharacterController>().sensitivity = sensitivity;
     }
 
 }
