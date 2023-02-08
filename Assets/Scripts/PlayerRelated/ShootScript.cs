@@ -221,7 +221,7 @@ public class ShootScript : MonoBehaviour
     public void DisplayTimer(float cooldown)
     {
         // If statement checks if cooldown is above 0 (in testing I found it goes into negatives)
-        if (cooldown < 0)
+        if (cooldown < -1f)
         {
             cooldownReticle.enabled = false;
         }
