@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.MathExtensions;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using TMPro;
 
 [RequireComponent(typeof(Rigidbody))]
 public class ShootScript : MonoBehaviour
@@ -16,6 +18,10 @@ public class ShootScript : MonoBehaviour
     [Tooltip("The time between shots in seconds")]
     [SerializeField]
     private float timeBetweenShots = 1f;
+
+    [Tooltip("The Cooldown reticle hud")]
+    [SerializeField]
+    private Image cooldownReticle;
 
     /// <summary>
     /// Updates the timeRemaining varaible.
@@ -111,6 +117,9 @@ public class ShootScript : MonoBehaviour
     {
         //Update the timer
         UpdateTimer(Time.deltaTime);
+
+        //Displays the timer on the hud
+        DisplayTimer(timeRemaining);
     }
     #endregion
 
@@ -138,7 +147,8 @@ public class ShootScript : MonoBehaviour
             ammo.GetComponent<BoltTemplate>().OnFire(this.gameObject, PlayerStatic.LookingDirectionVector);
 
             // Plays an audio clip
-            AudioManager.instance.PlaySFX(shootSFX);
+            if (SettingsMenu.instance != null)
+                AudioManager.instance.PlaySFX(shootSFX);
 
             //Reset the time
             ResetTimer();
@@ -159,7 +169,11 @@ public class ShootScript : MonoBehaviour
         else
         {
             if (!isDeveloperMode)
+            {
                 _allowedBolts.Add(defaultBolt);
+                print("default bolt added");
+            }
+                
             else
             {
                 foreach (var bolt in overarchingGameData.boltTemplates)
@@ -196,6 +210,30 @@ public class ShootScript : MonoBehaviour
 
             //Assign the bolt index to the script variable
             currentBoltIndex = newBoltIndex;
+        }
+    }
+
+    /// <summary>
+    /// Display the shooting cooldown on the hud
+    /// </summary>
+    /// <param name="cooldown"></param>
+    ///     The time remaining until the next shot
+    public void DisplayTimer(float cooldown)
+    {
+        // If statement checks if cooldown is above 0 (in testing I found it goes into negatives)
+        if (cooldown < -1f)
+        {
+            cooldownReticle.enabled = false;
+        }
+        // Displays reticle if cooldown is above 0
+        else
+        {
+            cooldownReticle.enabled = true;
+
+            // The fill amount is the current rotation of the cooldown reticle
+            // this is a ratio of the current cooldown divided by the default time between shots
+            // this isn't necessary right now since the default time is one but just in case we change that.
+            cooldownReticle.fillAmount = cooldown / timeBetweenShots;
         }
     }
     #endregion

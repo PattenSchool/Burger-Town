@@ -77,7 +77,6 @@ public class rbCharacterController : MonoBehaviour
         Quaternion rotation = transform.rotation;
         float distance = 1f;
 
-
         return Physics.BoxCast(center, halfExtents, direction, rotation, distance);
     }
 

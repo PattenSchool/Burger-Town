@@ -8,8 +8,10 @@ public class ResetLevel : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == PlayerStatic.PlayerTag)
-            ResetCurrentLevel();
+            LevelManagerStatic.ResetLevel();
     }
+
+    
 
     /// <summary>
     /// Reset the current level

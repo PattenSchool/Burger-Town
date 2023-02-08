@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class AudioManager : MonoBehaviour
     private AudioSource bgm;
     private List<AudioClip> tracks = new List<AudioClip> ();
     private int bgmIndex = 0;
+    private float currentTime;
 
     private void Awake()
     {
@@ -35,6 +37,11 @@ public class AudioManager : MonoBehaviour
 
         bgm = gameObject.AddComponent<AudioSource>();
         SFXSources = new AudioSource[SFXChannelAmount];
+
+        // Allows for the volume to update when game is paused
+        // This was why the volume was not updating in the settings menu
+        bgm.velocityUpdateMode = AudioVelocityUpdateMode.Dynamic;
+
 
         if (tracks.Count > 0)
         {
@@ -58,6 +65,8 @@ public class AudioManager : MonoBehaviour
             PlayBGMList();
         }
     }
+
+
 
     public void PlaySFX(AudioClip clip)
     {
@@ -124,6 +133,14 @@ public class AudioManager : MonoBehaviour
                 bgm.volume = SettingsMenu.instance.MusicVolume;
                 bgm.Play();
             }
+        }
+    }
+
+    public void UpdateBGM(float volume)
+    {
+        if (bgm)
+        {
+            bgm.volume = volume;
         }
     }
 }

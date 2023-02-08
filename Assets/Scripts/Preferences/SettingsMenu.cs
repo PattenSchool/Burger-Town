@@ -15,9 +15,13 @@ public class SettingsMenu : MonoBehaviour
 
     public TextMeshProUGUI sfxText;
 
+    public TextMeshProUGUI sensText;
+
     public UnityEngine.UI.Slider musicSlider;
 
     public UnityEngine.UI.Slider sfxSlider;
+
+    public UnityEngine.UI.Slider sensSlider;
 
     public float MusicVolume = 0.05f;
 
@@ -25,7 +29,11 @@ public class SettingsMenu : MonoBehaviour
 
     public float SFXVolume = 0.05f;
 
+    public float sensitivity;
+
     public string SFXName = "SFX";
+
+    public string SensitivityName = "Sensitivity";
 
     private void Awake()
     {
@@ -53,35 +61,16 @@ public class SettingsMenu : MonoBehaviour
 
             sfxSlider.value = SFXVolume * 100f;
         }
-    }
 
-    /*
-    [RuntimeInitializeOnLoadMethod]
-    static void SetMusic()
-    {
-        if (PlayerPrefs.HasKey("Music"))
+        if (PlayerPrefs.HasKey(SensitivityName))
         {
-            //AudioListener.volume = PlayerPrefs.GetFloat("Music");
-        }
-        else
-        {
-            //AudioListener.volume = 0.01f;
-        }
-    }
+            sensitivity = PlayerPrefs.GetFloat(SensitivityName);
 
-    [RuntimeInitializeOnLoadMethod]
-    static void SetSFX()
-    {
-        if (PlayerPrefs.HasKey("SFX"))
-        {
-            //AudioListener.volume = PlayerPrefs.GetFloat("SFX");
-        }
-        else
-        {
-            //AudioListener.volume = 0.01f;
+            sensSlider.value = sensitivity * 100f;
+
+            PlayerStatic.Player.GetComponent<rbCharacterController>().sensitivity = sensitivity;
         }
     }
-    */
 
 
     public void SetMusicVolume(float value)
@@ -89,9 +78,9 @@ public class SettingsMenu : MonoBehaviour
         musicText.text = value.ToString("N0");
         MusicVolume = value / 100;
 
-        //AudioListener.volume = MusicVolume;
-
         PlayerPrefs.SetFloat(MusicName, MusicVolume);
+
+        AudioManager.instance.UpdateBGM(MusicVolume);
     }
 
     public void SetSFXVolume(float value)
@@ -99,9 +88,18 @@ public class SettingsMenu : MonoBehaviour
         sfxText.text = value.ToString("N0");
         SFXVolume = value / 100;
 
-        //AudioListener.volume = MusicVolume;
-
         PlayerPrefs.SetFloat(SFXName, SFXVolume);
+    }
+
+    public void SetSensitivity(float value)
+    {
+        sensText.text = value.ToString("N0");
+
+        sensitivity = value / 100;
+
+        PlayerPrefs.SetFloat(SensitivityName, sensitivity);
+
+        PlayerStatic.Player.GetComponent<rbCharacterController>().sensitivity = sensitivity;
     }
 
 }

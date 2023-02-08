@@ -1,11 +1,14 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Used to display the ui of the player
+/// </summary>
 public class MainTextDisplay : MonoBehaviour
 {
     #region Text Components
+    //!===========Variables and Properties===========!//
     [Header("Text Components")]
 
     [Tooltip("The background the text sets on")]
@@ -15,101 +18,95 @@ public class MainTextDisplay : MonoBehaviour
     [Tooltip("The text to be displayed")]
     [SerializeField]
     private TMP_Text text;
-    #endregion
 
-    #region Timer Variables
-    [Header("TImer variables")]
-
-    [Tooltip("The timer for display in seconds")]
-    [SerializeField, Min(0.1f)]
-    private float timer = 0f;
-    #endregion
-
-    #region Conversation Strings
-    [Header("Conversation strings")]
-
+    [Tooltip("The text being looked at")]
     [SerializeField]
-    private string[] textText = new string[0];
+    private int textDisplayIndex = 0;
+    #endregion
 
-    private Conversation_SO analyzedConvo;
+    #region Text Index and Get Method
+    //!===========Variables and Properties===========!//
+    [Header("Text Index")]
+
+    [Tooltip("The index of the text")]
+    [SerializeField]
+    private int textIndex = 0;
+
+    //!===================Methods====================!//
+    /// <summary>
+    /// Increases the text index by 1
+    /// </summary>
+    public void IncrementTextIndex()
+    {
+        textIndex++;
+    }
+
+    /// <summary>
+    /// Gets the text index
+    /// </summary>
+    /// <returns></returns>
+    public int GetTextIndex()
+    {
+        return textIndex;
+    }
+
+    /// <summary>
+    /// Decreases the text index by 1
+    /// </summary>
+    public void DecrementTextIndex()
+    {
+        textIndex--;
+    }
+    #endregion
+
+    #region Text Display
+    //!===================Methods====================!//
+    private void DisplayConversation()
+    {
+        //Get's a temp conversation
+        Conversation_SO playerConversation = new();
+
+        //Safe gaurd if player doesn't have a conversation
+        if (!PlayerStatic.HasConversation())
+            return;
+        else
+            playerConversation = PlayerStatic.Conversation;
+
+        //If text conversation is over the allowed amount, then safegaurd
+        if (textIndex >= playerConversation.ConversationLength)
+        {
+            ResetTextElements();
+            return;
+        }
+
+        //Set text and text background active if not active already
+        if (textBackground.activeInHierarchy == false)
+            textBackground.SetActive(true);
+
+        //Set text
+        text.text = playerConversation.GetFormattedText(textIndex);
+    }
     #endregion
 
     #region Unity Methods
-    private void Awake()
+    private void Start()
     {
         PlayerStatic.DeleteConversation();
-        ResetTextElements();
     }
 
-    private void Update()
+    private void LateUpdate()
     {
-        if (!PlayerStatic.HasConversation())
-        {
-            ResetTextElements();
-        }
-        else if (!textBackground.activeInHierarchy && PlayerStatic.HasConversation())
-        {
-            textBackground.SetActive(true);
-            StartCoroutine(DisplayDialogue());
-        }
-
-        else if (PlayerStatic.Conversation != analyzedConvo)
-        {
-            StopAllCoroutines();
-            ResetTextElements();
-            textBackground.SetActive(true);
-            StartCoroutine(DisplayDialogue());
-        }
+        DisplayConversation();
     }
     #endregion
 
-    #region Edit Text
-    private IEnumerator DisplayDialogue()
-    {
-        analyzedConvo = PlayerStatic.Conversation;
-
-        MakeTextArray(PlayerStatic.Conversation);
-
-        for(int i = 0; i < textText.Length; i++)
-        {
-
-            if (!PlayerStatic.HasConversation())
-            {
-                yield break;
-            }
-
-            text.text = textText[i];
-
-            yield return new WaitForSeconds(timer);
-
-        }
-
-        PlayerStatic.DeleteConversation();
-
-        ResetTextElements();
-
-        textText = new string[0];
-    }
-
-    private void MakeTextArray(Conversation_SO tempConvo)
-    {
-        textText = new string[tempConvo.ConversationLength];
-
-
-        for (int i = 0; i < tempConvo.ConversationLength; i++)
-        {
-            textText[i] = tempConvo.GetFormattedText(i);
-        }
-    }
-    #endregion
-
-    #region Reset Text Elements
+    #region Reset text elements
+    //!===================Methods====================!//
     private void ResetTextElements()
     {
-        StopCoroutine(DisplayDialogue());
+        textIndex = 0;
+        PlayerStatic.DeleteConversation();
         textBackground.SetActive(false);
-        analyzedConvo = null;
     }
-
     #endregion
 }

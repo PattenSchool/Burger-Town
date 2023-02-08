@@ -34,4 +34,26 @@ public class RecoilBolt : BoltTemplate
         firee.GetComponent<rbCharacterController>().boltVelocity = directionVector * _initialSpeed;
     }
     #endregion
+
+    /// <summary>
+    /// Used to apply the hitted effect when the bolt hits something
+    /// </summary>
+    /// <param name="collision"></param>
+    ///     The info of the game object being collided
+    protected void OnCollisionEnter(Collision collision)
+    {
+        //Test to see if there is a hitable interface on the other collider
+        IHitable hittableObejct = collision.gameObject.GetComponent<IHitable>();
+
+
+
+        //Activate object IHitable
+        if (hittableObejct != null && collision.gameObject.tag != PlayerStatic.PlayerTag)
+        {
+            hittableObejct.IHit();
+        }
+
+        //Activate bolt Ihitable
+        IHit();
+    }
 }
