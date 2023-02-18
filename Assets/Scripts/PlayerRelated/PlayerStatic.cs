@@ -92,6 +92,14 @@ public class PlayerStatic
             return _shootScript.GetSelectedBolt();
         }
     }
+
+    public static GameObject DefaultBolt
+    {
+        get
+        {
+            return _shootScript.GetDefaultBolt();
+        }
+    }
     #endregion
 
     #region UIElements
