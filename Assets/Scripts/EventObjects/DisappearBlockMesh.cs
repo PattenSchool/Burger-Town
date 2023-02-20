@@ -10,6 +10,7 @@ public class DisappearBlockMesh : MonoBehaviour
     void Start()
     {
         blockMesh = this.gameObject.GetComponent<MeshRenderer>();
+        meshVisible = false;
     }
 
     // Update is called once per frame
