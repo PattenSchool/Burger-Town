@@ -10,25 +10,25 @@ public class PlatformChangeManager : MonoBehaviour
 
     [Tooltip("Platforms that appear if the default bolt is switched to")]
     [SerializeField]
-    private GameObject[] defaultBoltPlatforms;
+    protected GameObject[] defaultBoltPlatforms;
 
     [Tooltip("Platforms that change if not the default bolt is switched to")]
     [SerializeField]
-    private GameObject[] altBoltPlatforms;
+    protected GameObject[] altBoltPlatforms;
 
     [Tooltip("If on default or not")]
     [SerializeField]
-    private bool isDefault = true;
+    protected bool isDefault = true;
     #endregion
 
     #region Unity Methods
-    private void Start()
+    protected void Start()
     {
         if (!IsListsNull())
             SetAppropriatePlatformsNoSafegaurd();
     }
 
-    private void Update()
+    protected void Update()
     {
         //Set the platform bool
         SetDefaultPlatformBool();
@@ -42,12 +42,12 @@ public class PlatformChangeManager : MonoBehaviour
     /// <summary>
     /// Set the default boolean check
     /// </summary>
-    private void SetDefaultPlatformBool()
+    protected virtual void SetDefaultPlatformBool()
     {
         isDefault = (PlayerStatic.BoltSelected.name == PlayerStatic.DefaultBolt.name);
     }
 
-    private void SetAppropriatePlatformsNoSafegaurd()
+    protected virtual void SetAppropriatePlatformsNoSafegaurd()
     {
         //Set the propper platform for default platforms
         foreach (var defaultPlatform in defaultBoltPlatforms)
@@ -65,10 +65,8 @@ public class PlatformChangeManager : MonoBehaviour
     /// <summary>
     /// Sets the propper platforms to the 
     /// </summary>
-    private void SetAppropriatePlatforms()
+    protected virtual void SetAppropriatePlatforms()
     {
-        print(IsPropperPlatformsAlreadyEnabled());
-
         //Safegaurd against null
         if (IsListsNull())
         {
@@ -92,7 +90,7 @@ public class PlatformChangeManager : MonoBehaviour
     /// Checks if either platform lists is null or empty
     /// </summary>
     /// <returns></returns>
-    private bool IsListsNull()
+    protected virtual bool IsListsNull()
     {
         //Safegaurd against length
         if ((defaultBoltPlatforms.Length * altBoltPlatforms.Length) == 0)
@@ -118,7 +116,7 @@ public class PlatformChangeManager : MonoBehaviour
     /// Returns true if propper platforms were already enabled
     /// </summary>
     /// <returns></returns>
-    private bool IsPropperPlatformsAlreadyEnabled()
+    protected virtual bool IsPropperPlatformsAlreadyEnabled()
     {
         //If default and enabled, then return true
         if (defaultBoltPlatforms[0].activeInHierarchy && isDefault)
