@@ -80,8 +80,6 @@ public class PlatformChangeManager : MonoBehaviour
         }
 
         SetAppropriatePlatformsNoSafegaurd();
-
-        print("Bolt thing switched");
     }
     #endregion
 
