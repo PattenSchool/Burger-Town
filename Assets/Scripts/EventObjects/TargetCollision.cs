@@ -31,5 +31,6 @@ public class TargetCollision : MonoBehaviour, IHitable
     {
         // Lowers the targetNum counter in the GateTrigger script by 1.
         GateTrigger.targetNum-= 1;
+        BridgeRiseTrigger.targetNum -= 1;
     }
 }

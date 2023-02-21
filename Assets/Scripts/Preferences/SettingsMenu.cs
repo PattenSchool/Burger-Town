@@ -35,7 +35,7 @@ public class SettingsMenu : MonoBehaviour
 
     public string SensitivityName = "Sensitivity";
 
-    private void Awake()
+    private void Start()
     {
         if (SettingsMenu.instance == null)
         {
@@ -62,14 +62,14 @@ public class SettingsMenu : MonoBehaviour
             sfxSlider.value = SFXVolume * 100f;
         }
 
-        if (PlayerPrefs.HasKey(SensitivityName))
-        {
-            sensitivity = PlayerPrefs.GetFloat(SensitivityName);
+        
+        sensitivity = PlayerPrefs.GetFloat(SensitivityName, 0.5f);
 
-            sensSlider.value = sensitivity * 100f;
+        sensSlider.value = sensitivity * 100f;
 
+        if (PlayerStatic.Player != null)
             PlayerStatic.Player.GetComponent<rbCharacterController>().sensitivity = sensitivity;
-        }
+        
     }
 
 
@@ -99,7 +99,8 @@ public class SettingsMenu : MonoBehaviour
 
         PlayerPrefs.SetFloat(SensitivityName, sensitivity);
 
-        PlayerStatic.Player.GetComponent<rbCharacterController>().sensitivity = sensitivity;
+        if (PlayerStatic.Player != null)
+            PlayerStatic.Player.GetComponent<rbCharacterController>().sensitivity = sensitivity;
     }
 
 }
