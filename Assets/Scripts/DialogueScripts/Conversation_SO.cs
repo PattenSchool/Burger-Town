@@ -20,7 +20,7 @@ public class Conversation_SO : ScriptableObject
         {
             None,
             Player,
-            Mayor_Mayonase,
+            Mayor_Mayonnaise,
             Boss
         }
         //adsf
