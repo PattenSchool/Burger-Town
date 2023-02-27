@@ -10,6 +10,7 @@ public class DisappearBlockMesh : MonoBehaviour
     void Start()
     {
         blockMesh = this.gameObject.GetComponent<MeshRenderer>();
+        meshVisible = false;
     }
 
     // Update is called once per frame
@@ -23,10 +24,18 @@ public class DisappearBlockMesh : MonoBehaviour
         if (meshVisible == true)
         {
             blockMesh.enabled = true;
+
+            // enabled box collider
+            // was going to disable gameobject but since this script is attached
+            // that won't be possible
+            this.GetComponent<BoxCollider>().enabled = true;
         }
         else
         {
             blockMesh.enabled = false;
+
+            // disabled box collider
+            this.GetComponent<BoxCollider>().enabled = false;
         }
     }
 }
