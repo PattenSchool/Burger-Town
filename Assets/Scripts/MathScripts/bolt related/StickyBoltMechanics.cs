@@ -107,15 +107,5 @@ public class StickyBoltMechanics : BoltTemplate
             _rigidbody.constraints = RigidbodyConstraints.None;
         }
     }
-
-
-    /// <summary>
-    /// Returns the current plaform of a shot bolt
-    /// </summary>
-    /// <param name="_spawnedPlatform"></param>
-    public GameObject GetPlatform()
-    {
-        return _spawnedPlatform;
-    }
     #endregion
 }
