@@ -7,6 +7,10 @@ using UnityEngine.MathExtensions;
 
 public class rbCharacterController : MonoBehaviour
 {
+    #region Debug
+
+    #endregion
+
     #region Variables
     public Rigidbody rb;
     public float defaultSpeed;
@@ -79,26 +83,6 @@ public class rbCharacterController : MonoBehaviour
 
         return Physics.BoxCast(center, halfExtents, direction, rotation, distance);
     }
-
-    //void Move()
-    //{
-    //    //To move (in tutorial)
-    //    Vector3 currentVelocity = rb.velocity;
-    //    Vector3 targetVelocity = new Vector3(move.x, 0f, move.y);
-    //    targetVelocity *= speed;
-
-    //    //Align direction
-    //    targetVelocity = transform.TransformDirection(targetVelocity);
-
-    //    //Calculate forces
-    //    Vector3 velocityChange = (targetVelocity - currentVelocity);
-    //    velocityChange = new Vector3(velocityChange.x, 0f, velocityChange.z);
-
-    //    //Limit force
-    //    Vector3.ClampMagnitude(velocityChange, maxForce);
-
-    //    rb.AddForce(velocityChange, ForceMode.VelocityChange);
-    //}
     #endregion
 
     #region Unity Methods
@@ -152,6 +136,7 @@ public class rbCharacterController : MonoBehaviour
 
     void LateUpdate()                                                                                         //move camera after rest of scene has been updated
     {
+        
         transform.Rotate(Vector3.up * look.x * sensitivity);                                                                         //turn player on up axis
 
         lookRotation +=(-look.y * sensitivity);                                                                                               //player looks up and down
