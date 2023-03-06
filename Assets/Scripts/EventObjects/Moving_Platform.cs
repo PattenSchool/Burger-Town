@@ -68,16 +68,19 @@ public class Moving_Platform : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Checks if the object colliding is not a sticky bolt or platform
-        if (other.tag != "StickyPlatform" || other.tag != "StickyPlatform")
+        if (other.gameObject.layer == 3)
         {
-            // Makes the player's transform into the moving platform's transform.
-            other.gameObject.transform.parent = this.transform;
-        }
+            // Checks if the object colliding is not a sticky bolt or platform
+            if (other.tag != "StickyPlatform" || other.tag != "StickyPlatform")
+            {
+                // Makes the player's transform into the moving platform's transform.
+                other.gameObject.transform.parent = this.transform;
+            }
 
-        if (other.tag == "StickyPlatform")
-        {
-            currentStickyPlatform = other.gameObject;
+            if (other.tag == "StickyPlatform")
+            {
+                currentStickyPlatform = other.gameObject;
+            }
         }
     }
 
