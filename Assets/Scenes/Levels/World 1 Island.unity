@@ -4866,7 +4866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4531ff2a79e8c8c4e9a70e7d5b874e01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toolModeInt: 0
+  toolModeInt: 2
   erosionTypeInt: 0
   generatorTypeInt: 0
   isBrushOn: 0
@@ -4909,10 +4909,15 @@ MonoBehaviour:
   windCapacity: 0.01
   windEntropy: 0.1
   windSmoothing: 0.25
-  terrainLayers: []
+  terrainLayers:
+  - {fileID: 8574412962073106934, guid: fbde1b502fa0e8a4586ba3cacc8c055b, type: 2}
+  - {fileID: 8574412962073106934, guid: cf4993dab5a1e2c4098946ceef4e9aee, type: 2}
+  - {fileID: 8574412962073106934, guid: 74d7edb531194d14c9037f7d551661da, type: 2}
   slopeBlendMinAngle: 60
   slopeBlendMaxAngle: 75
-  heightBlendPoints: []
+  heightBlendPoints:
+  - 0.33
+  - 0.66
   gradientStyles: []
   voronoiTypeInt: 0
   voronoiCells: 16
