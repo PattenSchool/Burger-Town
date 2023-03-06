@@ -7,9 +7,6 @@ using UnityEngine.MathExtensions;
 
 public class rbCharacterController : MonoBehaviour
 {
-    #region Debug
-
-    #endregion
 
     #region Variables
     public Rigidbody rb;
@@ -97,7 +94,7 @@ public class rbCharacterController : MonoBehaviour
     private void FixedUpdate()
     {
         //Set the ground state
-        SetGrounded(CheckGrounded());
+        SetGrounded(PlayerStatic.IsGrounded);
 
         Vector3 currentVelocity = rb.velocity;
 
