@@ -22,6 +22,9 @@ public class rbCharacterController : MonoBehaviour
     public bool grounded;
     public float jumpForce;
 
+    //[HideInInspector] public bool isLaunchedByCannon = false;
+    public bool isLaunchedByCannon = false;
+
     public Vector3 boltVelocity;
 
     public Vector3 outsideVel;
