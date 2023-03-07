@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TargetSelfDestruct : MonoBehaviour, IHitable
 {
+
     public void IHit()
     {
         this.gameObject.SetActive(false);

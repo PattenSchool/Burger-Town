@@ -92,6 +92,14 @@ public class PlayerStatic
             return _shootScript.GetSelectedBolt();
         }
     }
+
+    public static GameObject DefaultBolt
+    {
+        get
+        {
+            return _shootScript.GetDefaultBolt();
+        }
+    }
     #endregion
 
     #region UIElements
@@ -133,6 +141,53 @@ public class PlayerStatic
     }
     #endregion
 
+    #region Ground Check
+    /// <summary>
+    /// A reference to the script checking if the player is grounded
+    /// </summary>
+    private static GroundCheck _groundCheckScript;
+
+    /// <summary>
+    /// Checks if the player is grounded 
+    ///     Returns true constantly if there is no reference
+    /// </summary>
+    public static bool IsGrounded
+    {
+        get
+        {
+            //As a just in case, if there is a call in awake or there is a null call
+            //  then call as true and note it in console
+            if (_groundCheckScript == null)
+            {
+                UnityEngine.Debug.LogError("Ground check script is null");
+                return true;
+            }
+
+            return _groundCheckScript.IsGrounded();
+        }
+    }
+
+    /// <summary>
+    /// Checks if the player is touching ground or not with 
+    ///     out any outside influences
+    /// </summary>
+    public static bool IsTouchingGround
+    {
+        get
+        {
+            //As a just in case, if there is a call in awake or there is a null call
+            //  then call as true and note it in console
+            if (_groundCheckScript == null)
+            {
+                UnityEngine.Debug.LogError("Ground check script is null");
+                return true;
+            }
+
+            return _groundCheckScript.GetIsTouchingGround();
+        }
+    }
+    #endregion
+
     #region Set Up Methods
     /// <summary>
     /// Set up the static player class
@@ -156,6 +211,7 @@ public class PlayerStatic
         SetUpShootScript(Player);
         SetUpUIDisplays(Player);
         SetUpPlayerInput(Player);
+        SetUpGroundCheck(Player);
     }
 
     /// <summary>
@@ -175,6 +231,12 @@ public class PlayerStatic
     private static void SetUpPlayerInput(GameObject player)
     {
         ControllerInput = player.GetComponent<PlayerInput>();
+    }
+
+
+    private static void SetUpGroundCheck(GameObject player)
+    {
+        _groundCheckScript = player.GetComponent<GroundCheck>();
     }
     #endregion
 
@@ -213,7 +275,6 @@ public class PlayerStatic
     }
     #endregion
 
-    
     #region Conversation stuff
     private static Conversation_SO conversation;
     public static Conversation_SO Conversation

@@ -46,6 +46,12 @@ public static class LevelManagerStatic
 
     public static void ResetLevel()
     {
+        //if (CheckPointManager.instance != null)
+        //{
+        //    CheckPointManager.instance.ClearList();
+        //}
+
+
         Scene currentScene = SceneManager.GetActiveScene();
 
         SceneManager.LoadScene(currentScene.name);

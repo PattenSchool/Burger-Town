@@ -1,10 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.MathExtensions;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using TMPro;
 
 [RequireComponent(typeof(Rigidbody))]
 public class ShootScript : MonoBehaviour
@@ -171,7 +169,6 @@ public class ShootScript : MonoBehaviour
             if (!isDeveloperMode)
             {
                 _allowedBolts.Add(defaultBolt);
-                print("default bolt added");
             }
                 
             else
@@ -247,6 +244,14 @@ public class ShootScript : MonoBehaviour
     public GameObject GetSelectedBolt()
     {
         return _allowedBolts[currentBoltIndex - 1].gameObject;
+    }
+
+    /// <summary>
+    /// Get's the default bolt
+    /// </summary>
+    public GameObject GetDefaultBolt()
+    {
+        return _allowedBolts[0].gameObject;
     }
     #endregion
 }
