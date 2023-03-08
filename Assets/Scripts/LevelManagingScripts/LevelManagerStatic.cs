@@ -52,6 +52,12 @@ public static class LevelManagerStatic
         //}
 
 
+        if (CheckPointManager.instance != null)
+        {
+            CheckPointManager.instance.RestartLevelByManager();
+            return;
+        }
+
         Scene currentScene = SceneManager.GetActiveScene();
 
         SceneManager.LoadScene(currentScene.name);

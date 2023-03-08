@@ -376,6 +376,17 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""9fd00e6d-dea0-4912-a06f-7f271c574533"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""400ed1c7-b264-40f2-bb60-2cc21a8bb8ce"",
                     ""path"": ""<Mouse>/scroll"",
                     ""interactions"": """",
@@ -947,6 +958,17 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""8a9709ff-fa3c-4739-bde6-93fdea689129"",
                     ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UnPause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""57f6ab1b-cd7a-4e3f-babb-6ecb71206890"",
+                    ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

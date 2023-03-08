@@ -12,11 +12,11 @@ public class GroundCheck : MonoBehaviour
     [Header("Grounded Varaibles")]
 
     [Tooltip("The grounded variable being read")]
-    [SerializeField, HideInInspector]
+    [SerializeField]
     private bool isGrounded = true;
 
     [Tooltip("Tests if the player is grounded")]
-    [SerializeField, HideInInspector]
+    [SerializeField]
     private bool isTouchingGround = true;
     #endregion
 
@@ -107,7 +107,7 @@ public class GroundCheck : MonoBehaviour
         if (isTouchingGround == false && kyoteTimer == 0f)
             SetTimerToKyoteTime();
         else if (isTouchingGround == false && kyoteTimer > 0f)
-            UpdateTimer(Time.deltaTime);
+            UpdateTimer(Time.fixedDeltaTime);
         else if (isTouchingGround == true)
             SetTimerToZero();
 

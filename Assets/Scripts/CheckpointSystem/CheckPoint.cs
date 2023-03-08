@@ -11,7 +11,13 @@ public class CheckPoint : MonoBehaviour
     #region Unity Methods
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == PlayerStatic.PlayerTag)
+        if (other.gameObject.tag == PlayerStatic.PlayerTag)
+            CheckPointManager.instance.RegisterCheckPoint(this);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == PlayerStatic.PlayerTag)
             CheckPointManager.instance.RegisterCheckPoint(this);
     }
     #endregion

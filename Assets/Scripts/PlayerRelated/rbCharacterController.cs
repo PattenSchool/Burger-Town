@@ -22,6 +22,9 @@ public class rbCharacterController : MonoBehaviour
     public bool grounded;
     public float jumpForce;
 
+    //A safe gaurd to expect durring the sprint and jump bug
+    public bool isSprinting = false;
+
     public Vector3 boltVelocity;
 
     public Vector3 outsideVel;
@@ -52,11 +55,11 @@ public class rbCharacterController : MonoBehaviour
     {
         if (context.started)
         {
-            speed = sprintSpeed;
+            isSprinting = true;
         }
         else if (context.canceled)
         {
-            speed = defaultSpeed;
+            isSprinting = false;
         }
     }
 
@@ -70,15 +73,16 @@ public class rbCharacterController : MonoBehaviour
         look = context.ReadValue<Vector2>();
     }
 
-    private bool CheckGrounded()
+    public void ApplySprint()
     {
-        Vector3 center = transform.position;
-        Vector3 halfExtents = this.gameObject.transform.lossyScale * (0.5f) + Vector3.down * 0.1f;
-        Vector3 direction = Vector3.down;
-        Quaternion rotation = transform.rotation;
-        float distance = 1f;
-
-        return Physics.BoxCast(center, halfExtents, direction, rotation, distance);
+        if (isSprinting)
+        {
+            speed = sprintSpeed;
+        }
+        else
+        {
+            speed = defaultSpeed;
+        }
     }
     #endregion
 
@@ -90,13 +94,20 @@ public class rbCharacterController : MonoBehaviour
 
         speed = defaultSpeed;
     }
-    
+
+    private void Update()
+    {
+        
+    }
+
     private void FixedUpdate()
     {
         //Set the ground state
         SetGrounded(PlayerStatic.IsGrounded);
 
         Vector3 currentVelocity = rb.velocity;
+
+        ApplySprint();
 
         //To Move
         Vector3 desiredmove = transform.rotation * new Vector3(move.x, 0f, move.y) * speed;

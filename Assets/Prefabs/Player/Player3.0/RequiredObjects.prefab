@@ -11374,7 +11374,7 @@ MonoBehaviour:
   defaultBolt: {fileID: 2543685648339813248, guid: 904d67dcfe93146459991bfcd066805a, type: 3}
   isDeveloperMode: 0
   shootSFX: {fileID: 8300000, guid: bd7d2a46ebb87b2458ea662a2b3fa3ee, type: 3}
-  _spawnRange: 1.5
+  _spawnRange: 1.1
   overarchingGameData: {fileID: 11400000, guid: bed510943af20374481cfddf13affe99, type: 2}
 --- !u!114 &3649394576227792816
 MonoBehaviour:
@@ -11439,6 +11439,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGrounded: 1
+  isTouchingGround: 1
+  kyoteTime: 0.025
+  kyoteTimer: 0
 --- !u!1 &7919990712788497563
 GameObject:
   m_ObjectHideFlags: 0
