@@ -169,7 +169,6 @@ public class ShootScript : MonoBehaviour
             if (!isDeveloperMode)
             {
                 _allowedBolts.Add(defaultBolt);
-                print("default bolt added");
             }
                 
             else

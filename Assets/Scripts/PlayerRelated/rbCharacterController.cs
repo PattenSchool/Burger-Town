@@ -7,6 +7,7 @@ using UnityEngine.MathExtensions;
 
 public class rbCharacterController : MonoBehaviour
 {
+
     #region Variables
     public Rigidbody rb;
     public float defaultSpeed;
@@ -20,6 +21,9 @@ public class rbCharacterController : MonoBehaviour
     public Camera main_camera;
     public bool grounded;
     public float jumpForce;
+
+    //A safe gaurd to expect durring the sprint and jump bug
+    public bool isSprinting = false;
 
     public Vector3 boltVelocity;
 
@@ -51,11 +55,11 @@ public class rbCharacterController : MonoBehaviour
     {
         if (context.started)
         {
-            speed = sprintSpeed;
+            isSprinting = true;
         }
         else if (context.canceled)
         {
-            speed = defaultSpeed;
+            isSprinting = false;
         }
     }
 
@@ -69,36 +73,17 @@ public class rbCharacterController : MonoBehaviour
         look = context.ReadValue<Vector2>();
     }
 
-    private bool CheckGrounded()
+    public void ApplySprint()
     {
-        Vector3 center = transform.position;
-        Vector3 halfExtents = this.gameObject.transform.lossyScale * (0.5f) + Vector3.down * 0.1f;
-        Vector3 direction = Vector3.down;
-        Quaternion rotation = transform.rotation;
-        float distance = 1f;
-
-        return Physics.BoxCast(center, halfExtents, direction, rotation, distance);
+        if (isSprinting)
+        {
+            speed = sprintSpeed;
+        }
+        else
+        {
+            speed = defaultSpeed;
+        }
     }
-
-    //void Move()
-    //{
-    //    //To move (in tutorial)
-    //    Vector3 currentVelocity = rb.velocity;
-    //    Vector3 targetVelocity = new Vector3(move.x, 0f, move.y);
-    //    targetVelocity *= speed;
-
-    //    //Align direction
-    //    targetVelocity = transform.TransformDirection(targetVelocity);
-
-    //    //Calculate forces
-    //    Vector3 velocityChange = (targetVelocity - currentVelocity);
-    //    velocityChange = new Vector3(velocityChange.x, 0f, velocityChange.z);
-
-    //    //Limit force
-    //    Vector3.ClampMagnitude(velocityChange, maxForce);
-
-    //    rb.AddForce(velocityChange, ForceMode.VelocityChange);
-    //}
     #endregion
 
     #region Unity Methods
@@ -109,13 +94,20 @@ public class rbCharacterController : MonoBehaviour
 
         speed = defaultSpeed;
     }
-    
+
+    private void Update()
+    {
+        
+    }
+
     private void FixedUpdate()
     {
         //Set the ground state
-        SetGrounded(CheckGrounded());
+        SetGrounded(PlayerStatic.IsGrounded);
 
         Vector3 currentVelocity = rb.velocity;
+
+        ApplySprint();
 
         //To Move
         Vector3 desiredmove = transform.rotation * new Vector3(move.x, 0f, move.y) * speed;
@@ -152,6 +144,7 @@ public class rbCharacterController : MonoBehaviour
 
     void LateUpdate()                                                                                         //move camera after rest of scene has been updated
     {
+        
         transform.Rotate(Vector3.up * look.x * sensitivity);                                                                         //turn player on up axis
 
         lookRotation +=(-look.y * sensitivity);                                                                                               //player looks up and down

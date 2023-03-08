@@ -3,7 +3,7 @@ using System.Collections.Generic;
 //using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class RecoilBolt : BoltTemplate
+public class LauncherBolt : BoltTemplate
 {
     #region On Fire Methods
     /// <summary>

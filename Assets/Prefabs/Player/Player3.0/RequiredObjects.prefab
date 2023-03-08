@@ -10989,6 +10989,7 @@ GameObject:
   - component: {fileID: 3649394576227792816}
   - component: {fileID: 968531097482780009}
   - component: {fileID: 968531097482780008}
+  - component: {fileID: 5122094904978327926}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -11373,7 +11374,7 @@ MonoBehaviour:
   defaultBolt: {fileID: 2543685648339813248, guid: 904d67dcfe93146459991bfcd066805a, type: 3}
   isDeveloperMode: 0
   shootSFX: {fileID: 8300000, guid: bd7d2a46ebb87b2458ea662a2b3fa3ee, type: 3}
-  _spawnRange: 1.5
+  _spawnRange: 1.1
   overarchingGameData: {fileID: 11400000, guid: bed510943af20374481cfddf13affe99, type: 2}
 --- !u!114 &3649394576227792816
 MonoBehaviour:
@@ -11425,6 +11426,22 @@ MonoBehaviour:
   grabObject: {fileID: 0}
   currentItem: {fileID: 0}
   transparencyMat: {fileID: 2100000, guid: 3b64550132ac44848a3b96c685034cd1, type: 2}
+--- !u!114 &5122094904978327926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919990712723082176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99c2d2223b8bb7a49be46987f87e0d5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrounded: 1
+  isTouchingGround: 1
+  kyoteTime: 0.025
+  kyoteTimer: 0
 --- !u!1 &7919990712788497563
 GameObject:
   m_ObjectHideFlags: 0
