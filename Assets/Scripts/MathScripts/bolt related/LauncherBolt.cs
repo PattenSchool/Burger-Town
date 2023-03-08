@@ -35,11 +35,11 @@ public class LauncherBolt : BoltTemplate
         {
             firee.GetComponent<rbCharacterController>().isLaunchedByCannon = false;
 
-            firee.GetComponent<rbCharacterController>().boltVelocity = directionVector * _initialSpeed;
+            firee.GetComponent<rbCharacterController>().boltVelocity = directionVector * (_initialSpeed / 1.55f);
         }
         else
         {
-            firee.GetComponent<rbCharacterController>().boltVelocity = directionVector * _initialSpeed;
+            firee.GetComponent<rbCharacterController>().boltVelocity = directionVector * (_initialSpeed / 1.55f);
         }
     }
     #endregion
