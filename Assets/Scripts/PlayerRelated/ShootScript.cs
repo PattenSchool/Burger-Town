@@ -21,6 +21,9 @@ public class ShootScript : MonoBehaviour
     [SerializeField]
     private Image cooldownReticle;
 
+    [HideInInspector]
+    public bool isLaunching = false;
+
     /// <summary>
     /// Updates the timeRemaining varaible.
     ///     Subtracts delta time from the timer.
@@ -117,7 +120,31 @@ public class ShootScript : MonoBehaviour
         UpdateTimer(Time.deltaTime);
 
         //Displays the timer on the hud
-        DisplayTimer(timeRemaining);
+        //DisplayTimer(timeRemaining);
+
+        if (isLaunching)
+        {
+            if (currentBoltIndex == 3)
+            {
+                DisplayTimer(1f);
+            }
+            else
+            {
+                DisplayTimer(timeRemaining);
+            }
+
+            if (timeRemaining < 0f)
+            {
+                if (PlayerStatic.IsGrounded)
+                {
+                    isLaunching = false;
+                }
+            }
+        }
+        else
+        {
+            DisplayTimer(timeRemaining);
+        }
     }
     #endregion
 
@@ -131,6 +158,11 @@ public class ShootScript : MonoBehaviour
     {
         //Checks if the bolt timer is up
         if (!IsTimerUp())
+        {
+            return;
+        }
+
+        if (isLaunching && currentBoltIndex == 3)
         {
             return;
         }
@@ -150,6 +182,11 @@ public class ShootScript : MonoBehaviour
 
             //Reset the time
             ResetTimer();
+
+            if (currentBoltIndex == 3)
+            {
+                isLaunching = true;
+            }
         }
 
     }
