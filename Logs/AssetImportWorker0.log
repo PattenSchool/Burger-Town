@@ -15,7 +15,7 @@ C:/Users/Owner/Documents/GitHub/Burger-Town
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-51048
+57139
 Successfully changed project path to: C:/Users/Owner/Documents/GitHub/Burger-Town
 C:/Users/Owner/Documents/GitHub/Burger-Town
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ C:/Users/Owner/Documents/GitHub/Burger-Town
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 129.67 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 101.07 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.5f1 (40eb3a945986)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.5f1/Editor/Data/Resources/UnitySubsystems
@@ -63,89 +63,89 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.5f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.5f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.5f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56440
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56424
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.5f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.006445 seconds.
+Registered in 0.004152 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 116.91 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 135.27 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.005 seconds
+- Completed reload, in  1.014 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1007ms)
-		BeginReloadAssembly (150ms)
+	ReloadAssembly (1015ms)
+		BeginReloadAssembly (84ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (693ms)
-			LoadAssemblies (144ms)
+		EndReloadAssembly (772ms)
+			LoadAssemblies (82ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (160ms)
+			SetupTypeCache (152ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (47ms)
-			SetupLoadedEditorAssemblies (402ms)
+			RebuildScriptCaches (56ms)
+			SetupLoadedEditorAssemblies (455ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (9ms)
+				InitializePlatformSupportModulesInManaged (13ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (117ms)
+				RefreshPlugins (135ms)
 				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (208ms)
-				ProcessInitializeOnLoadMethodAttributes (66ms)
+				ProcessInitializeOnLoadAttributes (241ms)
+				ProcessInitializeOnLoadMethodAttributes (63ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.008258 seconds.
+Registered in 0.011751 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\Owner\Documents\GitHub\Burger-Town\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\Owner\Documents\GitHub\Burger-Town\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 132.97 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 94.49 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.869 seconds
+- Completed reload, in  1.347 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1870ms)
-		BeginReloadAssembly (162ms)
+	ReloadAssembly (1348ms)
+		BeginReloadAssembly (112ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
+			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (25ms)
-		EndReloadAssembly (1520ms)
-			LoadAssemblies (127ms)
+			CreateAndSetChildDomain (19ms)
+		EndReloadAssembly (1108ms)
+			LoadAssemblies (87ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (428ms)
+			SetupTypeCache (313ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (96ms)
-			SetupLoadedEditorAssemblies (791ms)
+			RebuildScriptCaches (61ms)
+			SetupLoadedEditorAssemblies (591ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
+				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (133ms)
-				BeforeProcessingInitializeOnLoad (134ms)
-				ProcessInitializeOnLoadAttributes (471ms)
+				RefreshPlugins (95ms)
+				BeforeProcessingInitializeOnLoad (101ms)
+				ProcessInitializeOnLoadAttributes (342ms)
 				ProcessInitializeOnLoadMethodAttributes (33ms)
-				AfterProcessingInitializeOnLoad (14ms)
+				AfterProcessingInitializeOnLoad (15ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (9ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 1.36 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.69 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3845 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 28 unused Assets / (56.1 KB). Loaded Objects now: 4327.
-Memory consumption went from 150.9 MB to 150.8 MB.
-Total: 7.967200 ms (FindLiveObjects: 0.581900 ms CreateObjectMapping: 0.683900 ms MarkObjects: 6.526300 ms  DeleteObjects: 0.173200 ms)
+Unloading 28 unused Assets / (55.3 KB). Loaded Objects now: 4304.
+Memory consumption went from 136.4 MB to 136.3 MB.
+Total: 3.788900 ms (FindLiveObjects: 0.308900 ms CreateObjectMapping: 0.219700 ms MarkObjects: 3.145500 ms  DeleteObjects: 0.113600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -159,305 +159,25 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 11717.517229 seconds.
-  path: Assets/Art/Models/palm tree.fbx
-  artifactKey: Guid(67fdff26bb15aae48be9579245dd10c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Models/palm tree.fbx using Guid(67fdff26bb15aae48be9579245dd10c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3631f17eddd85b62071a03d9a7b4e4a') in 0.429886 seconds 
+  Time since last request: 77657.248785 seconds.
+  path: Assets/Scripts/SaveSystem/Data/PrototypeLevels/World 1-1.asset
+  artifactKey: Guid(df4f459bfd068314aa31de28615d6572) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveSystem/Data/PrototypeLevels/World 1-1.asset using Guid(df4f459bfd068314aa31de28615d6572) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89693bc952852dcee41ac51f99884226') in 0.027387 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/StoreAssets/Palm tree/4.models/palm_tree.fbx
-  artifactKey: Guid(c622aa1ce3d8f4200ad5a54c3917a1ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/Palm tree/4.models/palm_tree.fbx using Guid(c622aa1ce3d8f4200ad5a54c3917a1ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9f51a35717223e58b5d16e992b81301') in 0.125067 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.016963 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\Owner\Documents\GitHub\Burger-Town\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\Owner\Documents\GitHub\Burger-Town\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.45 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  3.671 seconds
-Domain Reload Profiling:
-	ReloadAssembly (3673ms)
-		BeginReloadAssembly (492ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (13ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (79ms)
-		EndReloadAssembly (2746ms)
-			LoadAssemblies (427ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (968ms)
-			ReleaseScriptCaches (7ms)
-			RebuildScriptCaches (131ms)
-			SetupLoadedEditorAssemblies (1141ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (43ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (3ms)
-				BeforeProcessingInitializeOnLoad (174ms)
-				ProcessInitializeOnLoadAttributes (800ms)
-				ProcessInitializeOnLoadMethodAttributes (91ms)
-				AfterProcessingInitializeOnLoad (29ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (20ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 9.97 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3825 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 19 unused Assets / (24.6 KB). Loaded Objects now: 4372.
-Memory consumption went from 154.0 MB to 154.0 MB.
-Total: 8.895500 ms (FindLiveObjects: 0.811100 ms CreateObjectMapping: 0.601000 ms MarkObjects: 7.433400 ms  DeleteObjects: 0.047700 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  Time since last request: 0.000029 seconds.
+  path: Assets/Scripts/SaveSystem/Data/OverworldData/Overworld Data.asset
+  artifactKey: Guid(bed510943af20374481cfddf13affe99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveSystem/Data/OverworldData/Overworld Data.asset using Guid(bed510943af20374481cfddf13affe99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '521b57155a7cb85d0a77467182d4f8a1') in 0.010843 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 301.982090 seconds.
-  path: Assets/StoreAssets/com/heparo/terrain/toolkit/editor/resources/blackButtonDisabled.png
-  artifactKey: Guid(dcd3f45167fe81e4d9f9c4816eaa0321) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/com/heparo/terrain/toolkit/editor/resources/blackButtonDisabled.png using Guid(dcd3f45167fe81e4d9f9c4816eaa0321) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f194244abd1ca598000705f26b01cd35') in 0.066774 seconds 
+  Time since last request: 1.157709 seconds.
+  path: Assets/Scripts/SaveSystem/Data/PrototypeLevels/World 2-2.asset
+  artifactKey: Guid(c525a94104e75f34e9b5f3073315d223) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SaveSystem/Data/PrototypeLevels/World 2-2.asset using Guid(c525a94104e75f34e9b5f3073315d223) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e56afa47146210236440d656c5930b5f') in 0.003738 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.564887 seconds.
-  path: Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Cliff (Sandstone).jpg
-  artifactKey: Guid(567e8871595c53e4f98db6c010b237f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Cliff (Sandstone).jpg using Guid(567e8871595c53e4f98db6c010b237f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea95b0d0f1914145cc60519ace72d67d') in 0.023914 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Sand (Beach).jpg
-  artifactKey: Guid(62c1e9920bcb39c4588acbafb79ca6cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Sand (Beach).jpg using Guid(62c1e9920bcb39c4588acbafb79ca6cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf9ec8bdb01a0bdd04dc9605f78d46f1') in 0.020875 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Sand (with pebbles).jpg
-  artifactKey: Guid(b1e376ee2088e62469d66d01ad87cb7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Sand (with pebbles).jpg using Guid(b1e376ee2088e62469d66d01ad87cb7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '780ecbfb6e9af1024df7d779b4fce31b') in 0.016896 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000118 seconds.
-  path: Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Sand (Beach Wet2).jpg
-  artifactKey: Guid(704284e54fdc67341a790ddb79b4c373) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Sand (Beach Wet2).jpg using Guid(704284e54fdc67341a790ddb79b4c373) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12eceb202d580e16a5dfff3f07b67595') in 0.019335 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.014949 seconds.
-  path: Assets/StoreAssets/com/heparo/terrain/toolkit/Materials/Cliff (Sandstone).mat
-  artifactKey: Guid(29e8fadbeee16dc49a9443b3a072460c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/com/heparo/terrain/toolkit/Materials/Cliff (Sandstone).mat using Guid(29e8fadbeee16dc49a9443b3a072460c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '012626dc80bd5b8502fe62c5e58b2e89') in 0.059960 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 15.812959 seconds.
-  path: Assets/Art/Materials/Sand_Tex.mat
-  artifactKey: Guid(c3944620cc9492e46a02da7c565c0333) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Materials/Sand_Tex.mat using Guid(c3944620cc9492e46a02da7c565c0333) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '915818e97b853693ec61a608dece1801') in 0.014329 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 10.912788 seconds.
-  path: Assets/StoreAssets/com/heparo/terrain/toolkit/Materials/Sand (Beach2).mat
-  artifactKey: Guid(c15996fb852389145a437b68f87f60d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/com/heparo/terrain/toolkit/Materials/Sand (Beach2).mat using Guid(c15996fb852389145a437b68f87f60d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72c586c1930fe6a213426d83c841c2b9') in 0.013877 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.572731 seconds.
-  path: Assets/StoreAssets/com/heparo/terrain/toolkit/Materials/Sand (with pebbles).mat
-  artifactKey: Guid(229ee0403f5d9cd45856785b5fa2f2a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/com/heparo/terrain/toolkit/Materials/Sand (with pebbles).mat using Guid(229ee0403f5d9cd45856785b5fa2f2a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b1e12fd32541e855919a4a5fb4f5e28') in 0.014190 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.061308 seconds.
-  path: Assets/StoreAssets/com/heparo/terrain/toolkit/Materials/Sand (Beach).mat
-  artifactKey: Guid(272fada6ab410654eb916c09a221308d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/com/heparo/terrain/toolkit/Materials/Sand (Beach).mat using Guid(272fada6ab410654eb916c09a221308d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b94436413c0ec15b7045950b1202fa70') in 0.013175 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.575120 seconds.
-  path: Assets/StoreAssets/com/heparo/terrain/toolkit/Materials/Sand (Beach Wet2).mat
-  artifactKey: Guid(b9b8f383fd8ba0c468ed8ccb8630b274) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/com/heparo/terrain/toolkit/Materials/Sand (Beach Wet2).mat using Guid(b9b8f383fd8ba0c468ed8ccb8630b274) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f38f02d55819977e52807944078c968d') in 0.014497 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 11.020468 seconds.
-  path: Assets/StoreAssets/Rocks Pack - Freebies/Rocks 02/Textures
-  artifactKey: Guid(c7b80d1c6b61b2f41b3df9f88d604f82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/Rocks Pack - Freebies/Rocks 02/Textures using Guid(c7b80d1c6b61b2f41b3df9f88d604f82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e087a39c8383e1fd762d1430bb65f9fb') in 0.002090 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.047222 seconds.
-  path: Assets/StoreAssets/Rocks Pack - Freebies/Rocks 02/Textures/Rocks 02 diffuse.tga
-  artifactKey: Guid(0b43c294cf9c00649853938ea4d775e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/Rocks Pack - Freebies/Rocks 02/Textures/Rocks 02 diffuse.tga using Guid(0b43c294cf9c00649853938ea4d775e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44e86bba16bbe5a6764f8c3b8725f450') in 0.034032 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.269343 seconds.
-  path: Assets/StoreAssets/com/heparo/terrain/toolkit/demonstration/textures
-  artifactKey: Guid(01bdd64a454688d41adc5804b51c560e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/com/heparo/terrain/toolkit/demonstration/textures using Guid(01bdd64a454688d41adc5804b51c560e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a48a0966c64100f4e009357cb1c5fba') in 0.005078 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.082856 seconds.
-  path: Assets/StoreAssets/com/heparo/terrain/toolkit/demonstration/textures/Sunny2_back.tif
-  artifactKey: Guid(df28bd3459400874ea6438c740102e4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/com/heparo/terrain/toolkit/demonstration/textures/Sunny2_back.tif using Guid(df28bd3459400874ea6438c740102e4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbae7c13b8b3c61489b483630a0a80c9') in 0.021395 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000052 seconds.
-  path: Assets/StoreAssets/com/heparo/terrain/toolkit/demonstration/textures/Sunny2_left.tif
-  artifactKey: Guid(3e4fe63354d5fdc4891c04ecfa3c26a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/com/heparo/terrain/toolkit/demonstration/textures/Sunny2_left.tif using Guid(3e4fe63354d5fdc4891c04ecfa3c26a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '469c1c094bf11ef7833b0d22a6182b85') in 0.020569 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/StoreAssets/com/heparo/terrain/toolkit/demonstration/textures/Sunny2_up.tif
-  artifactKey: Guid(6a9c959e5c381584fb707d2fda9aec68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/com/heparo/terrain/toolkit/demonstration/textures/Sunny2_up.tif using Guid(6a9c959e5c381584fb707d2fda9aec68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1632fc5bf01778a16e54eee7e0e2a7db') in 0.019258 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.498617 seconds.
-  path: Assets/StoreAssets/com/heparo/terrain/toolkit/textures
-  artifactKey: Guid(8136fd3570f16c645aa22565d8abbf23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/com/heparo/terrain/toolkit/textures using Guid(8136fd3570f16c645aa22565d8abbf23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a16662c894addc80c410933a4b0b78c7') in 0.003380 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.400266 seconds.
-  path: Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Cliff (Layered Rock).jpg
-  artifactKey: Guid(6305072403888534c96d73465349b0ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Cliff (Layered Rock).jpg using Guid(6305072403888534c96d73465349b0ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a4ec790777023c052b382073958281e') in 0.017521 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Forest Floor.jpg
-  artifactKey: Guid(365a2abb30522874fb67b2e38c6e3a21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Forest Floor.jpg using Guid(365a2abb30522874fb67b2e38c6e3a21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0ff89a85ab5f335bcca990b72b017e1') in 0.020530 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.173460 seconds.
-  path: Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Cliff (Grassy).jpg
-  artifactKey: Guid(2feaa88369b0d004cbc6e5944204420a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Cliff (Grassy).jpg using Guid(2feaa88369b0d004cbc6e5944204420a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f007f1e32fc48e5d341d2d0c139fa8c') in 0.013472 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.895682 seconds.
-  path: Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Grass (Hill).jpg
-  artifactKey: Guid(9924245327ef043478a9a9ee2219f73a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Grass (Hill).jpg using Guid(9924245327ef043478a9a9ee2219f73a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb7ca08b6dc00805d84719bafa5d465e') in 0.015932 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.025930 seconds.
-  path: Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Grass (Lawn).jpg
-  artifactKey: Guid(1ae9f5e22fb93144b8a70c6eeffc2083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Grass (Lawn).jpg using Guid(1ae9f5e22fb93144b8a70c6eeffc2083) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e65078ec4d6611565c3ce00197ddcaf2') in 0.012892 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.621152 seconds.
-  path: Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Grass (Meadows2).jpg
-  artifactKey: Guid(ede861962600ebe47be78280b1616e57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Grass (Meadows2).jpg using Guid(ede861962600ebe47be78280b1616e57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6970e04055603501b579233f89e317e8') in 0.015284 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.255616 seconds.
-  path: Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Grass (Muddy).jpg
-  artifactKey: Guid(440082986b535f34bbbb7a7b1f90a452) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Grass (Muddy).jpg using Guid(440082986b535f34bbbb7a7b1f90a452) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa5bb2014eb9f91a72ce3f96db1d55cc') in 0.013226 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.217484 seconds.
-  path: Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Grass (Rocky).jpg
-  artifactKey: Guid(a2e1f9837f6fb2141a1aed8a5f58104d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Grass (Rocky).jpg using Guid(a2e1f9837f6fb2141a1aed8a5f58104d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '115e9e321a8e925dd40e012ed4063343') in 0.016877 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.016679 seconds.
-  path: Assets/StoreAssets/com/heparo/terrain/toolkit/textures/NewLayer.terrainlayer
-  artifactKey: Guid(cf4993dab5a1e2c4098946ceef4e9aee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/com/heparo/terrain/toolkit/textures/NewLayer.terrainlayer using Guid(cf4993dab5a1e2c4098946ceef4e9aee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efdeefc57d40d8341e3d9b0aa43486c0') in 0.023623 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.198051 seconds.
-  path: Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Path (Rocky).jpg
-  artifactKey: Guid(3f5883d3d52420e4dad508c9b4fc8519) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Path (Rocky).jpg using Guid(3f5883d3d52420e4dad508c9b4fc8519) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8566fcb8f8f8dd65daf6e61b45338960') in 0.013855 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.019545 seconds.
-  path: Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Pebbles.jpg
-  artifactKey: Guid(d451fba7efe3e9e4fa26d8a87de3e93b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Pebbles.jpg using Guid(d451fba7efe3e9e4fa26d8a87de3e93b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e816fff7af6186da51313247a3f831d') in 0.020375 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.188315 seconds.
-  path: Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Rock (Basic).jpg
-  artifactKey: Guid(dbfc5d13048a35f4ab8778d8f4ab9e1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/StoreAssets/com/heparo/terrain/toolkit/textures/Rock (Basic).jpg using Guid(dbfc5d13048a35f4ab8778d8f4ab9e1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '664a5d13276cf19b1bc3c9596030aaf0') in 0.015308 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.011130 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image C:\Users\Owner\Documents\GitHub\Burger-Town\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image C:\Users\Owner\Documents\GitHub\Burger-Town\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.60 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.202 seconds
-Domain Reload Profiling:
-	ReloadAssembly (2203ms)
-		BeginReloadAssembly (221ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (67ms)
-		EndReloadAssembly (1799ms)
-			LoadAssemblies (140ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (585ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (101ms)
-			SetupLoadedEditorAssemblies (836ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (24ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (141ms)
-				ProcessInitializeOnLoadAttributes (591ms)
-				ProcessInitializeOnLoadMethodAttributes (60ms)
-				AfterProcessingInitializeOnLoad (18ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (15ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 5.87 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3825 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 19 unused Assets / (24.8 KB). Loaded Objects now: 4379.
-Memory consumption went from 154.1 MB to 154.1 MB.
-Total: 6.554000 ms (FindLiveObjects: 0.661000 ms CreateObjectMapping: 0.409500 ms MarkObjects: 5.447500 ms  DeleteObjects: 0.033700 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  Time since last request: 1.152569 seconds.
+  path: Assets/Scenes/Levels/World 2-2.unity
+  artifactKey: Guid(ee6d2f174a5933149a798fdc4f89c9b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Levels/World 2-2.unity using Guid(ee6d2f174a5933149a798fdc4f89c9b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbe755f2bf38ab37f59fc3c8ea6a31c3') in 0.002168 seconds 
