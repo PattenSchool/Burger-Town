@@ -31,7 +31,16 @@ public class LauncherBolt : BoltTemplate
     ///     The vector of the firee facing
     public void ApplyKnockbacRecoil(GameObject firee, Vector3 directionVector)
     {
-        firee.GetComponent<rbCharacterController>().boltVelocity = directionVector * _initialSpeed;
+        if (firee.GetComponent<rbCharacterController>().isLaunchedByCannon)
+        {
+            firee.GetComponent<rbCharacterController>().isLaunchedByCannon = false;
+
+            firee.GetComponent<rbCharacterController>().boltVelocity = directionVector * (_initialSpeed / 1.55f);
+        }
+        else
+        {
+            firee.GetComponent<rbCharacterController>().boltVelocity = directionVector * (_initialSpeed / 1.55f);
+        }
     }
     #endregion
 

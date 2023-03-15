@@ -22,6 +22,8 @@ public class rbCharacterController : MonoBehaviour
     public bool grounded;
     public float jumpForce;
 
+    public bool isLaunchedByCannon = false;
+
     //A safe gaurd to expect durring the sprint and jump bug
     public bool isSprinting = false;
 
