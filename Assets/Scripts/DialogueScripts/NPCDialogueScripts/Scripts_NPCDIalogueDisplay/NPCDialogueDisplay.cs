@@ -1,11 +1,13 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 using System.ComponentModel;
 using UnityEngine.MathExtensions;
 
 /// <summary>
 /// Displays the dialogue of NPCs
 /// </summary>
+[RequireComponent(typeof(Canvas))]
 public class NPCDialogueDisplay : MonoBehaviour
 {
     #region Display
@@ -16,6 +18,10 @@ public class NPCDialogueDisplay : MonoBehaviour
     [SerializeField]
     protected TMP_Text textDisplay;
 
+    [Tooltip("The image that is displayed whenever an emotion displayed (optional)")]
+    [SerializeField]
+    protected Image expressionDisplay;
+
     //!===================Methods====================!//
     /// <summary>
     /// Displays a dialogue if a conversation exists,
@@ -24,7 +30,13 @@ public class NPCDialogueDisplay : MonoBehaviour
     public virtual void DisplayDialogue()
     {
         if (conversation != null)
+        {
             textDisplay.text = conversation.GetFormattedText(dialogueIndex);
+
+            if (expressionDisplay != null)
+                expressionDisplay.sprite = conversation.GetExpressionSprite(dialogueIndex);
+        }
+            
         else
             print($"Conversation at {this.gameObject} does not have a conversation for a dialogue" +
                 $" to diaplay");
@@ -61,25 +73,33 @@ public class NPCDialogueDisplay : MonoBehaviour
     [SerializeField]
     protected Conversation_SO conversation;
 
-    //!===================Methods====================!//
     /// <summary>
-    /// Set's a new conversation
+    /// Blank with npc, must me overridden
     /// </summary>
-    /// <param name="newConversation"></param>
-    ///     Get's the conversation
-    public void OverrideConversation(Conversation_SO newConversation)
+    public virtual void PlayConversation()
     {
-        //Set the dialoge
-        conversation = newConversation;
+
     }
 
-    /// <summary>
-    /// Deletes the conversation currently being held
-    /// </summary>
-    public void DeleteConversation()
-    {
-        conversation = null;
-    }
+    ////!===================Methods====================!//
+    ///// <summary>
+    ///// Set's a new conversation
+    ///// </summary>
+    ///// <param name="newConversation"></param>
+    /////     Get's the conversation
+    //public void OverrideConversation(Conversation_SO newConversation)
+    //{
+    //    //Set the dialoge
+    //    conversation = newConversation;
+    //}
+
+    ///// <summary>
+    ///// Deletes the conversation currently being held
+    ///// </summary>
+    //public void DeleteConversation()
+    //{
+    //    conversation = null;
+    //}
     #endregion
 
     #region Index Related

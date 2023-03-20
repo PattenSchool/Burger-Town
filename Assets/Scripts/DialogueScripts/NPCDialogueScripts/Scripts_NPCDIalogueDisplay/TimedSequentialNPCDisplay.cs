@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>
@@ -23,10 +24,14 @@ public class TimedSequentialNPCDisplay : SequentialNPCDialogueDisplay
     /// </summary>
     public IEnumerator DisplayTimedDialogue()
     {
+        //Set up display
+        SetChildrenVisibility(true);
+
         //Check if the dialoguye is set
         if (conversation == null)
         {
             Debug.LogError($"{this.gameObject} does not have a conversation stored");
+
             yield return null;
         }
 
@@ -48,6 +53,38 @@ public class TimedSequentialNPCDisplay : SequentialNPCDialogueDisplay
         //Reset the text
         ResetDialogueIndex();
         ResetDisplay();
+        SetChildrenVisibility(false);
+    }
+
+    public override void PlayConversation()
+    {
+        StopCoroutine(DisplayTimedDialogue());
+        StartCoroutine(DisplayTimedDialogue());
+    }
+    #endregion
+
+    #region Unity Methods
+    private void Awake()
+    {
+        SetChildrenVisibility(false);
+    }
+    #endregion
+
+    #region Children visibility
+    /// <summary>
+    /// Set the child elements of visibility
+    /// </summary>
+    /// <param name="isVisible"></param>
+    public void SetChildrenVisibility(bool isVisible)
+    {
+        for(int i = 0; i < this.transform.childCount; i++)
+        {
+            //Get child
+            var child = this.transform.GetChild(i).gameObject;
+
+            //Set child visible
+            child.SetActive(isVisible);
+        }
     }
     #endregion
 }

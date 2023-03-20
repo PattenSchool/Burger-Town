@@ -9,6 +9,7 @@ using UnityEngine;
 public class SequentialNPCDialogueDisplay : NPCDialogueDisplay
 {
     #region Display Methods
+
     //!===================Methods====================!//
     /// <summary>
     /// Displays the current dialogue

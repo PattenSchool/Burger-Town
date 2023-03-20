@@ -97,11 +97,6 @@ public class rbCharacterController : MonoBehaviour
         speed = defaultSpeed;
     }
 
-    private void Update()
-    {
-        
-    }
-
     private void FixedUpdate()
     {
         //Set the ground state

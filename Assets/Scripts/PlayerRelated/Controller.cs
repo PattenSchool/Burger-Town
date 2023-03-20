@@ -107,6 +107,87 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Press"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SetBolt1"",
+                    ""type"": ""Button"",
+                    ""id"": ""b5b3dd27-24f1-4ae9-b731-6707fbf13e66"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SetBolt2"",
+                    ""type"": ""Button"",
+                    ""id"": ""473c48ba-7810-4305-92a5-a5c4057dfa62"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SetBolt3"",
+                    ""type"": ""Button"",
+                    ""id"": ""ffae133d-1d0e-44c1-b9b1-0dec145dc103"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SetBolt4"",
+                    ""type"": ""Button"",
+                    ""id"": ""7a84e594-ac7e-4507-8bcc-50925167260f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SetBolt5"",
+                    ""type"": ""Button"",
+                    ""id"": ""e7a64921-948f-4b7f-92b2-fd69dea8768a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SetBolt6"",
+                    ""type"": ""Button"",
+                    ""id"": ""b9758819-62ec-49ff-8c6e-8364994844de"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SetBolt7"",
+                    ""type"": ""Button"",
+                    ""id"": ""14e3a68d-4723-4a0a-968b-c99ddf872af4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SetBolt8"",
+                    ""type"": ""Button"",
+                    ""id"": ""1be406ab-7317-44a1-bfb3-cc059483e57c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SetBolt9"",
+                    ""type"": ""Button"",
+                    ""id"": ""93eec428-78ba-42b2-b4e5-4756050a6920"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -426,6 +507,204 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Throw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""abceb0fc-12e8-4e88-9332-01137f6f1b24"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SetBolt1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eb81760d-6e93-4ba8-a777-40b99497e88c"",
+                    ""path"": ""<Keyboard>/numpad1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SetBolt1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e202cd81-64aa-49e5-a299-dd50db94df85"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SetBolt2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5693262a-3563-433f-9f88-327e69338781"",
+                    ""path"": ""<Keyboard>/numpad2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SetBolt2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""07283dd2-8d18-4b55-8b9f-2eb1b325f2f5"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SetBolt3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""df8cb344-ea87-4435-949e-61acbd1950d3"",
+                    ""path"": ""<Keyboard>/numpad3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SetBolt3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a48ee31d-c9ff-4bf2-81b2-412d7add7402"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SetBolt4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1be0a783-d003-41c1-8ede-38441099bbce"",
+                    ""path"": ""<Keyboard>/numpad4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SetBolt4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""258a6637-0662-470b-854e-1919cafd1ff3"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SetBolt5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a6074054-6133-457f-88e2-862df215ea18"",
+                    ""path"": ""<Keyboard>/numpad5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SetBolt5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""92ae7981-db18-4262-a0f2-f27789b1e77d"",
+                    ""path"": ""<Keyboard>/6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SetBolt6"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c834abd0-fcb4-48c6-939c-fab62552a44e"",
+                    ""path"": ""<Keyboard>/numpad6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SetBolt6"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""27e52dcf-d6f3-4853-b1aa-f820edb41c40"",
+                    ""path"": ""<Keyboard>/7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SetBolt7"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9147b103-e80b-4412-a393-f0d450c39ab1"",
+                    ""path"": ""<Keyboard>/numpad7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SetBolt7"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""44ee9e11-d6c9-41f5-8eae-5c3badb5e3d0"",
+                    ""path"": ""<Keyboard>/8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SetBolt8"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""98329328-c7fa-4d1e-b744-b87d280db362"",
+                    ""path"": ""<Keyboard>/numpad8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SetBolt8"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fc2aa01f-cf31-4015-b4cd-2a216e39abfb"",
+                    ""path"": ""<Keyboard>/9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SetBolt9"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eaac435a-5272-4efc-8106-dfedf5da63ef"",
+                    ""path"": ""<Keyboard>/numpad9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SetBolt9"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1081,6 +1360,15 @@ public partial class @Controller : IInputActionCollection2, IDisposable
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         m_Player_BoltIndexScroll = m_Player.FindAction("Bolt Index Scroll", throwIfNotFound: true);
         m_Player_Throw = m_Player.FindAction("Throw", throwIfNotFound: true);
+        m_Player_SetBolt1 = m_Player.FindAction("SetBolt1", throwIfNotFound: true);
+        m_Player_SetBolt2 = m_Player.FindAction("SetBolt2", throwIfNotFound: true);
+        m_Player_SetBolt3 = m_Player.FindAction("SetBolt3", throwIfNotFound: true);
+        m_Player_SetBolt4 = m_Player.FindAction("SetBolt4", throwIfNotFound: true);
+        m_Player_SetBolt5 = m_Player.FindAction("SetBolt5", throwIfNotFound: true);
+        m_Player_SetBolt6 = m_Player.FindAction("SetBolt6", throwIfNotFound: true);
+        m_Player_SetBolt7 = m_Player.FindAction("SetBolt7", throwIfNotFound: true);
+        m_Player_SetBolt8 = m_Player.FindAction("SetBolt8", throwIfNotFound: true);
+        m_Player_SetBolt9 = m_Player.FindAction("SetBolt9", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1165,6 +1453,15 @@ public partial class @Controller : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Pause;
     private readonly InputAction m_Player_BoltIndexScroll;
     private readonly InputAction m_Player_Throw;
+    private readonly InputAction m_Player_SetBolt1;
+    private readonly InputAction m_Player_SetBolt2;
+    private readonly InputAction m_Player_SetBolt3;
+    private readonly InputAction m_Player_SetBolt4;
+    private readonly InputAction m_Player_SetBolt5;
+    private readonly InputAction m_Player_SetBolt6;
+    private readonly InputAction m_Player_SetBolt7;
+    private readonly InputAction m_Player_SetBolt8;
+    private readonly InputAction m_Player_SetBolt9;
     public struct PlayerActions
     {
         private @Controller m_Wrapper;
@@ -1178,6 +1475,15 @@ public partial class @Controller : IInputActionCollection2, IDisposable
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputAction @BoltIndexScroll => m_Wrapper.m_Player_BoltIndexScroll;
         public InputAction @Throw => m_Wrapper.m_Player_Throw;
+        public InputAction @SetBolt1 => m_Wrapper.m_Player_SetBolt1;
+        public InputAction @SetBolt2 => m_Wrapper.m_Player_SetBolt2;
+        public InputAction @SetBolt3 => m_Wrapper.m_Player_SetBolt3;
+        public InputAction @SetBolt4 => m_Wrapper.m_Player_SetBolt4;
+        public InputAction @SetBolt5 => m_Wrapper.m_Player_SetBolt5;
+        public InputAction @SetBolt6 => m_Wrapper.m_Player_SetBolt6;
+        public InputAction @SetBolt7 => m_Wrapper.m_Player_SetBolt7;
+        public InputAction @SetBolt8 => m_Wrapper.m_Player_SetBolt8;
+        public InputAction @SetBolt9 => m_Wrapper.m_Player_SetBolt9;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1214,6 +1520,33 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 @Throw.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnThrow;
                 @Throw.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnThrow;
                 @Throw.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnThrow;
+                @SetBolt1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt1;
+                @SetBolt1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt1;
+                @SetBolt1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt1;
+                @SetBolt2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt2;
+                @SetBolt2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt2;
+                @SetBolt2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt2;
+                @SetBolt3.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt3;
+                @SetBolt3.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt3;
+                @SetBolt3.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt3;
+                @SetBolt4.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt4;
+                @SetBolt4.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt4;
+                @SetBolt4.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt4;
+                @SetBolt5.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt5;
+                @SetBolt5.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt5;
+                @SetBolt5.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt5;
+                @SetBolt6.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt6;
+                @SetBolt6.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt6;
+                @SetBolt6.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt6;
+                @SetBolt7.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt7;
+                @SetBolt7.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt7;
+                @SetBolt7.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt7;
+                @SetBolt8.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt8;
+                @SetBolt8.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt8;
+                @SetBolt8.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt8;
+                @SetBolt9.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt9;
+                @SetBolt9.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt9;
+                @SetBolt9.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt9;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1245,6 +1578,33 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 @Throw.started += instance.OnThrow;
                 @Throw.performed += instance.OnThrow;
                 @Throw.canceled += instance.OnThrow;
+                @SetBolt1.started += instance.OnSetBolt1;
+                @SetBolt1.performed += instance.OnSetBolt1;
+                @SetBolt1.canceled += instance.OnSetBolt1;
+                @SetBolt2.started += instance.OnSetBolt2;
+                @SetBolt2.performed += instance.OnSetBolt2;
+                @SetBolt2.canceled += instance.OnSetBolt2;
+                @SetBolt3.started += instance.OnSetBolt3;
+                @SetBolt3.performed += instance.OnSetBolt3;
+                @SetBolt3.canceled += instance.OnSetBolt3;
+                @SetBolt4.started += instance.OnSetBolt4;
+                @SetBolt4.performed += instance.OnSetBolt4;
+                @SetBolt4.canceled += instance.OnSetBolt4;
+                @SetBolt5.started += instance.OnSetBolt5;
+                @SetBolt5.performed += instance.OnSetBolt5;
+                @SetBolt5.canceled += instance.OnSetBolt5;
+                @SetBolt6.started += instance.OnSetBolt6;
+                @SetBolt6.performed += instance.OnSetBolt6;
+                @SetBolt6.canceled += instance.OnSetBolt6;
+                @SetBolt7.started += instance.OnSetBolt7;
+                @SetBolt7.performed += instance.OnSetBolt7;
+                @SetBolt7.canceled += instance.OnSetBolt7;
+                @SetBolt8.started += instance.OnSetBolt8;
+                @SetBolt8.performed += instance.OnSetBolt8;
+                @SetBolt8.canceled += instance.OnSetBolt8;
+                @SetBolt9.started += instance.OnSetBolt9;
+                @SetBolt9.performed += instance.OnSetBolt9;
+                @SetBolt9.canceled += instance.OnSetBolt9;
             }
         }
     }
@@ -1451,6 +1811,15 @@ public partial class @Controller : IInputActionCollection2, IDisposable
         void OnPause(InputAction.CallbackContext context);
         void OnBoltIndexScroll(InputAction.CallbackContext context);
         void OnThrow(InputAction.CallbackContext context);
+        void OnSetBolt1(InputAction.CallbackContext context);
+        void OnSetBolt2(InputAction.CallbackContext context);
+        void OnSetBolt3(InputAction.CallbackContext context);
+        void OnSetBolt4(InputAction.CallbackContext context);
+        void OnSetBolt5(InputAction.CallbackContext context);
+        void OnSetBolt6(InputAction.CallbackContext context);
+        void OnSetBolt7(InputAction.CallbackContext context);
+        void OnSetBolt8(InputAction.CallbackContext context);
+        void OnSetBolt9(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

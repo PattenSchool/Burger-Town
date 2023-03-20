@@ -247,6 +247,13 @@ public class ShootScript : MonoBehaviour
         }
     }
 
+    public void SetBolt(int newIndex)
+    {
+        //int newIndex = 1;
+        if (newIndex <= _allowedBolts.Count)
+            currentBoltIndex = (newIndex);
+    }
+
     /// <summary>
     /// Display the shooting cooldown on the hud
     /// </summary>

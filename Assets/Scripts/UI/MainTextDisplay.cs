@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 /// <summary>
 /// Used to display the ui of the player
@@ -24,38 +25,46 @@ public class MainTextDisplay : MonoBehaviour
     private int textDisplayIndex = 0;
     #endregion
 
+    #region Expression Displays
+    [Header("Expression UI elements")]
+
+    [Tooltip("The Image containing where the expressions will be displayed")]
+    [SerializeField]
+    private Image expressionsImage;
+    #endregion
+
     #region Text Index and Get Method
     //!===========Variables and Properties===========!//
     [Header("Text Index")]
 
-    [Tooltip("The index of the text")]
+    [Tooltip("The index displaying the dialogue")]
     [SerializeField]
-    private int textIndex = 0;
+    private int dialogueIndex = 0;
 
     //!===================Methods====================!//
     /// <summary>
-    /// Increases the text index by 1
+    /// Increases the index by 1
     /// </summary>
-    public void IncrementTextIndex()
+    public void IncrementDialogueIndex()
     {
-        textIndex++;
+        dialogueIndex++;
     }
 
     /// <summary>
     /// Gets the text index
     /// </summary>
     /// <returns></returns>
-    public int GetTextIndex()
+    public int GetDialogueIndex()
     {
-        return textIndex;
+        return dialogueIndex;
     }
 
     /// <summary>
     /// Decreases the text index by 1
     /// </summary>
-    public void DecrementTextIndex()
+    public void DecrementDialogueIndex()
     {
-        textIndex--;
+        dialogueIndex--;
     }
     #endregion
 
@@ -73,7 +82,7 @@ public class MainTextDisplay : MonoBehaviour
             playerConversation = PlayerStatic.Conversation;
 
         //If text conversation is over the allowed amount, then safegaurd
-        if (textIndex >= playerConversation.ConversationLength)
+        if (dialogueIndex >= playerConversation.ConversationLength)
         {
             ResetTextElements();
             return;
@@ -83,8 +92,9 @@ public class MainTextDisplay : MonoBehaviour
         if (textBackground.activeInHierarchy == false)
             textBackground.SetActive(true);
 
-        //Set text
-        text.text = playerConversation.GetFormattedText(textIndex);
+        //Set Dialogue ELements
+        text.text = playerConversation.GetFormattedText(dialogueIndex);
+        expressionsImage.sprite = playerConversation.GetExpressionSprite(dialogueIndex);
     }
     #endregion
 
@@ -100,11 +110,11 @@ public class MainTextDisplay : MonoBehaviour
     }
     #endregion
 
-    #region Reset text elements
+    #region Reset elements
     //!===================Methods====================!//
     private void ResetTextElements()
     {
-        textIndex = 0;
+        dialogueIndex = 0;
         PlayerStatic.DeleteConversation();
         textBackground.SetActive(false);
     }
