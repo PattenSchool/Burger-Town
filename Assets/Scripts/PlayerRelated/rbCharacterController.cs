@@ -44,11 +44,12 @@ public class rbCharacterController : MonoBehaviour
     public void OnJump(InputAction.CallbackContext context)
     {
         Vector3 jumpForces = Vector3.zero;
-        if (grounded)
+        if (grounded && context.performed)
         {
             jumpForces = Vector3.up * jumpForce;
         }
 
+        //Forced jump
         rb.AddForce(jumpForces, ForceMode.VelocityChange);
     }
 

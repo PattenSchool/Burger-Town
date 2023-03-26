@@ -5,11 +5,11 @@ OcclusionCullingSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_OcclusionBakeSettings:
-    smallestOccluder: 5
+    smallestOccluder: 2
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: d15a912c39576a8419fee38728ba14cb
+  m_OcclusionCullingData: {fileID: 36300000, guid: 533aa81346ac86946acc35cb32cac608, type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -22382,6 +22382,7 @@ GameObject:
   - component: {fileID: 832904668}
   - component: {fileID: 832904667}
   - component: {fileID: 832904666}
+  - component: {fileID: 832904669}
   m_Layer: 5
   m_Name: Dialogue
   m_TagString: Untagged
@@ -22422,6 +22423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 832904667}
+  expressionDisplay: {fileID: 0}
   conversation: {fileID: 11400000, guid: 64fe1064bdd2e2a4c8383b4c70120529, type: 2}
   dialogueIndex: 0
   dialogueShownSeconds: 5
@@ -22524,6 +22526,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832904664}
   m_CullTransparentMesh: 1
+--- !u!223 &832904669
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832904664}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1001 &838352028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23460,6 +23483,10 @@ PrefabInstance:
     - target: {fileID: 5385957387888601759, guid: ac2079c92c8a6054c8f73075168a5c24, type: 3}
       propertyPath: m_Name
       value: StonePlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 5385957387888601759, guid: ac2079c92c8a6054c8f73075168a5c24, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5385957387888601754, guid: ac2079c92c8a6054c8f73075168a5c24, type: 3}
@@ -37752,6 +37779,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StonePlatform (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5385957387888601759, guid: ac2079c92c8a6054c8f73075168a5c24, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5385957387888601754, guid: ac2079c92c8a6054c8f73075168a5c24, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ac2079c92c8a6054c8f73075168a5c24, type: 3}
@@ -50699,8 +50730,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bc5aa48e55bdad4bbc760ceb6c514c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  convoDisplay: {fileID: 832904666}
-  npcConversation: {fileID: 11400000, guid: 4af6b3fb2475f924a96df6b500415464, type: 2}
 --- !u!1 &1673307981 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1051935492322388, guid: b2e5a2f18e4304214a814252d3e90968, type: 3}
