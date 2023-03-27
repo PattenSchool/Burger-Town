@@ -23,6 +23,8 @@ public class TriggerOnPlayerEnter : MonoBehaviour
         if (other.tag == PlayerStatic.PlayerTag)
         {
             triggerableEvent.Invoke();
+            //this.GetComponentInParent<Rigidbody>().constraints =
+            //    ~RigidbodyConstraints.FreezeAll;
         }
         else
         {

@@ -1,152 +1,112 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 
 public class FallingPlatform : MonoBehaviour
 {
-    #region Comopnent Related
+    #region Components
     [Header("Components")]
 
-    [Tooltip("The rigidbody controlling this object's velocity")]
-    [SerializeField, HideInInspector]
+    [Tooltip("The rigidbody that is used to control velocity")]
+    [SerializeField]
     private Rigidbody platformRigidBody;
     #endregion
 
-    #region Data Variabes
-    [Header("Data related")]
+    #region Height related variables
+    [Header("Height Related")]
 
-    [Tooltip("The speed at which the falling object is falling at")]
-    [SerializeField, Min(0f)]
+    [Tooltip("The speed that is used when going down")]
+    [SerializeField]
     private float fallingSpeed;
 
-    [Tooltip("The ammount of time spent falling before resetting in seconds")]
-    [SerializeField, Min(0f)]
-    private float fallingTime = 0.1f;
-
-    [Tooltip("The height difference this platform is allowed to fall in meters")]
-    [SerializeField, Min(0.1f)]
-    private float maxFallDistance = 0.1f;
-
-    [Tooltip("The delay when the fall is called to start")]
+    [Tooltip("The time until reset after delay")]
     [SerializeField, Min(0f)]
     private float fallDelay = 0f;
 
-    [Tooltip("The original position of the platform")]
-    [SerializeField, HideInInspector]
-    private Vector3 originalPosition = Vector3.zero;
+    [Tooltip("The time in seconds to reset after delay")]
+    [SerializeField, Min(0.1f)]
+    private float fallTimer = 0.1f;
+
+    [Tooltip("The max height the platform can be dropped in meters")]
+    [SerializeField]
+    private float fallHeight = 0f;
     #endregion
 
-    #region Triggered Methods
-    public void TriggerFall()
-    {
-        StartFalling();
+    #region Storage related
+    [Header("Storage Related")]
 
-        //TODO: Start the coroutine to start the fall
-        StartCoroutine(SetFallWithTimer());
+    [SerializeField]
+    private Vector3 originalPosition;
 
-        
-    }
-
-    public IEnumerator SetFallWithTimer()
-    {
-        //TODO: Delay the fall
-        yield return new WaitForSeconds(fallDelay);
-
-        //TODO: Start the fall
-        StartFalling();
-
-        //TODO: Wait until stop falling and reset the block
-        yield return new WaitForSeconds(fallingTime);
-        ResetPosition();
-    }
-
-    /// <summary>
-    /// Checks if the thing is at fall distance
-    /// </summary>
-    public bool IsAtFallDistance()
-    {
-        float currentHeight = this.transform.position.y;
-
-        float finalHeight = CalculateFinalPosition().y;
-
-        return currentHeight <= finalHeight;
-    }
-
-    [ExecuteInEditMode]
-    public Vector3 CalculateFinalPosition()
-    {
-        Vector3 startingPosition;
-
-        if (originalPosition == Vector3.zero)
-        {
-            startingPosition = transform.position;
-        }
-        else
-        {
-            startingPosition = originalPosition;
-        }
-
-        return startingPosition - new Vector3(0f, maxFallDistance, 0f);
-    }
-
-    public void StartFalling()
-    {
-        
-        //TODO: Set valocity
-        platformRigidBody.velocity = Vector3.down * (fallingSpeed);
-
-        print(platformRigidBody.velocity);
-    }
-
-    public void StopFalling()
-    {
-        //TODO: Freeze the velocity
-        platformRigidBody.velocity = Vector3.zero;
-    }
-
-    /// <summary>
-    /// Sets the original position in storage
-    /// </summary>
-    public void SetOriginalPosition()
+    private void SetOriginalPosition()
     {
         originalPosition = transform.position;
     }
-
-    public void ResetPosition()
-    {
-        //TODO: Stop the fall
-        StopFalling();
-
-        //TODO: Reset the object
-        this.transform.position = originalPosition;
-    }
     #endregion
 
-    #region Unity Methods
+    #region Falling Methods
+    //TODO: Start the fall
+    private void StartFall()
+    {
+        ////platformRigidBody.velocity = Vector3.down * fallingSpeed;
+        //platformRigidBody.constraints = RigidbodyConstraints.FreezeAll | ~RigidbodyConstraints.FreezePositionY;
+    }
+
+    //TODO: Freezes the platform
+    private void StopFall()
+    {
+        ////platformRigidBody.velocity = Vector3.zero;
+        //platformRigidBody.constraints = RigidbodyConstraints.FreezeAll;
+    }
+
+    //TODO: Start fall from the outside
+    public void TriggerFall()
+    {
+        StartFall();
+        StartCoroutine(StartFallWithTimers());
+    }
+
+    public IEnumerator StartFallWithTimers()
+    {
+        //if (this.transform.position != originalPosition)
+        //{
+        //    yield break;
+        //}
+
+        ////TODO: Reset any forces on the platform before 
+
+        ////TODO: Start the delay
+        //yield return new WaitForSeconds(fallDelay);
+
+        ////TODO: Start the fall
+        //StartFall();
+
+        //TODO: Start the timer until reset
+        yield return new WaitForSeconds(fallTimer);
+        ResetPlatform();
+
+    }
+
+    #endregion
+
+    #region Unity methods
     private void Awake()
     {
+        platformRigidBody = GetComponent<Rigidbody>();
         SetOriginalPosition();
-        platformRigidBody = this.GetComponent<Rigidbody>();
     }
 
-    private void Update()
-    {
-        if (IsAtFallDistance())
-            StopFalling();
-    }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(CalculateFinalPosition(), this.transform.localScale);
-    }
+    #endregion
 
-    private void OnCollisionEnter(Collision collision)
+    #region Misc Methods
+    private void ResetPlatform()
     {
-        if (collision.gameObject.tag != PlayerStatic.PlayerTag)
-        {
-            StopFalling();
-        }
+        //StopFall();
+        this.transform.position = originalPosition;
     }
     #endregion
 }
