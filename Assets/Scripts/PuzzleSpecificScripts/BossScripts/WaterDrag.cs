@@ -26,8 +26,6 @@ public class WaterDrag : MonoBehaviour
         Rigidbody enteredRigidBody = other.GetComponent<Rigidbody>();
         storedDrag = enteredRigidBody.drag;
         enteredRigidBody.drag = drag;
-
-        print(enteredRigidBody.drag);
     }
 
     private void OnTriggerExit(Collider other)
