@@ -57,146 +57,146 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\PuzzleSpecificScripts\BossScripts\BossMovement.cs" />
+    <Compile Include="Assets\Scripts\PlayerRelated\PlayerStatic.cs" />
     <Compile Include="Assets\Scripts\PuzzleSpecificScripts\BossScripts\WaterDrag.cs" />
     <Compile Include="Assets\Scripts\PuzzleSpecificScripts\BossScripts\DisableOnHit.cs" />
+    <Compile Include="Assets\Scripts\DialogueScripts\SetDialogueTrigger.cs" />
+    <Compile Include="Assets\Scripts\AI\FollowPlayerState.cs" />
+    <Compile Include="Assets\Scripts\AI\DistractedState.cs" />
+    <Compile Include="Assets\Scripts\AI\DistractObjectTracker.cs" />
+    <Compile Include="Assets\Scripts\PuzzleSpecificScripts\Level2\Sage&apos;sPuzzle\PlatformChangeManager.cs" />
+    <Compile Include="Assets\Scripts\Objective Related\Classes\AbstractObjective.cs" />
+    <Compile Include="Assets\Scripts\PuzzleSpecificScripts\Level1\Puzzle1\TargetsManager.cs" />
+    <Compile Include="Assets\Scripts\CheckpointSystem\IResettable.cs" />
+    <Compile Include="Assets\Scripts\PuzzleSpecificScripts\Level4\DestroyWall.cs" />
+    <Compile Include="Assets\Scripts\EventObjects\HutDoorCollision.cs" />
     <Compile Include="Assets\Scripts\PuzzleSpecificScripts\BossScripts\BossAI\TimerCountDown.cs" />
+    <Compile Include="Assets\Scripts\BossQuestData\GetIndredients.cs" />
+    <Compile Include="Assets\Scripts\Objective Related\Objectives\ObjectiveGoTo.cs" />
+    <Compile Include="Assets\Scripts\PlayerRelated\AwayFromCenter.cs" />
+    <Compile Include="Assets\Scripts\PuzzleSpecificScripts\Level1\Puzzle1\TargetSelfDestruct.cs" />
+    <Compile Include="Assets\Scripts\Objective Related\QuestManager.cs" />
+    <Compile Include="Assets\Scripts\CheckpointSystem\CheckPointManager.cs" />
+    <Compile Include="Assets\Scripts\Objective Related\Classes\AbstractCompleteAction.cs" />
+    <Compile Include="Assets\Scripts\EventObjects\Moving_Platform.cs" />
+    <Compile Include="Assets\Scripts\AI\ShotTimerTracker.cs" />
+    <Compile Include="Assets\Scripts\SaveSystem\ScriptsForData\SaveData_SO.cs" />
+    <Compile Include="Assets\Scripts\DialogueScripts\NPCDialogueScripts\Scripts_NPCDIalogueDisplay\TimedRandNPCDialogueDisplay.cs" />
     <Compile Include="Assets\Scripts\PuzzleSpecificScripts\BossScripts\MinionSpecific\DespawnWithTimer.cs" />
     <Compile Include="Assets\Scripts\PuzzleSpecificScripts\BossScripts\BossVariables.cs" />
+    <Compile Include="Assets\Scripts\TestScripts\IceCubeScript.cs" />
+    <Compile Include="Assets\Scripts\PlayerRelated\StaticPlayerClassSetup.cs" />
     <Compile Include="Assets\Scripts\PuzzleSpecificScripts\BossScripts\MinionSpecific\TimeShot.cs" />
+    <Compile Include="Assets\Scripts\EventObjects\TestEventReciever.cs" />
+    <Compile Include="Assets\Scripts\EventObjects\DisappearBlockMesh.cs" />
+    <Compile Include="Assets\Scripts\ThrowAwayScripts\IcrementLevel.cs" />
+    <Compile Include="Assets\Scripts\Burger Related\BurgerPhysical.cs" />
+    <Compile Include="Assets\Scripts\Objective Related\CompleteActions\CompleteActionSetActive.cs" />
+    <Compile Include="Assets\Scripts\ThrowAwayScripts\TestBossBehavior.cs" />
+    <Compile Include="Assets\Scripts\MathScripts\bolt related\HitTesting.cs" />
+    <Compile Include="Assets\Scripts\SaveSystem\ScriptsForData\LevelData_SO.cs" />
+    <Compile Include="Assets\Scripts\CheckpointSystem\CheckPoint.cs" />
+    <Compile Include="Assets\Scripts\SaveSystem\SaveLoadManager.cs" />
+    <Compile Include="Assets\Scripts\MathScripts\bolt related\BoltPlatformDestruct.cs" />
+    <Compile Include="Assets\Scripts\AI\BossWin\BossWin.cs" />
+    <Compile Include="Assets\Scripts\EventObjects\Strength_Puzzle_Button.cs" />
+    <Compile Include="Assets\Scripts\Objective Related\Classes\Quest.cs" />
     <Compile Include="Assets\Scripts\PuzzleSpecificScripts\BossScripts\BossAI\FireAmmo.cs" />
+    <Compile Include="Assets\Scripts\EventObjects\NewBehaviourScript.cs" />
+    <Compile Include="Assets\Scripts\PlayerRelated\ResetLevelOnHit.cs" />
+    <Compile Include="Assets\Scripts\AI\BossBehaviorVariables.cs" />
+    <Compile Include="Assets\Scripts\PlayerRelated\ShootScript.cs" />
+    <Compile Include="Assets\Scripts\Menus\ResetLevel.cs" />
     <Compile Include="Assets\Scripts\PuzzleSpecificScripts\BossScripts\MinionSpecific\DespawnWithHit.cs" />
+    <Compile Include="Assets\Scripts\EventObjects\BridgeRiseTrigger.cs" />
+    <Compile Include="Assets\Scripts\MathScripts\MathFExtended.cs" />
+    <Compile Include="Assets\Scripts\Menus\MainMenu\SceneSelect.cs" />
+    <Compile Include="Assets\Scripts\UI\MainTextDisplay.cs" />
     <Compile Include="Assets\Scripts\PuzzleSpecificScripts\BossScripts\ObsticalSpecific\TriggerOnPlayerEnter.cs" />
+    <Compile Include="Assets\Scripts\DialogueScripts\NPCDialogueScripts\Scripts_NPCDIalogueDisplay\NPCDialogueDisplay.cs" />
+    <Compile Include="Assets\Scripts\EventObjects\EventTrigger.cs" />
+    <Compile Include="Assets\Scripts\UI\DialogueManager.cs" />
+    <Compile Include="Assets\Scripts\ThrowAwayScripts\TestIngredientUI.cs" />
+    <Compile Include="Assets\Scripts\MathScripts\bolt related\Projectile.cs" />
+    <Compile Include="Assets\Scripts\SaveSystem\ScriptsForData\OverarchingSavesData_SO.cs" />
+    <Compile Include="Assets\Scripts\Menus\ResetLevel_Collider.cs" />
+    <Compile Include="Assets\Scripts\EventObjects\IngredientCollision.cs" />
+    <Compile Include="Assets\Scripts\Preferences\SettingsMenu.cs" />
+    <Compile Include="Assets\Scripts\AI\BossAsthetics\OrientationMatch.cs" />
+    <Compile Include="Assets\Scripts\PuzzleSpecificScripts\Level1\Puzzle1\TeleportPlayer.cs" />
+    <Compile Include="Assets\Scripts\EventObjects\TargetCollision.cs" />
+    <Compile Include="Assets\Scripts\AudioScripts\LevelSFX.cs" />
+    <Compile Include="Assets\Scripts\DialogueScripts\NPCDialogueScripts\Scripts_TriggerNPCDIalogue]\NPCDialogueTrigger.cs" />
+    <Compile Include="Assets\Scripts\MathScripts\bolt related\StickyBoltMechanics.cs" />
+    <Compile Include="Assets\Scripts\MathScripts\bolt related\ObjectPooling.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\SetTutorialConvo.cs" />
+    <Compile Include="Assets\Scripts\DialogueScripts\NPCDialogueScripts\Scripts_NPCDIalogueDisplay\SequentialNPCDialogueDisplay.cs" />
+    <Compile Include="Assets\Scripts\AI\PlayAnimation.cs" />
+    <Compile Include="Assets\Scripts\CheckpointSystem\ResetChildren.cs" />
+    <Compile Include="Assets\Scripts\PuzzleSpecificScripts\Level2\Sage&apos;sPuzzle\MoveObject.cs" />
+    <Compile Include="Assets\Scripts\DialogueScripts\NPCDialogueScripts\PointTowardsPlayer.cs" />
     <Compile Include="Assets\Scripts\PuzzleSpecificScripts\BossScripts\LookAtPlayer.cs" />
     <Compile Include="Assets\Scripts\PuzzleSpecificScripts\BossScripts\MatchGameObjectTransform.cs" />
-    <Compile Include="Assets\Scripts\PuzzleSpecificScripts\BossScripts\BossRotation.cs" />
-    <Compile Include="Assets\Scripts\MathScripts\bolt related\MinionBolt.cs" />
-    <Compile Include="Assets\Scripts\PuzzleSpecificScripts\BossScripts\ObsticalSpecific\FallingPlatform.cs" />
-    <Compile Include="Assets\Scripts\MathScripts\bolt related\BoltTemplate.cs" />
-    <Compile Include="Assets\TestThrowAwayAssets\BoltShower.cs" />
-    <Compile Include="Assets\Scripts\AI\FollowPlayerState.cs" />
-    <Compile Include="Assets\Scripts\AI\ShotTimerTracker.cs" />
-    <Compile Include="Assets\Scripts\AI\DistractObjectTracker.cs" />
-    <Compile Include="Assets\Scripts\AI\DetectDefeatState.cs" />
-    <Compile Include="Assets\Scripts\AI\PlayAnimation.cs" />
-    <Compile Include="Assets\Scripts\AI\ShootState.cs" />
-    <Compile Include="Assets\Scripts\AI\DistractedState.cs" />
-    <Compile Include="Assets\Scripts\AI\DefeatedState.cs" />
-    <Compile Include="Assets\Scripts\DialogueScripts\Conversation_SO.cs" />
-    <Compile Include="Assets\Scripts\SaveSystem\ScriptsForData\LevelData_SO.cs" />
-    <Compile Include="Assets\Scripts\SaveSystem\ScriptsForData\SaveData_SO.cs" />
-    <Compile Include="Assets\Scripts\SaveSystem\ScriptsForData\OverarchingSavesData_SO.cs" />
-    <Compile Include="Assets\Scripts\SaveSystem\ScriptsForData\OverarchingGameData_SO.cs" />
+    <Compile Include="Assets\Scripts\AI\BossData\BossFightManager.cs" />
     <Compile Include="Assets\Scripts\Burger Related\Burger.cs" />
-    <Compile Include="Assets\Scripts\Preferences\SettingsMenu.cs" />
-    <Compile Include="Assets\Scripts\EventObjects\HutDoorCollision.cs" />
-    <Compile Include="Assets\Scripts\MathScripts\bolt related\LauncherBolt.cs" />
-    <Compile Include="Assets\Scripts\UI\BoltUIDisplay.cs" />
-    <Compile Include="Assets\Scripts\EventObjects\TargetCollision.cs" />
-    <Compile Include="Assets\Scripts\EventObjects\Palm_Tree_Collision.cs" />
-    <Compile Include="Assets\Scripts\DialogueScripts\NPCDialogueScripts\PointTowardsPlayer.cs" />
-    <Compile Include="Assets\Scripts\DialogueScripts\NPCDialogueScripts\Scripts_NPCDIalogueDisplay\TimedSequentialNPCDisplay.cs" />
-    <Compile Include="Assets\Scripts\AI\BossBehaviorVariables.cs" />
-    <Compile Include="Assets\Scripts\ThrowAwayScripts\IcrementLevel.cs" />
-    <Compile Include="Assets\Scripts\EventObjects\EventTrigger.cs" />
-    <Compile Include="Assets\Scripts\Tutorial\SetTutorialConvo.cs" />
-    <Compile Include="Assets\Scripts\CheckpointSystem\CheckPointManager.cs" />
-    <Compile Include="Assets\Scripts\SaveSystem\SaveLoadManager.cs" />
-    <Compile Include="Assets\Scripts\PlayerRelated\StaticPlayerClassSetup.cs" />
-    <Compile Include="Assets\Scripts\UI\PlayerDisplays.cs" />
-    <Compile Include="Assets\Scripts\Menus\PauseManager.cs" />
-    <Compile Include="Assets\Scripts\PlayerRelated\rbCharacterController.cs" />
-    <Compile Include="Assets\Scripts\PlayerRelated\ShootScript.cs" />
-    <Compile Include="Assets\Scripts\EventObjects\DisappearBlockMesh.cs" />
-    <Compile Include="Assets\Scripts\EventObjects\DisappearButtonCollision.cs" />
+    <Compile Include="Assets\Scripts\Menus\WinMenuTest.cs" />
+    <Compile Include="Assets\Scripts\PlayerRelated\GroundCheck.cs" />
+    <Compile Include="Assets\Scripts\MovingPlatform\MovingPlatform.cs" />
     <Compile Include="Assets\Scripts\PlayerRelated\GrabObject.cs" />
-    <Compile Include="Assets\Scripts\UI\MainTextDisplay.cs" />
-    <Compile Include="Assets\Scripts\AudioScripts\AudioManager.cs" />
-    <Compile Include="Assets\ToMainMenu.cs" />
-    <Compile Include="Assets\Scripts\PuzzleSpecificScripts\Level2\Sage&apos;sPuzzle\MoveObject.cs" />
-    <Compile Include="Assets\Scripts\PuzzleSpecificScripts\Level1\Puzzle1\TargetSelfDestruct.cs" />
-    <Compile Include="Assets\Scripts\PuzzleSpecificScripts\Level1\Puzzle1\TargetsManager.cs" />
-    <Compile Include="Assets\Scripts\PuzzleSpecificScripts\Level1\Puzzle1\TeleportPlayer.cs" />
-    <Compile Include="Assets\Scripts\MathScripts\bolt related\StickyBoltPlatormTimer.cs" />
-    <Compile Include="Assets\Scripts\MathScripts\bolt related\BoltPlatformDestruct.cs" />
-    <Compile Include="Assets\Scripts\Objective Related\CompleteActions\CompleteActionSetActive.cs" />
-    <Compile Include="Assets\Scripts\Objective Related\Objectives\ObjectiveGoTo.cs" />
-    <Compile Include="Assets\Scripts\Objective Related\Objectives\ObjectiveDestroy.cs" />
-    <Compile Include="Assets\Scripts\Objective Related\CompleteActions\CompleteActionHover.cs" />
-    <Compile Include="Assets\Scripts\Objective Related\QuestManager.cs" />
-    <Compile Include="Assets\Scripts\Objective Related\CompleteActions\CompleteActionSpawnItem.cs" />
-    <Compile Include="Assets\Scripts\Objective Related\Objectives\ObjectiveObtainBurger.cs" />
-    <Compile Include="Assets\Scripts\AudioScripts\LevelSFX.cs" />
-    <Compile Include="Assets\Scripts\UI\DialogueInputManager.cs" />
+    <Compile Include="Assets\Scripts\AI\DetectDefeatState.cs" />
+    <Compile Include="Assets\Scripts\PuzzleSpecificScripts\BossScripts\BossRotation.cs" />
     <Compile Include="Assets\Scripts\UI\DialogueReticleToggle.cs" />
-    <Compile Include="Assets\Scripts\EventObjects\Strength_Puzzle_Weight.cs" />
-    <Compile Include="Assets\Scripts\EventObjects\Strength_Puzzle_Button.cs" />
+    <Compile Include="Assets\Scripts\Burger Related\BurgerPhysicalPart.cs" />
+    <Compile Include="Assets\Scripts\Menus\PauseManager.cs" />
+    <Compile Include="Assets\Scripts\ThrowAwayScripts\TestWeakSpot.cs" />
+    <Compile Include="Assets\Scripts\ThrowAwayScripts\LoadLevelButton.cs" />
+    <Compile Include="Assets\Scripts\Objective Related\Objectives\ObjectiveObtainBurger.cs" />
+    <Compile Include="Assets\Scripts\AI\BossAsthetics\BossAnimationPlayer.cs" />
+    <Compile Include="Assets\Scripts\MathScripts\bolt related\MinionBolt.cs" />
+    <Compile Include="Assets\Scripts\DialogueScripts\NPCDialogueScripts\Scripts_NPCDIalogueDisplay\TimedSequentialNPCDisplay.cs" />
+    <Compile Include="Assets\Scripts\MathScripts\bolt related\BoltTemplate.cs" />
+    <Compile Include="Assets\Scripts\PuzzleSpecificScripts\Level1\Puzzle1\TimedStay.cs" />
+    <Compile Include="Assets\Scripts\Menus\MainMenu\CameraRotation.cs" />
+    <Compile Include="Assets\Scripts\DialogueScripts\Conversation_SO.cs" />
+    <Compile Include="Assets\Scripts\AI\DistractableObject.cs" />
+    <Compile Include="Assets\Scripts\PlayerRelated\DebugModeScript.cs" />
+    <Compile Include="Assets\Scripts\Objective Related\CompleteActions\CompleteActionHover.cs" />
+    <Compile Include="Assets\Scripts\MovingPlatform\WaypointPath.cs" />
+    <Compile Include="Assets\Scripts\AI\DefeatedState.cs" />
+    <Compile Include="Assets\Scripts\EventObjects\Hut_Marker_Trigger.cs" />
     <Compile Include="Assets\Scripts\Menus\DeathMenuTest.cs" />
     <Compile Include="Assets\Scripts\EventObjects\GateTrigger.cs" />
-    <Compile Include="Assets\Scripts\Menus\ResetLevel_Collider.cs" />
-    <Compile Include="Assets\Scripts\PlayerRelated\GroundCheck.cs" />
-    <Compile Include="Assets\Scripts\EventObjects\Hut_Marker_Trigger.cs" />
-    <Compile Include="Assets\Scripts\MathScripts\bolt related\StickyBoltMechanics.cs" />
-    <Compile Include="Assets\Scripts\Menus\ResetLevel.cs" />
-    <Compile Include="Assets\Scripts\CheckpointSystem\CheckPoint.cs" />
-    <Compile Include="Assets\Scripts\EventObjects\BridgeRiseTrigger.cs" />
-    <Compile Include="Assets\Scripts\DialogueScripts\SetDialogueTrigger.cs" />
     <Compile Include="Assets\StoreAssets\com\heparo\terrain\toolkit\scripts\TerrainToolkit.cs" />
-    <Compile Include="Assets\Scripts\PuzzleSpecificScripts\Level2\Sage&apos;sPuzzle\PlatformChangeManager.cs" />
-    <Compile Include="Assets\Scripts\EventObjects\NewBehaviourScript.cs" />
-    <Compile Include="Assets\Scripts\AI\DistractableObject.cs" />
-    <Compile Include="Assets\Scripts\AI\BossAsthetics\OrientationMatch.cs" />
-    <Compile Include="Assets\Scripts\PlayerRelated\DebugModeScript.cs" />
-    <Compile Include="Assets\Scripts\CheckpointSystem\ResetChildren.cs" />
-    <Compile Include="Assets\Scripts\ThrowAwayScripts\TestWeakSpot.cs" />
-    <Compile Include="Assets\Scripts\MovingPlatform\WaypointPath.cs" />
-    <Compile Include="Assets\Scripts\ThrowAwayScripts\LoadLevelButton.cs" />
-    <Compile Include="Assets\Scripts\BossQuestData\GetIndredients.cs" />
-    <Compile Include="Assets\Scripts\PlayerRelated\PlayerStatic.cs" />
-    <Compile Include="Assets\Scripts\DialogueScripts\NPCDialogueScripts\Scripts_NPCDIalogueDisplay\TimedRandNPCDialogueDisplay.cs" />
-    <Compile Include="Assets\Scripts\ThrowAwayScripts\TestBossBehavior.cs" />
-    <Compile Include="Assets\Scripts\DialogueScripts\NPCDialogueScripts\Scripts_NPCDIalogueDisplay\NPCDialogueDisplay.cs" />
-    <Compile Include="Assets\Scripts\PlayerRelated\AwayFromCenter.cs" />
-    <Compile Include="Assets\Scripts\UI\DialogueManager.cs" />
-    <Compile Include="Assets\Scripts\Menus\MainToLoadMenu.cs" />
+    <Compile Include="Assets\Scripts\EventObjects\Strength_Puzzle_Weight.cs" />
     <Compile Include="Assets\Scripts\ThrowAwayScripts\TextDisplayText.cs" />
-    <Compile Include="Assets\Scripts\AI\BossData\BossFightManager.cs" />
-    <Compile Include="Assets\Scripts\MathScripts\bolt related\HitTesting.cs" />
-    <Compile Include="Assets\Scripts\Menus\WinMenuTest.cs" />
-    <Compile Include="Assets\Scripts\AI\BossAsthetics\BossAnimationPlayer.cs" />
-    <Compile Include="Assets\Scripts\TestScripts\IceCubeScript.cs" />
-    <Compile Include="Assets\Scripts\Objective Related\Classes\AbstractObjective.cs" />
     <Compile Include="Assets\Scripts\Menus\MainMenu\MenuSwitch.cs" />
-    <Compile Include="Assets\Scripts\PlayerRelated\ResetLevelOnHit.cs" />
-    <Compile Include="Assets\Scripts\ThrowAwayScripts\TargetCount.cs" />
-    <Compile Include="Assets\Scripts\ThrowAwayScripts\TestIngredientUI.cs" />
-    <Compile Include="Assets\Scripts\PlayerRelated\Controller.cs" />
-    <Compile Include="Assets\Scripts\DialogueScripts\NPCDialogueScripts\Scripts_TriggerNPCDIalogue]\NPCDialogueTrigger.cs" />
-    <Compile Include="Assets\Scripts\MathScripts\bolt related\Projectile.cs" />
-    <Compile Include="Assets\Scripts\EventObjects\WinEvent.cs" />
-    <Compile Include="Assets\Scripts\PuzzleSpecificScripts\Level1\Puzzle1\TimedStay.cs" />
-    <Compile Include="Assets\Scripts\CheckpointSystem\Resettable.cs" />
-    <Compile Include="Assets\Scripts\MovingPlatform\MovingPlatform.cs" />
-    <Compile Include="Assets\Scripts\AI\LifeLinkObject.cs" />
-    <Compile Include="Assets\Scripts\LevelManagingScripts\LevelManagerStatic.cs" />
-    <Compile Include="Assets\Scripts\CheckpointSystem\IResettable.cs" />
-    <Compile Include="Assets\Scripts\EventObjects\TestEventReciever.cs" />
-    <Compile Include="Assets\Scripts\PuzzleSpecificScripts\Level3\SwitchOnHit.cs" />
-    <Compile Include="Assets\Scripts\Menus\MainMenu\CameraRotation.cs" />
-    <Compile Include="Assets\Scripts\Objective Related\Classes\AbstractCompleteAction.cs" />
-    <Compile Include="Assets\Scripts\PuzzleSpecificScripts\Level4\DestroyWall.cs" />
-    <Compile Include="Assets\Scripts\Burger Related\BurgerPhysicalPart.cs" />
-    <Compile Include="Assets\Scripts\EventObjects\Moving_Platform.cs" />
-    <Compile Include="Assets\Scripts\MathScripts\bolt related\ObjectPooling.cs" />
-    <Compile Include="Assets\Scripts\AI\BossWin\BossWin.cs" />
-    <Compile Include="Assets\Scripts\Objective Related\Classes\Quest.cs" />
-    <Compile Include="Assets\Scripts\MathScripts\MathFExtended.cs" />
-    <Compile Include="Assets\Scripts\DialogueScripts\NPCDialogueScripts\Scripts_NPCDIalogueDisplay\SequentialNPCDialogueDisplay.cs" />
-    <Compile Include="Assets\Scripts\Burger Related\BurgerPhysical.cs" />
-    <Compile Include="Assets\Scripts\EventObjects\IngredientCollision.cs" />
-    <Compile Include="Assets\Scripts\Menus\MainMenu\SceneSelect.cs" />
+    <Compile Include="Assets\Scripts\Objective Related\CompleteActions\CompleteActionSpawnItem.cs" />
+    <Compile Include="Assets\Scripts\AI\ShootState.cs" />
+    <Compile Include="Assets\Scripts\UI\BoltUIDisplay.cs" />
     <Compile Include="Assets\Scripts\PuzzleSpecificScripts\Level2\Sage&apos;sPuzzle\CollisionManagerScript.cs" />
-    <Compile Include="Assets\Scripts\PuzzleSpecificScripts\Level4\Explosive.cs" />
+    <Compile Include="Assets\ToMainMenu.cs" />
+    <Compile Include="Assets\Scripts\PlayerRelated\rbCharacterController.cs" />
     <Compile Include="Assets\Scripts\DialogueScripts\NPCDialogueScripts\Scripts_NPCDIalogueDisplay\RandomizedNPCDialogueDisplay.cs" />
+    <Compile Include="Assets\Scripts\Menus\MainToLoadMenu.cs" />
+    <Compile Include="Assets\Scripts\EventObjects\DisappearButtonCollision.cs" />
+    <Compile Include="Assets\Scripts\AudioScripts\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\EventObjects\WinEvent.cs" />
+    <Compile Include="Assets\Scripts\AI\LifeLinkObject.cs" />
+    <Compile Include="Assets\Scripts\EventObjects\Palm_Tree_Collision.cs" />
+    <Compile Include="Assets\Scripts\MathScripts\bolt related\LauncherBolt.cs" />
+    <Compile Include="Assets\Scripts\CheckpointSystem\Resettable.cs" />
+    <Compile Include="Assets\Scripts\LevelManagingScripts\LevelManagerStatic.cs" />
+    <Compile Include="Assets\Scripts\PuzzleSpecificScripts\BossScripts\ObsticalSpecific\FallingPlatform.cs" />
+    <Compile Include="Assets\Scripts\PuzzleSpecificScripts\Level4\Explosive.cs" />
+    <Compile Include="Assets\Scripts\Objective Related\Objectives\ObjectiveDestroy.cs" />
+    <Compile Include="Assets\Scripts\ThrowAwayScripts\TargetCount.cs" />
+    <Compile Include="Assets\Scripts\PlayerRelated\Controller.cs" />
+    <Compile Include="Assets\Scripts\MathScripts\bolt related\StickyBoltPlatormTimer.cs" />
+    <Compile Include="Assets\Scripts\UI\DialogueInputManager.cs" />
+    <Compile Include="Assets\Scripts\PuzzleSpecificScripts\Level3\SwitchOnHit.cs" />
+    <Compile Include="Assets\Scripts\UI\PlayerDisplays.cs" />
+    <Compile Include="Assets\Scripts\SaveSystem\ScriptsForData\OverarchingGameData_SO.cs" />
+    <Compile Include="Assets\TestThrowAwayAssets\BoltShower.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -469,11 +469,11 @@
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="ReportGeneratorMerged">
       <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.0.1\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.5f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -847,23 +847,17 @@
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Services.Core.Analytics">
-      <HintPath>Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Shared.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Services.Core.Environments">
-      <HintPath>Library\ScriptAssemblies\Unity.Services.Core.Environments.dll</HintPath>
+    <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
+      <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
@@ -880,17 +874,23 @@
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
+      <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.PlasticSCM.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+    <Reference Include="Unity.InputSystem">
+      <HintPath>Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PlasticSCM.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
@@ -898,29 +898,29 @@
     <Reference Include="Unity.Services.Core">
       <HintPath>Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.State">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.Core">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
-      <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
     </Reference>
     <Reference Include="Unity.EditorCoroutines.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.InputSystem">
-      <HintPath>Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
+    <Reference Include="Unity.Services.Core.Analytics">
+      <HintPath>Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Shared.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Environments">
+      <HintPath>Library\ScriptAssemblies\Unity.Services.Core.Environments.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
-      <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
+    <Reference Include="Unity.VisualScripting.State">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
