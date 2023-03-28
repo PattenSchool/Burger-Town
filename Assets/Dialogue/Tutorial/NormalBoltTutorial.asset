@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e31002ba153d404b80405be71eb360a, type: 3}
+  m_Name: NormalBoltTutorial
+  m_EditorClassIdentifier: 
+  dialogues:
+  - expressionSprite: {fileID: 21300000, guid: 146e39c70bec9d24695bc47eb6f11e07, type: 3}
+    Narrorator: 2
+    text: Hey there, you've had a rough sleep.
+  - expressionSprite: {fileID: 21300000, guid: 146e39c70bec9d24695bc47eb6f11e07, type: 3}
+    Narrorator: 2
+    text: Considering it's been days, you've must be wide awake now.
+  - expressionSprite: {fileID: 21300000, guid: 146e39c70bec9d24695bc47eb6f11e07, type: 3}
+    Narrorator: 2
+    text: We need to make the best burger to escape the island.
+  - expressionSprite: {fileID: 21300000, guid: 146e39c70bec9d24695bc47eb6f11e07, type: 3}
+    Narrorator: 2
+    text: There's a crosssbow nearby, can you use it to break down the door? It's
+      been stuck since you fell asleep.
