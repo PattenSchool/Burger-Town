@@ -1,112 +1,187 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Data;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
 
+/// <summary>
+/// Controls the behaviors of the falling platform
+/// </summary>
 public class FallingPlatform : MonoBehaviour
 {
-    #region Components
-    [Header("Components")]
+    #region Alterable related
+    [Header("Falling related")]
 
-    [Tooltip("The rigidbody that is used to control velocity")]
-    [SerializeField]
-    private Rigidbody platformRigidBody;
-    #endregion
+    [Tooltip("The falling speed in meters")]
+    [SerializeField, Min(0.01f)]
+    private float fallingSpeed = 0.5f;
 
-    #region Height related variables
-    [Header("Height Related")]
-
-    [Tooltip("The speed that is used when going down")]
-    [SerializeField]
-    private float fallingSpeed;
-
-    [Tooltip("The time until reset after delay")]
+    [Tooltip("The max fall height")]
     [SerializeField, Min(0f)]
-    private float fallDelay = 0f;
+    private float fallDistance = 1f;
 
-    [Tooltip("The time in seconds to reset after delay")]
+    [Tooltip("The delay before the fall starts in seconds")]
     [SerializeField, Min(0.1f)]
-    private float fallTimer = 0.1f;
+    private float delayTime = 0f;
 
-    [Tooltip("The max height the platform can be dropped in meters")]
-    [SerializeField]
-    private float fallHeight = 0f;
+    [Tooltip("The time while in fall in seconds")]
+    [SerializeField, Min(0f)]
+    private float fallingTime = 1f;
     #endregion
 
-    #region Storage related
-    [Header("Storage Related")]
+    #region Dynamic Variables
+    [Header("Dynamic Variables")]
 
-    [SerializeField]
-    private Vector3 originalPosition;
+    [Tooltip("Hidden recorded speed")]
+    [SerializeField, HideInInspector, Min(0f)]
+    private float dynamicSpeed = 0f;
+    #endregion
 
-    private void SetOriginalPosition()
-    {
-        originalPosition = transform.position;
-    }
+    #region Fixed Hidden Variables
+    [Header("Fixed Variables")]
+
+    [Tooltip("The original position")]
+    [SerializeField, HideInInspector]
+    private Vector3 originalPosition = Vector3.zero;
+
+    [Tooltip("The final position the thing can be in")]
+    [SerializeField, HideInInspector]
+    private Vector3 finalPosition = Vector3.zero;
     #endregion
 
     #region Falling Methods
-    //TODO: Start the fall
     private void StartFall()
     {
-        ////platformRigidBody.velocity = Vector3.down * fallingSpeed;
-        //platformRigidBody.constraints = RigidbodyConstraints.FreezeAll | ~RigidbodyConstraints.FreezePositionY;
+        dynamicSpeed = fallingSpeed;
     }
 
-    //TODO: Freezes the platform
     private void StopFall()
     {
-        ////platformRigidBody.velocity = Vector3.zero;
-        //platformRigidBody.constraints = RigidbodyConstraints.FreezeAll;
+        dynamicSpeed = 0f;
+    }
+    #endregion
+
+    #region Position Related
+    private void UpdatePosition()
+    {
+        this.transform.position += new Vector3(0f, -dynamicSpeed * Time.deltaTime, 0f);
     }
 
-    //TODO: Start fall from the outside
+    private void StopOnHeightDifference()
+    {
+        if (IsBelowFinalHeight())
+        {
+            this.transform.position = finalPosition;
+        }
+    }
+
+    private bool IsBelowFinalHeight()
+    {
+        return transform.position.y <= finalPosition.y;
+    }
+
+    private void CalculateFinalPosition()
+    {
+        finalPosition = originalPosition - new Vector3(0f, fallDistance, 0f);
+    }
+
+    private void SetToFinalPosition()
+    {
+        transform.position = finalPosition;
+    }
+
+    private void StoreOriginalPosition()
+    {
+        originalPosition = this.transform.position;
+    }
+
+    private void SetToOriginalPosition()
+    {
+        this.transform.position = originalPosition; 
+    }
+    #endregion
+
+    #region Direct Platform Control Methods
+    /// <summary>
+    /// Resets the platform's speed and position
+    /// </summary>
+    public void ResetPlatform()
+    {
+        //TODO: Stop fall
+        StopFall();
+
+        //TODO: Reset Position
+        SetToOriginalPosition();
+    }
+
     public void TriggerFall()
     {
-        StartFall();
-        StartCoroutine(StartFallWithTimers());
+        //TODO: Start the coroutine
+        StartCoroutine(StartFallingSequence());
     }
 
-    public IEnumerator StartFallWithTimers()
+    private IEnumerator StartFallingSequence()
     {
-        //if (this.transform.position != originalPosition)
-        //{
-        //    yield break;
-        //}
+        //TODO: Start the delay
+        yield return new WaitForSeconds(delayTime);
 
-        ////TODO: Reset any forces on the platform before 
+        //TODO: Start the fall
+        StartFall();
 
-        ////TODO: Start the delay
-        //yield return new WaitForSeconds(fallDelay);
+        //TODO: Start the fall counter
+        yield return new WaitForSeconds(fallingTime);
 
-        ////TODO: Start the fall
-        //StartFall();
-
-        //TODO: Start the timer until reset
-        yield return new WaitForSeconds(fallTimer);
+        //TODO: Reset the platform
         ResetPlatform();
 
+        //TODO: Stop All Coroutines
+        StopAllCoroutines();
     }
-
     #endregion
 
-    #region Unity methods
+    #region Unity Methods
     private void Awake()
     {
-        platformRigidBody = GetComponent<Rigidbody>();
-        SetOriginalPosition();
+        //TODO: Get position info
+        StoreOriginalPosition();
+        CalculateFinalPosition();
+
+        //TODO: Reset fall just in case
+        StopFall();
     }
 
-
-    #endregion
-
-    #region Misc Methods
-    private void ResetPlatform()
+    private void Update()
     {
-        //StopFall();
-        this.transform.position = originalPosition;
+
+        if (!IsBelowFinalHeight())
+        {
+            UpdatePosition();
+        }
+        else
+        {
+            SetToFinalPosition();
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        //TODO: Calculate the final position with or without editor being on
+        #region Calculate projected position
+        Vector3 projectedPosition;
+        if (finalPosition == Vector3.zero)
+        {
+            projectedPosition = this.transform.position - new Vector3(0f, fallDistance, 0f); 
+        }
+        else
+        {
+            projectedPosition = finalPosition;
+        }
+        #endregion
+
+        //TODO: Draw the wirecube at the end
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(projectedPosition, transform.lossyScale);
+
+        //TODO: Draw line from current position to projected position
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(this.transform.position, projectedPosition);
     }
     #endregion
 }
