@@ -79,7 +79,6 @@ public class BoltTemplate : Projectile
         //Reset level if player was hit
         if (collision.gameObject.tag == PlayerStatic.PlayerTag)
         {
-            print(collision.gameObject.tag);
 
             Scene activeScene = SceneManager.GetActiveScene();
 

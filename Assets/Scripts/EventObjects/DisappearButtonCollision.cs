@@ -19,7 +19,7 @@ public class DisappearButtonCollision : MonoBehaviour
 
     // Switched to on trigger enter due to several issues detecting platform
     // collision was detecting the bolt rather than the spawned platform
-    private void OnTriggerEnter(Collider collider)
+    private void OnTriggerStay(Collider collider)
     {
         // Checks the tag of the colliding object
         // if its a player

@@ -9,4 +9,10 @@ public class TargetSelfDestruct : MonoBehaviour, IHitable
     {
         this.gameObject.SetActive(false);
     }
+
+    private void SubtractNumber()
+    {
+        GateTrigger.targetNum -= 1;
+        BridgeRiseTrigger.targetNum -= 1;
+    }
 }

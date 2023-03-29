@@ -1,116 +1,178 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using System.Linq;
-using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
-using System.Linq;
 
 public class CheckPointManager : MonoBehaviour
 {
-    [Tooltip("The instance of the checkpoint manager")]
+    #region Singleton
+    //!===========Variables and Properties===========!//
+    [Header("Singleton variables")]
+
+    [Tooltip("The instance that is called in other classes")]
     [SerializeField]
     public static CheckPointManager instance;
 
-    [Tooltip("The transform of the new checkpoint")]
-    [SerializeField]
-    public GameObject checkPointTracker;
-
-    [Tooltip("Which checkpoint is being respawned to on next player death")]
-    [SerializeField]
-    private int _index;
-
-    #region Self Destruction
-    public void DestroyCheckPointManager()
+    //!===================Methods====================!//
+    /// <summary>
+    /// Sets up the singleton to be called from other classes
+    /// </summary>
+    public void SetUpSingleton()
     {
-        if (instance.transform.parent == null)
-            Destroy(instance.gameObject);
-        else
-            Destroy(instance.transform.parent.gameObject);
-    }
-    #endregion
-
-    #region Unity Methods
-    private void Awake()
-    {
-        if (instance == null && instance != this)
+        if (instance == null)
         {
             instance = this;
-
-            var checkPoints = GameObject.FindObjectsOfType<CheckPoint>().ToList();
-            checkPoints.Sort(SortCheckPoints);
-            instance._index = 0;
-            instance.SetCheckpointTracker(checkPoints[0].transform);
-        }
-        else if (instance != null && instance == this)
-        {
-
         }
         else
         {
             this.gameObject.SetActive(false);
         }
-
-        //SceneManager.activeSceneChanged += OnSceneChanged;
-        
     }
     #endregion
 
+    #region CheckPoint related
+    //!===========Variables and Properties===========!//
+    [Header("Checkpoint Related")]
 
-    public void ResetManager()
+    [Tooltip("The checkpoints sorted by index (index is set inside of each gameobject")]
+    [SerializeField]
+    public List<CheckPoint> checkpoints;
+
+    //!===================Methods====================!//
+    /// <summary>
+    /// Sets up the checkpoint list sorted by index
+    /// </summary>
+    private void SetUpCheckPoints()
     {
-        var checkPoints = GameObject.FindObjectsOfType<CheckPoint>().ToList();
-        checkPoints.Sort(SortCheckPoints);
-        instance._index = 0;
-        instance.SetCheckpointTracker(checkPoints[0].transform);
+        checkpoints = Object.FindObjectsOfType<CheckPoint>().ToList();
+        checkpoints.Sort(SortCheckPoint);
     }
 
-    //public void OnSceneChanged(Scene current, Scene next)
-    //{
-    //    if (current.name != next.name)
-    //    {
-    //        DestroyCheckPointManager();
-    //    }
-    //}
-
-    public int SortCheckPoints(CheckPoint a, CheckPoint b)
+    /// <summary>
+    /// Sorts the checkpoints by index
+    /// </summary>
+    /// <param name="a"></param>
+    /// <param name="b"></param>
+    /// <returns></returns>
+    public int SortCheckPoint(CheckPoint a, CheckPoint b)
     {
-        if (a.index > b.index)
-        {
-            return 1;
-        }
-        else if (a.index < b.index)
+        if (a.index < b.index)
         {
             return -1;
+        }
+        else if (a.index > b.index)
+        {
+            return 1;
         }
 
         return 0;
     }
+    #endregion
 
-    #region CheckPoint related
-    public void RegisterCheckPoint(CheckPoint checkPoint)
+    #region ResettableObjects
+    //!===========Variables and Properties===========!//
+    [Header("Puzzle Related")]
+
+    [Tooltip("All related resettable objects")]
+    [SerializeField]
+    public List<IResettable> resettableObjects;
+
+    //!===================Methods====================!//
+    /// <summary>
+    /// Sets up the resettable objects
+    /// </summary>
+    private void SetUpResettables()
     {
-        //Only allow any checkpoints morethan or equal to be registered
-        if (checkPoint.index < instance._index)
-            return;
+        resettableObjects = GameObject.FindObjectsOfType<MonoBehaviour>().OfType<IResettable>().ToList();
 
 
-        SetCheckpointTracker(checkPoint.transform);
-        instance._index = checkPoint.index;
-    }
-
-    public void SetCheckpointTracker(Transform newTransform)
-    {
-        //Set the checkpoint transform to the manager transform
-        instance.checkPointTracker.transform.position = newTransform.position;
-        instance.checkPointTracker.transform.rotation = newTransform.rotation;
     }
     #endregion
 
-    #region Player Related
+    #region Recorded Index/index related
+    //!===========Variables and Properties===========!//
+    [Header("Index")]
+
+    [Tooltip("The index that will teleport")]
+    [SerializeField]
+    public int checkPointIndex;
+
+    //!===================Methods====================!//
+    /// <summary>
+    /// Resets the index to 0, not necessarily to the first index on the checkpoint list
+    /// </summary>
+    public void ResetIndex()
+    {
+        checkPointIndex = 0;
+    }
+
+    /// <summary>
+    /// Registers and sets a new index for the player to respawn at
+    /// </summary>
+    /// <param name="newIndex"></param>
+    public void RegisterCheckPoint(CheckPoint newCheckPoint)
+    {
+        checkPointIndex = newCheckPoint.index;
+    }
+    #endregion
+
+    #region Unity Methods
+    //!===================Methods====================!//
+    private void Awake()
+    {
+        SetUpSingleton();
+    }
+
+    private void Start()
+    {
+        SetUpResettables();
+
+        SetUpCheckPoints();
+
+        //Set index to min
+        checkPointIndex = checkpoints[0].index;
+
+        //REspawn player
+        RespawnPlayer();
+    }
+
+    public void Update()
+    {
+    }
+    #endregion
+
+    #region Reset Methods
+    /// <summary>
+    /// "reset" the level
+    /// </summary>
+    public void RestartLevelByManager()
+    {
+        //Reset objects that can be reset
+        ResetResettables();
+
+        //RespawnPlayer
+        RespawnPlayer();
+    }
+
+    public void ResetResettables()
+    {
+        foreach(var resettable in resettableObjects)
+        {
+            resettable.IResetTransform();
+        }
+    }
+
     public void RespawnPlayer()
     {
-        PlayerStatic.Player.transform.position = instance.checkPointTracker.transform.position;
-        PlayerStatic.Player.transform.rotation = instance.checkPointTracker.transform.rotation;
-
+        foreach (var checkPoint in checkpoints)
+        {
+            if (checkPointIndex == checkPoint.index)
+            {
+                PlayerStatic.Player.transform.position = checkPoint.transform.position;
+                PlayerStatic.Player.transform.rotation = checkPoint.transform.rotation;
+            }
+        }
     }
     #endregion
+
 }

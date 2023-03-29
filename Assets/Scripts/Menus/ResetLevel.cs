@@ -26,7 +26,5 @@ public class ResetLevel : MonoBehaviour
     /// </summary>
     public void ResetCurrentLevel()
     {
-        Scene activeScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(activeScene.name);
     }
 }

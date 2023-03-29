@@ -11,7 +11,7 @@ public class ShootScript : MonoBehaviour
     [Header("Time Variables")]
 
     [Tooltip("The time remaining")]
-    private float timeRemaining = 0f;
+    [HideInInspector] public float timeRemaining = 0f;
 
     [Tooltip("The time between shots in seconds")]
     [SerializeField]
@@ -40,7 +40,7 @@ public class ShootScript : MonoBehaviour
     /// </summary>
     /// <returns></returns>
     ///     Returns true if the timer is less than or equal to zero
-    private bool IsTimerUp()
+    public bool IsTimerUp()
     {
         return timeRemaining <= 0f;
     }
@@ -133,7 +133,7 @@ public class ShootScript : MonoBehaviour
                 DisplayTimer(timeRemaining);
             }
 
-            if (timeRemaining < 0f)
+            if (IsTimerUp())
             {
                 if (PlayerStatic.IsGrounded)
                 {
@@ -245,6 +245,13 @@ public class ShootScript : MonoBehaviour
             //Assign the bolt index to the script variable
             currentBoltIndex = newBoltIndex;
         }
+    }
+
+    public void SetBolt(int newIndex)
+    {
+        //int newIndex = 1;
+        if (newIndex <= _allowedBolts.Count)
+            currentBoltIndex = (newIndex);
     }
 
     /// <summary>

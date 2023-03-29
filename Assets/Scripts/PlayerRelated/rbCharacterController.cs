@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Diagnostics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.MathExtensions;
@@ -7,7 +9,6 @@ using UnityEngine.MathExtensions;
 
 public class rbCharacterController : MonoBehaviour
 {
-
     #region Variables
     public Rigidbody rb;
     public float defaultSpeed;
@@ -17,13 +18,15 @@ public class rbCharacterController : MonoBehaviour
     public float maxForce;
     private Vector2 move;
     private Vector2 look;
-    private float lookRotation;
+    //private float lookRotation;
     public Camera main_camera;
     public bool grounded;
     public float jumpForce;
 
-    //[HideInInspector] public bool isLaunchedByCannon = false;
     public bool isLaunchedByCannon = false;
+
+    //A safe gaurd to expect durring the sprint and jump bug
+    public bool isSprinting = false;
 
     public Vector3 boltVelocity;
 
@@ -31,6 +34,13 @@ public class rbCharacterController : MonoBehaviour
 
     public float horizontalFriction = 1f;
     public float verticalFriction = 47f;
+
+    public bool isDebug = false;
+    private float debugSpeed = 0f;
+
+    private ShootScript _shootScript;
+
+    private Vector3 lookRotation = Vector3.zero;
     #endregion
 
     #region Character Controller Methods
@@ -42,11 +52,12 @@ public class rbCharacterController : MonoBehaviour
     public void OnJump(InputAction.CallbackContext context)
     {
         Vector3 jumpForces = Vector3.zero;
-        if (grounded)
+        if (grounded && context.performed)
         {
             jumpForces = Vector3.up * jumpForce;
         }
 
+        //Forced jump
         rb.AddForce(jumpForces, ForceMode.VelocityChange);
     }
 
@@ -55,11 +66,11 @@ public class rbCharacterController : MonoBehaviour
     {
         if (context.started)
         {
-            speed = sprintSpeed;
+            isSprinting = true;
         }
         else if (context.canceled)
         {
-            speed = defaultSpeed;
+            isSprinting = false;
         }
     }
 
@@ -73,15 +84,16 @@ public class rbCharacterController : MonoBehaviour
         look = context.ReadValue<Vector2>();
     }
 
-    private bool CheckGrounded()
+    public void ApplySprint()
     {
-        Vector3 center = transform.position;
-        Vector3 halfExtents = this.gameObject.transform.lossyScale * (0.5f) + Vector3.down * 0.1f;
-        Vector3 direction = Vector3.down;
-        Quaternion rotation = transform.rotation;
-        float distance = 1f;
-
-        return Physics.BoxCast(center, halfExtents, direction, rotation, distance);
+        if (isSprinting)
+        {
+            speed = sprintSpeed;
+        }
+        else
+        {
+            speed = defaultSpeed;
+        }
     }
     #endregion
 
@@ -92,14 +104,33 @@ public class rbCharacterController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked; //lock mouse in center of screen
 
         speed = defaultSpeed;
+
+        _shootScript = this.gameObject.GetComponent<ShootScript>();
     }
-    
+
     private void FixedUpdate()
     {
+        if (isDebug)
+        {
+            debugSpeed = 1f;
+
+            GetComponent<Rigidbody>().useGravity = false;
+            GetComponent<CapsuleCollider>().enabled = false;
+        }
+        else
+        {
+            debugSpeed = 0f;
+
+            GetComponent<Rigidbody>().useGravity = true;
+            GetComponent<CapsuleCollider>().enabled = true;
+        }
+
         //Set the ground state
         SetGrounded(PlayerStatic.IsGrounded);
 
         Vector3 currentVelocity = rb.velocity;
+
+        ApplySprint();
 
         //To Move
         Vector3 desiredmove = transform.rotation * new Vector3(move.x, 0f, move.y) * speed;
@@ -108,7 +139,7 @@ public class rbCharacterController : MonoBehaviour
 
         Vector3.ClampMagnitude(velocityChange, maxForce);
 
-        Vector3 finalForce = new Vector3(velocityChange.x, 0f, velocityChange.z);
+        Vector3 finalForce = new Vector3(velocityChange.x, velocityChange.y * debugSpeed, velocityChange.z);
 
         if (boltVelocity.magnitude > 0.25f)
         {
@@ -117,6 +148,11 @@ public class rbCharacterController : MonoBehaviour
             boltVelocity = new Vector3(boltVelocity.x * Mathf.Lerp(1, 0, horizontalFriction * Time.fixedDeltaTime)
                 , boltVelocity.y - Mathf.Lerp(0, boltVelocity.y, verticalFriction * Time.fixedDeltaTime)
                 , boltVelocity.z * Mathf.Lerp(1, 0, horizontalFriction * Time.fixedDeltaTime));
+
+            if (grounded && _shootScript.IsTimerUp())
+            {
+                boltVelocity = Vector3.zero;
+            }
         }
         else
         {
@@ -134,15 +170,29 @@ public class rbCharacterController : MonoBehaviour
         yield break;
     }
 
-    void LateUpdate()                                                                                         //move camera after rest of scene has been updated
+    void LateUpdate()                                                                                         
     {
-        
-        transform.Rotate(Vector3.up * look.x * sensitivity);                                                                         //turn player on up axis
+        lookRotation.x += (-look.y * sensitivity);
+        lookRotation.x = Mathf.Clamp(lookRotation.x, -90, 90);
 
-        lookRotation +=(-look.y * sensitivity);                                                                                               //player looks up and down
-        lookRotation = Mathf.Clamp(lookRotation, -90, 90);                                                              //player up and down looking stops at halfway up and down
-        main_camera.transform.eulerAngles = new Vector3(lookRotation, 
-        main_camera.transform.eulerAngles.y, main_camera.transform.eulerAngles.z);                          //rotate the camera (in world space)
+        lookRotation.y += (look.x * sensitivity);
+
+        Camera.main.transform.eulerAngles = lookRotation;
+
+        this.transform.eulerAngles = new Vector3(lookRotation.x * debugSpeed, lookRotation.y
+            , lookRotation.z);
+    }
+
+    public void ToggleDebug()
+    {
+        if (isDebug)
+        {
+            isDebug = false;
+        }
+        else
+        {
+            isDebug = true;
+        }
     }
     #endregion
 }
