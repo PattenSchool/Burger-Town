@@ -7,7 +7,6 @@ using UnityEngine.MathExtensions;
 
 public class rbCharacterController : MonoBehaviour
 {
-
     #region Variables
     public Rigidbody rb;
     public float defaultSpeed;

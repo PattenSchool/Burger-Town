@@ -468,6 +468,17 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""8bb35b53-77e3-4324-986d-9f49334ad3be"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""c5c9656e-6754-42cd-907f-18fa2d24ba27"",
                     ""path"": ""<Keyboard>/p"",
                     ""interactions"": """",

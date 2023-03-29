@@ -361,7 +361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   head: {fileID: 1963757351}
   possibleBolts:
-  - {fileID: -3065931261310816723, guid: 6c092c7b70fe4af45bdbb2dfb459d84c, type: 3}
+  - {fileID: 8084040174284523497, guid: b80d43806bb2eaa40bf4a002822e7dc4, type: 3}
   cooldown: 1
 --- !u!95 &68911495
 Animator:
@@ -1594,7 +1594,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c660054fff97f2c40a0dffcead479553, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 974522498639420096, guid: c660054fff97f2c40a0dffcead479553, type: 3}
       propertyPath: m_Materials.Array.data[0]
