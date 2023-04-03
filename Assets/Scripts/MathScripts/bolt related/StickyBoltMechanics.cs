@@ -43,8 +43,6 @@ public class StickyBoltMechanics : BoltTemplate
     /// </summary>
     public override void IHit()
     {
-        ToggleStick(true);
-
         base.IHit();
     }
 

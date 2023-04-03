@@ -68,6 +68,9 @@ public class Moving_Platform : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == PlayerStatic.PlayerTag)
+        other.transform.parent = this.transform;
+
         if (other.gameObject.layer == 3)
         {
             // Checks if the object colliding is not a sticky bolt or platform

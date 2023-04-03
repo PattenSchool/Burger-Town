@@ -188,6 +188,15 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Debug"",
+                    ""type"": ""Button"",
+                    ""id"": ""ca05b6f6-8643-412f-9580-a0a440a115df"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -738,6 +747,17 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""SetBolt9"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ad5148d1-22ac-44d3-bb40-298f3ae854a5"",
+                    ""path"": ""<Keyboard>/rightBracket"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Debug"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1402,6 +1422,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
         m_Player_SetBolt7 = m_Player.FindAction("SetBolt7", throwIfNotFound: true);
         m_Player_SetBolt8 = m_Player.FindAction("SetBolt8", throwIfNotFound: true);
         m_Player_SetBolt9 = m_Player.FindAction("SetBolt9", throwIfNotFound: true);
+        m_Player_Debug = m_Player.FindAction("Debug", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1495,6 +1516,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SetBolt7;
     private readonly InputAction m_Player_SetBolt8;
     private readonly InputAction m_Player_SetBolt9;
+    private readonly InputAction m_Player_Debug;
     public struct PlayerActions
     {
         private @Controller m_Wrapper;
@@ -1517,6 +1539,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
         public InputAction @SetBolt7 => m_Wrapper.m_Player_SetBolt7;
         public InputAction @SetBolt8 => m_Wrapper.m_Player_SetBolt8;
         public InputAction @SetBolt9 => m_Wrapper.m_Player_SetBolt9;
+        public InputAction @Debug => m_Wrapper.m_Player_Debug;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1580,6 +1603,9 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 @SetBolt9.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt9;
                 @SetBolt9.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt9;
                 @SetBolt9.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt9;
+                @Debug.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDebug;
+                @Debug.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDebug;
+                @Debug.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDebug;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1638,6 +1664,9 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 @SetBolt9.started += instance.OnSetBolt9;
                 @SetBolt9.performed += instance.OnSetBolt9;
                 @SetBolt9.canceled += instance.OnSetBolt9;
+                @Debug.started += instance.OnDebug;
+                @Debug.performed += instance.OnDebug;
+                @Debug.canceled += instance.OnDebug;
             }
         }
     }
@@ -1853,6 +1882,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
         void OnSetBolt7(InputAction.CallbackContext context);
         void OnSetBolt8(InputAction.CallbackContext context);
         void OnSetBolt9(InputAction.CallbackContext context);
+        void OnDebug(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

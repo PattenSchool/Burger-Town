@@ -1208,7 +1208,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2919801819035295633
 Transform:
   m_ObjectHideFlags: 0
@@ -11152,7 +11152,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7919990712723082176}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 940d4c66cf460234094478b6e9031a9e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -11178,13 +11178,14 @@ MonoBehaviour:
   maxForce: 1
   main_camera: {fileID: 7919990711574780124}
   grounded: 1
-  jumpForce: 3
+  jumpForce: 5.41
   isLaunchedByCannon: 0
   isSprinting: 0
   boltVelocity: {x: 0, y: 0, z: 0}
   outsideVel: {x: 0, y: 0, z: 0}
   horizontalFriction: 0.85
   verticalFriction: 47
+  isDebug: 0
 --- !u!114 &7919990712723082205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11558,6 +11559,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 93eec428-78ba-42b2-b4e5-4756050a6920
     m_ActionName: Player/SetBolt9[/Keyboard/9,/Keyboard/numpad9]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7919990712723082204}
+        m_TargetAssemblyTypeName: rbCharacterController, Assembly-CSharp
+        m_MethodName: ToggleDebug
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ca05b6f6-8643-412f-9580-a0a440a115df
+    m_ActionName: Player/Debug[/Keyboard/rightBracket]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -11591,6 +11608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0cb1d243a1fee4ba26fa616f308fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeRemaining: 0
   timeBetweenShots: 1
   cooldownReticle: {fileID: 2121819493063397388}
   isLaunching: 0
