@@ -41,7 +41,28 @@ public class rbCharacterController : MonoBehaviour
     private ShootScript _shootScript;
 
     private Vector3 lookRotation = Vector3.zero;
+
+    private Controller _con = new Controller();
+
     #endregion
+
+    //private void OnEnable()
+    //{
+    //    _con = new Controller();
+    //    _con.Enable();
+    //    _con.Player.Jump.performed += OnJump;
+    //    _con.Player.Sprint.started += OnSprint;
+    //    _con.Player.Sprint.canceled += OnSprint;
+    //}
+
+
+    //private void OnDisable()
+    //{
+    //    _con.Disable();
+    //    _con.Player.Jump.performed -= OnJump;
+    //    _con.Player.Sprint.started -= OnSprint;
+    //    _con.Player.Sprint.canceled -= OnSprint;
+    //}
 
     #region Character Controller Methods
     public void OnMove(InputAction.CallbackContext context) //input system for movement
@@ -177,7 +198,10 @@ public class rbCharacterController : MonoBehaviour
 
         lookRotation.y += (look.x * sensitivity);
 
-        Camera.main.transform.eulerAngles = lookRotation;
+        //Camera.main.transform.eulerAngles = lookRotation;
+
+        Camera.main.transform.eulerAngles = new Vector3(lookRotation.x, this.transform.eulerAngles.y
+            , lookRotation.z);
 
         this.transform.eulerAngles = new Vector3(lookRotation.x * debugSpeed, lookRotation.y
             , lookRotation.z);
