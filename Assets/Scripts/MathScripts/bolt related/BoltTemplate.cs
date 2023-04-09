@@ -2,6 +2,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting; 
+
 public class BoltTemplate : Projectile
 {
     #region Components
@@ -29,6 +31,10 @@ public class BoltTemplate : Projectile
 
     [Tooltip("2D image of the bolt")]
     public Sprite sprite;
+
+    [Tooltip("If the bolt spawns as a gameobject or a raycast")]
+    [SerializeField]
+    protected bool isSpawnable = true;
     #endregion
 
     #region Time Variables
@@ -65,28 +71,11 @@ public class BoltTemplate : Projectile
     ///     The info of the game object being collided
     protected void OnCollisionEnter(Collision collision)
     {
-        //Test to see if there is a hitable interface on the other collider
-        IHitable hittableObejct = collision.gameObject.GetComponent<IHitable>();
+        //TODO: Trigger the object collision
+        TriggerObjectCollision(collision);
 
-        
-
-        //Activate object IHitable
-        if (hittableObejct != null && collision.gameObject.tag != PlayerStatic.PlayerTag)
-        {
-            hittableObejct.IHit();
-        }
-
-        //Reset level if player was hit
-        if (collision.gameObject.tag == PlayerStatic.PlayerTag)
-        {
-
-            Scene activeScene = SceneManager.GetActiveScene();
-
-            SceneManager.LoadScene(activeScene.buildIndex);
-        }
-
-        //Activate bolt Ihitable
-        IHit();
+        //TODO: Trigger the bolt collision
+        TriggerBoltCollision(collision);
     }
 
     protected void OnDrawGizmos()
@@ -114,7 +103,26 @@ public class BoltTemplate : Projectile
     ///     The one who launched the bolt
     public virtual void OnFire(GameObject firee, Vector3 directionVector)
     {
-        //Set the speed of the bolt
+        //TODO: Set bolt information if isSpawnable is true
+        if (isSpawnable)
+        {
+            OnSpawn(firee, directionVector);
+        }
+        //TODO: Set bolt as a line for instant travel
+        else
+        {
+            OnLineDrawn(firee, directionVector);
+        }
+    }
+
+    /// <summary>
+    /// Methods that are done when spawned
+    /// </summary>
+    /// <param name="firee"></param>
+    /// <param name="directionVector"></param>
+    protected virtual void OnSpawn(GameObject firee, Vector3 directionVector)
+    {
+        //Set the speed and constraints of the bolt
         _rigidbody.velocity = directionVector * _initialSpeed;
 
         _rigidbody.constraints = RigidbodyConstraints.FreezeRotationX;
@@ -125,6 +133,114 @@ public class BoltTemplate : Projectile
         //Set the maximum time the bolt exists
         StartCoroutine(DespawWithTimer());
     }
+
+    /// <summary>
+    /// The method called if the bolt is raycasted
+    /// </summary>
+    /// <param name="firee"></param>
+    /// <param name="directionVector"></param>
+    protected virtual void OnLineDrawn(GameObject firee, Vector3 directionVector)
+    {
+        //TODO: Get the collision of the raycast
+        RaycastHit raycastCollision = GetCollisionInfo(firee, directionVector);
+
+        //TODO: Trigger the collision
+        TriggerRaycastCollision(firee, directionVector, raycastCollision);
+
+        //TODO: Apply bolt physics to the collider
+        if (raycastCollision.rigidbody != null)
+        {
+            raycastCollision.rigidbody.AddForceAtPosition(directionVector * _initialSpeed, raycastCollision.point);
+        }
+
+        //TODO: Trigger the despawn
+        DespawnFromPool();
+    }
+    #endregion
+
+    #region Raycast Methods
+    /// <summary>
+    /// The collision info of raycasts
+    /// </summary>
+    /// <param name="firee"></param>
+    ///     The firee that fired the bolt
+    /// <param name="directionVector"></param>
+    ///     The direction the bolt has been fired
+    /// <returns></returns>
+    protected virtual RaycastHit GetCollisionInfo(GameObject firee, Vector3 directionVector)
+    {
+        //TODO: Generate the information with the hit info
+        Ray rayDirection = new Ray(this.transform.position, directionVector.normalized);
+        RaycastHit hit;
+        Physics.Raycast(rayDirection, out hit);
+
+        return hit;
+    }
+
+
+    protected virtual void TriggerRaycastCollision(GameObject firee, Vector3 directionVector, RaycastHit hitInfo)
+    {
+        //TODO: Trigger the object information
+        TriggerObjectCollision(hitInfo.point, hitInfo.collider, hitInfo.rigidbody);
+
+        //TODO: Trigger the bolt collision
+        TriggerBoltCollision(hitInfo.point);
+    }
+
+
+    /// <summary>
+    /// Trigger the object collision from the bolt (just in case)
+    /// </summary>
+    /// <param name="collision"></param>
+    ///     The collision information
+    protected virtual void TriggerObjectCollision(Collision collision)
+    {
+        TriggerObjectCollision(collision.contacts[0].point, collision.collider, collision.rigidbody);
+    }
+
+    /// <summary>
+    /// Trigger the object collision by information tidbits
+    /// </summary>
+    /// <param name="contactPoint"></param>
+    ///     The contact point of the bolt
+    /// <param name="collider"></param>
+    ///     The collider of the collided object
+    /// <param name="rigidbody"></param>
+    ///     The rigidbody of the collider object
+    protected virtual void TriggerObjectCollision
+        (Vector3 contactPoint, Collider collider, Rigidbody rigidbody = null)
+    {
+        //TODO: Get the gameobject
+        GameObject collidedGameObject = collider.gameObject;
+
+        //TODO: Trigger any hittable information
+        #region Trigger IHitable information
+        IHitable hittableInformation = collidedGameObject.GetComponent<IHitable>();
+        if (hittableInformation != null)
+            hittableInformation.IHit();
+        #endregion
+    }
+
+    /// <summary>
+    /// Triggger the bolt collision
+    /// </summary>
+    /// <param name="collision"></param>
+    ///     The collision information
+    protected virtual void TriggerBoltCollision(Collision collision)
+    {
+        TriggerBoltCollision(collision.contacts[0].point);
+    }
+
+    /// <summary>
+    /// Do some trigger of the bolt collision
+    /// </summary>
+    /// <param name="contactPoint"></param>
+    ///     The contact point of the bolt collision
+    protected virtual void TriggerBoltCollision(Vector3 contactPoint)
+    {
+        this.IHit();
+    }
+    
     #endregion
 
     #region Coroutine Despawn Methods
