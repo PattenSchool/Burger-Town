@@ -33,7 +33,38 @@ public class rbCharacterController : MonoBehaviour
 
     public float horizontalFriction = 1f;
     public float verticalFriction = 47f;
+<<<<<<< Updated upstream
+=======
+
+    public bool isDebug = false;
+    private float debugSpeed = 0f;
+
+    private ShootScript _shootScript;
+
+    private Vector3 lookRotation = Vector3.zero;
+
+    private Controller _con = new Controller();
+
+>>>>>>> Stashed changes
     #endregion
+
+    //private void OnEnable()
+    //{
+    //    _con = new Controller();
+    //    _con.Enable();
+    //    _con.Player.Jump.performed += OnJump;
+    //    _con.Player.Sprint.started += OnSprint;
+    //    _con.Player.Sprint.canceled += OnSprint;
+    //}
+
+
+    //private void OnDisable()
+    //{
+    //    _con.Disable();
+    //    _con.Player.Jump.performed -= OnJump;
+    //    _con.Player.Sprint.started -= OnSprint;
+    //    _con.Player.Sprint.canceled -= OnSprint;
+    //}
 
     #region Character Controller Methods
     public void OnMove(InputAction.CallbackContext context) //input system for movement
@@ -149,10 +180,34 @@ public class rbCharacterController : MonoBehaviour
         
         transform.Rotate(Vector3.up * look.x * sensitivity);                                                                         //turn player on up axis
 
+<<<<<<< Updated upstream
         lookRotation +=(-look.y * sensitivity);                                                                                               //player looks up and down
         lookRotation = Mathf.Clamp(lookRotation, -90, 90);                                                              //player up and down looking stops at halfway up and down
         main_camera.transform.eulerAngles = new Vector3(lookRotation, 
         main_camera.transform.eulerAngles.y, main_camera.transform.eulerAngles.z);                          //rotate the camera (in world space)
+=======
+        lookRotation.y += (look.x * sensitivity);
+
+        //Camera.main.transform.eulerAngles = lookRotation;
+
+        Camera.main.transform.eulerAngles = new Vector3(lookRotation.x, this.transform.eulerAngles.y
+            , lookRotation.z);
+
+        this.transform.eulerAngles = new Vector3(lookRotation.x * debugSpeed, lookRotation.y
+            , lookRotation.z);
+    }
+
+    public void ToggleDebug()
+    {
+        if (isDebug)
+        {
+            isDebug = false;
+        }
+        else
+        {
+            isDebug = true;
+        }
+>>>>>>> Stashed changes
     }
     #endregion
 }
