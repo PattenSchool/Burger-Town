@@ -42,7 +42,7 @@ public class rbCharacterController : MonoBehaviour
 
     private Vector3 lookRotation = Vector3.zero;
 
-    private Controller _con = new Controller();
+    //private Controller _con = new Controller();
 
     #endregion
 
