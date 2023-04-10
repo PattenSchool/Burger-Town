@@ -20,13 +20,13 @@ public class SpawnFallingPlatforms : MonoBehaviour
     private float spawnDelay = 1.0f;
 
     [Tooltip("The time remaining until next spawn")]
-    [SerializeField, Min(0f), HideInInspector]
+    [SerializeField, Min(0f)]
     private float spawnTimeRemaining = 0f;
 
     [Tooltip("The distance above the player that platofrms will spawn" +
         " in meters")]
     [SerializeField, Min(0f)]
-    private float spawnDistanceFromPlayer = 0f;
+    private float spawnDistanceFromStart = 0f;
     #endregion
 
     #region Unity Methods
@@ -35,13 +35,13 @@ public class SpawnFallingPlatforms : MonoBehaviour
         if (spawnTimeRemaining <= 0f)
         {
             //TODO: Spawn new platform
-            Vector3 spawnPos = (Vector3.up * (spawnDistanceFromPlayer + PlayerStatic.Player.transform.position.y));
-            float randomRotation = UnityEngine.Random.Range(0f, 360);
+            Vector3 spawnPos = (Vector3.up * (spawnDistanceFromStart + this.transform.position.y));
+            float randomRotation = Random.Range(0f, 360);
             Quaternion rotation = Quaternion.Euler(0f, randomRotation, 0f);
 
             var platform = ObjectPooling.Spawn(spawnablePlatform, spawnPos, rotation);
             platform.transform.parent = this.gameObject.transform;
-
+            platform.transform.position = spawnPos;
             //TODO: Reset timer
             spawnTimeRemaining = spawnDelay;
         }
@@ -49,6 +49,7 @@ public class SpawnFallingPlatforms : MonoBehaviour
         {
             spawnTimeRemaining -= Time.deltaTime;
         }
+        
     }
     #endregion
 }
