@@ -1207,7 +1207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2919801819035295633
 Transform:
   m_ObjectHideFlags: 0
@@ -11074,7 +11074,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7919990712723082176}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 940d4c66cf460234094478b6e9031a9e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -11100,12 +11100,14 @@ MonoBehaviour:
   maxForce: 1
   main_camera: {fileID: 7919990711574780124}
   grounded: 1
-  jumpForce: 3
+  jumpForce: 7
+  isLaunchedByCannon: 0
   isSprinting: 0
   boltVelocity: {x: 0, y: 0, z: 0}
   outsideVel: {x: 0, y: 0, z: 0}
   horizontalFriction: 0.85
   verticalFriction: 47
+  isDebug: 0
 --- !u!114 &7919990712723082205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11335,6 +11337,58 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c6bced55-dd23-437f-b21f-5fa9572f2784
     m_ActionName: Player/Throw[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b5b3dd27-24f1-4ae9-b731-6707fbf13e66
+    m_ActionName: Player/SetBolt1[/Keyboard/1,/Keyboard/numpad1]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 473c48ba-7810-4305-92a5-a5c4057dfa62
+    m_ActionName: Player/SetBolt2[/Keyboard/2,/Keyboard/numpad2]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ffae133d-1d0e-44c1-b9b1-0dec145dc103
+    m_ActionName: Player/SetBolt3[/Keyboard/3,/Keyboard/numpad3]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7a84e594-ac7e-4507-8bcc-50925167260f
+    m_ActionName: Player/SetBolt4[/Keyboard/4,/Keyboard/numpad4]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e7a64921-948f-4b7f-92b2-fd69dea8768a
+    m_ActionName: Player/SetBolt5[/Keyboard/5,/Keyboard/numpad5]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b9758819-62ec-49ff-8c6e-8364994844de
+    m_ActionName: Player/SetBolt6[/Keyboard/6,/Keyboard/numpad6]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 14e3a68d-4723-4a0a-968b-c99ddf872af4
+    m_ActionName: Player/SetBolt7[/Keyboard/7,/Keyboard/numpad7]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1be406ab-7317-44a1-bfb3-cc059483e57c
+    m_ActionName: Player/SetBolt8[/Keyboard/8,/Keyboard/numpad8]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 93eec428-78ba-42b2-b4e5-4756050a6920
+    m_ActionName: Player/SetBolt9[/Keyboard/9,/Keyboard/numpad9]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7919990712723082204}
+        m_TargetAssemblyTypeName: rbCharacterController, Assembly-CSharp
+        m_MethodName: ToggleDebug
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ca05b6f6-8643-412f-9580-a0a440a115df
+    m_ActionName: Player/Debug[/Keyboard/rightBracket]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -11368,8 +11422,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d0cb1d243a1fee4ba26fa616f308fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeRemaining: 0
   timeBetweenShots: 1
   cooldownReticle: {fileID: 2121819493063397388}
+  isLaunching: 0
   currentBoltIndex: 1
   _allowedBolts: []
   defaultBolt: {fileID: 2543685648339813248, guid: 904d67dcfe93146459991bfcd066805a, type: 3}
