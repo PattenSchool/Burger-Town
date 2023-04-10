@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Diagnostics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.MathExtensions;
@@ -7,7 +9,6 @@ using UnityEngine.MathExtensions;
 
 public class rbCharacterController : MonoBehaviour
 {
-
     #region Variables
     public Rigidbody rb;
     public float defaultSpeed;
@@ -17,7 +18,7 @@ public class rbCharacterController : MonoBehaviour
     public float maxForce;
     private Vector2 move;
     private Vector2 look;
-    private float lookRotation;
+    //private float lookRotation;
     public Camera main_camera;
     public bool grounded;
     public float jumpForce;
@@ -33,8 +34,6 @@ public class rbCharacterController : MonoBehaviour
 
     public float horizontalFriction = 1f;
     public float verticalFriction = 47f;
-<<<<<<< Updated upstream
-=======
 
     public bool isDebug = false;
     private float debugSpeed = 0f;
@@ -43,9 +42,8 @@ public class rbCharacterController : MonoBehaviour
 
     private Vector3 lookRotation = Vector3.zero;
 
-    private Controller _con = new Controller();
+    //private Controller _con = new Controller();
 
->>>>>>> Stashed changes
     #endregion
 
     //private void OnEnable()
@@ -75,11 +73,12 @@ public class rbCharacterController : MonoBehaviour
     public void OnJump(InputAction.CallbackContext context)
     {
         Vector3 jumpForces = Vector3.zero;
-        if (grounded)
+        if (grounded && context.performed)
         {
             jumpForces = Vector3.up * jumpForce;
         }
 
+        //Forced jump
         rb.AddForce(jumpForces, ForceMode.VelocityChange);
     }
 
@@ -126,15 +125,27 @@ public class rbCharacterController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked; //lock mouse in center of screen
 
         speed = defaultSpeed;
-    }
 
-    private void Update()
-    {
-        
+        _shootScript = this.gameObject.GetComponent<ShootScript>();
     }
 
     private void FixedUpdate()
     {
+        if (isDebug)
+        {
+            debugSpeed = 1f;
+
+            GetComponent<Rigidbody>().useGravity = false;
+            GetComponent<CapsuleCollider>().enabled = false;
+        }
+        else
+        {
+            debugSpeed = 0f;
+
+            GetComponent<Rigidbody>().useGravity = true;
+            GetComponent<CapsuleCollider>().enabled = true;
+        }
+
         //Set the ground state
         SetGrounded(PlayerStatic.IsGrounded);
 
@@ -149,7 +160,7 @@ public class rbCharacterController : MonoBehaviour
 
         Vector3.ClampMagnitude(velocityChange, maxForce);
 
-        Vector3 finalForce = new Vector3(velocityChange.x, 0f, velocityChange.z);
+        Vector3 finalForce = new Vector3(velocityChange.x, velocityChange.y * debugSpeed, velocityChange.z);
 
         if (boltVelocity.magnitude > 0.25f)
         {
@@ -158,6 +169,11 @@ public class rbCharacterController : MonoBehaviour
             boltVelocity = new Vector3(boltVelocity.x * Mathf.Lerp(1, 0, horizontalFriction * Time.fixedDeltaTime)
                 , boltVelocity.y - Mathf.Lerp(0, boltVelocity.y, verticalFriction * Time.fixedDeltaTime)
                 , boltVelocity.z * Mathf.Lerp(1, 0, horizontalFriction * Time.fixedDeltaTime));
+
+            if (grounded && _shootScript.IsTimerUp())
+            {
+                boltVelocity = Vector3.zero;
+            }
         }
         else
         {
@@ -175,17 +191,11 @@ public class rbCharacterController : MonoBehaviour
         yield break;
     }
 
-    void LateUpdate()                                                                                         //move camera after rest of scene has been updated
+    void LateUpdate()                                                                                         
     {
-        
-        transform.Rotate(Vector3.up * look.x * sensitivity);                                                                         //turn player on up axis
+        lookRotation.x += (-look.y * sensitivity);
+        lookRotation.x = Mathf.Clamp(lookRotation.x, -90, 90);
 
-<<<<<<< Updated upstream
-        lookRotation +=(-look.y * sensitivity);                                                                                               //player looks up and down
-        lookRotation = Mathf.Clamp(lookRotation, -90, 90);                                                              //player up and down looking stops at halfway up and down
-        main_camera.transform.eulerAngles = new Vector3(lookRotation, 
-        main_camera.transform.eulerAngles.y, main_camera.transform.eulerAngles.z);                          //rotate the camera (in world space)
-=======
         lookRotation.y += (look.x * sensitivity);
 
         //Camera.main.transform.eulerAngles = lookRotation;
@@ -207,7 +217,6 @@ public class rbCharacterController : MonoBehaviour
         {
             isDebug = true;
         }
->>>>>>> Stashed changes
     }
     #endregion
 }

@@ -297,5 +297,4 @@ public class PlayerStatic
         conversation = null;
     }
     #endregion
-        
 }
