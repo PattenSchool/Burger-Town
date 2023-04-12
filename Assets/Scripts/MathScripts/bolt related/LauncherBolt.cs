@@ -65,4 +65,18 @@ public class LauncherBolt : BoltTemplate
         //Activate bolt Ihitable
         IHit();
     }
+
+    protected override void TriggerObjectCollision
+        (Vector3 contactPoint, Collider collider, Rigidbody rigidbody = null)
+    {
+        //TODO: Get the gameobject
+        GameObject collidedGameObject = collider.gameObject;
+
+        //TODO: Trigger any hittable information
+        #region Trigger IHitable information
+        IHitable hittableInformation = collidedGameObject.GetComponent<IHitable>();
+        if (hittableInformation != null)
+            hittableInformation.IHit();
+        #endregion
+    }
 }
