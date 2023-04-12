@@ -2,7 +2,6 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -172,19 +171,11 @@ public class MoveObject : MonoBehaviour
             t += Time.deltaTime;
             launchee.transform.position = Vector3.Lerp(start.position, end.position, percent) + Vector3.up * curve.Evaluate(percent);
 
-            //yield return null;
-        }
-
-        if (t > duration - (duration / 10f))
-        {
             launchee.SetActive(false);
 
             wall.SetActive(false);
-            print("explosion");
+
+            yield return null;
         }
-
-        //yield break;
-
-        yield return null;
     }
 }
