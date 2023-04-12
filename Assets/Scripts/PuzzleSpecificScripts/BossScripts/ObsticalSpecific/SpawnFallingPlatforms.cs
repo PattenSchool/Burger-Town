@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class SpawnFallingPlatforms : MonoBehaviour
 {
@@ -34,7 +35,7 @@ public class SpawnFallingPlatforms : MonoBehaviour
     {
         if (spawnTimeRemaining <= 0f)
         {
-            //TODO: Spawn new platform
+            //TODO: Spawn new platform 
             Vector3 spawnPos = (Vector3.up * (spawnDistanceFromStart + this.transform.position.y));
             float randomRotation = Random.Range(0f, 360);
             Quaternion rotation = Quaternion.Euler(0f, randomRotation, 0f);
@@ -50,6 +51,33 @@ public class SpawnFallingPlatforms : MonoBehaviour
             spawnTimeRemaining -= Time.deltaTime;
         }
         
+    }
+    #endregion
+
+    #region Debug Options
+    private void OnDrawGizmos()
+    {
+        Vector3 spawnCenter = new Vector3(
+            this.transform.position.x,
+            this.transform.position.y + spawnDistanceFromStart,
+            this.transform.position.z);
+        Vector3 currentPos = this.transform.position;
+        float lineLength = 4f;
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(spawnCenter, spawnCenter + (Vector3.left * lineLength));
+        Gizmos.DrawLine(spawnCenter, spawnCenter + (Vector3.right * lineLength));
+        Gizmos.DrawLine(spawnCenter, spawnCenter + (Vector3.forward * lineLength));
+        Gizmos.DrawLine(spawnCenter, spawnCenter + (Vector3.back * lineLength));
+        Gizmos.DrawLine(spawnCenter, currentPos);
+        Gizmos.DrawLine(currentPos, currentPos + (Vector3.left * lineLength));
+        Gizmos.DrawLine(currentPos, currentPos + (Vector3.right * lineLength));
+        Gizmos.DrawLine(currentPos, currentPos + (Vector3.forward * lineLength));
+        Gizmos.DrawLine(currentPos, currentPos + (Vector3.back * lineLength));
+        Gizmos.DrawLine(currentPos, currentPos);
+        Gizmos.DrawLine(spawnCenter + (Vector3.left * lineLength), currentPos + (Vector3.left * lineLength));
+        Gizmos.DrawLine(spawnCenter + (Vector3.right * lineLength), currentPos + (Vector3.right * lineLength));
+        Gizmos.DrawLine(spawnCenter + (Vector3.forward * lineLength), currentPos + (Vector3.forward * lineLength));
+        Gizmos.DrawLine(spawnCenter + (Vector3.back * lineLength), currentPos + (Vector3.back * lineLength));
     }
     #endregion
 }
