@@ -219,12 +219,6 @@ public class BoltTemplate : Projectile
         if (hittableInformation != null)
             hittableInformation.IHit();
         #endregion
-
-        //TODO: Trigger anything about the player if player is hit
-        if (collider.tag == PlayerStatic.PlayerTag)
-        {
-            LevelManagerStatic.ResetLevel();
-        }
     }
 
     /// <summary>
