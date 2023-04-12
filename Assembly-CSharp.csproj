@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\PuzzleSpecificScripts\BossScripts\BossMovement.cs" />
+    <Compile Include="Assets\Scripts\PuzzleSpecificScripts\BossScripts\ObsticalSpecific\SpawnFallingPlatforms.cs" />
     <Compile Include="Assets\Scripts\PlayerRelated\PlayerStatic.cs" />
     <Compile Include="Assets\Scripts\MathScripts\bolt related\HomingBolt.cs" />
     <Compile Include="Assets\Scripts\PuzzleSpecificScripts\BossScripts\WaterDrag.cs" />
@@ -82,7 +83,6 @@
     <Compile Include="Assets\Scripts\EventObjects\Moving_Platform.cs" />
     <Compile Include="Assets\Scripts\AI\ShotTimerTracker.cs" />
     <Compile Include="Assets\Scripts\SaveSystem\ScriptsForData\SaveData_SO.cs" />
-    <Compile Include="Assets\Scripts\DialogueScripts\NPCDialogueScripts\Scripts_NPCDIalogueDisplay\TimedRandNPCDialogueDisplay.cs" />
     <Compile Include="Assets\Scripts\PuzzleSpecificScripts\BossScripts\MinionSpecific\DespawnWithTimer.cs" />
     <Compile Include="Assets\Scripts\PuzzleSpecificScripts\BossScripts\BossVariables.cs" />
     <Compile Include="Assets\Scripts\TestScripts\IceCubeScript.cs" />
@@ -114,7 +114,6 @@
     <Compile Include="Assets\Scripts\Menus\MainMenu\SceneSelect.cs" />
     <Compile Include="Assets\Scripts\UI\MainTextDisplay.cs" />
     <Compile Include="Assets\Scripts\PuzzleSpecificScripts\BossScripts\ObsticalSpecific\TriggerOnPlayerEnter.cs" />
-    <Compile Include="Assets\Scripts\DialogueScripts\NPCDialogueScripts\Scripts_NPCDIalogueDisplay\NPCDialogueDisplay.cs" />
     <Compile Include="Assets\Scripts\EventObjects\EventTrigger.cs" />
     <Compile Include="Assets\Scripts\UI\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\ThrowAwayScripts\TestIngredientUI.cs" />
@@ -127,15 +126,12 @@
     <Compile Include="Assets\Scripts\PuzzleSpecificScripts\Level1\Puzzle1\TeleportPlayer.cs" />
     <Compile Include="Assets\Scripts\EventObjects\TargetCollision.cs" />
     <Compile Include="Assets\Scripts\AudioScripts\LevelSFX.cs" />
-    <Compile Include="Assets\Scripts\DialogueScripts\NPCDialogueScripts\Scripts_TriggerNPCDIalogue]\NPCDialogueTrigger.cs" />
     <Compile Include="Assets\Scripts\MathScripts\bolt related\StickyBoltMechanics.cs" />
     <Compile Include="Assets\Scripts\MathScripts\bolt related\ObjectPooling.cs" />
     <Compile Include="Assets\Scripts\Tutorial\SetTutorialConvo.cs" />
-    <Compile Include="Assets\Scripts\DialogueScripts\NPCDialogueScripts\Scripts_NPCDIalogueDisplay\SequentialNPCDialogueDisplay.cs" />
     <Compile Include="Assets\Scripts\AI\PlayAnimation.cs" />
     <Compile Include="Assets\Scripts\CheckpointSystem\ResetChildren.cs" />
     <Compile Include="Assets\Scripts\PuzzleSpecificScripts\Level2\Sage&apos;sPuzzle\MoveObject.cs" />
-    <Compile Include="Assets\Scripts\DialogueScripts\NPCDialogueScripts\PointTowardsPlayer.cs" />
     <Compile Include="Assets\Scripts\PuzzleSpecificScripts\BossScripts\LookAtPlayer.cs" />
     <Compile Include="Assets\Scripts\PuzzleSpecificScripts\BossScripts\MatchGameObjectTransform.cs" />
     <Compile Include="Assets\Scripts\AI\BossData\BossFightManager.cs" />
@@ -154,7 +150,6 @@
     <Compile Include="Assets\Scripts\Objective Related\Objectives\ObjectiveObtainBurger.cs" />
     <Compile Include="Assets\Scripts\AI\BossAsthetics\BossAnimationPlayer.cs" />
     <Compile Include="Assets\Scripts\MathScripts\bolt related\MinionBolt.cs" />
-    <Compile Include="Assets\Scripts\DialogueScripts\NPCDialogueScripts\Scripts_NPCDIalogueDisplay\TimedSequentialNPCDisplay.cs" />
     <Compile Include="Assets\Scripts\MathScripts\bolt related\BoltTemplate.cs" />
     <Compile Include="Assets\Scripts\PuzzleSpecificScripts\Level1\Puzzle1\TimedStay.cs" />
     <Compile Include="Assets\Scripts\Menus\MainMenu\CameraRotation.cs" />
@@ -175,9 +170,11 @@
     <Compile Include="Assets\Scripts\AI\ShootState.cs" />
     <Compile Include="Assets\Scripts\UI\BoltUIDisplay.cs" />
     <Compile Include="Assets\Scripts\PuzzleSpecificScripts\Level2\Sage&apos;sPuzzle\CollisionManagerScript.cs" />
+    <Compile Include="Assets\Scripts\PuzzleSpecificScripts\BossScripts\ObsticalSpecific\LavaRising.cs" />
     <Compile Include="Assets\ToMainMenu.cs" />
+    <Compile Include="Assets\Scripts\PuzzleSpecificScripts\BossScripts\ObsticalSpecific\DespawnTimer.cs" />
     <Compile Include="Assets\Scripts\PlayerRelated\rbCharacterController.cs" />
-    <Compile Include="Assets\Scripts\DialogueScripts\NPCDialogueScripts\Scripts_NPCDIalogueDisplay\RandomizedNPCDialogueDisplay.cs" />
+    <Compile Include="Assets\Scripts\PuzzleSpecificScripts\BossScripts\ObsticalSpecific\ConstantFallingPlatform.cs" />
     <Compile Include="Assets\Scripts\Menus\MainToLoadMenu.cs" />
     <Compile Include="Assets\Scripts\EventObjects\DisappearButtonCollision.cs" />
     <Compile Include="Assets\Scripts\AudioScripts\AudioManager.cs" />

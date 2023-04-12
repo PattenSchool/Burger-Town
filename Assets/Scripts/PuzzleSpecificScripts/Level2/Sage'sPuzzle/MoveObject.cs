@@ -107,6 +107,11 @@ public class MoveObject : MonoBehaviour
         {
             if (other.gameObject.tag == "PhysObject")
             {
+                if (other.gameObject.GetComponent<Explosive>() != null)
+                {
+                    other.gameObject.GetComponent<Explosive>().explosiveIsActive = true;
+                }
+
                 PlayerStatic.Player.GetComponent<GrabObject>().ClearGrabObject();
 
 
@@ -117,17 +122,7 @@ public class MoveObject : MonoBehaviour
 
                 projectile.transform.rotation = this.transform.rotation;
 
-                if (other.gameObject.GetComponent<Explosive>() != null)
-                {
-                    other.gameObject.GetComponent<Explosive>().explosiveIsActive = true;
-
-                    moveObject = StartCoroutine(MoveExplosive(projectile, end.gameObject));
-                }
-                else
-                {
-
-                    moveObject = StartCoroutine(Move(projectile));
-                }
+                moveObject = StartCoroutine(Move(projectile));
             }
         }
     }
@@ -158,24 +153,6 @@ public class MoveObject : MonoBehaviour
                 launchee.transform.position = Vector3.Lerp(start.position, end.position, percent) + Vector3.up * curve.Evaluate(percent);
                 yield return null;
             }
-        }
-    }
-
-    private IEnumerator MoveExplosive(GameObject launchee, GameObject wall)
-    {
-        float t = 0;
-
-        while (t < duration)
-        {
-            float percent = t / duration;
-            t += Time.deltaTime;
-            launchee.transform.position = Vector3.Lerp(start.position, end.position, percent) + Vector3.up * curve.Evaluate(percent);
-
-            launchee.SetActive(false);
-
-            wall.SetActive(false);
-
-            yield return null;
         }
     }
 }

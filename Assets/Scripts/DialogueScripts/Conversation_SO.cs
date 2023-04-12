@@ -16,18 +16,6 @@ public class Conversation_SO : ScriptableObject
     [System.Serializable]
     public class Dialogue
     {
-        #region Sprites
-        //[Header("Sprite Elements")]
-
-        //[Tooltip("The facial expression sprite that can be displayed")]
-        public Sprite expressionSprite;
-        #endregion
-
-        #region Written Elements
-        //[Header("Written Elements")]
-
-        //[Tooltip("The type of narrorator being displayed")]
-        public NarrationType Narrorator;
         public enum NarrationType
         {
             None,
@@ -35,10 +23,9 @@ public class Conversation_SO : ScriptableObject
             Mayor_Mayonnaise,
             Boss
         }
-
-        //[Tooltip("The text of the dialogue")]
+        //adsf
+        public NarrationType Narrorator;
         public string text;
-        #endregion
     }
 
     //Dialogue Array
@@ -86,21 +73,6 @@ public class Conversation_SO : ScriptableObject
         
         dialogues.RemoveAt(index);
         
-    }
-    #endregion
-
-    #region Sprite Access
-    public Sprite GetExpressionSprite(int index)
-    {
-        if (dialogues.Count >= 0)
-        {
-            //Return slected dialogue
-            var dialogue = dialogues[index];
-
-            return dialogue.expressionSprite;
-        }
-
-        return null;
     }
     #endregion
 

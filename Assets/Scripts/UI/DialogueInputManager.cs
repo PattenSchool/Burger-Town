@@ -81,7 +81,7 @@ public class DialogueInputManager : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         //Increment the text display
-        textDisplayScript.IncrementDialogueIndex();
+        textDisplayScript.IncrementTextIndex();
 
         //Cancel any remaining text displays
         StopAllCoroutines();

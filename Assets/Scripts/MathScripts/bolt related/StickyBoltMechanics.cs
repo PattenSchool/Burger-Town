@@ -33,7 +33,7 @@ public class StickyBoltMechanics : BoltTemplate
         GameObject platform = ObjectPooling.Spawn(_spawnedPlatform, spawnPoint, rotation);
 
         //Set the desired time
-        platform.GetComponent<StickyBoltPlatormTimer>().DespawnWithTimer(_platformTimer);
+        _spawnedPlatform.GetComponent<StickyBoltPlatormTimer>().DespawnWithTimer(_platformTimer);
     }
     #endregion
 
@@ -43,6 +43,8 @@ public class StickyBoltMechanics : BoltTemplate
     /// </summary>
     public override void IHit()
     {
+        ToggleStick(true);
+
         base.IHit();
     }
 
@@ -51,57 +53,22 @@ public class StickyBoltMechanics : BoltTemplate
     ///     make the sticky bolt parallel to the ground
     /// </summary>
     /// <param name="collision"></param>
-    protected new void OnCollisionEnter(Collision collision)
+    protected void OnCollisionEnter(Collision collision)
     {
-        ////Have no idea what's going on here, thanks Stack Overflow
-        //bool onNonstickSurface =
-        //    (_nonStickyLayerMasks & 1 << collision.gameObject.layer) == 1 << collision.gameObject.layer;
-
-        ////Spawn the platform if the material is compatible
-        //if (!onNonstickSurface)
-        //{
-        //    ContactPoint contactPoint = collision.contacts[0];
-
-        //    SpawnPlatform(contactPoint.point);
-        //}
-
-        ////Apply the IHit method
-        //IHit();
-        TriggerObjectCollision(collision);
-    }
-
-    /// <summary>
-    /// Trigger the object collision from the bolt (just in case)
-    /// </summary>
-    /// <param name="collision"></param>
-    ///     The collision information
-    private new void TriggerObjectCollision(Collision collision)
-    {
-        TriggerObjectCollision(collision.contacts[0].point, collision.collider, collision.rigidbody);
-    }
-
-    protected override void TriggerObjectCollision(Vector3 contactPoint, Collider collider, Rigidbody rigidbody = null)
-    {
-        //TODO: Get the gameobject
-        GameObject collidedGameObject = collider.gameObject;
-
-        //TODO: Trigger any hittable information
-        #region Trigger IHitable information
-        IHitable hittableInformation = collidedGameObject.GetComponent<IHitable>();
-        if (hittableInformation != null)
-            hittableInformation.IHit();
-        #endregion
-
-        //TODO: Spawn the platform
         //Have no idea what's going on here, thanks Stack Overflow
         bool onNonstickSurface =
-            (_nonStickyLayerMasks & 1 << collider.gameObject.layer) == 1 << collider.gameObject.layer;
+            (_nonStickyLayerMasks & 1 << collision.gameObject.layer) == 1 << collision.gameObject.layer;
 
         //Spawn the platform if the material is compatible
         if (!onNonstickSurface)
         {
-            SpawnPlatform(contactPoint);
+            ContactPoint contactPoint = collision.contacts[0];
+
+            SpawnPlatform(contactPoint.point);
         }
+
+        //Apply the IHit method
+        IHit();
     }
 
     /// <summary>
@@ -112,19 +79,10 @@ public class StickyBoltMechanics : BoltTemplate
     public override void OnFire(GameObject firee, Vector3 directionVector)
     {
         //Reset the stick state
-        //ToggleStick(false);
+        ToggleStick(false);
 
-        //TODO: Set bolt information if isSpawnable is true
-        if (isSpawnable)
-        {
-            OnSpawn(firee, directionVector);
-        }
-        //TODO: Set bolt as a line for instant travel
-        else
-        {
-            OnLineDrawn(firee, directionVector);
-            
-        }
+        //Do the base fire action
+        base.OnFire(firee, directionVector);
     }
 
     /// <summary>
