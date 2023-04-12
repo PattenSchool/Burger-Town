@@ -20,7 +20,7 @@ public class WinMenuTest : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if(collision.gameObject.tag == "Finish")
+        if(collision.gameObject.tag == PlayerStatic.PlayerTag)
         {
             playerHUD.SetActive(false);
             winCanvas.SetActive(true);
