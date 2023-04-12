@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1190,6 +1190,7 @@ GameObject:
   - component: {fileID: 462292551}
   - component: {fileID: 462292550}
   - component: {fileID: 462292549}
+  - component: {fileID: 462292554}
   m_Layer: 0
   m_Name: Grabbable Cube (4)
   m_TagString: PhysObject
@@ -1291,6 +1292,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &462292554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462292548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ad98257edf639041a32238020be703d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &481343999
 GameObject:
   m_ObjectHideFlags: 0
@@ -2226,6 +2239,7 @@ GameObject:
   - component: {fileID: 651837579}
   - component: {fileID: 651837578}
   - component: {fileID: 651837577}
+  - component: {fileID: 651837582}
   m_Layer: 0
   m_Name: Grabbable Cube (2)
   m_TagString: PhysObject
@@ -2327,6 +2341,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &651837582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651837576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ad98257edf639041a32238020be703d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &668163884
 GameObject:
   m_ObjectHideFlags: 0
@@ -2529,7 +2555,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697116669}
   m_LocalRotation: {x: -0, y: -0.35038307, z: -0, w: 0.9366065}
-  m_LocalPosition: {x: 335.18, y: 3.448, z: 237.79}
+  m_LocalPosition: {x: 335.18, y: 1.93, z: 237.79}
   m_LocalScale: {x: 1, y: 0.34099, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5959,6 +5985,7 @@ GameObject:
   - component: {fileID: 1804503132}
   - component: {fileID: 1804503131}
   - component: {fileID: 1804503130}
+  - component: {fileID: 1804503135}
   m_Layer: 0
   m_Name: Grabbable Cube (3)
   m_TagString: PhysObject
@@ -6060,6 +6087,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1804503135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804503129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ad98257edf639041a32238020be703d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1814315615
 PrefabInstance:
   m_ObjectHideFlags: 0
