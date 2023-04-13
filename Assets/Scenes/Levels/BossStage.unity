@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 1, g: 0.89056605, b: 0.89056605, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -580,7 +580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnablePlatform: {fileID: 1318655384804614345, guid: 4bc971b8584234f4881efc8c520689f9, type: 3}
-  spawnDelay: 6
+  spawnDelay: 3
   spawnTimeRemaining: 0
   spawnDistanceFromStart: 77.88
 --- !u!1 &246762853
@@ -1430,7 +1430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnablePlatform: {fileID: 1318655384804614345, guid: 4bc971b8584234f4881efc8c520689f9, type: 3}
-  spawnDelay: 6
+  spawnDelay: 3
   spawnTimeRemaining: 0
   spawnDistanceFromStart: 40
 --- !u!1001 &533907207
@@ -5471,7 +5471,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -5627,7 +5627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnablePlatform: {fileID: 1318655384804614345, guid: 4bc971b8584234f4881efc8c520689f9, type: 3}
-  spawnDelay: 6
+  spawnDelay: 3
   spawnTimeRemaining: 0
   spawnDistanceFromStart: 20
 --- !u!1 &1963757351

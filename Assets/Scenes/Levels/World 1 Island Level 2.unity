@@ -11959,7 +11959,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 374325324}
   m_LocalRotation: {x: -0, y: -0.26198408, z: -0, w: 0.9650722}
-  m_LocalPosition: {x: 200.364, y: 4.3271446, z: 406.8622}
+  m_LocalPosition: {x: 194.15, y: 3.73, z: 416.42}
   m_LocalScale: {x: 48.226128, y: 1, z: 5.8398}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23325,10 +23325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834698c103b89944ebc809a34ae9317b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textDisplay: {fileID: 832904667}
-  conversation: {fileID: 11400000, guid: 64fe1064bdd2e2a4c8383b4c70120529, type: 2}
-  dialogueIndex: 0
-  dialogueShownSeconds: 5
 --- !u!114 &832904667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51815,8 +51811,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bc5aa48e55bdad4bbc760ceb6c514c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  convoDisplay: {fileID: 832904666}
-  npcConversation: {fileID: 11400000, guid: 4af6b3fb2475f924a96df6b500415464, type: 2}
 --- !u!1 &1673307981 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1051935492322388, guid: b2e5a2f18e4304214a814252d3e90968, type: 3}
@@ -55311,10 +55305,10 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -55652,8 +55646,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baec6087001d8fc44a6aeb92059b78e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotatingObejct: {fileID: 0}
-  rotationTransform: {fileID: 0}
 --- !u!114 &1796273713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61158,7 +61150,7 @@ GameObject:
   - component: {fileID: 2015418241}
   - component: {fileID: 2015418240}
   - component: {fileID: 2015418244}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ocean
   m_TagString: Untagged
   m_Icon: {fileID: 0}
