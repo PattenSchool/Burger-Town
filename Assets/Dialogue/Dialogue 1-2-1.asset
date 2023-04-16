@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e31002ba153d404b80405be71eb360a, type: 3}
+  m_Name: Dialogue 1-2-1
+  m_EditorClassIdentifier: 
+  dialogues:
+  - expressionSprite: {fileID: 21300000, guid: 146e39c70bec9d24695bc47eb6f11e07, type: 3}
+    Narrorator: 2
+    text: Good show, my lad! Hoo hoo hoo! You made it here in one piece!
+  - expressionSprite: {fileID: 21300000, guid: 146e39c70bec9d24695bc47eb6f11e07, type: 3}
+    Narrorator: 2
+    text: 'Now listen up: this part of the island is a bit trickier, but you''ll
+      need to get through here if you''re gonna get the <tomato>! So use your noggin!'
+  - expressionSprite: {fileID: 21300000, guid: 146e39c70bec9d24695bc47eb6f11e07, type: 3}
+    Narrorator: 2
+    text: Take these <sticky bolts>. You'll need them to get over high obsticals.
+      Switch between bolt types with the scroll wheel. You can get rid of a platform
+      you've already put down by switching back to your <normal bolts> and blasting
+      them away!

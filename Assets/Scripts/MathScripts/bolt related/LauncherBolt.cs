@@ -35,7 +35,7 @@ public class LauncherBolt : BoltTemplate
         {
             firee.GetComponent<rbCharacterController>().isLaunchedByCannon = false;
 
-            firee.GetComponent<rbCharacterController>().boltVelocity = directionVector * (_initialSpeed );
+            firee.GetComponent<rbCharacterController>().boltVelocity = directionVector * (_initialSpeed / 1.55f);
         }
         else
         {
@@ -44,27 +44,25 @@ public class LauncherBolt : BoltTemplate
     }
     #endregion
 
-    protected override void TriggerRaycastCollision(GameObject firee, Vector3 directionVector, RaycastHit hitInfo)
+    /// <summary>
+    /// Used to apply the hitted effect when the bolt hits something
+    /// </summary>
+    /// <param name="collision"></param>
+    ///     The info of the game object being collided
+    protected void OnCollisionEnter(Collision collision)
     {
-        //TODO: Trigger the object collisions
-        TriggerObjectCollision(hitInfo.point, hitInfo.collider, hitInfo.rigidbody);
+        //Test to see if there is a hitable interface on the other collider
+        IHitable hittableObejct = collision.gameObject.GetComponent<IHitable>();
 
-        //TODO: Trigger the bolt collisions if the object collided was not the player
-        if (hitInfo.collider.tag != PlayerStatic.PlayerTag)
-            TriggerBoltCollision(hitInfo.point);
-    }
 
-    protected override void TriggerObjectCollision
-        (Vector3 contactPoint, Collider collider, Rigidbody rigidbody = null)
-    {
-        //TODO: Get the gameobject
-        GameObject collidedGameObject = collider.gameObject;
 
-        //TODO: Trigger any hittable information
-        #region Trigger IHitable information
-        IHitable hittableInformation = collidedGameObject.GetComponent<IHitable>();
-        if (hittableInformation != null)
-            hittableInformation.IHit();
-        #endregion
+        //Activate object IHitable
+        if (hittableObejct != null && collision.gameObject.tag != PlayerStatic.PlayerTag)
+        {
+            hittableObejct.IHit();
+        }
+
+        //Activate bolt Ihitable
+        IHit();
     }
 }

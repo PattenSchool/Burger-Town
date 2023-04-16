@@ -51,7 +51,7 @@ public class Conversation_SO : ScriptableObject
     /// </summary>
     public void AddLastDialogue()
     {
-        if(dialogues == null)
+        if (dialogues == null)
         {
             dialogues = new List<Dialogue>();
         }
@@ -64,7 +64,7 @@ public class Conversation_SO : ScriptableObject
     /// </summary>
     public void RemoveLastDialogue()
     {
-        if(dialogues == null)
+        if (dialogues == null)
         {
             return;
         }
@@ -83,9 +83,9 @@ public class Conversation_SO : ScriptableObject
             Debug.Log("Index Error On Conversation");
             return;
         }
-        
+
         dialogues.RemoveAt(index);
-        
+
     }
     #endregion
 
@@ -127,7 +127,7 @@ public class Conversation_SO : ScriptableObject
         {
             return "";
         }
-        
+
     }
 
     public int ConversationLength

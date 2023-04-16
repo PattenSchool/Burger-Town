@@ -213,18 +213,14 @@ public class BoltTemplate : Projectile
         //TODO: Get the gameobject
         GameObject collidedGameObject = collider.gameObject;
 
+        print(collider.name);
+
         //TODO: Trigger any hittable information
         #region Trigger IHitable information
         IHitable hittableInformation = collidedGameObject.GetComponent<IHitable>();
         if (hittableInformation != null)
             hittableInformation.IHit();
         #endregion
-
-        //TODO: Trigger anything about the player if player is hit
-        if (collider.tag == PlayerStatic.PlayerTag)
-        {
-            LevelManagerStatic.ResetLevel();
-        }
     }
 
     /// <summary>
