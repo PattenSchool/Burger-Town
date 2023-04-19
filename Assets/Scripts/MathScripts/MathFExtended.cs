@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace UnityEngine.MathExtensions
 {
     /// <summary>
@@ -212,6 +214,36 @@ namespace UnityEngine.MathExtensions
                 }
             }
             #endregion
+        }
+
+        /// <summary>
+        /// A class that deals with random ranges
+        /// </summary>
+        public static class RandomExtended
+        {
+            /// <summary>
+            /// Returns a ransom sign if a number is positive or negative
+            /// </summary>
+            /// <returns></returns>
+            ///     returns either -1 or 1
+            public static int RandomSign()
+            {
+                int result = 0;
+
+                //Randomize the number to either 1 or 0
+                result = Random.Range(0, 2);
+
+                if (result == 0)
+                {
+                    result = -1;
+                }
+                else if (result == 1)
+                {
+                    result = 1;
+                }
+
+                return result;
+            }
         }
     }
 }

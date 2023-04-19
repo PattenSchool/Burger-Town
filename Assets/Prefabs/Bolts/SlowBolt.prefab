@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4189306844764869278}
   - component: {fileID: 389655885642285394}
   - component: {fileID: 1351215288359337163}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: BoltMiddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 2887424605215294306}
   - component: {fileID: 7442890821392341855}
   - component: {fileID: 8834446467203990982}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: SlowBolt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,6 +151,7 @@ MonoBehaviour:
   _centerOfMass: {x: 0, y: 0, z: 0.17}
   _initialSpeed: 10
   sprite: {fileID: 0}
+  isSpawnable: 1
   _desiredSetTime: 10
 --- !u!54 &8834446467203990982
 Rigidbody:
@@ -179,7 +180,7 @@ GameObject:
   - component: {fileID: 2348472597027000271}
   - component: {fileID: 4903289773056781466}
   - component: {fileID: 7031720856736124061}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: BoltEndHorizontal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +263,7 @@ GameObject:
   - component: {fileID: 7340731043800791491}
   - component: {fileID: 8945120008843054630}
   - component: {fileID: 4203492085766371749}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: BoltEndVertical
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +347,7 @@ GameObject:
   - component: {fileID: 6768690657637765940}
   - component: {fileID: 6671410763417130340}
   - component: {fileID: 2297815741090472460}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: BoltTip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
