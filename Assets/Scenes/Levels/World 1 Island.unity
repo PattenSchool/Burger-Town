@@ -707,7 +707,7 @@ GameObject:
   - component: {fileID: 311861234}
   - component: {fileID: 311861233}
   - component: {fileID: 311861232}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CheckPoint 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3421,6 +3421,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 71421353986740247, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 690518336266648764, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -5260,6 +5264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7fa65c8baced1e49812cebe75e3d220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueDisplay: {fileID: 0}
 --- !u!1001 &1678780892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5601,7 +5606,7 @@ GameObject:
   - component: {fileID: 1775555915}
   - component: {fileID: 1775555914}
   - component: {fileID: 1775555913}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CheckPoint 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5923,7 +5928,7 @@ GameObject:
   - component: {fileID: 1814703084}
   - component: {fileID: 1814703083}
   - component: {fileID: 1814703082}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CheckPoint 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

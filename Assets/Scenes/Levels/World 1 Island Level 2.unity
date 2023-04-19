@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 454640}
   - component: {fileID: 454639}
   - component: {fileID: 454638}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CheckPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10248,7 +10248,7 @@ GameObject:
   - component: {fileID: 284981958}
   - component: {fileID: 284981957}
   - component: {fileID: 284981956}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CheckPoint (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11984,7 +11984,7 @@ GameObject:
   - component: {fileID: 388042242}
   - component: {fileID: 388042241}
   - component: {fileID: 388042240}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CheckPoint (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12895,7 +12895,7 @@ GameObject:
   - component: {fileID: 404550501}
   - component: {fileID: 404550500}
   - component: {fileID: 404550499}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CheckPoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16002,7 +16002,7 @@ GameObject:
   - component: {fileID: 567536899}
   - component: {fileID: 567536898}
   - component: {fileID: 567536897}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CheckPoint (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23286,6 +23286,7 @@ GameObject:
   - component: {fileID: 832904668}
   - component: {fileID: 832904667}
   - component: {fileID: 832904666}
+  - component: {fileID: 832904669}
   m_Layer: 5
   m_Name: Dialogue
   m_TagString: Untagged
@@ -23325,6 +23326,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834698c103b89944ebc809a34ae9317b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textDisplay: {fileID: 0}
+  expressionDisplay: {fileID: 0}
+  conversation: {fileID: 0}
+  dialogueIndex: 0
+  dialogueShownSeconds: 1
 --- !u!114 &832904667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23424,6 +23430,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832904664}
   m_CullTransparentMesh: 1
+--- !u!223 &832904669
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832904664}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1001 &838352028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55646,6 +55673,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baec6087001d8fc44a6aeb92059b78e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotatingObejct: {fileID: 0}
+  rotationTransform: {fileID: 0}
 --- !u!114 &1796273713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55920,7 +55949,7 @@ GameObject:
   - component: {fileID: 1808115390}
   - component: {fileID: 1808115389}
   - component: {fileID: 1808115388}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CheckPoint (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

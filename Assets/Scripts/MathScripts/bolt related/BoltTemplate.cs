@@ -2,7 +2,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using Unity.VisualScripting; 
+using Unity.VisualScripting;
+using UnityEngine.Timeline;
 
 public class BoltTemplate : Projectile
 {
@@ -171,9 +172,10 @@ public class BoltTemplate : Projectile
     {
         //TODO: Generate the information with the hit info
         Ray rayDirection = new Ray(this.transform.position, directionVector.normalized);
+        //Ray rayDirection = PlayerStatic.MainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         Physics.Raycast(rayDirection, out hit);
-
+        Debug.Log(hit.transform.name);
         return hit;
     }
 
@@ -212,8 +214,6 @@ public class BoltTemplate : Projectile
     {
         //TODO: Get the gameobject
         GameObject collidedGameObject = collider.gameObject;
-
-        print(collider.name);
 
         //TODO: Trigger any hittable information
         #region Trigger IHitable information

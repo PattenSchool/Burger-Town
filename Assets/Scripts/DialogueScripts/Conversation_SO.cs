@@ -90,6 +90,11 @@ public class Conversation_SO : ScriptableObject
     #endregion
 
     #region Sprite Access
+    /// <summary>
+    /// Get's the sprite on a certain index
+    /// </summary>
+    /// <param name="index"></param>
+    /// <returns></returns>
     public Sprite GetExpressionSprite(int index)
     {
         if (dialogues.Count >= 0)
