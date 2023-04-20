@@ -25,42 +25,54 @@ public class MainTextDisplay : MonoBehaviour
     private int textDisplayIndex = 0;
     #endregion
 
-    #region Text Index and Get Method
+    #region Dialogue Index and Get Method
     //!===========Variables and Properties===========!//
-    [Header("Text Index")]
+    [Header("Dialogue Index")]
 
     [Tooltip("The index of the text")]
     [SerializeField]
-    private int textIndex = 0;
+    private int dialogueIndex = 0;
 
     //!===================Methods====================!//
     /// <summary>
     /// Increases the text index by 1
     /// </summary>
-    public void IncrementTextIndex()
+    public void IncrementDialogueIndex()
     {
-        textIndex++;
+        dialogueIndex++;
     }
 
     /// <summary>
     /// Gets the text index
     /// </summary>
     /// <returns></returns>
-    public int GetTextIndex()
+    public int GetDialogueIndex()
     {
-        return textIndex;
+        return dialogueIndex;
     }
 
     /// <summary>
     /// Decreases the text index by 1
     /// </summary>
-    public void DecrementTextIndex()
+    public void DecrementDialogueIndex()
     {
-        textIndex--;
+        dialogueIndex--;
     }
     #endregion
 
-    #region Text Display
+    #region Sprite Related
+    [Header("Sprite Related")]
+
+    [Tooltip("The image holding the sprites")]
+    [SerializeField]
+    private Image expressionDisplay;
+
+    [Tooltip("THe default color when the conversation is null")]
+    [SerializeField]
+    private Color defaultExpressionColor = Color.clear;
+    #endregion
+
+    #region Dialogue Display
     //!===================Methods====================!//
     private void DisplayConversation()
     {
@@ -74,7 +86,7 @@ public class MainTextDisplay : MonoBehaviour
             playerConversation = PlayerStatic.Conversation;
 
         //If text conversation is over the allowed amount, then safegaurd
-        if (textIndex >= playerConversation.ConversationLength)
+        if (dialogueIndex >= playerConversation.ConversationLength)
         {
             ResetTextElements();
             return;
@@ -85,7 +97,19 @@ public class MainTextDisplay : MonoBehaviour
             textBackground.SetActive(true);
 
         //Set text
-        text.text = playerConversation.GetFormattedText(textIndex);
+        text.text = playerConversation.GetFormattedText(dialogueIndex);
+
+        //TODO: Set expression
+        var incomingExpressionSprite = playerConversation.GetExpressionSprite(dialogueIndex);
+        if (incomingExpressionSprite == null)
+        {
+            expressionDisplay.color = defaultExpressionColor;
+        }
+        else
+        {
+            expressionDisplay.color = Color.white;
+            expressionDisplay.sprite = incomingExpressionSprite;
+        }
     }
     #endregion
 
@@ -105,8 +129,9 @@ public class MainTextDisplay : MonoBehaviour
     //!===================Methods====================!//
     private void ResetTextElements()
     {
-        textIndex = 0;
+        dialogueIndex = 0;
         PlayerStatic.DeleteConversation();
+        expressionDisplay.color = defaultExpressionColor;
         textBackground.SetActive(false);
     }
     #endregion
