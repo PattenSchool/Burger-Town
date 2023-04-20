@@ -82,7 +82,7 @@ public class BossMovement : MonoBehaviour
         Vector3 direction = distanceVector.normalized;
 
         //TODO: Check if this is within the check boundary (if so, do not move)
-        if (!(distance < checkDistance))
+        if (!(distance < checkDistance) && !PlayerStatic.HasConversation())
             //TODO: Move towards the transform reference
             rigidbody.velocity = direction * speed;
         else

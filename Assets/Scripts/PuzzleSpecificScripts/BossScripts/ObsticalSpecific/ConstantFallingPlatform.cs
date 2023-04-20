@@ -16,7 +16,8 @@ public class ConstantFallingPlatform : MonoBehaviour
     #region Unity Methods
     private void Update()
     {
-        this.transform.position += Vector3.down * fallSpeed * Time.deltaTime;
+        if (!PlayerStatic.HasConversation())
+            this.transform.position += Vector3.down * fallSpeed * Time.deltaTime;
     }
     #endregion
 }

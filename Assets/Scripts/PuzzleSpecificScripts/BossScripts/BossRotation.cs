@@ -24,10 +24,19 @@ public class BossRotation : MonoBehaviour
     #region UnityMethods
     private void Update()
     {
-        //TODO: Get original rotation 
-        Quaternion targetRot = transformRef.rotation;
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRot, Time.deltaTime * speed);
-        timeCount += Time.deltaTime;
+        if (PlayerStatic.HasConversation())
+        {
+
+        }
+        else
+        {
+            //TODO: Get original rotation 
+            Quaternion targetRot = transformRef.rotation;
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRot, Time.deltaTime * speed);
+            timeCount += Time.deltaTime;
+        }
+
+        
     }
     #endregion
 }
