@@ -9,7 +9,7 @@ public class DisappearBlockMesh : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        blockMesh = this.gameObject.GetComponent<MeshRenderer>();
+        blockMesh = this.gameObject.GetComponentInChildren<MeshRenderer>();
         meshVisible = false;
     }
 
@@ -28,14 +28,14 @@ public class DisappearBlockMesh : MonoBehaviour
             // enabled box collider
             // was going to disable gameobject but since this script is attached
             // that won't be possible
-            this.GetComponent<BoxCollider>().enabled = true;
+            this.GetComponent<MeshCollider>().enabled = true;
         }
         else
         {
             blockMesh.enabled = false;
 
             // disabled box collider
-            this.GetComponent<BoxCollider>().enabled = false;
+            this.GetComponent<MeshCollider>().enabled = false;
         }
     }
 }
