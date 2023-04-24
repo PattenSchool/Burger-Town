@@ -2,6 +2,7 @@ using System.Collections;
 using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.MathExtensions;
 
@@ -10,6 +11,10 @@ using UnityEngine.MathExtensions;
 public class rbCharacterController : MonoBehaviour
 {
     #region Variables
+    [Tooltip("The double tap register to get the double tap")]
+    [SerializeField]
+    private DoubleTapRegister doubleTapRegister;
+
     public Rigidbody rb;
     public float defaultSpeed;
     private float speed;
@@ -97,7 +102,7 @@ public class rbCharacterController : MonoBehaviour
 
     public void ApplySprint()
     {
-        if (isSprinting)
+        if (isSprinting || doubleTapRegister.GetDoubleTapCheck())
         {
             speed = sprintSpeed;
         }
@@ -142,10 +147,6 @@ public class rbCharacterController : MonoBehaviour
         Vector3 currentVelocity = rb.velocity;
 
         ApplySprint();
-
-        //TODO: Apply jump if the left sprint is being pressed (Quickfix)
-        if (isSprinting == true && Input.GetKeyDown(KeyCode.Space) && grounded)
-            ApplyJumpForce();
 
         //To Move
         Vector3 desiredmove = transform.rotation * new Vector3(move.x, 0f, move.y) * speed;

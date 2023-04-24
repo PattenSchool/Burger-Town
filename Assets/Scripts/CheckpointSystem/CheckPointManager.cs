@@ -169,7 +169,9 @@ public class CheckPointManager : MonoBehaviour
             if (checkPointIndex == checkPoint.index)
             {
                 PlayerStatic.Player.transform.position = checkPoint.transform.position;
-                PlayerStatic.Player.transform.rotation = checkPoint.transform.rotation;
+                //PlayerStatic.Player.transform.rotation = checkPoint.transform.rotation;
+                PlayerStatic.Player.transform.rotation = Quaternion.Euler(0f,
+                    checkPoint.transform.rotation.y, 0f);
             }
         }
     }

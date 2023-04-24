@@ -174,8 +174,15 @@ public class BoltTemplate : Projectile
         Ray rayDirection = new Ray(this.transform.position, directionVector.normalized);
         //Ray rayDirection = PlayerStatic.MainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        Physics.Raycast(rayDirection, out hit);
-        Debug.Log(hit.transform.name);
+        if (Physics.Raycast(rayDirection, out hit))
+        {
+            return hit;
+        }
+        else
+        {
+            this.DespawnFromPool();
+        }
+
         return hit;
     }
 
@@ -183,7 +190,8 @@ public class BoltTemplate : Projectile
     protected virtual void TriggerRaycastCollision(GameObject firee, Vector3 directionVector, RaycastHit hitInfo)
     {
         //TODO: Trigger the object information
-        TriggerObjectCollision(hitInfo.point, hitInfo.collider, hitInfo.rigidbody);
+        if (hitInfo.collider.gameObject.name != null)
+            TriggerObjectCollision(hitInfo.point, hitInfo.collider, hitInfo.rigidbody);
 
         //TODO: Trigger the bolt collision
         TriggerBoltCollision(hitInfo.point);
@@ -197,7 +205,8 @@ public class BoltTemplate : Projectile
     ///     The collision information
     protected virtual void TriggerObjectCollision(Collision collision)
     {
-        TriggerObjectCollision(collision.contacts[0].point, collision.collider, collision.rigidbody);
+        if (collision != null)
+            TriggerObjectCollision(collision.contacts[0].point, collision.collider, collision.rigidbody);
     }
 
     /// <summary>

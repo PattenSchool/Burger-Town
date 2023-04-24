@@ -11096,6 +11096,7 @@ GameObject:
   - component: {fileID: 968531097482780009}
   - component: {fileID: 968531097482780008}
   - component: {fileID: 5122094904978327926}
+  - component: {fileID: 1907087369568590452}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -11199,6 +11200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6a59ea60b1e2a842b7f4b16d9d68fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doubleTapRegister: {fileID: 1907087369568590452}
   rb: {fileID: 7919990712723082199}
   defaultSpeed: 5
   sprintSpeed: 8
@@ -11603,6 +11605,34 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ca05b6f6-8643-412f-9580-a0a440a115df
     m_ActionName: Player/Debug[/Keyboard/rightBracket]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1907087369568590452}
+        m_TargetAssemblyTypeName: DoubleTapRegister, Assembly-CSharp
+        m_MethodName: RegisterTap
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1907087369568590452}
+        m_TargetAssemblyTypeName: DoubleTapRegister, Assembly-CSharp
+        m_MethodName: RegisterHold
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0d040b34-b881-466a-9d8e-47c7cf13b28e
+    m_ActionName: Player/SprintTap[/Keyboard/w,/Keyboard/upArrow]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -11713,6 +11743,25 @@ MonoBehaviour:
   isTouchingGround: 1
   kyoteTime: 0.025
   kyoteTimer: 0
+--- !u!114 &1907087369568590452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919990712723082176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd7f42fb0a99c64d89bc50583ca0a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDoubleTap: 0
+  tapsRegistered: 0
+  isTapHeld: 0
+  isTimerCounting: 0
+  isDoubleTapRegistered: 0
+  timerTime: 0.4
+  timeRemaining: 0
 --- !u!1 &7919990712788497563
 GameObject:
   m_ObjectHideFlags: 0
