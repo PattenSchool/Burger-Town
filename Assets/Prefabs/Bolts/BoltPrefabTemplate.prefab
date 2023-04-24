@@ -332,6 +332,9 @@ MonoBehaviour:
   _initialSpeed: 50
   sprite: {fileID: 0}
   isSpawnable: 1
+  hittableLayers:
+    serializedVersion: 2
+    m_Bits: 127
   _desiredSetTime: 10
 --- !u!54 &4503373205164251981
 Rigidbody:

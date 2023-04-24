@@ -39,7 +39,7 @@ public class TimerCountDown : StateMachineBehaviour
     {
         timer -= Time.deltaTime;
 
-        if (timer <= 0f)
+        if (timer <= 0f && !PlayerStatic.HasConversation())
             animator.SetTrigger(triggerName);
     }
 

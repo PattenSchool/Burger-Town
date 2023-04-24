@@ -59,6 +59,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 003076f3c2480d24e89bb2c382170d18, type: 2}
+    - target: {fileID: 4503373205164251981, guid: 994782f631c02474db2fa8a313eae702, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6207380262792847936, guid: 994782f631c02474db2fa8a313eae702, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -101,6 +105,9 @@ MonoBehaviour:
   _initialSpeed: 20
   sprite: {fileID: 21300000, guid: 6bfe1e77bba511944a174e248fe253cf, type: 3}
   isSpawnable: 0
+  hittableLayers:
+    serializedVersion: 2
+    m_Bits: 63
   _desiredSetTime: 10
   _spawnedPlatform: {fileID: 428391412465546510, guid: cbd979c7a6e475140847dfbeca44d142, type: 3}
   _platformTimer: 5
