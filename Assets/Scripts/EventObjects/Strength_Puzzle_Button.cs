@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Strength_Puzzle_Button : MonoBehaviour
+public class Strength_Puzzle_Button : MonoBehaviour, IHitable
 {
     // Start is called before the first frame update
     void Start()
@@ -16,13 +16,17 @@ public class Strength_Puzzle_Button : MonoBehaviour
         
     }
 
+    public void IHit()
+    {
+       // GameObject otherObject = collision.gameObject;
+       // if (otherObject.tag == "NormalBolt")
+        //{
+            Strength_Puzzle_Weight.isHit = true;
+       // }
+    }
     private void OnCollisionEnter(Collision collision)
     {
-        GameObject otherObject = collision.gameObject;
-        if (otherObject.tag == "NormalBolt")
-        {
-            Strength_Puzzle_Weight.isHit = true;
-        }
+        
     }
 
 }

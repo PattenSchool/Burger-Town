@@ -213,6 +213,8 @@ public class BoltTemplate : Projectile
         //TODO: Get the gameobject
         GameObject collidedGameObject = collider.gameObject;
 
+        print(collider.name);
+
         //TODO: Trigger any hittable information
         #region Trigger IHitable information
         IHitable hittableInformation = collidedGameObject.GetComponent<IHitable>();

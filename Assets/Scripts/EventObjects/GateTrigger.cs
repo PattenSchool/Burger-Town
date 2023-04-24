@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GateTrigger : MonoBehaviour
 {
     public bool isTriggered = false;
     public float speed = 4.0f;
     public static int targetNum = 0;
+    public TMP_Text targetCounter;
+    //public tex
     [SerializeField]
     GameObject[] targets;
     // Start is called before the first frame update
@@ -15,7 +18,12 @@ public class GateTrigger : MonoBehaviour
         // Method that sets how many targets are in the area at the start.
 
         setTargetNum();
-        
+
+    }
+
+    private void Update()
+    {
+        targetCounter.text = targetNum.ToString();
     }
 
     // Update is called once per frame
@@ -47,7 +55,7 @@ public class GateTrigger : MonoBehaviour
     void gateMoveCheck()
     {
         Vector3 moveDirection = Vector3.zero;
-      //Checks to see if the targetNum counter reaches 0 or below
+        //Checks to see if the targetNum counter reaches 0 or below
         if (targetNum <= 0)
         {
             // Outputs a message to the console if the gate conditons have been satisfied.
