@@ -1876,6 +1876,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2095488603387336901, guid: ca81b971d796a09429960b03b83b3223, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656667993045571877, guid: ca81b971d796a09429960b03b83b3223, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3789020055782449738, guid: ca81b971d796a09429960b03b83b3223, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -7894,6 +7902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7fa65c8baced1e49812cebe75e3d220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueDisplay: {fileID: 0}
 --- !u!1001 &1678780892
 PrefabInstance:
   m_ObjectHideFlags: 0
