@@ -6902,6 +6902,7 @@ GameObject:
   - component: {fileID: 171382542}
   - component: {fileID: 171382541}
   - component: {fileID: 171382540}
+  - component: {fileID: 171382546}
   m_Layer: 0
   m_Name: Crate (2)
   m_TagString: PhysObject
@@ -7015,6 +7016,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 39.51, z: 0}
+--- !u!114 &171382546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171382539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65234bebcd540584cab877b89c8531e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &176020194 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9031193989434729353, guid: ba8096c7aac47d84e92e4de4301ed91c, type: 3}
@@ -30639,6 +30652,8 @@ GameObject:
   - component: {fileID: 954128137}
   - component: {fileID: 954128136}
   - component: {fileID: 954128135}
+  - component: {fileID: 954128141}
+  - component: {fileID: 954128140}
   m_Layer: 0
   m_Name: TestCube
   m_TagString: PhysObject
@@ -30740,6 +30755,30 @@ Transform:
   m_Father: {fileID: 1955173991}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &954128140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954128134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ad98257edf639041a32238020be703d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &954128141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954128134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65234bebcd540584cab877b89c8531e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &960046238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63972,6 +64011,7 @@ GameObject:
   - component: {fileID: 1813920331}
   - component: {fileID: 1813920330}
   - component: {fileID: 1813920329}
+  - component: {fileID: 1813920335}
   m_Layer: 0
   m_Name: Crate (1)
   m_TagString: PhysObject
@@ -64085,6 +64125,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 39.51, z: 0}
+--- !u!114 &1813920335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813920328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65234bebcd540584cab877b89c8531e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1814315615
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69649,6 +69701,7 @@ GameObject:
   - component: {fileID: 2010934132}
   - component: {fileID: 2010934131}
   - component: {fileID: 2010934130}
+  - component: {fileID: 2010934136}
   m_Layer: 0
   m_Name: Crate
   m_TagString: PhysObject
@@ -69762,6 +69815,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2010934136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010934129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65234bebcd540584cab877b89c8531e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2015418239
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,6 +19,7 @@ public class AddMusic : MonoBehaviour
     {
         //Get the first instance of that
         var audioManager = AudioManager.instance;
+        AudioManager.instance.ResetTracks();
         AudioManager.instance.AddTrack(audioClip);
     }
 }
