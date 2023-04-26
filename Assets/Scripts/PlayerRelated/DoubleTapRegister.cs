@@ -39,19 +39,19 @@ public class DoubleTapRegister : MonoBehaviour
     [Header("Tap registers")]
 
     [Tooltip("The number of taps being registered")]
-    [SerializeField]
+    [SerializeField, HideInInspector]
     private int tapsRegistered = 0;
 
     [Tooltip("A bool to tell if the last tap is being held")]
-    [SerializeField]
+    [SerializeField, HideInInspector]
     private bool isTapHeld = false;
 
     [Tooltip("Asking if the timer is still counting down")]
-    [SerializeField]
+    [SerializeField, HideInInspector]
     private bool isTimerCounting = false;
 
     [Tooltip("A bool determining if the double tap registered")]
-    [SerializeField]
+    [SerializeField, HideInInspector]
     private bool isDoubleTapRegistered = false;
 
     /// <summary>
