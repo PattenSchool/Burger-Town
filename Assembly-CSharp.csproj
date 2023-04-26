@@ -119,6 +119,7 @@
     <Compile Include="Assets\Scripts\DialogueScripts\NPCDialogueScripts\Scripts_NPCDIalogueDisplay\NPCDialogueDisplay.cs" />
     <Compile Include="Assets\Scripts\EventObjects\EventTrigger.cs" />
     <Compile Include="Assets\Scripts\UI\DialogueManager.cs" />
+    <Compile Include="Assets\Scripts\PlayerRelated\CrossbowFireAnim.cs" />
     <Compile Include="Assets\Scripts\ThrowAwayScripts\TestIngredientUI.cs" />
     <Compile Include="Assets\Scripts\MathScripts\bolt related\Projectile.cs" />
     <Compile Include="Assets\Scripts\SaveSystem\ScriptsForData\OverarchingSavesData_SO.cs" />
@@ -194,6 +195,8 @@
     <Compile Include="Assets\Scripts\AI\LifeLinkObject.cs" />
     <Compile Include="Assets\Scripts\AudioScripts\AddNoise.cs" />
     <Compile Include="Assets\Scripts\EventObjects\Palm_Tree_Collision.cs" />
+    <Compile Include="Assets\Scripts\PuzzleSpecificScripts\Level2\Sage&apos;sPuzzle\CannonObjectCheck.cs" />
+    <Compile Include="Assets\Scripts\EventObjects\PlayerCatcher.cs" />
     <Compile Include="Assets\Scripts\CheckpointSystem\Resettable.cs" />
     <Compile Include="Assets\Scripts\MathScripts\bolt related\LauncherBolt.cs" />
     <Compile Include="Assets\Scripts\LevelManagingScripts\LevelManagerStatic.cs" />
@@ -208,8 +211,6 @@
     <Compile Include="Assets\Scripts\UI\PlayerDisplays.cs" />
     <Compile Include="Assets\Scripts\SaveSystem\ScriptsForData\OverarchingGameData_SO.cs" />
     <Compile Include="Assets\TestThrowAwayAssets\BoltShower.cs" />
-    <Compile Include="Assets\Scripts\EventObjects\PlayerCatcher.cs" />
-    <Compile Include="Assets\Scripts\PlayerRelated\CrossbowFireAnim.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
