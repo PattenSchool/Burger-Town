@@ -2939,9 +2939,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 169704621}
-  - component: {fileID: 169704620}
   - component: {fileID: 169704622}
-  - component: {fileID: 169704623}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -2949,19 +2947,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &169704620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 169704618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7856f7bbc7b06cc4985328318dfcc354, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SFXChannelAmount: 30
 --- !u!4 &169704621
 Transform:
   m_ObjectHideFlags: 0
@@ -2984,25 +2969,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 169704618}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67114e9e9ba925f409d6bd633816d821, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundSFX: {fileID: 8300000, guid: 8feb468527312d548971ad4ba8db1bf4, type: 3}
---- !u!114 &169704623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 169704618}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f1558a78ec3a0247abb33c5dcd61502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 8feb468527312d548971ad4ba8db1bf4, type: 3}
+  audioClip: {fileID: 8300000, guid: b4a6bc6915c909d43a4a8f534e7dbc72, type: 3}
 --- !u!1 &178301346
 GameObject:
   m_ObjectHideFlags: 0
