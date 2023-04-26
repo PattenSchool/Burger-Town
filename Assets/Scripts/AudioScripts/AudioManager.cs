@@ -16,6 +16,7 @@ public class AudioManager : MonoBehaviour
     private int curSFX = 0;
 
     private AudioSource bgm;
+    [SerializeField]
     private List<AudioClip> tracks = new List<AudioClip> ();
     private int bgmIndex = 0;
     private float currentTime;
@@ -67,7 +68,10 @@ public class AudioManager : MonoBehaviour
     }
 
 
-
+    public void ResetTracks()
+    {
+        tracks.Clear();
+    }
     public void PlaySFX(AudioClip clip)
     {
         SFXSources[curSFX].clip = clip;

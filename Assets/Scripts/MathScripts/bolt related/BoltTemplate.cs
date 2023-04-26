@@ -2,7 +2,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using Unity.VisualScripting; 
+using Unity.VisualScripting;
+using UnityEngine.Timeline;
 
 public class BoltTemplate : Projectile
 {
@@ -171,8 +172,16 @@ public class BoltTemplate : Projectile
     {
         //TODO: Generate the information with the hit info
         Ray rayDirection = new Ray(this.transform.position, directionVector.normalized);
+        //Ray rayDirection = PlayerStatic.MainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        Physics.Raycast(rayDirection, out hit);
+        if (Physics.Raycast(rayDirection, out hit))
+        {
+            return hit;
+        }
+        else
+        {
+            this.DespawnFromPool();
+        }
 
         return hit;
     }
@@ -181,7 +190,8 @@ public class BoltTemplate : Projectile
     protected virtual void TriggerRaycastCollision(GameObject firee, Vector3 directionVector, RaycastHit hitInfo)
     {
         //TODO: Trigger the object information
-        TriggerObjectCollision(hitInfo.point, hitInfo.collider, hitInfo.rigidbody);
+        if (hitInfo.collider.gameObject.name != null)
+            TriggerObjectCollision(hitInfo.point, hitInfo.collider, hitInfo.rigidbody);
 
         //TODO: Trigger the bolt collision
         TriggerBoltCollision(hitInfo.point);
@@ -195,7 +205,8 @@ public class BoltTemplate : Projectile
     ///     The collision information
     protected virtual void TriggerObjectCollision(Collision collision)
     {
-        TriggerObjectCollision(collision.contacts[0].point, collision.collider, collision.rigidbody);
+        if (collision != null)
+            TriggerObjectCollision(collision.contacts[0].point, collision.collider, collision.rigidbody);
     }
 
     /// <summary>
@@ -212,8 +223,6 @@ public class BoltTemplate : Projectile
     {
         //TODO: Get the gameobject
         GameObject collidedGameObject = collider.gameObject;
-
-        print(collider.name);
 
         //TODO: Trigger any hittable information
         #region Trigger IHitable information

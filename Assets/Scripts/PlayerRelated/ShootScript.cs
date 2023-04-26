@@ -11,7 +11,8 @@ public class ShootScript : MonoBehaviour
     [Header("Time Variables")]
 
     [Tooltip("The time remaining")]
-    [HideInInspector] public float timeRemaining = 0f;
+    //[HideInInspector] 
+    public float timeRemaining = 0f;
 
     [Tooltip("The time between shots in seconds")]
     [SerializeField]
@@ -21,7 +22,9 @@ public class ShootScript : MonoBehaviour
     [SerializeField]
     private Image cooldownReticle;
 
-    [HideInInspector]
+    private float tempTimer;
+
+    //[HideInInspector]
     public bool isLaunching = false;
 
     private bool isFiredBool = false;
@@ -131,11 +134,13 @@ public class ShootScript : MonoBehaviour
         {
             if (currentBoltIndex == 3)
             {
-                DisplayTimer(1f);
+                //DisplayTimer(1f);
+                tempTimer = 1f;
             }
             else
             {
-                DisplayTimer(timeRemaining);
+                //DisplayTimer(timeRemaining);
+                tempTimer = timeRemaining;
             }
 
             if (IsTimerUp())
@@ -148,8 +153,10 @@ public class ShootScript : MonoBehaviour
         }
         else
         {
-            DisplayTimer(timeRemaining);
+            tempTimer = timeRemaining;
         }
+
+        DisplayTimer(tempTimer);
     }
     #endregion
 
@@ -275,7 +282,7 @@ public class ShootScript : MonoBehaviour
     {
         // If statement checks if cooldown is above 0 (in testing I found it goes into negatives)
         //if (cooldown < -1f)
-        if (cooldown < -0.05f)
+        if (cooldown <= -0.30f)
         {
             cooldownReticle.enabled = false;
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.MathExtensions;
 
@@ -10,6 +11,10 @@ using UnityEngine.MathExtensions;
 public class rbCharacterController : MonoBehaviour
 {
     #region Variables
+    [Tooltip("The double tap register to get the double tap")]
+    [SerializeField]
+    private DoubleTapRegister doubleTapRegister;
+
     public Rigidbody rb;
     public float defaultSpeed;
     private float speed;
@@ -46,24 +51,6 @@ public class rbCharacterController : MonoBehaviour
 
     #endregion
 
-    //private void OnEnable()
-    //{
-    //    _con = new Controller();
-    //    _con.Enable();
-    //    _con.Player.Jump.performed += OnJump;
-    //    _con.Player.Sprint.started += OnSprint;
-    //    _con.Player.Sprint.canceled += OnSprint;
-    //}
-
-
-    //private void OnDisable()
-    //{
-    //    _con.Disable();
-    //    _con.Player.Jump.performed -= OnJump;
-    //    _con.Player.Sprint.started -= OnSprint;
-    //    _con.Player.Sprint.canceled -= OnSprint;
-    //}
-
     #region Character Controller Methods
     public void OnMove(InputAction.CallbackContext context) //input system for movement
     {
@@ -75,10 +62,18 @@ public class rbCharacterController : MonoBehaviour
         Vector3 jumpForces = Vector3.zero;
         if (grounded && context.performed)
         {
-            jumpForces = Vector3.up * jumpForce;
+            ApplyJumpForce();
+            return;
         }
 
         //Forced jump
+        rb.AddForce(jumpForces, ForceMode.VelocityChange);
+    }
+
+    public void ApplyJumpForce()
+    {
+        Vector3 jumpForces = Vector3.zero;
+        jumpForces = Vector3.up * jumpForce;
         rb.AddForce(jumpForces, ForceMode.VelocityChange);
     }
 
@@ -107,7 +102,7 @@ public class rbCharacterController : MonoBehaviour
 
     public void ApplySprint()
     {
-        if (isSprinting)
+        if (isSprinting || doubleTapRegister.GetDoubleTapCheck())
         {
             speed = sprintSpeed;
         }

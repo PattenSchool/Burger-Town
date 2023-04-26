@@ -14,6 +14,8 @@ public class CrossbowFireAnim : MonoBehaviour
 
     private BoltTemplate currentBolt;
 
+    public bool resetLauncherBolt;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,12 +29,27 @@ public class CrossbowFireAnim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_shootScript.isFired() == true)
+        if (_shootScript.timeRemaining <= 0.10f)
         {
-            currentBolt.gameObject.SetActive(false);
+            if (!PlayerStatic.IsGrounded && _shootScript.currentBoltIndex == 3)
+            {
+                //currentBolt.gameObject.SetActive(false);
+            }
+            else
+                currentBolt.gameObject.SetActive(true);
         }
-        else 
-            currentBolt.gameObject.SetActive(true);
+        else
+            currentBolt.gameObject.SetActive(false);
+
+        if (_shootScript.isFired() && _shootScript.currentBoltIndex == 3)
+        {
+            resetLauncherBolt = false;
+        }
+
+        if (PlayerStatic.IsGrounded)
+        {
+            resetLauncherBolt = true;
+        }
     }
 
     public void PlayFireAnim()
@@ -51,7 +68,15 @@ public class CrossbowFireAnim : MonoBehaviour
             }
             else
             {
-                bolt.gameObject.SetActive(true);
+                if (!PlayerStatic.IsGrounded && _shootScript.currentBoltIndex == 3
+                    && !resetLauncherBolt)
+                {
+                    bolt.gameObject.SetActive(false);
+                }
+                else
+                {
+                    bolt.gameObject.SetActive(true);
+                }
                 currentBolt = bolt;
             }
         }

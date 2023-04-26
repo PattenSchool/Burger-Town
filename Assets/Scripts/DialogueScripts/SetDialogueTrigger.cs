@@ -8,6 +8,10 @@ public class SetDialogueTrigger : MonoBehaviour
     [Tooltip("The conversation set inside the dialogue box")]
     [SerializeField]
     private Conversation_SO conversation;
+
+    [Tooltip("Choose if despawns after use")]
+    [SerializeField]
+    private bool isDespawnAfterUse;
     #endregion
 
     #region Unity Methods
@@ -16,6 +20,7 @@ public class SetDialogueTrigger : MonoBehaviour
         if (other.tag == PlayerStatic.PlayerTag)
         {
             PlayerStatic.OverrideConversation(conversation);
+            this.gameObject.SetActive(!isDespawnAfterUse);
         }
     }
     #endregion
