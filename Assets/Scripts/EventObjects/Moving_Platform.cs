@@ -82,6 +82,11 @@ public class Moving_Platform : MonoBehaviour
                 currentStickyPlatform = other.gameObject;
             }
         }
+
+        if (other.gameObject.tag == PlayerStatic.PlayerTag)
+        {
+            other.gameObject.transform.parent = this.transform;
+        }
     }
 
     private void OnTriggerExit(Collider other)
