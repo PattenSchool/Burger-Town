@@ -19,6 +19,8 @@ public class MoveObject : MonoBehaviour
     public float radius;
 
 
+    public bool isCannonFired;
+
     private GameObject projectile;
     private string projectileTag;
 
@@ -49,8 +51,9 @@ public class MoveObject : MonoBehaviour
                 {
                     if (projectile.GetComponent<Explosive>().explosiveIsActive)
                     {
-                        end.gameObject.SetActive(false);
-                        projectile.SetActive(false);
+                        //print("test2");
+                        //end.gameObject.SetActive(false);
+                        //projectile.SetActive(false);
                     }
                 }
                 else
@@ -108,6 +111,8 @@ public class MoveObject : MonoBehaviour
         {
             if (other.gameObject.tag == "PhysObject")
             {
+                isCannonFired = true;
+
                 PlayerStatic.Player.GetComponent<GrabObject>().ClearGrabObject();
 
 
@@ -122,7 +127,8 @@ public class MoveObject : MonoBehaviour
                 {
                     other.gameObject.GetComponent<Explosive>().explosiveIsActive = true;
 
-                    moveObject = StartCoroutine(MoveExplosive(projectile, end.gameObject));
+                    //moveObject = StartCoroutine(MoveExplosive(projectile, end.gameObject));
+                    moveObject = StartCoroutine(Move(projectile));
                 }
                 else
                 {
@@ -174,16 +180,6 @@ public class MoveObject : MonoBehaviour
 
             //yield return null;
         }
-
-        if (t > duration - (duration / 10f))
-        {
-            launchee.SetActive(false);
-
-            wall.SetActive(false);
-            print("explosion");
-        }
-
-        //yield break;
 
         yield return null;
     }
