@@ -2125,6 +2125,14 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2191653053684679951, guid: ca81b971d796a09429960b03b83b3223, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191653053684679951, guid: ca81b971d796a09429960b03b83b3223, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3789020055782449738, guid: ca81b971d796a09429960b03b83b3223, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2179,6 +2187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8584332816471128010, guid: ca81b971d796a09429960b03b83b3223, type: 3}
+    - {fileID: 6625173189829075240, guid: ca81b971d796a09429960b03b83b3223, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ca81b971d796a09429960b03b83b3223, type: 3}
 --- !u!1001 &652673302
 PrefabInstance:
@@ -2603,6 +2612,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 696844513}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &708839600 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7172332323204807437, guid: ca81b971d796a09429960b03b83b3223, type: 3}
+  m_PrefabInstance: {fileID: 625969581}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &708839607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708839600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21579c37a8487de45828a3930ed00e8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInput: {fileID: 1066846397}
 --- !u!1 &710008639
 GameObject:
   m_ObjectHideFlags: 0
@@ -3985,6 +4012,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df6f2fcce0b14a48a9979f88f5e1181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1066846397 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7919990712723082205, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
+  m_PrefabInstance: {fileID: 1115047917}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1070242799
 GameObject:
   m_ObjectHideFlags: 0
@@ -4206,8 +4244,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3876050979724973101, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
       propertyPath: m_text
-      value: 'This is when someone would say "are ya winnin son" and that would be
-        now. You can now say "Yes, I did won dad."
+      value: 'and the perfect burger was destroyed never to be deservedly eaten by
+        another soul... Even by these developers...
 
 '
       objectReference: {fileID: 0}
@@ -4270,7 +4308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.033206
+      value: 0.06184478
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7, type: 3}
       propertyPath: m_LocalScale.y
@@ -4286,7 +4324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 79.41
+      value: 78.1808
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 94ac0f7807b256d4b866c2b3ec1a6de7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6906,12 +6944,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1914903149}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f1558a78ec3a0247abb33c5dcd61502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 46dfcfe330b7d2e49954f9ee6ce8ef11, type: 3}
 --- !u!1 &1963757351
 GameObject:
   m_ObjectHideFlags: 0

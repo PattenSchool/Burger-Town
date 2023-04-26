@@ -70,6 +70,7 @@ public class AudioManager : MonoBehaviour
 
     public void ResetTracks()
     {
+        bgm.clip = null;
         tracks.Clear();
     }
     public void PlaySFX(AudioClip clip)
