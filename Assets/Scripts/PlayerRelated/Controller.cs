@@ -190,15 +190,6 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Debug"",
-                    ""type"": ""Button"",
-                    ""id"": ""ca05b6f6-8643-412f-9580-a0a440a115df"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""SprintTap"",
                     ""type"": ""Button"",
                     ""id"": ""0d040b34-b881-466a-9d8e-47c7cf13b28e"",
@@ -431,17 +422,6 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""5d574ad7-3b7b-40b2-96df-5b59ad27815f"",
-                    ""path"": ""<Keyboard>/x"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""560a3eba-5526-460f-9b8c-7ab11f650486"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
@@ -454,29 +434,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""66e6ea0c-a2db-4320-8f37-2fae5b8db662"",
-                    ""path"": ""<Keyboard>/c"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Sprint"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""fcc77be9-844d-452f-b3a6-e43ab208e1db"",
-                    ""path"": ""<Keyboard>/leftShift"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Sprint"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""64a49788-9564-4463-a32d-a3c213e62fa4"",
-                    ""path"": ""<Keyboard>/rightShift"",
+                    ""path"": ""<Keyboard>/x"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -756,17 +714,6 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""SetBolt9"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""ad5148d1-22ac-44d3-bb40-298f3ae854a5"",
-                    ""path"": ""<Keyboard>/rightBracket"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Debug"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -1464,7 +1411,6 @@ public partial class @Controller : IInputActionCollection2, IDisposable
         m_Player_SetBolt7 = m_Player.FindAction("SetBolt7", throwIfNotFound: true);
         m_Player_SetBolt8 = m_Player.FindAction("SetBolt8", throwIfNotFound: true);
         m_Player_SetBolt9 = m_Player.FindAction("SetBolt9", throwIfNotFound: true);
-        m_Player_Debug = m_Player.FindAction("Debug", throwIfNotFound: true);
         m_Player_SprintTap = m_Player.FindAction("SprintTap", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
@@ -1559,7 +1505,6 @@ public partial class @Controller : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SetBolt7;
     private readonly InputAction m_Player_SetBolt8;
     private readonly InputAction m_Player_SetBolt9;
-    private readonly InputAction m_Player_Debug;
     private readonly InputAction m_Player_SprintTap;
     public struct PlayerActions
     {
@@ -1583,7 +1528,6 @@ public partial class @Controller : IInputActionCollection2, IDisposable
         public InputAction @SetBolt7 => m_Wrapper.m_Player_SetBolt7;
         public InputAction @SetBolt8 => m_Wrapper.m_Player_SetBolt8;
         public InputAction @SetBolt9 => m_Wrapper.m_Player_SetBolt9;
-        public InputAction @Debug => m_Wrapper.m_Player_Debug;
         public InputAction @SprintTap => m_Wrapper.m_Player_SprintTap;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
@@ -1648,9 +1592,6 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 @SetBolt9.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt9;
                 @SetBolt9.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt9;
                 @SetBolt9.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt9;
-                @Debug.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDebug;
-                @Debug.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDebug;
-                @Debug.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDebug;
                 @SprintTap.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprintTap;
                 @SprintTap.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprintTap;
                 @SprintTap.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprintTap;
@@ -1712,9 +1653,6 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 @SetBolt9.started += instance.OnSetBolt9;
                 @SetBolt9.performed += instance.OnSetBolt9;
                 @SetBolt9.canceled += instance.OnSetBolt9;
-                @Debug.started += instance.OnDebug;
-                @Debug.performed += instance.OnDebug;
-                @Debug.canceled += instance.OnDebug;
                 @SprintTap.started += instance.OnSprintTap;
                 @SprintTap.performed += instance.OnSprintTap;
                 @SprintTap.canceled += instance.OnSprintTap;
@@ -1933,7 +1871,6 @@ public partial class @Controller : IInputActionCollection2, IDisposable
         void OnSetBolt7(InputAction.CallbackContext context);
         void OnSetBolt8(InputAction.CallbackContext context);
         void OnSetBolt9(InputAction.CallbackContext context);
-        void OnDebug(InputAction.CallbackContext context);
         void OnSprintTap(InputAction.CallbackContext context);
     }
     public interface IUIActions
