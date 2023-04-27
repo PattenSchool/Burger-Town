@@ -11,7 +11,8 @@ public class ShootScript : MonoBehaviour
     [Header("Time Variables")]
 
     [Tooltip("The time remaining")]
-    [HideInInspector] public float timeRemaining = 0f;
+    //[HideInInspector] 
+    public float timeRemaining = 0f;
 
     [Tooltip("The time between shots in seconds")]
     [SerializeField]
@@ -21,8 +22,12 @@ public class ShootScript : MonoBehaviour
     [SerializeField]
     private Image cooldownReticle;
 
-    [HideInInspector]
+    private float tempTimer;
+
+    //[HideInInspector]
     public bool isLaunching = false;
+
+    private bool isFiredBool = false;
 
     /// <summary>
     /// Updates the timeRemaining varaible.
@@ -76,6 +81,9 @@ public class ShootScript : MonoBehaviour
     [SerializeField]
     private AudioClip shootSFX;
 
+    [HideInInspector]
+    public CrossbowFireAnim fireAnimScript;
+
     /// <summary>
     /// Generate ammo wanted by the player
     /// </summary>
@@ -126,11 +134,13 @@ public class ShootScript : MonoBehaviour
         {
             if (currentBoltIndex == 3)
             {
-                DisplayTimer(1f);
+                //DisplayTimer(1f);
+                tempTimer = 1f;
             }
             else
             {
-                DisplayTimer(timeRemaining);
+                //DisplayTimer(timeRemaining);
+                tempTimer = timeRemaining;
             }
 
             if (IsTimerUp())
@@ -143,8 +153,10 @@ public class ShootScript : MonoBehaviour
         }
         else
         {
-            DisplayTimer(timeRemaining);
+            tempTimer = timeRemaining;
         }
+
+        DisplayTimer(tempTimer);
     }
     #endregion
 
@@ -156,6 +168,8 @@ public class ShootScript : MonoBehaviour
     ///     The context of the input
     public void Fire(InputAction.CallbackContext context)
     {
+        fireAnimScript.PlayFireAnim();
+
         //Checks if the bolt timer is up
         if (!IsTimerUp())
         {
@@ -244,6 +258,8 @@ public class ShootScript : MonoBehaviour
 
             //Assign the bolt index to the script variable
             currentBoltIndex = newBoltIndex;
+
+            fireAnimScript.SetBoltModel();
         }
     }
 
@@ -251,7 +267,10 @@ public class ShootScript : MonoBehaviour
     {
         //int newIndex = 1;
         if (newIndex <= _allowedBolts.Count)
+        {
             currentBoltIndex = (newIndex);
+            fireAnimScript.SetBoltModel();
+        }
     }
 
     /// <summary>
@@ -262,14 +281,19 @@ public class ShootScript : MonoBehaviour
     public void DisplayTimer(float cooldown)
     {
         // If statement checks if cooldown is above 0 (in testing I found it goes into negatives)
-        if (cooldown < -1f)
+        //if (cooldown < -1f)
+        if (cooldown <= -0.30f)
         {
             cooldownReticle.enabled = false;
+
+            isFiredBool = false;
         }
         // Displays reticle if cooldown is above 0
         else
         {
             cooldownReticle.enabled = true;
+
+            isFiredBool = true;
 
             // The fill amount is the current rotation of the cooldown reticle
             // this is a ratio of the current cooldown divided by the default time between shots
@@ -296,6 +320,11 @@ public class ShootScript : MonoBehaviour
     public GameObject GetDefaultBolt()
     {
         return _allowedBolts[0].gameObject;
+    }
+
+    public bool isFired()
+    {
+        return isFiredBool;
     }
     #endregion
 }

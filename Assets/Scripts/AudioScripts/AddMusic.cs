@@ -22,4 +22,10 @@ public class AddMusic : MonoBehaviour
         AudioManager.instance.ResetTracks();
         AudioManager.instance.AddTrack(audioClip);
     }
+
+    private void OnEnable()
+    {
+        AudioManager.instance.ResetTracks();
+        AudioManager.instance.AddTrack(audioClip);
+    }
 }
