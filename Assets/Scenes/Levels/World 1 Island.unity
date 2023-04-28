@@ -5374,6 +5374,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 425297758765833559, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
+      propertyPath: screenRatio.x
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 425297758765833559, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
+      propertyPath: screenRatio.y
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 690518336266648764, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -5433,6 +5441,14 @@ PrefabInstance:
     - target: {fileID: 1760450804979990329, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
       propertyPath: m_Color.r
       value: 0.8207547
+      objectReference: {fileID: 0}
+    - target: {fileID: 7919990712723082205, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1228395121}
+    - target: {fileID: 7919990712723082205, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoveMouse
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
@@ -7090,6 +7106,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5aa9fb7067983544bbaa5c0983467ade, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1228395121 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 425297758765833559, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
+  m_PrefabInstance: {fileID: 977339028}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ab7a23aef98d746975f6552fec7c42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1248249125 stripped

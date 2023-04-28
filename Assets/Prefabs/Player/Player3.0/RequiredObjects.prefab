@@ -11645,15 +11645,63 @@ MonoBehaviour:
     m_ActionId: acafa932-1b95-4564-a109-ba173fac92ba
     m_ActionName: Player/Grab[/Mouse/forwardButton]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: InputControllerTranslation, Assembly-CSharp
+        m_MethodName: MoveMouse
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 495c6e45-c5f2-4b34-b240-0a667897e3a9
     m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4683441549056892715}
+        m_TargetAssemblyTypeName: DialogueInputManager, Assembly-CSharp
+        m_MethodName: IncrementTextIndex
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: InputControllerTranslation, Assembly-CSharp
+        m_MethodName: OnVirtualClick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: ff65635a-3286-46c1-832b-258f1c3e2ab6
     m_ActionName: UI/Submit[/Keyboard/enter]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: InputControllerTranslation, Assembly-CSharp
+        m_MethodName: OnVirtualClick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: a07305d4-1246-4fb0-bcff-6874f4040d12
     m_ActionName: UI/Cancel[/Keyboard/escape]
   - m_PersistentCalls:
@@ -11898,22 +11946,6 @@ MonoBehaviour:
     m_ActionName: Player/SetBolt9[/Keyboard/9,/Keyboard/numpad9]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7919990712723082204}
-        m_TargetAssemblyTypeName: rbCharacterController, Assembly-CSharp
-        m_MethodName: ToggleDebug
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: ca05b6f6-8643-412f-9580-a0a440a115df
-    m_ActionName: Player/Debug[/Keyboard/rightBracket]
-  - m_PersistentCalls:
-      m_Calls:
       - m_Target: {fileID: 1907087369568590452}
         m_TargetAssemblyTypeName: DoubleTapRegister, Assembly-CSharp
         m_MethodName: RegisterTap
@@ -11940,7 +11972,39 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 0d040b34-b881-466a-9d8e-47c7cf13b28e
     m_ActionName: Player/SprintTap[/Keyboard/w,/Keyboard/upArrow]
-  m_NeverAutoSwitchControlSchemes: 1
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5163073275100593458}
+        m_TargetAssemblyTypeName: ShootScript, Assembly-CSharp
+        m_MethodName: IncrementBoltIndex
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7f4b8fba-b6b5-48ad-8da0-d5be6ba8bdf4
+    m_ActionName: Player/IncrementBoltChoice[/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5163073275100593458}
+        m_TargetAssemblyTypeName: ShootScript, Assembly-CSharp
+        m_MethodName: DecrementBoltIndex
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4cc0199e-4049-4cc8-8ab0-a0564b687a45
+    m_ActionName: Player/DecrementBoltChoice[/XInputControllerWindows/leftShoulder]
+  m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1

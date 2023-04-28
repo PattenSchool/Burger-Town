@@ -69,8 +69,9 @@ public class DialogueInputManager : MonoBehaviour
     /// INcrement text if it exists
     /// </summary>
     /// <param name="cxt"></param>
-    private void IncrementTextIndex(InputAction.CallbackContext cxt)
+    public void IncrementTextIndex(InputAction.CallbackContext cxt)
     {
+        print(cxt.action.bindings);
         if (PlayerStatic.HasConversation())
            StartCoroutine(IncrementTextIndexTimed());
     }
