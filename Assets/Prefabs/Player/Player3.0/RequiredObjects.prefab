@@ -2867,6 +2867,7 @@ GameObject:
   - component: {fileID: 3876050978861003420}
   - component: {fileID: 3876050978861003395}
   - component: {fileID: 3876050978861003394}
+  - component: {fileID: 7101155791505590916}
   m_Layer: 8
   m_Name: ToMainMenu
   m_TagString: Untagged
@@ -2977,9 +2978,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SceneSelect, Assembly-CSharp
-        m_MethodName: MainMenu
+      - m_Target: {fileID: 7101155791505590916}
+        m_TargetAssemblyTypeName: ToMainMenu, Assembly-CSharp
+        m_MethodName: ToTheMain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2989,6 +2990,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7101155791505590916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3876050978861003392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf813b25f7e8d384d875445c626d8914, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3876050979032714092
 GameObject:
   m_ObjectHideFlags: 0
@@ -3675,6 +3688,7 @@ GameObject:
   - component: {fileID: 3876050979830558381}
   - component: {fileID: 3876050979830558380}
   - component: {fileID: 3876050979830558355}
+  - component: {fileID: 1695564400115114068}
   m_Layer: 8
   m_Name: To Main Menu
   m_TagString: Untagged
@@ -3785,9 +3799,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SceneSelect, Assembly-CSharp
-        m_MethodName: MainMenu
+      - m_Target: {fileID: 1695564400115114068}
+        m_TargetAssemblyTypeName: ToMainMenu, Assembly-CSharp
+        m_MethodName: ToTheMain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3797,6 +3811,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1695564400115114068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3876050979830558353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf813b25f7e8d384d875445c626d8914, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4047918594025166208
 GameObject:
   m_ObjectHideFlags: 0
@@ -7383,7 +7409,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7066341262330548271}
         m_TargetAssemblyTypeName: SaveLoadManager, Assembly-CSharp
         m_MethodName: LoadSave
         m_Mode: 3
@@ -7933,7 +7959,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7066341262330548271}
         m_TargetAssemblyTypeName: SaveLoadManager, Assembly-CSharp
         m_MethodName: LoadSave
         m_Mode: 3
@@ -8067,7 +8093,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7066341262330548271}
         m_TargetAssemblyTypeName: SaveLoadManager, Assembly-CSharp
         m_MethodName: ClearSave
         m_Mode: 3
@@ -8790,7 +8816,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7066341262330548271}
         m_TargetAssemblyTypeName: SaveLoadManager, Assembly-CSharp
         m_MethodName: ClearSave
         m_Mode: 3
@@ -9657,7 +9683,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7066341262330548271}
         m_TargetAssemblyTypeName: SaveLoadManager, Assembly-CSharp
         m_MethodName: ClearSave
         m_Mode: 3
@@ -10966,7 +10992,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7066341262330548271}
         m_TargetAssemblyTypeName: SaveLoadManager, Assembly-CSharp
         m_MethodName: LoadSave
         m_Mode: 3
