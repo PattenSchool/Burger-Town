@@ -145,12 +145,13 @@
     <Compile Include="Assets\Scripts\Menus\MainMenu\CameraRotation.cs" />
     <Compile Include="Assets\Scripts\DialogueScripts\Conversation_SO.cs" />
     <Compile Include="Assets\Scripts\AI\DistractableObject.cs" />
+    <Compile Include="Assets\ResetPlatform.cs" />
     <Compile Include="Assets\Scripts\PlayerRelated\DebugModeScript.cs" />
-    <Compile Include="Assets\Scripts\Objective Related\CompleteActions\CompleteActionHover.cs" />
     <Compile Include="Assets\Scripts\MovingPlatform\WaypointPath.cs" />
     <Compile Include="Assets\Scripts\AI\DefeatedState.cs" />
     <Compile Include="Assets\Scripts\EventObjects\Hut_Marker_Trigger.cs" />
     <Compile Include="Assets\Scripts\Menus\DeathMenuTest.cs" />
+    <Compile Include="Assets\Scripts\Objective Related\CompleteActions\CompleteActionHover.cs" />
     <Compile Include="Assets\Scripts\EventObjects\GateTrigger.cs" />
     <Compile Include="Assets\StoreAssets\com\heparo\terrain\toolkit\scripts\TerrainToolkit.cs" />
     <Compile Include="Assets\Scripts\EventObjects\Strength_Puzzle_Weight.cs" />
@@ -159,7 +160,12 @@
     <Compile Include="Assets\Scripts\Objective Related\CompleteActions\CompleteActionSpawnItem.cs" />
     <Compile Include="Assets\Scripts\AI\ShootState.cs" />
     <Compile Include="Assets\Scripts\UI\BoltUIDisplay.cs" />
+<<<<<<< Updated upstream
     <Compile Include="Assets\Scripts\DialogueScripts\NPCDialogueScripts\TestDialoguetrigger.cs" />
+=======
+    <Compile Include="Assets\Scripts\Crates\RespawnAfterHit.cs" />
+    <Compile Include="Assets\Scripts\AudioScripts\ForceMusicReset.cs" />
+>>>>>>> Stashed changes
     <Compile Include="Assets\Scripts\PuzzleSpecificScripts\Level2\Sage&apos;sPuzzle\CollisionManagerScript.cs" />
     <Compile Include="Assets\ToMainMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerRelated\rbCharacterController.cs" />

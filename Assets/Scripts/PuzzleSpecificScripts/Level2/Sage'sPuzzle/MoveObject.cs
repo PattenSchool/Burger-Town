@@ -23,9 +23,12 @@ public class MoveObject : MonoBehaviour
 
     private Coroutine moveObject;
 
+    public AudioClip cannonSFX;
+
     // Start is called before the first frame update
     void Start()
     {
+        var audioManager = AudioManager.instance;
         start = this.transform;
         //StartCoroutine(Move());
     }
@@ -125,6 +128,8 @@ public class MoveObject : MonoBehaviour
                 moveObject = StartCoroutine(Move(projectile));
             }
         }
+        AudioManager.instance.PlaySFX(cannonSFX);
+
     }
 
     private IEnumerator Move(GameObject launchee)
