@@ -75,6 +75,7 @@ public class ShootScript : MonoBehaviour
 
     [SerializeField]
     private AudioClip shootSFX;
+    public AudioClip launchSFX;
 
     /// <summary>
     /// Generate ammo wanted by the player
@@ -185,6 +186,7 @@ public class ShootScript : MonoBehaviour
 
             if (currentBoltIndex == 3)
             {
+                AudioManager.instance.PlaySFX(launchSFX);
                 isLaunching = true;
             }
         }
