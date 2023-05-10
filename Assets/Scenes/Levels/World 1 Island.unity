@@ -5814,6 +5814,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -569.10504
       objectReference: {fileID: 0}
+    - target: {fileID: 7919990712580682515, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
+      propertyPath: tracks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7919990712580682515, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
+      propertyPath: tracks.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: bb62bae7f5af591448701cd69dbfaed5, type: 3}
     - target: {fileID: 7919990712644700213, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -5896,7 +5904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7919990713128070530, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7919990713132353115, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
       propertyPath: m_AnchoredPosition.x
