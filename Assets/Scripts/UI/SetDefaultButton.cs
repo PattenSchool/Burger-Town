@@ -13,6 +13,8 @@ public class SetDefaultButton : MonoBehaviour
         { 
             return; 
         } 
-        firstSelected.Select(); 
-    } 
+
+        if (InputStatic.InputData.IsAGamepadConnected())
+            firstSelected.Select(); 
+    }
 }

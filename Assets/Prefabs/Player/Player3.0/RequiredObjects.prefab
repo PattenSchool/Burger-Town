@@ -12209,7 +12209,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGrounded: 1
   isTouchingGround: 1
-  kyoteTime: 0.025
+  maxDistanceCheck: 0.1
+  kyoteTime: 0
   kyoteTimer: 0
 --- !u!114 &1907087369568590452
 MonoBehaviour:

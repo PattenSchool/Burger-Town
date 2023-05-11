@@ -5445,7 +5445,7 @@ PrefabInstance:
     - target: {fileID: 7919990712723082205, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
       propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1228395121}
+      objectReference: {fileID: 0}
     - target: {fileID: 7919990712723082205, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
       propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: MoveMouse
@@ -7106,17 +7106,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5aa9fb7067983544bbaa5c0983467ade, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1228395121 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 425297758765833559, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
-  m_PrefabInstance: {fileID: 977339028}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25ab7a23aef98d746975f6552fec7c42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1248249125 stripped
@@ -9349,6 +9338,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3c5c4a80684d554982dde2f2fe241c4, type: 3}
+--- !u!1 &1727804975 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 690518336266648766, guid: 4e98f96e0c3f0d041b269cf1efc53471, type: 3}
+  m_PrefabInstance: {fileID: 977339028}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1727804978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727804975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3341a78dd8d9c6342a66ba0e2092492f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1739408320
 GameObject:
   m_ObjectHideFlags: 0

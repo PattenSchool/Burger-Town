@@ -18,6 +18,10 @@ public class GroundCheck : MonoBehaviour
     [Tooltip("Tests if the player is grounded")]
     [SerializeField]
     private bool isTouchingGround = true;
+
+    [Tooltip("The distance for the check of the ground")]
+    [SerializeField]
+    private float maxDistanceCheck = 0.1f;
     #endregion
 
     #region Timer Variables
@@ -87,13 +91,21 @@ public class GroundCheck : MonoBehaviour
     /// <returns></returns>
     private bool IsTouchingGround()
     {
-        Vector3 center = transform.position;
-        Vector3 halfExtents = this.gameObject.transform.lossyScale * (0.5f) + Vector3.down * 0.1f;
-        Vector3 direction = Vector3.down;
-        Quaternion rotation = transform.rotation;
-        float distance = 1f;
+        //Vector3 center = transform.position;
+        //Vector3 halfExtents = this.gameObject.transform.lossyScale * (0.5f) + Vector3.down * 0.01f;
+        //Vector3 direction = Vector3.down;
+        //Quaternion rotation = transform.rotation;
+        //float distance = 1f;
 
-        return Physics.BoxCast(center, halfExtents, direction, rotation, distance);
+        //return Physics.BoxCast(center, halfExtents, direction, rotation, distance);
+
+        Vector3 center = transform.position;
+        Vector3 direction = Vector3.down;
+        float radius = 0.5f;
+        RaycastHit hit = new();
+        float maxDistance = maxDistanceCheck + radius;
+
+        return Physics.SphereCast(center, radius, direction, out hit, maxDistance);
     }
     #endregion
 
