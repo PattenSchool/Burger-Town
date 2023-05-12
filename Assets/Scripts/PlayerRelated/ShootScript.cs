@@ -80,6 +80,7 @@ public class ShootScript : MonoBehaviour
 
     [SerializeField]
     private AudioClip shootSFX;
+    public AudioClip launchSFX;
 
     [HideInInspector]
     public CrossbowFireAnim fireAnimScript;
@@ -199,6 +200,7 @@ public class ShootScript : MonoBehaviour
 
             if (currentBoltIndex == 3)
             {
+                AudioManager.instance.PlaySFX(launchSFX);
                 isLaunching = true;
             }
         }
@@ -243,24 +245,58 @@ public class ShootScript : MonoBehaviour
         //Ensure that the change is only once
         if (cxt.performed)
         {
-            //Set to the old bolt index to be modified
-            int newBoltIndex = currentBoltIndex;
-
-            //Get only the sign of the number
-            newBoltIndex += MathFExtended.SignEx(cxt.ReadValue<Vector2>().y);
-
-            //The level ranges
-            int maxIndex = _allowedBolts.Count;
-            int minIndex = minBoltIndex;
-
-            //Used to keep the integers in a loop
-            MathFExtended.Ranges.IntLoopInRange(minIndex, ref newBoltIndex, maxIndex);
-
-            //Assign the bolt index to the script variable
-            currentBoltIndex = newBoltIndex;
-
-            fireAnimScript.SetBoltModel();
+            SetPlayerBolt(MathFExtended.SignEx(cxt.ReadValue<Vector2>().y));
         }
+    }
+
+    /// <summary>
+    /// Increase the bolt index by one
+    /// </summary>
+    /// <param name="cxt"></param>
+    public void IncrementBoltIndex(InputAction.CallbackContext cxt)
+    {
+        //Ensure that the change is only once
+        if (cxt.performed)
+        {
+            SetPlayerBolt(1);
+        }
+    }
+
+    /// <summary>
+    /// Decrease the bolt index by one
+    /// </summary>
+    /// <param name="cxt"></param>
+    public void DecrementBoltIndex(InputAction.CallbackContext cxt)
+    {
+        if (cxt.performed)
+        {
+            SetPlayerBolt(-1);
+        }
+    }
+
+    /// <summary>
+    /// Set the player bolt plus model
+    /// </summary>
+    /// <param name="addToIndex"></param>
+    private void SetPlayerBolt(int addToIndex)
+    {
+        //Set to the old bolt index to be modified
+        int newBoltIndex = currentBoltIndex;
+
+        //Get only the sign of the number
+        newBoltIndex += addToIndex;
+
+        //The level ranges
+        int maxIndex = _allowedBolts.Count;
+        int minIndex = minBoltIndex;
+
+        //Used to keep the integers in a loop
+        MathFExtended.Ranges.IntLoopInRange(minIndex, ref newBoltIndex, maxIndex);
+
+        //Assign the bolt index to the script variable
+        currentBoltIndex = newBoltIndex;
+
+        fireAnimScript.SetBoltModel();
     }
 
     public void SetBolt(int newIndex)

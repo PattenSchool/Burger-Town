@@ -12,10 +12,4 @@ public class MenuSwitch : MonoBehaviour
         //Time Scale thing
         Time.timeScale = 1f;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

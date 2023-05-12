@@ -78,7 +78,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""id"": ""acafa932-1b95-4564-a109-ba173fac92ba"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Hold(pressPoint=1)"",
+                    ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
@@ -105,7 +105,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""id"": ""c6bced55-dd23-437f-b21f-5fa9572f2784"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Press"",
+                    ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
@@ -190,18 +190,36 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Debug"",
+                    ""name"": ""SprintTap"",
                     ""type"": ""Button"",
-                    ""id"": ""ca05b6f6-8643-412f-9580-a0a440a115df"",
+                    ""id"": ""0d040b34-b881-466a-9d8e-47c7cf13b28e"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""SprintTap"",
+                    ""name"": ""IncrementBoltChoice"",
                     ""type"": ""Button"",
-                    ""id"": ""0d040b34-b881-466a-9d8e-47c7cf13b28e"",
+                    ""id"": ""7f4b8fba-b6b5-48ad-8da0-d5be6ba8bdf4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DecrementBoltChoice"",
+                    ""type"": ""Button"",
+                    ""id"": ""4cc0199e-4049-4cc8-8ab0-a0564b687a45"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Debug"",
+                    ""type"": ""Button"",
+                    ""id"": ""6a26393a-97b5-45be-9f32-8d7c8a68a067"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -222,8 +240,8 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""WASD"",
-                    ""id"": ""00ca640b-d935-4593-8157-c05846ea39b3"",
-                    ""path"": ""Dpad"",
+                    ""id"": ""d7150b93-ec65-4f5f-9c90-e13a9f971b64"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -233,88 +251,99 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""e2062cb9-1b15-46a2-838c-2f8d72a0bdd9"",
+                    ""id"": ""c9d69ded-bac6-4f3d-80cc-4e9c2e8ef4f9"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""8180e8bd-4097-4f4e-ab88-4523101a6ce9"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""320bffee-a40b-4347-ac70-c210eb8bc73a"",
+                    ""id"": ""91872d86-0d55-4cf7-a184-9945cbcc02a1"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""d95df56f-9e19-47dc-b052-a0dd50868b55"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""210cc191-26ce-44a8-baab-ac8bd045ee8d"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Arrow Keys"",
+                    ""id"": ""03abe21a-db71-4132-abc8-735482071ba7"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""4a6fa6ce-6148-406a-9a3a-3d9187786839"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""1c5327b5-f71c-4f60-99c7-4e737386f1d1"",
+                    ""id"": ""9186f4ac-1a3d-4bc8-8e49-fd71d05a4942"",
                     ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""left"",
-                    ""id"": ""d2581a9b-1d11-4566-b27d-b92aff5fabbc"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""2e46982e-44cc-431b-9f0b-c11910bf467a"",
+                    ""id"": ""3a5097f9-b598-489e-bb7a-090a9372abb1"",
                     ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""fcfe95b8-67b9-4526-84b5-5d0bc98d6400"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""77bff152-3580-4b21-b6de-dcd0c7e41164"",
+                    ""id"": ""044ef9dd-523a-4a9e-9657-423bbaf47f21"",
                     ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -431,22 +460,22 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""5d574ad7-3b7b-40b2-96df-5b59ad27815f"",
-                    ""path"": ""<Keyboard>/x"",
+                    ""id"": ""560a3eba-5526-460f-9b8c-7ab11f650486"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""560a3eba-5526-460f-9b8c-7ab11f650486"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""id"": ""c263f895-3a2c-4c62-9303-7ffd2b808719"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -454,32 +483,10 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""66e6ea0c-a2db-4320-8f37-2fae5b8db662"",
-                    ""path"": ""<Keyboard>/c"",
+                    ""path"": ""<Keyboard>/x"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Sprint"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""fcc77be9-844d-452f-b3a6-e43ab208e1db"",
-                    ""path"": ""<Keyboard>/leftShift"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Sprint"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""64a49788-9564-4463-a32d-a3c213e62fa4"",
-                    ""path"": ""<Keyboard>/rightShift"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Sprint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -490,19 +497,30 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/ctrl"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Sprint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""c5c9656e-6754-42cd-907f-18fa2d24ba27"",
-                    ""path"": ""<Keyboard>/p"",
+                    ""id"": ""5b6d7c70-7bb1-47ae-87f9-e134cecee0aa"",
+                    ""path"": ""<Gamepad>/leftStickPress"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Pause"",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7b85d881-1797-4af9-ba59-803949a497d3"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Sprint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -512,7 +530,18 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fbb5bc94-741b-46a9-94be-b32c79f502cf"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -530,20 +559,9 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""51bb8162-e007-48c0-83ca-f0a0103fd91b"",
-                    ""path"": ""<Mouse>/rightButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Grab"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""7d0f92cb-9586-47e6-bb4a-cbec0380917a"",
                     ""path"": ""<Keyboard>/q"",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Throw"",
@@ -552,11 +570,11 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""1d9d7970-0363-4f93-b514-daca57a8b0c5"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
+                    ""id"": ""cd3a763a-ccb3-4573-adcc-71170f7d6568"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": ""Press(behavior=1)"",
                     ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""Throw"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -567,7 +585,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/1"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""SetBolt1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -578,7 +596,18 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/numpad1"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""SetBolt1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4317e679-6d5b-425d-b7db-7dff4b87e9c4"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""SetBolt1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -589,7 +618,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/2"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""SetBolt2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -600,7 +629,18 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/numpad2"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""SetBolt2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""aaad64ba-a23d-45e8-bfb9-274ffa803abe"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""SetBolt2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -611,7 +651,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/3"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""SetBolt3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -622,7 +662,18 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/numpad3"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""SetBolt3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""93f63bc7-68f2-45a9-822e-249e37f82beb"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""SetBolt3"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -633,7 +684,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/4"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""SetBolt4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -644,7 +695,18 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/numpad4"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""SetBolt4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cb2a1f71-d92b-4541-ad93-33f4928cef39"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""SetBolt4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -655,7 +717,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/5"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""SetBolt5"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -666,7 +728,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/numpad5"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""SetBolt5"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -677,7 +739,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/6"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""SetBolt6"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -688,7 +750,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/numpad6"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""SetBolt6"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -699,7 +761,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/7"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""SetBolt7"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -710,7 +772,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/numpad7"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""SetBolt7"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -721,7 +783,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/8"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""SetBolt8"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -732,7 +794,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/numpad8"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""SetBolt8"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -743,7 +805,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/9"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""SetBolt9"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -754,19 +816,8 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/numpad9"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""SetBolt9"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""ad5148d1-22ac-44d3-bb40-298f3ae854a5"",
-                    ""path"": ""<Keyboard>/rightBracket"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Debug"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -776,7 +827,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""SprintTap"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -787,7 +838,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""SprintTap"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -798,8 +849,63 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""SprintTap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""51bb8162-e007-48c0-83ca-f0a0103fd91b"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": ""Hold(pressPoint=1)"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Grab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""190092b6-eeaa-4ff1-9a62-9e88de1f97d7"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Grab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5f3b76bc-86c0-4aa5-b742-d68c8140035d"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""IncrementBoltChoice"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""133671a5-8a87-4d48-a5c7-01e66928acc0"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""DecrementBoltChoice"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""58610ae5-d502-450f-994c-cb7f46a7be28"",
+                    ""path"": ""<Keyboard>/backquote"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Debug"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -903,6 +1009,15 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""name"": ""UnPause"",
                     ""type"": ""Button"",
                     ""id"": ""6fb55bf1-8f9d-422c-881e-f6aa2e9d790a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Debug"",
+                    ""type"": ""Button"",
+                    ""id"": ""d53dd948-6c25-4722-86a9-85816372af40"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -1187,6 +1302,17 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""205f186d-1dc9-446f-9b5e-f8626318562e"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""82627dcc-3b13-4ba9-841d-e4b746d6553e"",
                     ""path"": ""*/{Cancel}"",
                     ""interactions"": """",
@@ -1275,6 +1401,17 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""39a7dfa0-1ece-4056-bc73-c0a9ae710c27"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""38c99815-14ea-4617-8627-164d27641299"",
                     ""path"": ""<Mouse>/scroll"",
                     ""interactions"": """",
@@ -1330,8 +1467,8 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""8a9709ff-fa3c-4739-bde6-93fdea689129"",
-                    ""path"": ""<Keyboard>/p"",
+                    ""id"": ""57f6ab1b-cd7a-4e3f-babb-6ecb71206890"",
+                    ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1341,12 +1478,12 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""57f6ab1b-cd7a-4e3f-babb-6ecb71206890"",
-                    ""path"": ""<Keyboard>/escape"",
+                    ""id"": ""a6b80d76-bb3d-4092-a422-1591513be575"",
+                    ""path"": ""<Keyboard>/backquote"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""UnPause"",
+                    ""action"": ""Debug"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1464,8 +1601,10 @@ public partial class @Controller : IInputActionCollection2, IDisposable
         m_Player_SetBolt7 = m_Player.FindAction("SetBolt7", throwIfNotFound: true);
         m_Player_SetBolt8 = m_Player.FindAction("SetBolt8", throwIfNotFound: true);
         m_Player_SetBolt9 = m_Player.FindAction("SetBolt9", throwIfNotFound: true);
-        m_Player_Debug = m_Player.FindAction("Debug", throwIfNotFound: true);
         m_Player_SprintTap = m_Player.FindAction("SprintTap", throwIfNotFound: true);
+        m_Player_IncrementBoltChoice = m_Player.FindAction("IncrementBoltChoice", throwIfNotFound: true);
+        m_Player_DecrementBoltChoice = m_Player.FindAction("DecrementBoltChoice", throwIfNotFound: true);
+        m_Player_Debug = m_Player.FindAction("Debug", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1479,6 +1618,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
         m_UI_UnPause = m_UI.FindAction("UnPause", throwIfNotFound: true);
+        m_UI_Debug = m_UI.FindAction("Debug", throwIfNotFound: true);
         // Test
         m_Test = asset.FindActionMap("Test", throwIfNotFound: true);
         m_Test_TestPrint = m_Test.FindAction("TestPrint", throwIfNotFound: true);
@@ -1559,8 +1699,10 @@ public partial class @Controller : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SetBolt7;
     private readonly InputAction m_Player_SetBolt8;
     private readonly InputAction m_Player_SetBolt9;
-    private readonly InputAction m_Player_Debug;
     private readonly InputAction m_Player_SprintTap;
+    private readonly InputAction m_Player_IncrementBoltChoice;
+    private readonly InputAction m_Player_DecrementBoltChoice;
+    private readonly InputAction m_Player_Debug;
     public struct PlayerActions
     {
         private @Controller m_Wrapper;
@@ -1583,8 +1725,10 @@ public partial class @Controller : IInputActionCollection2, IDisposable
         public InputAction @SetBolt7 => m_Wrapper.m_Player_SetBolt7;
         public InputAction @SetBolt8 => m_Wrapper.m_Player_SetBolt8;
         public InputAction @SetBolt9 => m_Wrapper.m_Player_SetBolt9;
-        public InputAction @Debug => m_Wrapper.m_Player_Debug;
         public InputAction @SprintTap => m_Wrapper.m_Player_SprintTap;
+        public InputAction @IncrementBoltChoice => m_Wrapper.m_Player_IncrementBoltChoice;
+        public InputAction @DecrementBoltChoice => m_Wrapper.m_Player_DecrementBoltChoice;
+        public InputAction @Debug => m_Wrapper.m_Player_Debug;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1648,12 +1792,18 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 @SetBolt9.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt9;
                 @SetBolt9.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt9;
                 @SetBolt9.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSetBolt9;
-                @Debug.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDebug;
-                @Debug.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDebug;
-                @Debug.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDebug;
                 @SprintTap.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprintTap;
                 @SprintTap.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprintTap;
                 @SprintTap.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprintTap;
+                @IncrementBoltChoice.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnIncrementBoltChoice;
+                @IncrementBoltChoice.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnIncrementBoltChoice;
+                @IncrementBoltChoice.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnIncrementBoltChoice;
+                @DecrementBoltChoice.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDecrementBoltChoice;
+                @DecrementBoltChoice.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDecrementBoltChoice;
+                @DecrementBoltChoice.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDecrementBoltChoice;
+                @Debug.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDebug;
+                @Debug.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDebug;
+                @Debug.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDebug;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1712,12 +1862,18 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 @SetBolt9.started += instance.OnSetBolt9;
                 @SetBolt9.performed += instance.OnSetBolt9;
                 @SetBolt9.canceled += instance.OnSetBolt9;
-                @Debug.started += instance.OnDebug;
-                @Debug.performed += instance.OnDebug;
-                @Debug.canceled += instance.OnDebug;
                 @SprintTap.started += instance.OnSprintTap;
                 @SprintTap.performed += instance.OnSprintTap;
                 @SprintTap.canceled += instance.OnSprintTap;
+                @IncrementBoltChoice.started += instance.OnIncrementBoltChoice;
+                @IncrementBoltChoice.performed += instance.OnIncrementBoltChoice;
+                @IncrementBoltChoice.canceled += instance.OnIncrementBoltChoice;
+                @DecrementBoltChoice.started += instance.OnDecrementBoltChoice;
+                @DecrementBoltChoice.performed += instance.OnDecrementBoltChoice;
+                @DecrementBoltChoice.canceled += instance.OnDecrementBoltChoice;
+                @Debug.started += instance.OnDebug;
+                @Debug.performed += instance.OnDebug;
+                @Debug.canceled += instance.OnDebug;
             }
         }
     }
@@ -1737,6 +1893,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_TrackedDevicePosition;
     private readonly InputAction m_UI_TrackedDeviceOrientation;
     private readonly InputAction m_UI_UnPause;
+    private readonly InputAction m_UI_Debug;
     public struct UIActions
     {
         private @Controller m_Wrapper;
@@ -1752,6 +1909,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
         public InputAction @TrackedDevicePosition => m_Wrapper.m_UI_TrackedDevicePosition;
         public InputAction @TrackedDeviceOrientation => m_Wrapper.m_UI_TrackedDeviceOrientation;
         public InputAction @UnPause => m_Wrapper.m_UI_UnPause;
+        public InputAction @Debug => m_Wrapper.m_UI_Debug;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1794,6 +1952,9 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 @UnPause.started -= m_Wrapper.m_UIActionsCallbackInterface.OnUnPause;
                 @UnPause.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnUnPause;
                 @UnPause.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnUnPause;
+                @Debug.started -= m_Wrapper.m_UIActionsCallbackInterface.OnDebug;
+                @Debug.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnDebug;
+                @Debug.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnDebug;
             }
             m_Wrapper.m_UIActionsCallbackInterface = instance;
             if (instance != null)
@@ -1831,6 +1992,9 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 @UnPause.started += instance.OnUnPause;
                 @UnPause.performed += instance.OnUnPause;
                 @UnPause.canceled += instance.OnUnPause;
+                @Debug.started += instance.OnDebug;
+                @Debug.performed += instance.OnDebug;
+                @Debug.canceled += instance.OnDebug;
             }
         }
     }
@@ -1933,8 +2097,10 @@ public partial class @Controller : IInputActionCollection2, IDisposable
         void OnSetBolt7(InputAction.CallbackContext context);
         void OnSetBolt8(InputAction.CallbackContext context);
         void OnSetBolt9(InputAction.CallbackContext context);
-        void OnDebug(InputAction.CallbackContext context);
         void OnSprintTap(InputAction.CallbackContext context);
+        void OnIncrementBoltChoice(InputAction.CallbackContext context);
+        void OnDecrementBoltChoice(InputAction.CallbackContext context);
+        void OnDebug(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
@@ -1949,6 +2115,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
         void OnTrackedDevicePosition(InputAction.CallbackContext context);
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
         void OnUnPause(InputAction.CallbackContext context);
+        void OnDebug(InputAction.CallbackContext context);
     }
     public interface ITestActions
     {

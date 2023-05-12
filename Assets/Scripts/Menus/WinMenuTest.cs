@@ -27,6 +27,7 @@ public class WinMenuTest : MonoBehaviour
             Time.timeScale = 0f;
             playerInput.SwitchCurrentActionMap("UI");
             Cursor.lockState = CursorLockMode.None;
+            print("THing worked");
         }
     }
 }
