@@ -215,6 +215,15 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Debug"",
+                    ""type"": ""Button"",
+                    ""id"": ""6a26393a-97b5-45be-9f32-8d7c8a68a067"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -285,7 +294,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""ArrowKeys"",
+                    ""name"": ""Arrow Keys"",
                     ""id"": ""03abe21a-db71-4132-abc8-735482071ba7"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
@@ -512,17 +521,6 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Sprint"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c5c9656e-6754-42cd-907f-18fa2d24ba27"",
-                    ""path"": ""<Keyboard>/p"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -899,6 +897,17 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""action"": ""DecrementBoltChoice"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""58610ae5-d502-450f-994c-cb7f46a7be28"",
+                    ""path"": ""<Keyboard>/backquote"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Debug"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -1000,6 +1009,15 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                     ""name"": ""UnPause"",
                     ""type"": ""Button"",
                     ""id"": ""6fb55bf1-8f9d-422c-881e-f6aa2e9d790a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Debug"",
+                    ""type"": ""Button"",
+                    ""id"": ""d53dd948-6c25-4722-86a9-85816372af40"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -1449,8 +1467,8 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""8a9709ff-fa3c-4739-bde6-93fdea689129"",
-                    ""path"": ""<Keyboard>/p"",
+                    ""id"": ""57f6ab1b-cd7a-4e3f-babb-6ecb71206890"",
+                    ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -1460,12 +1478,12 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""57f6ab1b-cd7a-4e3f-babb-6ecb71206890"",
-                    ""path"": ""<Keyboard>/escape"",
+                    ""id"": ""a6b80d76-bb3d-4092-a422-1591513be575"",
+                    ""path"": ""<Keyboard>/backquote"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""UnPause"",
+                    ""action"": ""Debug"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1586,6 +1604,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
         m_Player_SprintTap = m_Player.FindAction("SprintTap", throwIfNotFound: true);
         m_Player_IncrementBoltChoice = m_Player.FindAction("IncrementBoltChoice", throwIfNotFound: true);
         m_Player_DecrementBoltChoice = m_Player.FindAction("DecrementBoltChoice", throwIfNotFound: true);
+        m_Player_Debug = m_Player.FindAction("Debug", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1599,6 +1618,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
         m_UI_UnPause = m_UI.FindAction("UnPause", throwIfNotFound: true);
+        m_UI_Debug = m_UI.FindAction("Debug", throwIfNotFound: true);
         // Test
         m_Test = asset.FindActionMap("Test", throwIfNotFound: true);
         m_Test_TestPrint = m_Test.FindAction("TestPrint", throwIfNotFound: true);
@@ -1682,6 +1702,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SprintTap;
     private readonly InputAction m_Player_IncrementBoltChoice;
     private readonly InputAction m_Player_DecrementBoltChoice;
+    private readonly InputAction m_Player_Debug;
     public struct PlayerActions
     {
         private @Controller m_Wrapper;
@@ -1707,6 +1728,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
         public InputAction @SprintTap => m_Wrapper.m_Player_SprintTap;
         public InputAction @IncrementBoltChoice => m_Wrapper.m_Player_IncrementBoltChoice;
         public InputAction @DecrementBoltChoice => m_Wrapper.m_Player_DecrementBoltChoice;
+        public InputAction @Debug => m_Wrapper.m_Player_Debug;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1779,6 +1801,9 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 @DecrementBoltChoice.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDecrementBoltChoice;
                 @DecrementBoltChoice.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDecrementBoltChoice;
                 @DecrementBoltChoice.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDecrementBoltChoice;
+                @Debug.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDebug;
+                @Debug.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDebug;
+                @Debug.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDebug;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1846,6 +1871,9 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 @DecrementBoltChoice.started += instance.OnDecrementBoltChoice;
                 @DecrementBoltChoice.performed += instance.OnDecrementBoltChoice;
                 @DecrementBoltChoice.canceled += instance.OnDecrementBoltChoice;
+                @Debug.started += instance.OnDebug;
+                @Debug.performed += instance.OnDebug;
+                @Debug.canceled += instance.OnDebug;
             }
         }
     }
@@ -1865,6 +1893,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_TrackedDevicePosition;
     private readonly InputAction m_UI_TrackedDeviceOrientation;
     private readonly InputAction m_UI_UnPause;
+    private readonly InputAction m_UI_Debug;
     public struct UIActions
     {
         private @Controller m_Wrapper;
@@ -1880,6 +1909,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
         public InputAction @TrackedDevicePosition => m_Wrapper.m_UI_TrackedDevicePosition;
         public InputAction @TrackedDeviceOrientation => m_Wrapper.m_UI_TrackedDeviceOrientation;
         public InputAction @UnPause => m_Wrapper.m_UI_UnPause;
+        public InputAction @Debug => m_Wrapper.m_UI_Debug;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1922,6 +1952,9 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 @UnPause.started -= m_Wrapper.m_UIActionsCallbackInterface.OnUnPause;
                 @UnPause.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnUnPause;
                 @UnPause.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnUnPause;
+                @Debug.started -= m_Wrapper.m_UIActionsCallbackInterface.OnDebug;
+                @Debug.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnDebug;
+                @Debug.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnDebug;
             }
             m_Wrapper.m_UIActionsCallbackInterface = instance;
             if (instance != null)
@@ -1959,6 +1992,9 @@ public partial class @Controller : IInputActionCollection2, IDisposable
                 @UnPause.started += instance.OnUnPause;
                 @UnPause.performed += instance.OnUnPause;
                 @UnPause.canceled += instance.OnUnPause;
+                @Debug.started += instance.OnDebug;
+                @Debug.performed += instance.OnDebug;
+                @Debug.canceled += instance.OnDebug;
             }
         }
     }
@@ -2064,6 +2100,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
         void OnSprintTap(InputAction.CallbackContext context);
         void OnIncrementBoltChoice(InputAction.CallbackContext context);
         void OnDecrementBoltChoice(InputAction.CallbackContext context);
+        void OnDebug(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
@@ -2078,6 +2115,7 @@ public partial class @Controller : IInputActionCollection2, IDisposable
         void OnTrackedDevicePosition(InputAction.CallbackContext context);
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
         void OnUnPause(InputAction.CallbackContext context);
+        void OnDebug(InputAction.CallbackContext context);
     }
     public interface ITestActions
     {

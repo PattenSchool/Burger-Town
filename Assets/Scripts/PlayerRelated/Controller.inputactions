@@ -193,6 +193,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Debug",
+                    "type": "Button",
+                    "id": "6a26393a-97b5-45be-9f32-8d7c8a68a067",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -490,17 +499,6 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Sprint",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c5c9656e-6754-42cd-907f-18fa2d24ba27",
-                    "path": "<Keyboard>/p",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -877,6 +875,17 @@
                     "action": "DecrementBoltChoice",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "58610ae5-d502-450f-994c-cb7f46a7be28",
+                    "path": "<Keyboard>/backquote",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Debug",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -978,6 +987,15 @@
                     "name": "UnPause",
                     "type": "Button",
                     "id": "6fb55bf1-8f9d-422c-881e-f6aa2e9d790a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Debug",
+                    "type": "Button",
+                    "id": "d53dd948-6c25-4722-86a9-85816372af40",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -1427,8 +1445,8 @@
                 },
                 {
                     "name": "",
-                    "id": "8a9709ff-fa3c-4739-bde6-93fdea689129",
-                    "path": "<Keyboard>/p",
+                    "id": "57f6ab1b-cd7a-4e3f-babb-6ecb71206890",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1438,12 +1456,12 @@
                 },
                 {
                     "name": "",
-                    "id": "57f6ab1b-cd7a-4e3f-babb-6ecb71206890",
-                    "path": "<Keyboard>/escape",
+                    "id": "a6b80d76-bb3d-4092-a422-1591513be575",
+                    "path": "<Keyboard>/backquote",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "UnPause",
+                    "action": "Debug",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
