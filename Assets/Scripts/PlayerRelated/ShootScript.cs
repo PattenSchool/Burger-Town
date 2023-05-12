@@ -80,6 +80,7 @@ public class ShootScript : MonoBehaviour
 
     [SerializeField]
     private AudioClip shootSFX;
+    public AudioClip launchSFX;
 
     [HideInInspector]
     public CrossbowFireAnim fireAnimScript;
@@ -199,6 +200,7 @@ public class ShootScript : MonoBehaviour
 
             if (currentBoltIndex == 3)
             {
+                AudioManager.instance.PlaySFX(launchSFX);
                 isLaunching = true;
             }
         }
