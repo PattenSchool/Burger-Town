@@ -649,7 +649,12 @@ GameObject:
   - component: {fileID: 316227890797501137}
   - component: {fileID: 316227890797501142}
   - component: {fileID: 316227890797501143}
+<<<<<<< Updated upstream
   m_Layer: 5
+=======
+  - component: {fileID: 314623777620427559}
+  m_Layer: 8
+>>>>>>> Stashed changes
   m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -705,7 +710,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< Updated upstream
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+=======
+  m_Sprite: {fileID: 21300000, guid: e9bee07a3e7ed3641855cd3c8368f79e, type: 3}
+>>>>>>> Stashed changes
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -783,6 +792,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &314623777620427559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316227890797501141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 23fa179028d76c04ba9bcfa0adbfd1cd, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 0b897e13aa595fe47a6442f3d0a3f76c, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &316227890921661341
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,6 +1406,85 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+<<<<<<< Updated upstream
+=======
+--- !u!1 &2323577192543086506
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3464126503105382012}
+  - component: {fileID: 3671229896085201504}
+  - component: {fileID: 2066332925574417430}
+  m_Layer: 8
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3464126503105382012
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2323577192543086506}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8746828076436875968}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 710.22723, y: -389.64697}
+  m_SizeDelta: {x: 367.6673, y: 177.1161}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3671229896085201504
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2323577192543086506}
+  m_CullTransparentMesh: 1
+--- !u!114 &2066332925574417430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2323577192543086506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+>>>>>>> Stashed changes
 --- !u!1 &2475062459957430611
 GameObject:
   m_ObjectHideFlags: 0
@@ -1501,8 +1634,11 @@ GameObject:
   - component: {fileID: 557937382547021163}
   - component: {fileID: 6589337187626984878}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Layer: 0
 =======
+=======
+>>>>>>> Stashed changes
   - component: {fileID: 3710572438508487242}
   m_Layer: 8
 >>>>>>> Stashed changes
@@ -1529,15 +1665,21 @@ RectTransform:
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_AnchorMin: {x: 0.363, y: 0.47659343}
   m_AnchorMax: {x: 0.6352481, y: 0.52346885}
   m_AnchoredPosition: {x: 0, y: -192}
   m_SizeDelta: {x: 0.0000038146973, y: -1.9999981}
 =======
+=======
+>>>>>>> Stashed changes
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 955.5, y: -1024.3208}
   m_SizeDelta: {x: 595, y: 119.358574}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5536998205581831168
@@ -1668,14 +1810,22 @@ MonoBehaviour:
           m_MethodName: PlaySFX
           m_Mode: 2
           m_Arguments:
+<<<<<<< Updated upstream
             m_ObjectArgument: {fileID: 8300000, guid: 731876d0c1e61394b8df069935030ab4, type: 3}
+=======
+            m_ObjectArgument: {fileID: 8300000, guid: 23fa179028d76c04ba9bcfa0adbfd1cd, type: 3}
+>>>>>>> Stashed changes
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+<<<<<<< Updated upstream
   - eventID: 4
+=======
+  - eventID: 9
+>>>>>>> Stashed changes
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -1684,7 +1834,11 @@ MonoBehaviour:
           m_MethodName: PlaySFX
           m_Mode: 2
           m_Arguments:
+<<<<<<< Updated upstream
             m_ObjectArgument: {fileID: 8300000, guid: a8998bb8f2587f24f9face70a76e7e71, type: 3}
+=======
+            m_ObjectArgument: {fileID: 8300000, guid: 0b897e13aa595fe47a6442f3d0a3f76c, type: 3}
+>>>>>>> Stashed changes
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -2122,8 +2276,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4cc28b22e00fb7b40a8982f652a2e04c, type: 2}
+  m_sharedMaterial: {fileID: 8800763638161248667, guid: 4cc28b22e00fb7b40a8982f652a2e04c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2186,7 +2340,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &3876050978310703216
@@ -2337,8 +2491,11 @@ GameObject:
   - component: {fileID: 3876050978482148227}
   - component: {fileID: 3876050978482148226}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Layer: 0
 =======
+=======
+>>>>>>> Stashed changes
   - component: {fileID: 7599811196932222934}
   m_Layer: 8
 >>>>>>> Stashed changes
@@ -2365,15 +2522,21 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_AnchorMin: {x: 0.363, y: 0.47659343}
   m_AnchorMax: {x: 0.6352481, y: 0.52346885}
   m_AnchoredPosition: {x: 0, y: -8}
   m_SizeDelta: {x: 0, y: -2}
 =======
+=======
+>>>>>>> Stashed changes
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 955.5, y: -265.62787}
   m_SizeDelta: {x: 595, y: 119.358574}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3876050978482148252
@@ -2492,14 +2655,22 @@ MonoBehaviour:
           m_MethodName: PlaySFX
           m_Mode: 2
           m_Arguments:
+<<<<<<< Updated upstream
             m_ObjectArgument: {fileID: 8300000, guid: 731876d0c1e61394b8df069935030ab4, type: 3}
+=======
+            m_ObjectArgument: {fileID: 8300000, guid: 23fa179028d76c04ba9bcfa0adbfd1cd, type: 3}
+>>>>>>> Stashed changes
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+<<<<<<< Updated upstream
   - eventID: 4
+=======
+  - eventID: 9
+>>>>>>> Stashed changes
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -2508,7 +2679,11 @@ MonoBehaviour:
           m_MethodName: PlaySFX
           m_Mode: 2
           m_Arguments:
+<<<<<<< Updated upstream
             m_ObjectArgument: {fileID: 8300000, guid: a8998bb8f2587f24f9face70a76e7e71, type: 3}
+=======
+            m_ObjectArgument: {fileID: 8300000, guid: 0b897e13aa595fe47a6442f3d0a3f76c, type: 3}
+>>>>>>> Stashed changes
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -2541,7 +2716,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3876050978501610391}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
@@ -2651,15 +2826,21 @@ RectTransform:
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_AnchorMin: {x: 0.3347008, y: 0.70287544}
   m_AnchorMax: {x: 0.6667008, y: 0.77346885}
   m_AnchoredPosition: {x: -0.5, y: 1}
   m_SizeDelta: {x: -1, y: 2}
 =======
+=======
+>>>>>>> Stashed changes
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 955.5, y: -103.28429}
   m_SizeDelta: {x: 595, y: 140.56857}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3876050978839251196
@@ -2773,7 +2954,13 @@ GameObject:
   - component: {fileID: 3876050978861003420}
   - component: {fileID: 3876050978861003395}
   - component: {fileID: 3876050978861003394}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  - component: {fileID: 7101155791505590916}
+  - component: {fileID: 8557016396085782324}
+  m_Layer: 8
+>>>>>>> Stashed changes
   m_Name: ToMainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2829,7 +3016,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: e9bee07a3e7ed3641855cd3c8368f79e, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2895,6 +3082,66 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+<<<<<<< Updated upstream
+=======
+--- !u!114 &7101155791505590916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3876050978861003392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf813b25f7e8d384d875445c626d8914, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8557016396085782324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3876050978861003392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 23fa179028d76c04ba9bcfa0adbfd1cd, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 0b897e13aa595fe47a6442f3d0a3f76c, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+>>>>>>> Stashed changes
 --- !u!1 &3876050979032714092
 GameObject:
   m_ObjectHideFlags: 0
@@ -3032,8 +3279,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.37300003, y: 0.8186558}
   m_AnchorMax: {x: 0.76600003, y: 0.89246887}
-  m_AnchoredPosition: {x: 1.7329025, y: 0.754364}
-  m_SizeDelta: {x: -1.0888977, y: -3.2572021}
+  m_AnchoredPosition: {x: -133.44, y: -177}
+  m_SizeDelta: {x: 1.1884613, y: -3.2572021}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3876050979518092714
 CanvasRenderer:
@@ -3063,10 +3310,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You Died Test
+  m_text: You Died!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4cc28b22e00fb7b40a8982f652a2e04c, type: 2}
+  m_sharedMaterial: {fileID: 8800763638161248667, guid: 4cc28b22e00fb7b40a8982f652a2e04c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3090,15 +3337,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 72
+  m_fontSizeBase: 72
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -3129,7 +3376,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &3876050979599400697
@@ -3595,7 +3842,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: e9bee07a3e7ed3641855cd3c8368f79e, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4361,8 +4608,13 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8024691, y: 0}
   m_AnchorMax: {x: 1, y: 0.22312456}
+<<<<<<< Updated upstream
   m_AnchoredPosition: {x: 758.2467, y: -408.66895}
   m_SizeDelta: {x: 303.50632, y: 166.6621}
+=======
+  m_AnchoredPosition: {x: 669.4456, y: -375.23557}
+  m_SizeDelta: {x: 295.4378, y: 94.0467}
+>>>>>>> Stashed changes
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1601963323824763546
 CanvasRenderer:
@@ -4917,8 +5169,11 @@ GameObject:
   - component: {fileID: 7919990711208739289}
   - component: {fileID: 7919990711208739290}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Layer: 0
 =======
+=======
+>>>>>>> Stashed changes
   - component: {fileID: 6197963644223433230}
   m_Layer: 8
 >>>>>>> Stashed changes
@@ -4945,15 +5200,21 @@ RectTransform:
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_AnchorMin: {x: 0.363, y: 0.47659343}
   m_AnchorMax: {x: 0.6352481, y: 0.52346885}
   m_AnchoredPosition: {x: 0, y: -154}
   m_SizeDelta: {x: 0.0000038146973, y: -1.9999981}
 =======
+=======
+>>>>>>> Stashed changes
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 955.5, y: -872.58215}
   m_SizeDelta: {x: 595, y: 119.358574}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7919990711208739288
@@ -5096,14 +5357,22 @@ MonoBehaviour:
           m_MethodName: PlaySFX
           m_Mode: 2
           m_Arguments:
+<<<<<<< Updated upstream
             m_ObjectArgument: {fileID: 8300000, guid: 731876d0c1e61394b8df069935030ab4, type: 3}
+=======
+            m_ObjectArgument: {fileID: 8300000, guid: 23fa179028d76c04ba9bcfa0adbfd1cd, type: 3}
+>>>>>>> Stashed changes
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+<<<<<<< Updated upstream
   - eventID: 4
+=======
+  - eventID: 9
+>>>>>>> Stashed changes
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -5112,7 +5381,11 @@ MonoBehaviour:
           m_MethodName: PlaySFX
           m_Mode: 2
           m_Arguments:
+<<<<<<< Updated upstream
             m_ObjectArgument: {fileID: 8300000, guid: a8998bb8f2587f24f9face70a76e7e71, type: 3}
+=======
+            m_ObjectArgument: {fileID: 8300000, guid: 0b897e13aa595fe47a6442f3d0a3f76c, type: 3}
+>>>>>>> Stashed changes
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -5366,8 +5639,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4cc28b22e00fb7b40a8982f652a2e04c, type: 2}
+  m_sharedMaterial: {fileID: 8800763638161248667, guid: 4cc28b22e00fb7b40a8982f652a2e04c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5394,7 +5667,7 @@ MonoBehaviour:
   m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -6143,8 +6416,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4cc28b22e00fb7b40a8982f652a2e04c, type: 2}
+  m_sharedMaterial: {fileID: 8800763638161248667, guid: 4cc28b22e00fb7b40a8982f652a2e04c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6171,7 +6444,7 @@ MonoBehaviour:
   m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -6221,7 +6494,12 @@ GameObject:
   - component: {fileID: 7919990711614355179}
   - component: {fileID: 7919990711614355177}
   - component: {fileID: 7919990711614355178}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  - component: {fileID: 7350694830411372617}
+  m_Layer: 8
+>>>>>>> Stashed changes
   m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6276,7 +6554,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: e9bee07a3e7ed3641855cd3c8368f79e, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6286,6 +6564,51 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7350694830411372617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919990711614355180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 23fa179028d76c04ba9bcfa0adbfd1cd, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 0b897e13aa595fe47a6442f3d0a3f76c, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7919990711648143538
 GameObject:
   m_ObjectHideFlags: 0
@@ -6335,7 +6658,12 @@ GameObject:
   - component: {fileID: 7919990711655197567}
   - component: {fileID: 7919990711655197536}
   - component: {fileID: 7919990711655197537}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  - component: {fileID: 8622529980411061756}
+  m_Layer: 8
+>>>>>>> Stashed changes
   m_Name: Clear Save 1
   m_TagString: Ignore
   m_Icon: {fileID: 0}
@@ -6391,7 +6719,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: e9bee07a3e7ed3641855cd3c8368f79e, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6457,6 +6785,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8622529980411061756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919990711655197539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 23fa179028d76c04ba9bcfa0adbfd1cd, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 0b897e13aa595fe47a6442f3d0a3f76c, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7919990711663903481
 GameObject:
   m_ObjectHideFlags: 0
@@ -6701,7 +7074,12 @@ GameObject:
   - component: {fileID: 7919990711780768599}
   - component: {fileID: 7919990711780768600}
   - component: {fileID: 7919990711780768601}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  - component: {fileID: 316008589275811820}
+  m_Layer: 8
+>>>>>>> Stashed changes
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6835,6 +7213,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &316008589275811820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919990711780768603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 23fa179028d76c04ba9bcfa0adbfd1cd, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 0b897e13aa595fe47a6442f3d0a3f76c, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7919990711791420605
 GameObject:
   m_ObjectHideFlags: 0
@@ -7193,7 +7616,12 @@ GameObject:
   - component: {fileID: 7919990711934874578}
   - component: {fileID: 7919990711934874579}
   - component: {fileID: 7919990711934874580}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  - component: {fileID: 6216927826017930622}
+  m_Layer: 8
+>>>>>>> Stashed changes
   m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7249,7 +7677,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: e9bee07a3e7ed3641855cd3c8368f79e, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7315,6 +7743,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6216927826017930622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919990711934874582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 23fa179028d76c04ba9bcfa0adbfd1cd, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 0b897e13aa595fe47a6442f3d0a3f76c, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7919990711986852103
 GameObject:
   m_ObjectHideFlags: 0
@@ -7462,7 +7935,12 @@ GameObject:
   - component: {fileID: 7919990711991241120}
   - component: {fileID: 7919990711991241121}
   - component: {fileID: 7919990711991241122}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  - component: {fileID: 1105864180923075035}
+  m_Layer: 8
+>>>>>>> Stashed changes
   m_Name: Back
   m_TagString: Ignore
   m_Icon: {fileID: 0}
@@ -7518,7 +7996,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: e9bee07a3e7ed3641855cd3c8368f79e, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7596,6 +8074,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &1105864180923075035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919990711991241124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 23fa179028d76c04ba9bcfa0adbfd1cd, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 0b897e13aa595fe47a6442f3d0a3f76c, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7919990711999834920
 GameObject:
   m_ObjectHideFlags: 0
@@ -7743,7 +8266,12 @@ GameObject:
   - component: {fileID: 7919990712011127985}
   - component: {fileID: 7919990712011127986}
   - component: {fileID: 7919990712011127987}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  - component: {fileID: 3515912383718124876}
+  m_Layer: 8
+>>>>>>> Stashed changes
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7799,7 +8327,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: e9bee07a3e7ed3641855cd3c8368f79e, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7865,6 +8393,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3515912383718124876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919990712011127989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 23fa179028d76c04ba9bcfa0adbfd1cd, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 0b897e13aa595fe47a6442f3d0a3f76c, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7919990712014592169
 GameObject:
   m_ObjectHideFlags: 0
@@ -7877,7 +8450,12 @@ GameObject:
   - component: {fileID: 7919990712014592165}
   - component: {fileID: 7919990712014592166}
   - component: {fileID: 7919990712014592167}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  - component: {fileID: 3990050518369703233}
+  m_Layer: 8
+>>>>>>> Stashed changes
   m_Name: Clear Save 3
   m_TagString: Ignore
   m_Icon: {fileID: 0}
@@ -7933,7 +8511,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: e9bee07a3e7ed3641855cd3c8368f79e, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7999,6 +8577,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3990050518369703233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919990712014592169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 23fa179028d76c04ba9bcfa0adbfd1cd, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 0b897e13aa595fe47a6442f3d0a3f76c, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7919990712015820734
 GameObject:
   m_ObjectHideFlags: 0
@@ -8565,8 +9188,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: e9bee07a3e7ed3641855cd3c8368f79e, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -8600,7 +9223,12 @@ GameObject:
   - component: {fileID: 7919990712185393638}
   - component: {fileID: 7919990712185393639}
   - component: {fileID: 7919990712185393640}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  - component: {fileID: 8450162502344871608}
+  m_Layer: 8
+>>>>>>> Stashed changes
   m_Name: Clear Save 1
   m_TagString: Ignore
   m_Icon: {fileID: 0}
@@ -8656,7 +9284,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: e9bee07a3e7ed3641855cd3c8368f79e, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8722,6 +9350,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8450162502344871608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919990712185393642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 23fa179028d76c04ba9bcfa0adbfd1cd, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 0b897e13aa595fe47a6442f3d0a3f76c, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7919990712196578095
 GameObject:
   m_ObjectHideFlags: 0
@@ -8790,7 +9463,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: e9bee07a3e7ed3641855cd3c8368f79e, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8919,8 +9592,11 @@ GameObject:
   - component: {fileID: 7919990712245022580}
   - component: {fileID: 7919990712245022581}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Layer: 0
 =======
+=======
+>>>>>>> Stashed changes
   - component: {fileID: 4023430824357772417}
   m_Layer: 8
 >>>>>>> Stashed changes
@@ -8947,15 +9623,21 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_AnchorMin: {x: 0.363, y: 0.47659343}
   m_AnchorMax: {x: 0.6352481, y: 0.52346885}
   m_AnchoredPosition: {x: 0, y: -44}
   m_SizeDelta: {x: 0, y: -2}
 =======
+=======
+>>>>>>> Stashed changes
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 955.5, y: -417.36646}
   m_SizeDelta: {x: 595, y: 119.358574}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7919990712245022579
@@ -9086,14 +9768,22 @@ MonoBehaviour:
           m_MethodName: PlaySFX
           m_Mode: 2
           m_Arguments:
+<<<<<<< Updated upstream
             m_ObjectArgument: {fileID: 8300000, guid: 731876d0c1e61394b8df069935030ab4, type: 3}
+=======
+            m_ObjectArgument: {fileID: 8300000, guid: 23fa179028d76c04ba9bcfa0adbfd1cd, type: 3}
+>>>>>>> Stashed changes
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+<<<<<<< Updated upstream
   - eventID: 4
+=======
+  - eventID: 9
+>>>>>>> Stashed changes
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -9102,7 +9792,11 @@ MonoBehaviour:
           m_MethodName: PlaySFX
           m_Mode: 2
           m_Arguments:
+<<<<<<< Updated upstream
             m_ObjectArgument: {fileID: 8300000, guid: a8998bb8f2587f24f9face70a76e7e71, type: 3}
+=======
+            m_ObjectArgument: {fileID: 8300000, guid: 0b897e13aa595fe47a6442f3d0a3f76c, type: 3}
+>>>>>>> Stashed changes
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -9121,7 +9815,12 @@ GameObject:
   - component: {fileID: 7919990712246784415}
   - component: {fileID: 7919990712246784384}
   - component: {fileID: 7919990712246784385}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  - component: {fileID: 2873314286420924333}
+  m_Layer: 8
+>>>>>>> Stashed changes
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9177,7 +9876,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: e9bee07a3e7ed3641855cd3c8368f79e, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9243,6 +9942,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2873314286420924333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919990712246784387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 23fa179028d76c04ba9bcfa0adbfd1cd, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 0b897e13aa595fe47a6442f3d0a3f76c, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7919990712303436440
 GameObject:
   m_ObjectHideFlags: 0
@@ -9390,7 +10134,12 @@ GameObject:
   - component: {fileID: 7919990712319280633}
   - component: {fileID: 7919990712319280634}
   - component: {fileID: 7919990712319280635}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  - component: {fileID: 7987467155142751594}
+  m_Layer: 8
+>>>>>>> Stashed changes
   m_Name: Clear Save 2
   m_TagString: Ignore
   m_Icon: {fileID: 0}
@@ -9446,7 +10195,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: e9bee07a3e7ed3641855cd3c8368f79e, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9512,6 +10261,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7987467155142751594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919990712319280637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 23fa179028d76c04ba9bcfa0adbfd1cd, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 0b897e13aa595fe47a6442f3d0a3f76c, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7919990712320228072
 GameObject:
   m_ObjectHideFlags: 0
@@ -9524,7 +10318,12 @@ GameObject:
   - component: {fileID: 7919990712320228068}
   - component: {fileID: 7919990712320228069}
   - component: {fileID: 7919990712320228070}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  - component: {fileID: 8993749133537518628}
+  m_Layer: 8
+>>>>>>> Stashed changes
   m_Name: Clear Save 2
   m_TagString: Ignore
   m_Icon: {fileID: 0}
@@ -9580,7 +10379,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: e9bee07a3e7ed3641855cd3c8368f79e, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9646,6 +10445,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8993749133537518628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919990712320228072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 23fa179028d76c04ba9bcfa0adbfd1cd, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 0b897e13aa595fe47a6442f3d0a3f76c, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7919990712349461612
 GameObject:
   m_ObjectHideFlags: 0
@@ -10050,7 +10894,12 @@ GameObject:
   - component: {fileID: 7919990712456027300}
   - component: {fileID: 7919990712456027301}
   - component: {fileID: 7919990712456027302}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  - component: {fileID: 282387149685504312}
+  m_Layer: 8
+>>>>>>> Stashed changes
   m_Name: Clear Save 3
   m_TagString: Ignore
   m_Icon: {fileID: 0}
@@ -10106,7 +10955,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: e9bee07a3e7ed3641855cd3c8368f79e, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10172,6 +11021,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &282387149685504312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919990712456027304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 23fa179028d76c04ba9bcfa0adbfd1cd, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 0b897e13aa595fe47a6442f3d0a3f76c, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7919990712519947347
 GameObject:
   m_ObjectHideFlags: 0
@@ -10319,7 +11213,12 @@ GameObject:
   - component: {fileID: 7919990712546232345}
   - component: {fileID: 7919990712546232346}
   - component: {fileID: 7919990712546232347}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  - component: {fileID: 4100825158418152722}
+  m_Layer: 8
+>>>>>>> Stashed changes
   m_Name: Back
   m_TagString: Ignore
   m_Icon: {fileID: 0}
@@ -10375,7 +11274,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: e9bee07a3e7ed3641855cd3c8368f79e, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10453,6 +11352,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &4100825158418152722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919990712546232349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 23fa179028d76c04ba9bcfa0adbfd1cd, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 0b897e13aa595fe47a6442f3d0a3f76c, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7919990712562183248
 GameObject:
   m_ObjectHideFlags: 0
@@ -10465,7 +11409,12 @@ GameObject:
   - component: {fileID: 7919990712562184108}
   - component: {fileID: 7919990712562184109}
   - component: {fileID: 7919990712562184110}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  - component: {fileID: 816117501249024933}
+  m_Layer: 8
+>>>>>>> Stashed changes
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10521,7 +11470,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: e9bee07a3e7ed3641855cd3c8368f79e, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10587,6 +11536,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &816117501249024933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919990712562183248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 23fa179028d76c04ba9bcfa0adbfd1cd, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 0b897e13aa595fe47a6442f3d0a3f76c, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7919990712568985195
 GameObject:
   m_ObjectHideFlags: 0
@@ -10600,8 +11594,11 @@ GameObject:
   - component: {fileID: 7919990712568985192}
   - component: {fileID: 7919990712568985193}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Layer: 0
 =======
+=======
+>>>>>>> Stashed changes
   - component: {fileID: 4250092596301006434}
   m_Layer: 8
 >>>>>>> Stashed changes
@@ -10628,15 +11625,21 @@ RectTransform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_AnchorMin: {x: 0.363, y: 0.47659343}
   m_AnchorMax: {x: 0.6352481, y: 0.52346885}
   m_AnchoredPosition: {x: 0, y: -80}
   m_SizeDelta: {x: -0.000015258789, y: -1.9999981}
 =======
+=======
+>>>>>>> Stashed changes
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 955.5, y: -569.10504}
   m_SizeDelta: {x: 595, y: 119.358574}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7919990712568985191
@@ -10779,14 +11782,22 @@ MonoBehaviour:
           m_MethodName: PlaySFX
           m_Mode: 2
           m_Arguments:
+<<<<<<< Updated upstream
             m_ObjectArgument: {fileID: 8300000, guid: 731876d0c1e61394b8df069935030ab4, type: 3}
+=======
+            m_ObjectArgument: {fileID: 8300000, guid: 23fa179028d76c04ba9bcfa0adbfd1cd, type: 3}
+>>>>>>> Stashed changes
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+<<<<<<< Updated upstream
   - eventID: 4
+=======
+  - eventID: 9
+>>>>>>> Stashed changes
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -10795,7 +11806,11 @@ MonoBehaviour:
           m_MethodName: PlaySFX
           m_Mode: 2
           m_Arguments:
+<<<<<<< Updated upstream
             m_ObjectArgument: {fileID: 8300000, guid: a8998bb8f2587f24f9face70a76e7e71, type: 3}
+=======
+            m_ObjectArgument: {fileID: 8300000, guid: 0b897e13aa595fe47a6442f3d0a3f76c, type: 3}
+>>>>>>> Stashed changes
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -10890,7 +11905,12 @@ GameObject:
   - component: {fileID: 7919990712644700212}
   - component: {fileID: 7919990712644700213}
   - component: {fileID: 7919990712644700214}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  - component: {fileID: 2293376412236924474}
+  m_Layer: 8
+>>>>>>> Stashed changes
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10946,7 +11966,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: e9bee07a3e7ed3641855cd3c8368f79e, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11012,6 +12032,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2293376412236924474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919990712644700216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 23fa179028d76c04ba9bcfa0adbfd1cd, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 0b897e13aa595fe47a6442f3d0a3f76c, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7919990712654395505
 GameObject:
   m_ObjectHideFlags: 0
@@ -11350,8 +12415,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4cc28b22e00fb7b40a8982f652a2e04c, type: 2}
+  m_sharedMaterial: {fileID: 8800763638161248667, guid: 4cc28b22e00fb7b40a8982f652a2e04c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11378,7 +12443,7 @@ MonoBehaviour:
   m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -11879,9 +12944,13 @@ MonoBehaviour:
   isDeveloperMode: 0
   shootSFX: {fileID: 8300000, guid: bd7d2a46ebb87b2458ea662a2b3fa3ee, type: 3}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   _spawnRange: 1.5
 =======
   launchSFX: {fileID: 0}
+=======
+  launchSFX: {fileID: 8300000, guid: fd4031e4992612f4f81c46a0fc1aa1ab, type: 3}
+>>>>>>> Stashed changes
   fireAnimScript: {fileID: 0}
   _spawnRange: 0.13
 >>>>>>> Stashed changes
@@ -12505,8 +13574,11 @@ GameObject:
   - component: {fileID: 7919990712864689498}
   - component: {fileID: 7919990712864689499}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Layer: 0
 =======
+=======
+>>>>>>> Stashed changes
   - component: {fileID: 2324813613237369456}
   m_Layer: 8
 >>>>>>> Stashed changes
@@ -12533,15 +13605,21 @@ RectTransform:
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_AnchorMin: {x: 0.363, y: 0.47659343}
   m_AnchorMax: {x: 0.6352481, y: 0.52346885}
   m_AnchoredPosition: {x: 0, y: -117}
   m_SizeDelta: {x: 0.0000038146973, y: -1.9999981}
 =======
+=======
+>>>>>>> Stashed changes
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 955.5, y: -720.84357}
   m_SizeDelta: {x: 595, y: 119.358574}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7919990712864689497
@@ -12684,14 +13762,22 @@ MonoBehaviour:
           m_MethodName: PlaySFX
           m_Mode: 2
           m_Arguments:
+<<<<<<< Updated upstream
             m_ObjectArgument: {fileID: 8300000, guid: 731876d0c1e61394b8df069935030ab4, type: 3}
+=======
+            m_ObjectArgument: {fileID: 8300000, guid: 23fa179028d76c04ba9bcfa0adbfd1cd, type: 3}
+>>>>>>> Stashed changes
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+<<<<<<< Updated upstream
   - eventID: 4
+=======
+  - eventID: 9
+>>>>>>> Stashed changes
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -12700,7 +13786,11 @@ MonoBehaviour:
           m_MethodName: PlaySFX
           m_Mode: 2
           m_Arguments:
+<<<<<<< Updated upstream
             m_ObjectArgument: {fileID: 8300000, guid: a8998bb8f2587f24f9face70a76e7e71, type: 3}
+=======
+            m_ObjectArgument: {fileID: 8300000, guid: 0b897e13aa595fe47a6442f3d0a3f76c, type: 3}
+>>>>>>> Stashed changes
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -13045,8 +14135,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4cc28b22e00fb7b40a8982f652a2e04c, type: 2}
+  m_sharedMaterial: {fileID: 8800763638161248667, guid: 4cc28b22e00fb7b40a8982f652a2e04c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13073,7 +14163,7 @@ MonoBehaviour:
   m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -13226,8 +14316,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4cc28b22e00fb7b40a8982f652a2e04c, type: 2}
+  m_sharedMaterial: {fileID: 8800763638161248667, guid: 4cc28b22e00fb7b40a8982f652a2e04c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13254,7 +14344,7 @@ MonoBehaviour:
   m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -13305,7 +14395,12 @@ GameObject:
   - component: {fileID: 7919990713067299793}
   - component: {fileID: 7919990713067299794}
   - component: {fileID: 7919990713067299795}
+<<<<<<< Updated upstream
   m_Layer: 0
+=======
+  - component: {fileID: 5132432865315965819}
+  m_Layer: 8
+>>>>>>> Stashed changes
   m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13361,7 +14456,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: e9bee07a3e7ed3641855cd3c8368f79e, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13427,6 +14522,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5132432865315965819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919990713067299797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 23fa179028d76c04ba9bcfa0adbfd1cd, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7919990712580682515}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 0b897e13aa595fe47a6442f3d0a3f76c, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7919990713128070530
 GameObject:
   m_ObjectHideFlags: 0
@@ -13846,8 +14986,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4cc28b22e00fb7b40a8982f652a2e04c, type: 2}
+  m_sharedMaterial: {fileID: 8800763638161248667, guid: 4cc28b22e00fb7b40a8982f652a2e04c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13874,7 +15014,7 @@ MonoBehaviour:
   m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0

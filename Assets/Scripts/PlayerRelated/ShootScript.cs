@@ -76,6 +76,12 @@ public class ShootScript : MonoBehaviour
     [SerializeField]
     private AudioClip shootSFX;
     public AudioClip launchSFX;
+<<<<<<< Updated upstream
+=======
+
+    [HideInInspector]
+    public CrossbowFireAnim fireAnimScript;
+>>>>>>> Stashed changes
 
     /// <summary>
     /// Generate ammo wanted by the player
