@@ -97,7 +97,8 @@ public class MainTextDisplay : MonoBehaviour
             textBackground.SetActive(true);
 
         //Set text
-        text.text = playerConversation.GetFormattedText(dialogueIndex);
+        text.text = InputStatic.InputNames.TranslateTextToInstruction(
+            playerConversation.GetFormattedText(dialogueIndex), '`');
 
         //TODO: Set expression
         var incomingExpressionSprite = playerConversation.GetExpressionSprite(dialogueIndex);

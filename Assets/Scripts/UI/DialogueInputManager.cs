@@ -71,7 +71,6 @@ public class DialogueInputManager : MonoBehaviour
     /// <param name="cxt"></param>
     public void IncrementTextIndex(InputAction.CallbackContext cxt)
     {
-        print(cxt.action.bindings);
         if (PlayerStatic.HasConversation())
            StartCoroutine(IncrementTextIndexTimed());
     }
