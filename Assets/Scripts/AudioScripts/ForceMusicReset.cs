@@ -20,7 +20,7 @@ public class ForceMusicReset : MonoBehaviour
     private IEnumerator ForceStart()
     {
         musicBox.SetActive(false);
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.01f);
         musicBox.SetActive(true);
     }
 }
