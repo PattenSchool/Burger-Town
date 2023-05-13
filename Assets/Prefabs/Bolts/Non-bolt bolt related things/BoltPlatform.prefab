@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3655174350661561158}
   - component: {fileID: 3073444122919133116}
   - component: {fileID: 5802077507344976199}
+  - component: {fileID: 8175148454431283990}
   m_Layer: 3
   m_Name: BoltPlatform
   m_TagString: StickyPlatform
@@ -133,6 +134,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8175148454431283990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428391412465546510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08a661b3aaaf184686fc4234c319549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stickySFX: {fileID: 8300000, guid: 7be8b7838af01f244a1b06011ee6e443, type: 3}
+  soundDelay: 0.1
 --- !u!1 &8988752059543090356
 GameObject:
   m_ObjectHideFlags: 0
