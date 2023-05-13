@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\Objective Related\QuestManager.cs" />
     <Compile Include="Assets\Scripts\CheckpointSystem\CheckPointManager.cs" />
     <Compile Include="Assets\Scripts\Objective Related\Classes\AbstractCompleteAction.cs" />
+    <Compile Include="Assets\Scripts\ConsoleCommands\SkipLevel.cs" />
     <Compile Include="Assets\Scripts\EventObjects\Moving_Platform.cs" />
     <Compile Include="Assets\Scripts\AI\ShotTimerTracker.cs" />
     <Compile Include="Assets\Scripts\SaveSystem\ScriptsForData\SaveData_SO.cs" />
@@ -145,6 +146,7 @@
     <Compile Include="Assets\Scripts\AI\BossData\BossFightManager.cs" />
     <Compile Include="Assets\Scripts\Burger Related\Burger.cs" />
     <Compile Include="Assets\Scripts\Menus\WinMenuTest.cs" />
+    <Compile Include="Assets\Scripts\ConsoleCommands\Unstuck.cs" />
     <Compile Include="Assets\Scripts\PlayerRelated\GroundCheck.cs" />
     <Compile Include="Assets\Scripts\MovingPlatform\MovingPlatform.cs" />
     <Compile Include="Assets\Scripts\PlayerRelated\GrabObject.cs" />
@@ -201,10 +203,13 @@
     <Compile Include="Assets\Scripts\EventObjects\Palm_Tree_Collision.cs" />
     <Compile Include="Assets\Scripts\PuzzleSpecificScripts\Level2\Sage&apos;sPuzzle\CannonObjectCheck.cs" />
     <Compile Include="Assets\Scripts\EventObjects\PlayerCatcher.cs" />
+    <Compile Include="Assets\Scripts\ConsoleCommands\SetCheckpoint.cs" />
+    <Compile Include="Assets\Scripts\ConsoleCommands\Noclip.cs" />
     <Compile Include="Assets\Scripts\CheckpointSystem\Resettable.cs" />
     <Compile Include="Assets\Scripts\MathScripts\bolt related\LauncherBolt.cs" />
     <Compile Include="Assets\Scripts\LevelManagingScripts\LevelManagerStatic.cs" />
     <Compile Include="Assets\Scripts\PuzzleSpecificScripts\BossScripts\ObsticalSpecific\FallingPlatform.cs" />
+    <Compile Include="Assets\Scripts\ConsoleCommands\ConsoleCommand.cs" />
     <Compile Include="Assets\Scripts\PuzzleSpecificScripts\Level4\Explosive.cs" />
     <Compile Include="Assets\Scripts\UI\InputTextReplace.cs" />
     <Compile Include="Assets\Scripts\Objective Related\Objectives\ObjectiveDestroy.cs" />
