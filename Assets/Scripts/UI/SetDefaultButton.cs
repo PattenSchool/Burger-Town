@@ -6,11 +6,11 @@ using UnityEngine.UI;
 
 public class SetDefaultButton : MonoBehaviour 
 {
-    #region UI Elements
+    #region UI elements
     public Button firstSelected;
     #endregion
 
-    #region Tracker Variables
+    #region Update checks
     private bool isControllerConnectedLastUpdate = false;
     #endregion
 
@@ -28,14 +28,15 @@ public class SetDefaultButton : MonoBehaviour
 
     private void Update()
     {
-        //Temp Get current isControlller updated
+        //Get this update's check
         bool isControllerConnectedThisUpdate = InputStatic.InputData.IsAGamepadConnected();
 
-        //Compare
+        //Check ifcontroller is connected
         if (isControllerConnectedThisUpdate != isControllerConnectedLastUpdate)
             firstSelected.Select();
 
-        //Set new
+
+        //Update last update check
         isControllerConnectedLastUpdate = isControllerConnectedThisUpdate;
     }
     #endregion
